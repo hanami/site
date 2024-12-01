@@ -4,6 +4,8 @@ module Site
   class Routes < Hanami::Routes
     root to: "pages.home"
 
+    get "/guides/:org/:version/:slug/:path", to: "guides.show"
+
     get "/community", to: "pages.community"
   end
 end

@@ -1,0 +1,11 @@
+module Site
+  module Relations
+    class Guides < Hanami::DB::Relation
+      schema :guides do
+        attribute :org, Types::Nominal::String
+        attribute :slug, Types::Nominal::String
+        attribute :version, Types::Nominal::String
+      end
+    end
+  end
+end

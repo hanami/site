@@ -16,6 +16,9 @@ gem "puma"
 gem "rake"
 gem "sqlite3"
 
+# Markdown content handling
+gem "commonmarker"
+
 group :development do
   gem "hanami-webconsole", "~> 2.2"
 end
