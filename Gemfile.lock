@@ -112,6 +112,7 @@ GEM
     ffi (1.17.0-x86_64-linux-gnu)
     ffi (1.17.0-x86_64-linux-musl)
     formatador (1.1.0)
+    front_matter_parser (1.0.1)
     guard (2.19.0)
       formatador (>= 0.2.4)
       listen (>= 2.7, < 4.0)
@@ -317,6 +318,7 @@ DEPENDENCIES
   dotenv
   dry-operation
   dry-types (~> 1.7)
+  front_matter_parser
   hanami (~> 2.2)
   hanami-assets (~> 2.2)
   hanami-controller (~> 2.2)

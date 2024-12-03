@@ -10,10 +10,19 @@ module Site
       end
 
       def page(guide:, path:)
-        file_path = guide.path.join("#{path}.md")
-        raise ContentNotFoundError unless file_path.exist?
+        file = files.find(guide.relative_content_path.join("#{path}.md"))
+        raise ContentNotFoundError if file.failure?
 
-        Structs::GuidePage.new(guide:, content_md: File.read(file_path))
+        file = file.value!
+        Structs::GuidePage.new(guide:, content_md: file.content)
+      end
+
+      private
+
+      # Workaround until https://github.com/hanami/hanami/issues/1483 is fixed and we can switch
+      # back to using `Deps` for this.
+      def files
+        @files ||= Content::Files.new
       end
     end
   end

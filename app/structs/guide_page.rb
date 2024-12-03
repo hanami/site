@@ -1,11 +1,10 @@
 # frozen_string_literal: true
 
 require "commonmarker"
-require "dry/struct"
 
 module Site
   module Structs
-    class GuidePage < Dry::Struct
+    class GuidePage < Site::Struct
       attribute :guide, Guide
       attribute :content_md, Types::Strict::String
 

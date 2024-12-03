@@ -18,6 +18,7 @@ gem "sqlite3"
 
 # Markdown content handling
 gem "commonmarker"
+gem "front_matter_parser"
 
 group :development do
   gem "hanami-webconsole", "~> 2.2"
