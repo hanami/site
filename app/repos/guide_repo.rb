@@ -3,23 +3,18 @@
 module Site
   module Repos
     class GuideRepo < Site::DB::Repo
+      ContentNotFoundError = Class.new(ROM::TupleCountMismatchError)
+
       def find(org:, version:, slug:)
         guides.where(org:, version:, slug:).one!
       end
 
-      def page(org:, version:, slug:, path:)
-        page = guides
-          .where(org:, version:, slug:)
-          .select_append { `''`.as(:content_md) }
-          .as(:guide_page)
-          .one!
+      def page(guide:, path:)
+        file_path = guide.path.join("#{path}.md")
+        raise ContentNotFoundError unless file_path.exist?
 
-        # TODO: make safe
-        content_md = File.read(Content::GUIDES_PATH.join(org, version, slug, "#{path}.md"))
-
-        page.new(content_md:)
+        Structs::GuidePage.new(guide:, content_md: File.read(file_path))
       end
-
     end
   end
 end
