@@ -14,6 +14,8 @@ module Site
           params[:path] ||= "index"
 
           response.render(view, **params)
+        rescue Content::NotFoundError => e
+          raise Action::NotFoundError, "#{e.path} not found"
         end
       end
     end

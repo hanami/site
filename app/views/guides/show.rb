@@ -11,7 +11,7 @@ module Site
         end
 
         expose :page do |guide, path:|
-          guide_repo.page(guide:, path:)
+          guide.pages.page_at(path)
         end
       end
     end

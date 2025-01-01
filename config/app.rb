@@ -18,7 +18,7 @@ module Site
         start :db
 
         # Load content into the database
-        self["content.load_guides"].call
+        self["content.loaders.guides"].call
       end
     end
   end
