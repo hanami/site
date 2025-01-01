@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Site
   module Relations
     class Docs < Hanami::DB::Relation

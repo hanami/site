@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Hanami.app.configure_provider :db do
   after :start do
     # Automatically migrate our in-memory SQLite database when the db starts
