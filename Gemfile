@@ -26,6 +26,7 @@ end
 
 group :development, :test do
   gem "dotenv"
+  gem "standard"
 end
 
 group :cli, :development do
