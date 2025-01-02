@@ -23,7 +23,9 @@ jobs:
           bundler-cache: true
 
       - name: Rake
-        run: bundle exec rake
+        run: |-
+          bundle exec hanami assets compile
+          bundle exec rake
 
   workflow-keepalive:
     if: github.event_name == 'schedule'
