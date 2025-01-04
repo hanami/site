@@ -2,7 +2,7 @@
 
 <h1>Page: <%= page.title %></h1>
 
-<ol>
+<ol data-testid="guide-toc">
   <% guide.pages.all.each do |page| %>
     <li><%= page.title %></li>
   <% end %>
