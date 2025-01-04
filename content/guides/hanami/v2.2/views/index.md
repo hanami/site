@@ -1,6 +1,7 @@
 ---
 title: Overview
-order: 10
+sections:
+  - context
 ---
 
 Hanami provides a complete view system for rendering HTML, JSON and other formats.

@@ -5,6 +5,8 @@ require "front_matter_parser"
 module Site
   module Content
     class MultiPageCollection
+      INDEX_PAGE_PATH = "index"
+
       attr_reader :root
 
       attr_reader :pages
@@ -14,6 +16,11 @@ module Site
         @pages = []
       end
 
+      def all
+        @all ||= ordered_page_paths.map { page_at(it) }
+      end
+
+      # TODO: cache from `#all` if already found?
       def page_at(path)
         page_path = root.join(path)
 
@@ -29,6 +36,16 @@ module Site
           front_matter: parsed_file.front_matter,
           content: parsed_file.content
         )
+      end
+
+      private
+
+      def ordered_page_paths
+        @ordered_page_paths ||= [INDEX_PAGE_PATH] + index_page.front_matter.fetch(:sections, [])
+      end
+
+      def index_page
+        @index_page ||= page_at(INDEX_PAGE_PATH)
       end
     end
   end

@@ -2,4 +2,10 @@
 
 <h1>Page: <%= page.title %></h1>
 
+<ol>
+  <% guide.pages.all.each do |page| %>
+    <li><%= page.title %></li>
+  <% end %>
+</ol>
+
 <%= page.content_html %>
