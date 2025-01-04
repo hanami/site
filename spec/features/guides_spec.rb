@@ -15,12 +15,23 @@ RSpec.feature "Guides" do
     expect(page).to have_content "Page: Context"
   end
 
-  it "shows a list of a guide's pages" do
+  it "shows a list of all the guide's pages" do
     visit "/guides/hanami/v2.2/views"
 
     within("[data-testid=guide-toc]") do
       expect(page).to have_selector "li:nth-child(1)", text: "Overview"
       expect(page).to have_selector "li:nth-child(2)", text: "Context"
+    end
+  end
+
+  it "shows a table of contents for the current page" do
+    visit "/guides/hanami/v2.2/views/context"
+
+    within("[data-testid=page-toc]") do
+      expect(page).to have_selector "li:nth-child(1)", text: "Standard context"
+      expect(page).to have_selector "li:nth-child(2)", text: "Customizing the standard context"
+      expect(page).to have_selector "li:nth-child(3)", text: "Decorating context attributes"
+      expect(page).to have_selector "li:nth-child(4)", text: "Providing an alternative context object"
     end
   end
 end

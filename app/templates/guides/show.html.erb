@@ -8,4 +8,11 @@
   <% end %>
 </ol>
 
+<ol data-testid="page-toc">
+  <% page.headings.each do |heading| %>
+    <%# TODO: do something with heading.header_level %>
+    <li><%= heading.text %></li>
+  <% end %>
+</ol>
+
 <%= page.content_html %>
