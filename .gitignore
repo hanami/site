@@ -1,7 +1,8 @@
 .env*.local
+build/
+db/*.sqlite
 log/*
+node_modules/
 public/
 !public/*.html
-node_modules/
-db/*.sqlite
 spec/examples.txt

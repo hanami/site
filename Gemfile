@@ -20,6 +20,9 @@ gem "sqlite3"
 gem "commonmarker"
 gem "front_matter_parser"
 
+# Static site generation
+gem "parklife"
+
 group :development do
   gem "hanami-webconsole", "~> 2.2"
 end

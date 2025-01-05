@@ -233,6 +233,10 @@ GEM
       nenv (~> 0.1)
       shellany (~> 0.0)
     parallel (1.26.3)
+    parklife (0.6.1)
+      nokogiri
+      rack-test
+      thor
     parser (3.3.6.0)
       ast (~> 2.4.1)
       racc
@@ -376,6 +380,7 @@ DEPENDENCIES
   hanami-validations (~> 2.2)
   hanami-view (~> 2.2)
   hanami-webconsole (~> 2.2)
+  parklife
   puma
   rack-test
   rake
