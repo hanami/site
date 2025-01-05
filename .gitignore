@@ -1,6 +1,7 @@
 .env*.local
 log/*
 public/
+!public/*.html
 node_modules/
 db/*.sqlite
 spec/examples.txt
