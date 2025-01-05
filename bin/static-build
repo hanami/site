@@ -2,6 +2,9 @@
 
 set -eu
 
+# Compile frontend assets
+bundle exec hanami assets compile
+
 # Build with Parklife - and forward arguments sent to this script.
 bundle exec parklife build "$@"
 
