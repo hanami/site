@@ -1,13 +1,25 @@
 guides:
-  - getting-started
-  - command-line
-  - app
-  - database
-  - routing
-  - actions
-  - operations
-  - views
-  - helpers
-  - logger
-  - assets
-  - upgrade-notes
+  - slug: getting-started
+    title: Getting started
+  - slug: command-line
+    title: Command line
+  - slug: app
+    title: App
+  - slug: database
+    title: Database
+  - slug: routing
+    title: Routing
+  - slug: actions
+    title: Actions
+  - slug: operations
+    title: Operations
+  - slug: views
+    title: Views
+  - slug: helpers
+    title: Helpers
+  - slug: logger
+    title: Logger
+  - slug: assets
+    title: Assets
+  - slug: upgrade-notes
+    title: Upgrade notes

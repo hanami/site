@@ -6,6 +6,7 @@ module Site
       schema :guides do
         attribute :org, Types::Nominal::String
         attribute :slug, Types::Nominal::String
+        attribute :title, Types::Nominal::String
         attribute :position, Types::Nominal::Integer
         attribute :version, Types::Nominal::String
       end

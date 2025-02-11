@@ -3,8 +3,7 @@
   <% all_guides.each do |guide| %>
     <li>
       <a href="<%= guide.url_path %>">
-        <%# TODO: put full guide title here %>
-        <%= guide.url_path %>
+        <%= guide.title %>
       </a>
     </li>
   <% end %>

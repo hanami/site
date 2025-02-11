@@ -42,9 +42,9 @@ RSpec.feature "Guides" do
       all_guide_names = page.find_all("li a").map(&:text)
 
       expect(all_guide_names[0..2]).to eq [
-        "guides/hanami/v2.2/getting-started",
-        "guides/hanami/v2.2/command-line",
-        "guides/hanami/v2.2/app"
+        "Getting started",
+        "Command line",
+        "App"
       ]
     end
   end
