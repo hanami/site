@@ -1,3 +1,15 @@
+<h2>All guides</h1>
+<ol data-testid="guides-list">
+  <% all_guides.each do |guide| %>
+    <li>
+      <a href="<%= guide.url_path %>">
+        <%# TODO: put full guide title here %>
+        <%= guide.url_path %>
+      </a>
+    </li>
+  <% end %>
+<ol>
+
 <h1>Guide: <%= guide.slug %></h1>
 
 <h1>Page: <%= page.title %></h1>

@@ -7,12 +7,16 @@ module Site
         @pages ||= Content::MultiPageCollection.new(relative_content_path)
       end
 
-      def path
+      def url_path
+        relative_content_path
+      end
+
+      def content_path
         Content::GUIDES_PATH.join(org, version, slug)
       end
 
       def relative_content_path
-        path.relative_path_from(Content::CONTENT_PATH)
+        content_path.relative_path_from(Content::CONTENT_PATH)
       end
     end
   end

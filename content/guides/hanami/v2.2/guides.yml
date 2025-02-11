@@ -1,0 +1,13 @@
+guides:
+  - getting-started
+  - command-line
+  - app
+  - database
+  - routing
+  - actions
+  - operations
+  - views
+  - helpers
+  - logger
+  - assets
+  - upgrade-notes

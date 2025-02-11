@@ -13,6 +13,10 @@ module Site
         expose :page do |guide, path:|
           guide.pages.page_at(path)
         end
+
+        expose :all_guides do |org:, version:|
+          guide_repo.all(org:, version:)
+        end
       end
     end
   end
