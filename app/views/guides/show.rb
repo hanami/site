@@ -15,7 +15,7 @@ module Site
         end
 
         expose :other_guides do |org:, version:|
-          guide_repo.all_with(org:, version:)
+          guide_repo.all_for(org:, version:)
         end
       end
     end

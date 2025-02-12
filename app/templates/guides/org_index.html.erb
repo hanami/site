@@ -1,0 +1,22 @@
+<h1><%= org_name(org_slug) %> guides</h1>
+
+<h2><%= version %></h2>
+
+<h3>Other versions</h3>
+<ol data-testid="other-versions">
+  <% versions.each do |version| %>
+    <li>
+      <a href="<%= "/guides/#{org_slug}/#{version}" %>">
+        <%= version %>
+      </a>
+    </li>
+  <% end %>
+</ol>
+
+<ol data-testid="guides">
+  <% guides.each do |guide| %>
+    <li>
+      <a href="<%= guide.url_path %>"><%= guide.title %></a>
+    </li>
+  <% end %>
+</ol>

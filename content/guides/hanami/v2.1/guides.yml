@@ -1,0 +1,21 @@
+guides:
+  - slug: getting-started
+    title: Getting started
+  - slug: command-line
+    title: Command line
+  - slug: app
+    title: App
+  - slug: routing
+    title: Routing
+  - slug: actions
+    title: Actions
+  - slug: views
+    title: Views
+  - slug: helpers
+    title: Helpers
+  - slug: logger
+    title: Logger
+  - slug: assets
+    title: Assets
+  - slug: upgrade-notes
+    title: Upgrade notes

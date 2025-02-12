@@ -5,6 +5,7 @@ module Site
     root to: "pages.home"
 
     get "/guides", to: "guides.index"
+    get "/guides/:org/:version", to: "guides.org_index"
     get "/guides/:org/:version/:slug", to: "guides.show"
     get "/guides/:org/:version/:slug/:path", to: "guides.show"
 
