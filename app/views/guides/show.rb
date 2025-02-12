@@ -14,8 +14,8 @@ module Site
           guide.pages.page_at(path)
         end
 
-        expose :all_guides do |org:, version:|
-          guide_repo.all(org:, version:)
+        expose :other_guides do |org:, version:|
+          guide_repo.all_with(org:, version:)
         end
       end
     end

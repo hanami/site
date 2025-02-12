@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.feature "Guides" do
+RSpec.feature "Guides / Guide pages" do
   it "renders a guide index page" do
     visit "/guides/hanami/v2.2/views"
 

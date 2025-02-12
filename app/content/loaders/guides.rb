@@ -7,6 +7,8 @@ module Site
     module Loaders
       # Loads guides from content/guides/ into the database.
       class Guides
+        GuideData = Data.define(:org, :slug, :title, :version)
+
         GUIDES_YML = "guides.yml"
         GUIDES_KEY = :guides
         SLUG_KEY = :slug
@@ -16,27 +18,32 @@ module Site
 
         def call(root: GUIDES_PATH)
           # Find all per-org guide versions: ["hanami/v2.2", ...]
-          org_guide_versions = root.glob("*/*").map { it.relative_path_from(root).to_s }
+          org_versions = root.glob("*/*").map { it.relative_path_from(root).to_s }
 
           # For each versioned set of guides, load the available guides (in order) from guides.yml
-          guides = org_guide_versions.each_with_object([]) { |org_guide_version, memo_arr|
-            guides_yml = GUIDES_PATH.join(org_guide_version, GUIDES_YML)
+          guides = org_versions.each_with_object([]) { |org_version, memo_arr|
+            guides_yml = GUIDES_PATH.join(org_version, GUIDES_YML)
             next unless guides_yml.file?
+
+            org, version = org_version.split(File::SEPARATOR)
 
             versioned_guides = File.read(guides_yml)
               .then { YAML.load(it, symbolize_names: true) }
               .fetch(GUIDES_KEY)
-              .map { it.merge(SLUG_KEY => File.join(org_guide_version, it[SLUG_KEY])) }
+              .map { |guide_attrs|
+                GuideData.new(
+                  org:, version:,
+                  slug: guide_attrs.fetch(SLUG_KEY),
+                  title: guide_attrs.fetch(TITLE_KEY)
+                )
+              }
 
             memo_arr.concat versioned_guides
           }
 
           # Insert a record for each guide
           guides.each_with_index do |guide, position|
-            org, version, slug = guide[SLUG_KEY].split("/")
-            title = guide[TITLE_KEY]
-
-            relation.insert(org:, slug:, title:, version:, position:)
+            relation.insert(**guide.to_h, position:)
           end
         end
       end

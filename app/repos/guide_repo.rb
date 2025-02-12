@@ -7,8 +7,17 @@ module Site
         guides.where(org:, version:, slug:).one!
       end
 
-      def all(org:, version:)
+      def all_with(org:, version:)
         guides.where(org:, version:).to_a
+      end
+
+      def latest_by_org
+        Content::DEFAULT_GUIDE_VERSIONS.to_h { |org, version|
+          [
+            org,
+            guides.where(org:, version:).order(guides[:position].asc)
+          ]
+        }
       end
     end
   end

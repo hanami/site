@@ -1,0 +1,32 @@
+<h1>Guides</h1>
+
+<h2>Hanami</h2>
+
+<ol data-testid="hanami-guides">
+  <% hanami_guides.each do |guide| %>
+    <li>
+      <a href="<%= guide.url_path %>"><%= guide.title %></a>
+    </li>
+  <% end %>
+</ol>
+
+<h2>Dry RB</h2>
+
+<ol data-testid="dry-rb-guides">
+  <% dry_rb_guides.each do |guide| %>
+    <li>
+      <a href="<%= guide.url_path %>"><%= guide.title %></a>
+    </li>
+  <% end %>
+</ol>
+
+
+<h2>ROM</h2>
+
+<ol data-testid="rom-guides">
+  <% rom_guides.each do |guide| %>
+    <li>
+      <a href="<%= guide.url_path %>"><%= guide.title %></a>
+    </li>
+  <% end %>
+</ol>
