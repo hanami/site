@@ -4,6 +4,7 @@ require "hanami/boot"
 
 Parklife.application.configure do |config|
   config.app = Site::App
+  config.on_404 = :warn
 end
 
 Parklife.application.routes do

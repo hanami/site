@@ -8,7 +8,7 @@ module Site
       end
 
       def url_path
-        relative_content_path
+        "/#{relative_content_path}"
       end
 
       def content_path
