@@ -3,30 +3,41 @@
 <h2>Hanami</h2>
 
 <ol data-testid="hanami-guides">
-  <% hanami_guides.each do |guide| %>
+  <% guides.fetch("hanami").each do |guide| %>
     <li>
       <a href="<%= guide.url_path %>"><%= guide.title %></a>
     </li>
   <% end %>
 </ol>
+
+<div data-testid="hanami-versions">
+  <%= render :version_links, versions: versions.fetch("hanami"), org_slug: "hanami" %>
+</div>
 
 <h2>Dry RB</h2>
 
 <ol data-testid="dry-rb-guides">
-  <% dry_rb_guides.each do |guide| %>
+  <% guides.fetch("dry-rb").each do |guide| %>
     <li>
       <a href="<%= guide.url_path %>"><%= guide.title %></a>
     </li>
   <% end %>
 </ol>
 
+<div data-testid="dry-rb-versions">
+  <%= render :version_links, versions: versions.fetch("dry-rb"), org_slug: "dry-rb" %>
+</div>
 
 <h2>ROM</h2>
 
 <ol data-testid="rom-guides">
-  <% rom_guides.each do |guide| %>
+  <% guides.fetch("rom").each do |guide| %>
     <li>
       <a href="<%= guide.url_path %>"><%= guide.title %></a>
     </li>
   <% end %>
 </ol>
+
+<div data-testid="rom-versions">
+  <%= render :version_links, versions: versions.fetch("dry-rb"), org_slug: "rom" %>
+</div>

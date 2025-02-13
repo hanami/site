@@ -23,6 +23,12 @@ module Site
           ]
         }
       end
+
+      def versions_by_org
+        guides
+          .group(:org, :version).order(guides[:version].desc).pluck(:org, :version)
+          .each_with_object({}) { |row, hsh| (hsh[row[0]] ||= []) << row[1] }
+      end
     end
   end
 end

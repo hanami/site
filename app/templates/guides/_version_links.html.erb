@@ -1,0 +1,11 @@
+<% return "" unless versions.length > 1 %>
+
+<ol data-testid="versions">
+  <% versions.each do |version| %>
+    <li>
+      <a href="<%= "/guides/#{org_slug}/#{version}" %>">
+        <%= version %>
+      </a>
+    </li>
+  <% end %>
+</ol>

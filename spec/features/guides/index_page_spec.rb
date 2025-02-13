@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 RSpec.feature "Guides / Index page" do
-  it "lists all the guides across orgs" do
+  it "lists all the guides and versions across orgs" do
     visit "/guides"
 
     within "[data-testid=hanami-guides]" do
@@ -10,6 +10,14 @@ RSpec.feature "Guides / Index page" do
         "Command line",
         "App"
       ]
+    end
+
+    within "[data-testid=hanami-versions]" do
+      expect(page).to have_link "v2.1"
+      expect(page).to have_link "v2.0"
+      expect(page).to have_link "v2.2"
+
+      expect(page.find_link("v2.1")[:href]).to eq "/guides/hanami/v2.1"
     end
 
     within "[data-testid=dry-rb-guides]" do
