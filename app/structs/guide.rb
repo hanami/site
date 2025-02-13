@@ -4,7 +4,10 @@ module Site
   module Structs
     class Guide < Site::DB::Struct
       def pages
-        @pages ||= Content::MultiPageCollection.new(relative_content_path)
+        @pages ||= Content::MultiPageCollection.new(
+          path: relative_content_path,
+          url_path:
+        )
       end
 
       def url_path

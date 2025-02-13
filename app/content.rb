@@ -12,6 +12,8 @@ module Site
     DOCS_PATH = CONTENT_PATH.join("docs").freeze
     GUIDES_PATH = CONTENT_PATH.join("guides").freeze
 
+    INDEX_NAME = "index"
+
     class NotFoundError < StandardError
       attr_reader :path
 

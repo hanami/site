@@ -9,10 +9,13 @@ module Site
 
       attr_reader :root
 
+      attr_reader :url_path
+
       attr_reader :pages
 
-      def initialize(path)
+      def initialize(path:, url_path:)
         @root = CONTENT_PATH.join(path)
+        @url_path = url_path
         @pages = []
       end
 
@@ -33,6 +36,7 @@ module Site
         # TODO: figure out if there's value in passing `self` to the page, to
         # allow the page to expose its siblings, etc.
         Content::Page.new(
+          url_path: (path == INDEX_NAME) ? url_path : File.join(url_path, path),
           front_matter: parsed_file.front_matter,
           content: parsed_file.content
         )

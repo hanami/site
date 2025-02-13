@@ -6,6 +6,7 @@ require "commonmarker"
 module Site
   module Content
     class Page < Site::Struct
+      attribute :url_path, Types::Strict::String
       attribute :front_matter, Types::Strict::Hash.constructor(->(hsh) { hsh.transform_keys(&:to_sym) })
       attribute :content, Types::Strict::String
 
@@ -18,7 +19,9 @@ module Site
         front_matter.fetch(:title)
       end
 
-      def content_md = content
+      def content_md
+        content
+      end
 
       def content_html
         @content_html ||= content_doc.to_html.html_safe
