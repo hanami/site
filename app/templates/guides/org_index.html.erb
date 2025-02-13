@@ -2,16 +2,8 @@
 
 <h2><%= version %></h2>
 
-<h3>Other versions</h3>
-<ol data-testid="other-versions">
-  <% versions.each do |version| %>
-    <li>
-      <a href="<%= "/guides/#{org_slug}/#{version}" %>">
-        <%= version %>
-      </a>
-    </li>
-  <% end %>
-</ol>
+<h3>Versions</h3>
+<%= render :version_links, versions:, org_slug: %>
 
 <ol data-testid="guides">
   <% guides.each do |guide| %>

@@ -4,7 +4,7 @@ RSpec.feature "Guides / Org index page" do
   it "renders the guides for an org at a specific version, with links to the other versions" do
     visit "/guides/hanami/v2.0"
 
-    within "[data-testid=other-versions]" do
+    within "[data-testid=versions]" do
       expect(page).to have_link "v2.1"
       expect(page).to have_link "v2.0"
       expect(page).to have_link "v2.2"
