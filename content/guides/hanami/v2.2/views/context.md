@@ -1,5 +1,6 @@
 ---
 title: Context
+order: 60
 ---
 
 When each view is rendered, a single context object provides access to common facilities from across the app, making these available to every template, partial, part and scope in that rendering.
@@ -88,7 +89,7 @@ The context class is compatible with the Deps mixin, so you can also include you
 module Bookshelf
   module Views
     class Context < Hanami::View::Context
-      include Deps["repositories.user_repo"]
+      include Deps["repos.user_repo"]
 
       def current_user
         return nil unless session["user_id"]
@@ -110,7 +111,7 @@ The context object will have `#dup` called once at the beginning of each renderi
 module Bookshelf
   module Views
     class Context < Hanami::View::Context
-      include Deps["repositories.user_repo"]
+      include Deps["repos.user_repo"]
 
       def initialize(*)
         super

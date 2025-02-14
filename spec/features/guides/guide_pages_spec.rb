@@ -15,12 +15,20 @@ RSpec.feature "Guides / Guide pages" do
     expect(page).to have_content "Page: Context"
   end
 
-  it "shows a list of all the guide's pages" do
+  it "links to all of all the guide's pages" do
     visit "/guides/hanami/v2.2/views"
 
     within "[data-testid=guide-toc]" do
-      expect(page).to have_selector "li:nth-child(1)", text: "Overview"
-      expect(page).to have_selector "li:nth-child(2)", text: "Context"
+      links = page.find_all("a")
+
+      expect(links[0..2].map(&:text)).to eq [
+        "Overview",
+        "Working with dependencies",
+        "Input and exposures"
+      ]
+
+      expect(links[0][:href]).to eq "/guides/hanami/v2.2/views"
+      expect(links[1][:href]).to eq "/guides/hanami/v2.2/views/working-with-dependencies"
     end
   end
 
