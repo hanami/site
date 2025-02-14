@@ -1,6 +1,6 @@
 ---
 title: Overview
-sections:
+pages:
 - parameters
 - rendering-views
 - request-and-response

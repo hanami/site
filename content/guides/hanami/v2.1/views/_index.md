@@ -1,6 +1,6 @@
 ---
 title: Overview
-sections:
+pages:
 - working-with-dependencies
 - input-and-exposures
 - rendering-from-actions

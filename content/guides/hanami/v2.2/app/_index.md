@@ -1,6 +1,6 @@
 ---
 title: Booting
-sections:
+pages:
 - container-and-components
 - providers
 - settings

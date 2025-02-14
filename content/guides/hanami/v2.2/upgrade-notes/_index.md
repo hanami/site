@@ -1,6 +1,6 @@
 ---
 title: Upgrade to 2.2
-sections:
+pages:
 - v2.1
 ---
 

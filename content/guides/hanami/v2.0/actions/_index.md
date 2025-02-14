@@ -1,6 +1,6 @@
 ---
 title: Overview
-sections:
+pages:
 - parameters
 - request-and-response
 - status-codes

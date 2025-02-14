@@ -1,6 +1,6 @@
 ---
 title: Overview
-sections:
+pages:
 - using-a-cdn
 - customization
 ---

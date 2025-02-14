@@ -1,6 +1,6 @@
 ---
 title: Configuration
-sections:
+pages:
 - usage
 ---
 

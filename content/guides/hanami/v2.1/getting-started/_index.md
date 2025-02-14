@@ -1,6 +1,6 @@
 ---
 title: Getting Started
-sections:
+pages:
 - building-a-web-app
 - building-an-api
 ---

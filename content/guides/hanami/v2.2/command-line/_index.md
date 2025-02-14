@@ -1,6 +1,6 @@
 ---
 title: Commands
-sections:
+pages:
 - new
 - install
 - console
