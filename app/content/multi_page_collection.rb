@@ -43,7 +43,8 @@ module Site
       private
 
       def ordered_page_paths
-        @ordered_page_paths ||= [INDEX_PAGE_PATH] + index_page.front_matter.fetch(:pages, [])
+        @ordered_page_paths ||= [INDEX_PAGE_PATH] +
+          index_page.front_matter.fetch(PAGES_FRONTMATTER_KEY, [])
       end
 
       def index_page

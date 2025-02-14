@@ -13,6 +13,7 @@ module Site
     GUIDES_PATH = CONTENT_PATH.join("guides").freeze
 
     INDEX_PAGE_PATH = "_index"
+    PAGES_FRONTMATTER_KEY = :pages
 
     class NotFoundError < StandardError
       attr_reader :path
