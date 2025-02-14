@@ -1,6 +1,5 @@
 ---
 title: Configuration
-order: 20
 ---
 
 As of 2.2 Hanami will automatically generate DB configuration for your application. You can suppress this with --skip-db

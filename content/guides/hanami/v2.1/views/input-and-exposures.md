@@ -1,6 +1,5 @@
 ---
 title: Input and exposures
-order: 15
 ---
 
 Each view in a Hanami application starts with a view class. In the same way that actions inherit from a base action class, views inherit from a base view class at (defined in `app/view.rb`).
@@ -254,4 +253,3 @@ By default, exposures are decorated by a [part](/v2.1/views/parts/). To opt out 
 ```ruby
 expose :page_number, decorate: false
 ```
-

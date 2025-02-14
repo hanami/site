@@ -1,6 +1,5 @@
 ---
 title: "Building an API"
-order: 30
 ---
 
 Now that we've [created our app](/v2.1/introduction/getting-started/), let's turn it into an API.
@@ -1197,4 +1196,3 @@ So far we've seen how to create a new Hanami app, explored some of the basics of
 Still, we've barely touched the surface of what Hanami offers.
 
 From here you might want to look in more detail at [routing](/v2.1/routing/overview/) and [actions](/v2.1/actions/overview/), or explore Hanami's [app architecture](/v2.1/app/container-and-components/), starting with its [component management](/v2.1/app/container-and-components/) and [dependency injection](/v2.1/app/container-and-components/) systems.
-

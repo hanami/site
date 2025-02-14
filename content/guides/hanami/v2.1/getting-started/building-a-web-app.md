@@ -1,6 +1,5 @@
 ---
 title: "Building a web app"
-order: 20
 ---
 
 Now that we've [created our app](/v2.1/introduction/getting-started/), let's turn it into a web app.

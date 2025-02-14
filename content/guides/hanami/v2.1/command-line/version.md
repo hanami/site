@@ -1,6 +1,5 @@
 ---
 title: Version
-order: 110
 ---
 
 ## hanami version

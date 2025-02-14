@@ -1,6 +1,5 @@
 ---
 title: Planned for 2.1
-order: 10
 ---
 
 Hanami 2.0 does not yet include integrated view rendering. This is planned for the upcoming 2.1 release.
