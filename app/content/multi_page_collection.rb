@@ -34,7 +34,7 @@ module Site
         # TODO: figure out if there's value in passing `self` to the page, to
         # allow the page to expose its siblings, etc.
         Content::Page.new(
-          url_path: (path == INDEX_NAME) ? url_path : File.join(url_path, path),
+          url_path: (path == INDEX_PAGE_PATH) ? url_path : File.join(url_path, path),
           front_matter: parsed_file.front_matter,
           content: parsed_file.content
         )
@@ -43,11 +43,11 @@ module Site
       private
 
       def ordered_page_paths
-        @ordered_page_paths ||= [INDEX_NAME] + index_page.front_matter.fetch(:sections, [])
+        @ordered_page_paths ||= [INDEX_PAGE_PATH] + index_page.front_matter.fetch(:sections, [])
       end
 
       def index_page
-        @index_page ||= page_at(INDEX_NAME)
+        @index_page ||= page_at(INDEX_PAGE_PATH)
       end
     end
   end
