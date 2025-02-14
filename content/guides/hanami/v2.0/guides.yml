@@ -11,7 +11,5 @@ guides:
     title: Actions
   - slug: logger
     title: Logger
-  - slug: assets
-    title: Assets
-  - slug: upgrade-notes
-    title: Upgrade notes
+  - slug: views
+    title: Views
