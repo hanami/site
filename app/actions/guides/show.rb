@@ -4,14 +4,16 @@ module Site
   module Actions
     module Guides
       class Show < Site::Action
-        def handle(request, response)
-          # Return 404 when "index" path is given explicitly, since we use this for the guide root.
-          halt 404 if request.params[:path] == "index"
+        INDEX_NAME = Content::INDEX_NAME
 
-          # When no path is given, we're at the guide's root. Now we can set the path to "index" in
-          # order to render the index page.
+        def handle(request, response)
+          # Return 404 when index name is explicitly given, since we use this for the guide's root.
+          halt 404 if request.params[:path] == INDEX_NAME
+
+          # When no path is given, we're at the guide's root. Here we can set the path to index to
+          # render the guide's index page.
           params = request.params.to_h
-          params[:path] ||= "index"
+          params[:path] ||= INDEX_NAME
 
           response.render(view, **params)
         rescue Content::NotFoundError => e

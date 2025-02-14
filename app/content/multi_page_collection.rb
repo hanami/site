@@ -5,8 +5,6 @@ require "front_matter_parser"
 module Site
   module Content
     class MultiPageCollection
-      INDEX_PAGE_PATH = "index"
-
       attr_reader :root
 
       attr_reader :url_path
@@ -45,11 +43,11 @@ module Site
       private
 
       def ordered_page_paths
-        @ordered_page_paths ||= [INDEX_PAGE_PATH] + index_page.front_matter.fetch(:sections, [])
+        @ordered_page_paths ||= [INDEX_NAME] + index_page.front_matter.fetch(:sections, [])
       end
 
       def index_page
-        @index_page ||= page_at(INDEX_PAGE_PATH)
+        @index_page ||= page_at(INDEX_NAME)
       end
     end
   end
