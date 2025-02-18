@@ -19,6 +19,7 @@ gem "sqlite3"
 # Markdown content handling
 gem "commonmarker"
 gem "front_matter_parser"
+gem "html-pipeline"
 
 # Static site generation
 gem "parklife"

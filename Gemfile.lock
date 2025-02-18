@@ -193,6 +193,9 @@ GEM
       better_errors (~> 2.10, >= 2.10.1)
       binding_of_caller (~> 1.0)
     hansi (0.2.1)
+    html-pipeline (3.2.2)
+      selma (~> 0.4)
+      zeitwerk (~> 2.5)
     ice_nine (0.11.2)
     json (2.10.1)
     language_server-protocol (3.17.0.4)
@@ -320,6 +323,12 @@ GEM
       rubocop-ast (>= 1.31.1, < 2.0)
     ruby-progressbar (1.13.0)
     ruby2_keywords (0.0.5)
+    selma (0.4.12)
+      rb_sys (~> 0.9)
+    selma (0.4.12-aarch64-linux)
+    selma (0.4.12-arm64-darwin)
+    selma (0.4.12-x86_64-darwin)
+    selma (0.4.12-x86_64-linux)
     sequel (5.89.0)
       bigdecimal
     shellany (0.0.1)
@@ -386,6 +395,7 @@ DEPENDENCIES
   hanami-validations (~> 2.2)
   hanami-view (~> 2.2)
   hanami-webconsole (~> 2.2)
+  html-pipeline
   parklife
   puma
   rack-test
