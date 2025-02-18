@@ -35,7 +35,7 @@ module Site
 
           return unless heading_href.start_with?("#")
 
-          heading_id = heading_href.drop(1)
+          heading_id = heading_href[1..]
 
           element["id"] = heading_id
           element["class"] = "anchor"

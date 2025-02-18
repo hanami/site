@@ -8,6 +8,10 @@ AllCops:
   SuggestExtensions: false
   TargetRubyVersion: 3.4
 
+# Disabled due to https://github.com/rubocop/rubocop-performance/issues/197
+Performance/ArraySemiInfiniteRangeSlice:
+  Enabled: false
+
 Style/FrozenStringLiteralComment:
   Enabled: true
   EnforcedStyle: always_true
