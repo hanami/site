@@ -34,6 +34,7 @@ module Site
         # TODO: figure out if there's value in passing `self` to the page, to
         # allow the page to expose its siblings, etc.
         Content::Page.new(
+          url_base: url_path,
           url_path: (path == INDEX_PAGE_PATH) ? url_path : File.join(url_path, path),
           front_matter: parsed_file.front_matter,
           content: parsed_file.content
