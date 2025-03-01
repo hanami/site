@@ -147,7 +147,7 @@ $ open http://localhost:2300
 
 You should see "Hello from Hanami".
 
-<p><img src="/v2.0/introduction/hello-from-hanami.png" alt="Hello from Hanami" class="img-responsive"></p>
+<p><img src="//file/hello-from-hanami.png" alt="Hello from Hanami" class="img-responsive"></p>
 
 
 ## Adding our first functionality
@@ -237,7 +237,7 @@ module Bookshelf
 end
 ```
 
-This `Bookshelf::Routes` class contains the configuration for our application's router. Routes in Hanami are comprised of a HTTP method, a path, and an endpoint to be invoked, which is usually a Hanami action. (See the [Routing guide](/v2.0/routing/overview/) for more information).
+This `Bookshelf::Routes` class contains the configuration for our application's router. Routes in Hanami are comprised of a HTTP method, a path, and an endpoint to be invoked, which is usually a Hanami action. (See the [Routing guide](//guide/routing) for more information).
 
 We'll take a look at adding more routes in a moment, but for now let's get our spec to pass. The above `Bookshelf::Routes` class contains only one route, the `root` route, which handles `GET` requests for `"/"`.
 
@@ -313,7 +313,7 @@ end
 
 In the automatically generated home show action above, `*` is used for the `request` argument because the action does not currently use the request.
 
-For more details on actions, see the [Actions guide](/v2.0/actions/overview/).
+For more details on actions, see the [Actions guide](//guide/actions).
 
 For now, let's adjust our home action to return our desired "Welcome to Bookshelf" message.
 
@@ -485,7 +485,7 @@ $ createdb bookshelf_development
 $ createdb bookshelf_test
 ```
 
-In Hanami, [providers](/v2.0/app/providers/) offer a mechanism for configuring and using dependencies, like databases, within your application.
+In Hanami, [providers](//guide/app/providers) offer a mechanism for configuring and using dependencies, like databases, within your application.
 
 Copy and paste the following provider into a new file at `config/providers/persistence.rb`:
 
@@ -533,7 +533,7 @@ Settings can be strings, booleans, integers and other types. Each setting can be
 
 Each setting is sourced from an environment variable matching its name. For example `my_flag` will be sourced from `ENV["MY_FLAG"]`.
 
-You can read more about Hanami's settings in the [Application guide](/v2.0/app/settings/).
+You can read more about Hanami's settings in the [Application guide](//guide/app/settings).
 
 Let's add `database_url` and make it a required setting by using the `Types::String` constructor:
 
@@ -735,7 +735,7 @@ end
 
 To get this spec to pass, we'll need to update our books index action to return books from the books relation.
 
-To access the books relation within the action, we can use Hanami's "Deps mixin". Covered in detail in the [container and components](/v2.0/app/container-and-components/) section of the Architecture guide, the Deps mixin gives each of your application's components easy access to the other components it depends on to achieve its work. We'll see this in more detail as these guides progress.
+To access the books relation within the action, we can use Hanami's "Deps mixin". Covered in detail in the [container and components](//guide/app/container-and-components) section of the Architecture guide, the Deps mixin gives each of your application's components easy access to the other components it depends on to achieve its work. We'll see this in more detail as these guides progress.
 
 For now however, it's enough to know that we can use `include Deps["persistence.rom"]` to make rom-rb available via a `rom` method within our action. The books relation is then available via `rom.relations[:books]`.
 
@@ -934,7 +934,7 @@ end
 
 Validating parameters in actions is useful for performing parameter coercion and type validation. More complex domain-specific validations, or validations concerned with things such as uniqueness, however, are usually better performed at layers deeper than your HTTP actions.
 
-You can find more details on actions and parameter validation in the [Actions guide](/v2.0/actions/overview/).
+You can find more details on actions and parameter validation in the [Actions guide](//guide/actions).
 
 ## Showing a book
 
@@ -1337,4 +1337,4 @@ So far we've seen how to create a new Hanami application, explored some of the b
 
 Still, we've barely touched the surface of what Hanami offers.
 
-From here you might want to look in more detail at [routing](/v2.0/routing/overview/) and [actions](/v2.0/actions/overview/), or explore Hanami's [application architecture](/v2.0/app/container-and-components/), starting with its [component management](/v2.0/app/container-and-components/) and [dependency injection](/v2.0/app/container-and-components/) systems.
+From here you might want to look in more detail at [routing](//guide/routing) and [actions](//guide/actions), or explore Hanami's [application architecture](//guide/app), starting with its [component management](//guide/app/container-and-components) and [dependency injection](//guide/app/container-and-components) systems.

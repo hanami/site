@@ -90,7 +90,7 @@ $ hanami generate action books.show
 $ hanami generate slice api
 ```
 
-See the [actions](/v2.0/actions/overview/) and [slices](/v2.0/app/slices/) guides for example usage.
+See the [actions](//guide/actions) and [slices](//guide/app/slices) guides for example usage.
 
 ## hanami middleware
 
