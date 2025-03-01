@@ -172,11 +172,11 @@ $ open http://localhost:2300
 
 You should see the Hanami welcome screen. We're delighted to have you here!
 
-<p><img src="/v2.1/introduction/hanami-welcome.png" alt="Hanami welcome screen" class="img-responsive"></p>
+<p><img src="//file/hanami-welcome.png" alt="Hanami welcome screen" class="img-responsive"></p>
 
 ## Building a Hanami app
 
 It's time to get started building your app. Your next steps here will be based on the kind of app you want to build:
 
-- [Building a web app](/v2.1/introduction/building-a-web-app/)
-- [Building an API](/v2.1/introduction/building-an-api/)
+- [Building a web app](//page/building-a-web-app)
+- [Building an API](//page/building-an-api)
