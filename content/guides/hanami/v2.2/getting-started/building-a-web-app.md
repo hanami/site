@@ -150,7 +150,7 @@ def handle(request, response)
 end
 ```
 
-For more details on actions, see the [Actions guide](/v2.2/actions/overview/).
+For more details on actions, see the [Actions guide](//guide/actions).
 
 By default, an action will render its equivalent view. We can find our new view in our `app` directory at `app/views/home/index.rb`:
 

@@ -50,16 +50,35 @@ module Site
           content_md,
           context: {
             internal_links: {
-              guide: method(:guide_path)
+              page: method(:page_path),
+              guide: method(:guide_path),
+              org_guide: method(:org_guide_path)
             }
           }
         )
       end
 
-      # Replaces links to "//_guide/internal-page" with links within the current guide and
-      # version, such as "/guides/hanami/v2.2/some-guide/internal-page".
-      def guide_path(path)
+      # Transforms "//page/page-slug" into a path within the current guide and version, such as
+      # "/guides/hanami/v2.2/current-guide/page-slug".
+      def page_path(path)
         url_base + path
+      end
+
+      # Transforms "//guide/guide-slug/page-slug" into a path within the current version, such as
+      # "/guides/hanami/v2.2/guide-slug/page-slug".
+      #
+      # To link to the guide's index page, provide a guide slug only.
+      def guide_path(path)
+        url_base_without_slug = url_base.split("/")[0..-2].join("/")
+        url_base_without_slug + path
+      end
+
+      # Transforms "//org_guide/org-slug/guide-slug" into a versionless path for the guide within
+      # the given org.
+      #
+      # Visitors to that link will then be redirected to the latest version of the guide.
+      def org_guide_path(path)
+        "/guides/#{path}"
       end
     end
   end

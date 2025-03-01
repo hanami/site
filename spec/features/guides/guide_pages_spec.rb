@@ -63,12 +63,21 @@ RSpec.feature "Guides / Guide pages" do
     end
   end
 
-  it "replaces guide:// URLs with URLs within the current guide and version" do
+  it "replaces //page URLs with URLs within the current guide and version" do
     visit "/guides/hanami/v2.2/actions"
 
     within ".content" do
-      # In `content/guides/hanami/v2.2/actions/_index.md`, this is linked as "//_guide/parameters"
+      # In the markdown, this is linked as "//page/parameters"
       expect(page).to have_link "parameters", href: "/guides/hanami/v2.2/actions/parameters"
+    end
+  end
+
+  it "transforms //guide links into links to a different guide within the current version" do
+    visit "/guides/hanami/v2.2/getting-started/building-a-web-app"
+
+    within ".content" do
+      # In the markdown, this is linked as "//guide/actions"
+      expect(page).to have_link "Actions guide", href: "/guides/hanami/v2.2/actions"
     end
   end
 end

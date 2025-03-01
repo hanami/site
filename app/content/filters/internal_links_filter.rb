@@ -1,3 +1,4 @@
+# auto_register: false
 # frozen_string_literal: true
 
 require "html_pipeline"
@@ -5,7 +6,7 @@ require "html_pipeline"
 module Site
   module Content
     module Filters
-      # Replaces internal links with the format "//_link_type/some/extra/path".
+      # Replaces internal links with the format "//link_type/some/extra/path".
       #
       # Expects an `:internal_links` hash to be provided in the context, with a transformation proc
       # for each link type. Based on the above example, the following context should be provided:
@@ -37,11 +38,9 @@ module Site
             return
           end
 
-          link_type = uri.host
+          return unless uri.scheme.nil? && !uri.host.to_s.empty?
 
-          return unless link_type&.start_with?("_")
-
-          replacement_proc = internal_links[link_type.sub(/^_/, "").to_sym]
+          replacement_proc = internal_links[uri.host.to_sym]
 
           return unless replacement_proc
 
