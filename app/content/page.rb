@@ -51,6 +51,7 @@ module Site
           context: {
             internal_links: {
               page: method(:page_path),
+              file: method(:page_path),
               guide: method(:guide_path),
               org_guide: method(:org_guide_path)
             }

@@ -2,7 +2,7 @@
 title: "Building an API"
 ---
 
-Now that we've [created our app](/v2.2/introduction/getting-started/), let's turn it into an API.
+Now that we've [created our app](//page), let's turn it into an API.
 
 ## Adding our first functionality
 
@@ -90,7 +90,7 @@ module Bookshelf
 end
 ```
 
-This `Bookshelf::Routes` class contains the configuration for our app's router. Routes in Hanami are comprised of a HTTP method, a path, and an endpoint to be invoked, which is usually a Hanami action. (See the [Routing guide](/v2.2/routing/overview/) for more information).
+This `Bookshelf::Routes` class contains the configuration for our app's router. Routes in Hanami are comprised of a HTTP method, a path, and an endpoint to be invoked, which is usually a Hanami action. (See the [Routing guide](//guide/routing) for more information).
 
 Let's update our routes to invoke an action for our app's root, which handles `GET` requests for `"/"`.
 
@@ -159,7 +159,7 @@ def handle(request, response)
 end
 ```
 
-For more details on actions, see the [Actions guide](/v2.2/actions/overview/).
+For more details on actions, see the [Actions guide](//guide/actions).
 
 For now, let's adjust our home action to return our desired "Welcome to Bookshelf" message.
 
@@ -404,7 +404,7 @@ module Bookshelf
 end
 ```
 
-To access this book repo from the action, we can use Hanami's Deps mixin. Covered in detail in the [container and components](/v2.2/app/container-and-components/) section of the Architecture guide, the Deps mixin gives each of your app's components easy access to the other components it depends on to achieve its work. We'll see this in more detail as these guides progress.
+To access this book repo from the action, we can use Hanami's Deps mixin. Covered in detail in the [container and components](//guide/app/container-and-components) section of the Architecture guide, the Deps mixin gives each of your app's components easy access to the other components it depends on to achieve its work. We'll see this in more detail as these guides progress.
 
 For now however, it's enough to know that we can use `include Deps["repos.book_repo"]` to make the repo available via a `book_repo` method within our action.
 
@@ -626,7 +626,7 @@ end
 
 Validating parameters in actions is useful for performing parameter coercion and type validation. More complex domain-specific validations, or validations concerned with things such as uniqueness, however, are usually better performed at layers deeper than your HTTP actions.
 
-You can find more details on actions and parameter validation in the [Actions guide](/v2.2/actions/overview/).
+You can find more details on actions and parameter validation in the [Actions guide](//guide/actions).
 
 ## Showing a book
 
@@ -1064,4 +1064,4 @@ So far we've seen how to create a new Hanami app, explored some of the basics of
 
 Still, we've barely touched the surface of what Hanami offers.
 
-From here you might want to look in more detail at [routing](/v2.2/routing/overview/) and [actions](/v2.2/actions/overview/), or explore Hanami's [app architecture](/v2.2/app/container-and-components/), starting with its [component management](/v2.2/app/container-and-components/) and [dependency injection](/v2.2/app/container-and-components/) systems.
+From here you might want to look in more detail at [routing](//guide/routing) and [actions](//guide/actions), or explore Hanami's [app architecture](//guide/app), starting with its [component management](//guide/app/container-and-components) and [dependency injection](//guide/app/container-and-components) systems.
