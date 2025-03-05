@@ -15,7 +15,7 @@ RSpec.feature "Guides / Guide pages" do
     expect(page).to have_content "Page: Context"
   end
 
-  it "links to all of all the guide's pages" do
+  it "links to all the guide's pages" do
     visit "/guides/hanami/v2.2/views"
 
     within "[data-testid=guide-toc]" do

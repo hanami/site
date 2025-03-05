@@ -10,6 +10,8 @@ module Site
     get "/guides/:org/:version/:slug/:path", to: "guides.show"
 
     get "/docs", to: "docs.index"
+    get "/docs/:slug/:version", to: "docs.show"
+    get "/docs/:slug/:version/:path", to: "docs.show"
 
     get "/community", to: "pages.community"
   end

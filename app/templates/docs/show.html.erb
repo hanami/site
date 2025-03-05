@@ -1,0 +1,30 @@
+<h1>Doc: <%= doc.title %></h1>
+
+<ol data-testid="pages">
+  <% doc.pages.all.each do |page| %>
+    <li>
+      <a href="<%= page.url_path %>">
+        <%= page.title %>
+      </a>
+    </li>
+  <% end %>
+</ol>
+
+
+<h1>Page: <%= page.title %></h1>
+
+<h2>TOC</h2>
+<ol data-testid="page-toc">
+  <% page.headings.each do |heading| %>
+    <%# TODO: do something with heading.header_level %>
+    <li>
+      <a href="<%= heading.href %>">
+        <%= heading.text %>
+      </a>
+    </li>
+  <% end %>
+</ol>
+
+<div class="content">
+  <%= page.content_html %>
+</div>
