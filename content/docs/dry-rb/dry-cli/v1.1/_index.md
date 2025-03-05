@@ -1,1 +1,5 @@
-# dry-cli
+---
+title: Introduction
+---
+
+dry-cli
