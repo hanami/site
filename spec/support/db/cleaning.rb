@@ -5,6 +5,7 @@ require "database_cleaner/sequel"
 # Clean the databases between tests tagged as `:db`
 RSpec.configure do |config|
   skip_cleaning = %w[
+    docs
     guides
     schema_migrations
   ]

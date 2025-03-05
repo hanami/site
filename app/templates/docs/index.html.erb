@@ -1,0 +1,11 @@
+<h1>Docs</h1>
+
+<h2>Dry RB</h2>
+
+<ol data-testid="dry-rb-docs">
+  <% docs.fetch("dry-rb").each do |doc| %>
+    <li>
+      <a href="#"><%= doc.slug %></a>
+    </li>
+  <% end %>
+</ol>
