@@ -1,4 +1,3 @@
 docs:
   - slug: dry-operation
-    hidden: [v1.1]
   - slug: dry-cli
