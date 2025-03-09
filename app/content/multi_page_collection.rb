@@ -7,13 +7,13 @@ module Site
     class MultiPageCollection
       attr_reader :root
 
-      attr_reader :url_path
+      attr_reader :base_url_path
 
       attr_reader :pages
 
-      def initialize(path:, url_path:)
-        @root = CONTENT_PATH.join(path)
-        @url_path = url_path
+      def initialize(root:, base_url_path:)
+        @root = root
+        @base_url_path = base_url_path
         @pages = []
       end
 
@@ -34,8 +34,8 @@ module Site
         # TODO: figure out if there's value in passing `self` to the page, to
         # allow the page to expose its siblings, etc.
         Content::Page.new(
-          url_base: url_path,
-          url_path: (path == INDEX_PAGE_PATH) ? url_path : File.join(url_path, path),
+          url_base: base_url_path,
+          url_path: (path == INDEX_PAGE_PATH) ? base_url_path : File.join(base_url_path, path),
           front_matter: parsed_file.front_matter,
           content: parsed_file.content
         )
