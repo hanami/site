@@ -1,0 +1,12 @@
+<ol>
+  <% pages.each do |(page, child_pages)| %>
+    <li>
+      <a href="<%= page.url_path %>">
+        <%= page.title %>
+      </a>
+      <% if child_pages.any? %>
+        <%= render "docs/pages_nav", pages: child_pages %>
+      <% end %>
+    </li>
+  <% end %>
+</ol>
