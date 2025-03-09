@@ -7,8 +7,8 @@ module Site
 
       def pages
         @pages ||= Content::MultiPageCollection.new(
-          path: relative_content_path,
-          url_path:
+          root: content_path,
+          base_url_path: url_path
         )
       end
 
