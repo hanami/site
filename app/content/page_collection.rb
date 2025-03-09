@@ -15,6 +15,20 @@ module Site
         @pages = {}
       end
 
+      def [](path)
+        @pages.fetch(path) { @pages[path] = build_page(path) }
+      end
+
+      def pages
+        paths.map { self[it] }
+      end
+
+      def nested_pages(paths = nested_paths)
+        paths.map { |(path, child_paths)|
+          [self[path], nested_pages(child_paths)]
+        }
+      end
+
       def paths
         @paths ||= index_page.front_matter
           .fetch(PAGES_FRONTMATTER_KEY, [])
@@ -27,26 +41,8 @@ module Site
       def nested_paths
         @paths_hash ||= index_page.front_matter
           .fetch(PAGES_FRONTMATTER_KEY, [])
-          .map { hashify_path(it) }
-          .then { it.prepend(INDEX_PAGE_PATH => {}) }
-      end
-
-      def [](path)
-        @pages.fetch(path) { @pages[path] = build_page(path) }
-      end
-
-      def each(&)
-        return to_enum(:each) unless block_given?
-
-        to_a.each(&)
-      end
-
-      # def to_a
-      #   paths.map { self[it] }
-      # end
-
-      def to_a
-        nested_paths.to_a
+          .map { nest_path(it) }
+          .then { it.prepend([INDEX_PAGE_PATH, []]) }
       end
 
       private
@@ -81,13 +77,13 @@ module Site
         }
       end
 
-      def hashify_path(path, prefix = nil)
+      def nest_path(path, prefix = nil)
         if path.is_a?(Hash) && path.length == 1
-          path.transform_values { hashify_path(it, path.keys.first) }
+          [path.keys.first, nest_path(path.values.first, path.keys.first)]
         elsif path.is_a?(Array)
-          path.map { hashify_path(it, prefix) }
+          path.map { nest_path(it, prefix) }
         elsif path.is_a?(String)
-          {[prefix, path].compact.join("/") => {}}
+          [[prefix, path].compact.join("/"), []]
         else
           raise "Invalid path #{path}"
         end
