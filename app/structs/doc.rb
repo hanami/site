@@ -6,7 +6,7 @@ module Site
       def title = slug
 
       def pages
-        @pages ||= Content::MultiPageCollection.new(
+        @pages ||= Content::PageCollection.new(
           root: content_path,
           base_url_path: url_path
         )

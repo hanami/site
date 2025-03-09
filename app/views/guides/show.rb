@@ -11,7 +11,7 @@ module Site
         end
 
         expose :page do |guide, path:|
-          guide.pages.page_at(path)
+          guide.pages[path]
         end
 
         expose :other_guides do |org:, version:|

@@ -1,7 +1,7 @@
 <h1>Doc: <%= doc.title %></h1>
 
 <ol data-testid="pages">
-  <% doc.pages.all.each do |page| %>
+  <% doc.pages.each do |page| %>
     <li>
       <a href="<%= page.url_path %>">
         <%= page.title %>
