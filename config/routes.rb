@@ -7,11 +7,11 @@ module Site
     get "/guides", to: "guides.index"
     get "/guides/:org/:version", to: "guides.org_index"
     get "/guides/:org/:version/:slug", to: "guides.show"
-    get "/guides/:org/:version/:slug/:path", to: "guides.show"
+    get "/guides/:org/:version/:slug/*path", to: "guides.show"
 
     get "/docs", to: "docs.index"
     get "/docs/:slug/:version", to: "docs.show"
-    get "/docs/:slug/:version/:path", to: "docs.show"
+    get "/docs/:slug/:version/*path", to: "docs.show"
 
     get "/community", to: "pages.community"
   end
