@@ -11,7 +11,7 @@ module Site
         end
 
         expose :page do |doc, path:|
-          doc.pages.page_at(path)
+          doc.pages[path]
         end
       end
     end
