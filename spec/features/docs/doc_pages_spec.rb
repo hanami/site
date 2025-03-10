@@ -18,7 +18,7 @@ RSpec.feature "Docs / Doc pages" do
   it "links to all the doc's pages" do
     visit "/docs/dry-operation/v1.0"
 
-    within "[data-testid=pages]" do
+    within "[data-testid=pages-nav]" do
       links = page.find_all("a")
 
       expect(links[0..2].map(&:text)).to eq [

@@ -19,13 +19,13 @@ module Site
         @pages.fetch(path) { @pages[path] = build_page(path) }
       end
 
-      def pages
+      def all
         paths.map { self[it] }
       end
 
-      def nested_pages(paths = nested_paths)
+      def nested(paths = nested_paths)
         paths.map { |(path, child_paths)|
-          [self[path], nested_pages(child_paths)]
+          [self[path], nested(child_paths)]
         }
       end
 
@@ -85,7 +85,7 @@ module Site
         elsif path.is_a?(String)
           [[prefix, path].compact.join("/"), []]
         else
-          raise "Invalid path #{path}"
+          raise "Unsupported path format #{path.inspect}"
         end
       end
 

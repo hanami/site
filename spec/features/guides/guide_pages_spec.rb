@@ -18,7 +18,7 @@ RSpec.feature "Guides / Guide pages" do
   it "links to all the guide's pages" do
     visit "/guides/hanami/v2.2/views"
 
-    within "[data-testid=guide-toc]" do
+    within "[data-testid=pages-nav]" do
       links = page.find_all("a")
 
       expect(links[0..2].map(&:text)).to eq [

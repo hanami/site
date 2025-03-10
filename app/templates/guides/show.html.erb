@@ -11,15 +11,7 @@
 
 <h1>Guide: <%= guide.title %></h1>
 
-<ol data-testid="guide-toc">
-  <% guide.pages.each do |page| %>
-    <li>
-      <a href="<%= page.url_path %>">
-        <%= page.title %>
-      </a>
-    </li>
-  <% end %>
-</ol>
+<%= render "doc_pages/pages_nav", pages: guide.pages.nested %>
 
 <h1>Page: <%= page.title %></h1>
 
