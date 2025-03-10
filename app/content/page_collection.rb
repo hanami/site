@@ -23,6 +23,8 @@ module Site
         paths.map { self[it] }
       end
 
+      def to_a = all
+
       def nested(paths = nested_paths)
         paths.map { |(path, child_paths)|
           [self[path], nested(child_paths)]
