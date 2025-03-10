@@ -32,6 +32,23 @@ RSpec.feature "Docs / Doc pages" do
     end
   end
 
+  it "links to a doc's nested pages" do
+    visit "/docs/dry-types/v1.7"
+
+    within "[data-testid=pages-nav]", match: :first do
+      parent_item = page.find("li", text: "Extensions")
+      nested_nav = parent_item.find("ol")
+
+      within nested_nav do
+        nested_links = page.find_all("a")
+        expect(nested_links[0..1].map(&:text)).to eq [
+          "Maybe",
+          "Monads"
+        ]
+      end
+    end
+  end
+
   it "shows a table of contents for the current page" do
     visit "/docs/dry-operation/v1.0"
 
