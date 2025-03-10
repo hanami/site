@@ -107,7 +107,7 @@ $ bundle exec hanami generate relation --help
 
 ### hanami generate repo
 
-Generates a [repo](//guide/database/overview/#repositories):
+Generates a [repo](//guide/database/overview#repositories):
 
 ```shell
 $ bundle exec hanami generate repo books

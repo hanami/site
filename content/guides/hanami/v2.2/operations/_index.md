@@ -107,7 +107,7 @@ def call
 end
 ```
 
-By default, `transaction` uses your "default" [gateway](//guide/database/configuration/#gateway-configuration). To use a different one, specify gateway: followed by the desired gateway name.
+By default, `transaction` uses your "default" [gateway](//guide/database/configuration#gateway-configuration). To use a different one, specify gateway: followed by the desired gateway name.
 
 ```ruby
 transaction(gateway: :other) do
