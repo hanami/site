@@ -4,8 +4,6 @@ date: 2024-12-12 10:00:00 UTC
 tags: announcements
 author: Tim Riley
 image: true
-excerpt: >
-
 ---
 
 After 10 years working on [dry-rb](https://dry-rb.org/), and 15 years on DataMapper and now [Ruby Object Mapper](https://rom-rb.org/) (aka ROM), Peter Solnica [is retiring from the dry-rb and ROM core teams](https://solnic.dev/retiring-from-the-core-teams).

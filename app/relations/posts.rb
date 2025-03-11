@@ -8,11 +8,20 @@ module Site
         attribute :title, Types::Nominal::String
         attribute :published_at, Types::Nominal::Time.optional
         attribute :author, Types::Nominal::String
-        attribute :body, Types::Nominal::String
+        attribute :excerpt, Types::Nominal::String.optional
+        attribute :content, Types::Nominal::String
 
         indexes do
           index :permalink, name: :unique_permalink, unique: true
         end
+      end
+
+      use :pagination
+      per_page 10
+
+      def published
+        where { !published_at.is(nil) }
+          .where { published_at < Time.now }
       end
     end
   end

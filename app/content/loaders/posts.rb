@@ -8,7 +8,7 @@ module Site
     module Loaders
       # Loads posts from content/blog/ into the database.
       class Posts
-        PostData = Data.define(:permalink, :title, :published_at, :author, :body)
+        PostData = Data.define(:permalink, :title, :published_at, :author, :excerpt, :content)
 
         include Deps[posts_relation: "relations.posts"]
 
@@ -22,7 +22,8 @@ module Site
               title: front_matter.fetch(:title),
               published_at: Time.parse(front_matter.fetch(:date)),
               author: front_matter.fetch(:author),
-              body: parsed_file.content
+              excerpt: front_matter[:excerpt],
+              content: parsed_file.content
             )
 
             posts_relation.insert(post.to_h)

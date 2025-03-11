@@ -8,6 +8,7 @@ RSpec.configure do |config|
     docs
     gems
     guides
+    posts
     schema_migrations
   ]
 

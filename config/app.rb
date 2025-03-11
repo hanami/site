@@ -26,6 +26,7 @@ module Site
         # Load content into the database
         self["content.loaders.gems_docs"].call
         self["content.loaders.guides"].call
+        self["content.loaders.posts"].call
       end
     end
   end
