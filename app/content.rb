@@ -9,6 +9,7 @@ module Site
     }.freeze
 
     CONTENT_PATH = App.root.join("content").freeze
+    POSTS_PATH = CONTENT_PATH.join("posts").freeze
     DOCS_PATH = CONTENT_PATH.join("docs").freeze
     GUIDES_PATH = CONTENT_PATH.join("guides").freeze
 
