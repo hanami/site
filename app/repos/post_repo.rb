@@ -4,7 +4,7 @@ module Site
   module Repos
     class PostRepo < Site::DB::Repo
       def get(permalink)
-        where(permalink:).one!
+        posts.where(permalink:).one!
       end
 
       def latest(page: 1)

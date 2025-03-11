@@ -20,7 +20,8 @@ module Site
     get "/docs/:slug", to: "docs.redirect"
     get "/docs/:slug/*path", to: "docs.redirect"
 
-    get "/blog", to: "blog.index"
+    get "/blog", to: "blog.index", as: :blog
+    get "/blog/*permalink", to: "blog.show", as: :blog_post
 
     get "/community", to: "pages.community"
   end

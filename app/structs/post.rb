@@ -6,6 +6,10 @@ require "html_pipeline/convert_filter/markdown_filter"
 module Site
   module Structs
     class Post < Site::DB::Struct
+      def url_path
+        "/blog/#{permalink}"
+      end
+
       def content_md
         content
       end
