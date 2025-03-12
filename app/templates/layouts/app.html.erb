@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
       <% if content_for(:title) %>
-        <%= raw(content_for(:title)) %> &middot; Hanami Collection
+        <%= raw content_for(:title) %> &middot; Hanami Collection
       <% else %>
         Hanami
       <% end %>
     </title>
     <%= favicon_tag %>
     <%= stylesheet_tag "app" %>
-    <%= raw(content_for(:meta)) %>
+    <%= raw content_for(:meta) %>
+    <link rel="preconnect" href="https://<%= settings.docsearch_app_id %>-dsn.algolia.net" crossorigin />
   </head>
   <body>
     <nav>
@@ -21,7 +22,15 @@
       <a href="/docs">Docs</a>
       <a href="/blog">Blog</a>
     </nav>
+    <div id="docsearch"></div>
     <%= yield %>
+    <script>
+      window.app_settings = {
+        docsearch_app_id: "<%= settings.docsearch_app_id %>",
+        docsearch_api_key: "<%= settings.docsearch_api_key %>",
+        docsearch_index_name: "<%= settings.docsearch_index_name %>"
+      }
+    </script>
     <%= javascript_tag "app" %>
   </body>
 </html>

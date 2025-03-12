@@ -3,6 +3,7 @@
   "private": true,
   "type": "module",
   "dependencies": {
+    "@docsearch/js": "^3.9.0",
     "hanami-assets": "^2.2.1"
   }
 }

@@ -8,5 +8,9 @@ require "builder"
 
 module Site
   class View < Hanami::View
+    include Deps["settings"]
+
+    # Used in the app layout
+    expose :settings, decorate: false
   end
 end

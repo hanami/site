@@ -4,6 +4,9 @@ require "hanami"
 
 module Site
   class App < Hanami::App
+    config.actions.content_security_policy[:script_src] += " 'unsafe-inline'"
+    config.actions.content_security_policy[:connect_src] += " https://*.algolia.net https://*.algolianet.com https://*.algolia.io"
+
     environment :production do
       # We set HANAMI_ENV to production in bin/static-build, but we don't want the noisy default of
       # logging to stdout.
