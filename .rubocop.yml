@@ -1,5 +1,7 @@
 require:
   - standard
+
+plugins:
   - standard-custom
   - standard-performance
   - rubocop-performance
@@ -12,6 +14,9 @@ inherit_gem:
 AllCops:
   SuggestExtensions: false
   TargetRubyVersion: 3.4
+
+Lint/UselessConstantScoping:
+  Enabled: false
 
 Style/FrozenStringLiteralComment:
   Enabled: true
