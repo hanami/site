@@ -6,9 +6,18 @@
   <p><%= post.excerpt %></p>
 <% end %>
 
+<% if posts.none? %>
+  <p>
+    No more posts.
+    <a href="/blog">Back to the beginning.</a>
+  </p>
+<% end %>
+
 <div class="pagination">
   <% if page > 1 %>
     <a href=<%= "/blog/page/#{page - 1}" %>>Previous page</a>
   <% end %>
-  <a href=<%= "/blog/page/#{page + 1}" %>>Next page</a>
+  <% if posts.any? %>
+    <a href=<%= "/blog/page/#{page + 1}" %>>Next page</a>
+  <% end %>
 </div>

@@ -7,8 +7,8 @@ module Site
         posts.where(permalink:).one!
       end
 
-      def latest(page: 1)
-        posts.page(page).to_a
+      def latest(page: 1, per_page: 10)
+        posts.per_page(per_page).page(page).to_a
       end
 
       def posts
