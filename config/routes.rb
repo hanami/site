@@ -21,7 +21,9 @@ module Site
     get "/docs/:slug/*path", to: "docs.redirect"
 
     get "/blog", to: "blog.index", as: :blog
+    get "/blog/page/:page", to: "blog.index"
     get "/blog/*permalink", to: "blog.show", as: :blog_post
+    get "/feed.xml", to: "feed.index"
 
     get "/community", to: "pages.community"
   end

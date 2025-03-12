@@ -2,8 +2,9 @@
 
 module Site
   class Settings < Hanami::Settings
-    # Define your app settings here, for example:
-    #
-    # setting :my_flag, default: false, constructor: Types::Params::Bool
+    # Site URL, without trailing slash
+    setting :site_url,
+      constructor: Types::String.optional.constructor(->(v) { v.sub(%r{/$}, "") }),
+      default: "https://hanamirb.org"
   end
 end

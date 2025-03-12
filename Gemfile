@@ -21,6 +21,9 @@ gem "commonmarker"
 gem "front_matter_parser"
 gem "html-pipeline"
 
+# Views
+gem "builder"
+
 # Static site generation
 gem "parklife"
 

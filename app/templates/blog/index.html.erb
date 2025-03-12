@@ -2,5 +2,13 @@
   <h2>
     <a href="<%= post.url_path %>"><%= post.title %></a>
   </h2>
+  <p><%= post.published_date %></p>
   <p><%= post.excerpt %></p>
 <% end %>
+
+<div class="pagination">
+  <% if page > 1 %>
+    <a href=<%= "/blog/page/#{page - 1}" %>>Previous page</a>
+  <% end %>
+  <a href=<%= "/blog/page/#{page + 1}" %>>Next page</a>
+</div>

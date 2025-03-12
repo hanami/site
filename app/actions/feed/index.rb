@@ -2,13 +2,10 @@
 
 module Site
   module Actions
-    module Blog
+    module Feed
       class Index < Site::Action
         def handle(request, response)
-          response.render(
-            view,
-            page: Types::PageNumber[request.params[:page]]
-          )
+          response.format = :atom
         end
       end
     end
