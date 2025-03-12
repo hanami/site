@@ -53,7 +53,7 @@ Methods like `#create_table`, `#primary_key` or `#column` are intuitive and feel
 
 Then we can create and migrate with `lotus db create` and `lotus db migrate`, or use `lotus db prepare` as a shortcut.
 
-[Read the full announcement](/blog/2015/06/17/introducing-database-migrations.html).
+[Read the full announcement](/blog/2015/06/17/introducing-database-migrations).
 
 ### HTML5 Form Helpers
 
@@ -101,7 +101,7 @@ It produces:
 </form>
 ```
 
-[Read the full announcement](/blog/2015/06/15/introducing-form-helpers.html).
+[Read the full announcement](/blog/2015/06/15/introducing-form-helpers).
 
 ### Application Architecture
 

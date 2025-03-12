@@ -10,7 +10,7 @@ excerpt: >
 
 Hello, Hanami community! It is my great honor to make my first post here and announce the release of Hanami v2.0.0.alpha2! 🎉
 
-It’s been a little while since [the last alpha release](https://hanamirb.org/blog/2019/01/30/announcing-hanami-200alpha1/), but we’ve been hard at work, and the close collaboration between the Hanami, dry-rb, and rom-rb teams has been going exceedingly well. Together, we’re delighted to present a **revolutionary vision** for Hanami 2.0! In this alpha, we have:
+It’s been a little while since [the last alpha release](https://hanamirb.org/blog/2019/01/30/announcing-hanami-200alpha1), but we’ve been hard at work, and the close collaboration between the Hanami, dry-rb, and rom-rb teams has been going exceedingly well. Together, we’re delighted to present a **revolutionary vision** for Hanami 2.0! In this alpha, we have:
 
 - A **completely rewritten application core**, offering advanced application-level state management and code loading capabilities
 - An **always-there auto-injection mixin**, making it easy to model your behavior as functional, composable objects
@@ -336,7 +336,7 @@ Hanami.application.routes do
 end
 ```
 
-The engine underpinning the new router also offers amazing performance, with Hanami::API benchmarks showing it [outperforming nearly all others](https://hanamirb.org/blog/2020/02/26/introducing-hanami-api/).
+The engine underpinning the new router also offers amazing performance, with Hanami::API benchmarks showing it [outperforming nearly all others](https://hanamirb.org/blog/2020/02/26/introducing-hanami-api).
 
 ## A framework for all applications
 

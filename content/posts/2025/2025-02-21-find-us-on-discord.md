@@ -15,4 +15,4 @@ In both our chat and forum, we care about building a friendly, inclusive and hel
 
 You can also catch us on social media via [Mastodon](https://ruby.social/@hanami) and [Bluesky](https://bsky.app/profile/hanamirb.org). We’re no longer posting to X/Twitter.
 
-With our recent [2.2 release](https://hanamirb.org/blog/2024/11/05/hanami-220/) and our [plans for the future](https://hanamirb.org/blog/2024/12/10/state-of-hanami-december-2024/), exciting times are ahead for Hanami, dry-rb and ROM. We’d love for you to give our tools a try, and we’re looking forward to hearing how you go.
+With our recent [2.2 release](https://hanamirb.org/blog/2024/11/05/hanami-220) and our [plans for the future](https://hanamirb.org/blog/2024/12/10/state-of-hanami-december-2024), exciting times are ahead for Hanami, dry-rb and ROM. We’d love for you to give our tools a try, and we’re looking forward to hearing how you go.

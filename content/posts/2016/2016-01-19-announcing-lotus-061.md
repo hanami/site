@@ -8,7 +8,7 @@ excerpt: >
   Minor fixes for CLI, cookie sessions and database exceptions.
 ---
 
-This is a patch release that addresses some bugs reported after [v0.6.0 release](/blog/2016/01/12/announcing-lotus-060.html).
+This is a patch release that addresses some bugs reported after [v0.6.0 release](/blog/2016/01/12/announcing-lotus-060).
 
 ## Bug Fixes
 

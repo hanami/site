@@ -10,7 +10,7 @@ excerpt: >
   Subresource Integrity, updated Content Security Policy, and new HTTP security headers.
 ---
 
-This is the first minor release after the [project rebranding](/blog/2016/01/22/lotus-is-now-hanami.html) that happened a few months ago.
+This is the first minor release after the [project rebranding](/blog/2016/01/22/lotus-is-now-hanami) that happened a few months ago.
 
 We waited so long to release this version in order to have the largest possible feedback cycle. (Actually, the longest gap in releases since this project was started four years ago!)
 We've had a lot of new contributions: new features, bug fixes, and real world experiences.

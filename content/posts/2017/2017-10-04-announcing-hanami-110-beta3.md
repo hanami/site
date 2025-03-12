@@ -10,7 +10,7 @@ excerpt: >
 
 Hello wonderful community!
 
-On yesterday I released [`v1.1.0.beta2`](/blog/2017/10/03/announcing-hanami-110-beta2.html), but it was [broken](https://github.com/hanami/hanami/issues/838) 😭.
+On yesterday I released [`v1.1.0.beta2`](/blog/2017/10/03/announcing-hanami-110-beta2), but it was [broken](https://github.com/hanami/hanami/issues/838) 😭.
 
 My sincere apologize, folks. 🙏
 

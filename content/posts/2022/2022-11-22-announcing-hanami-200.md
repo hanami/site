@@ -51,7 +51,7 @@ There’s a lot to dig into for each of these. **[Check out the Highlights of Ha
 
 ## Faster
 
-We’ve completely rewritten our HTTP routing engine, with benchmarks showing it [outperforms nearly all others](https://hanamirb.org/blog/2020/02/26/introducing-hanami-api/).
+We’ve completely rewritten our HTTP routing engine, with benchmarks showing it [outperforms nearly all others](https://hanamirb.org/blog/2020/02/26/introducing-hanami-api).
 
 You will see actions served in **microseconds**:
 

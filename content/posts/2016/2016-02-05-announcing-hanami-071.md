@@ -8,7 +8,7 @@ excerpt: >
   Fixes for static assets serving, Hanami console and minor improvements
 ---
 
-This is a patch release that addresses some bugs reported after [v0.7.0 release](/blog/2016/01/22/lotus-is-now-hanami.html).
+This is a patch release that addresses some bugs reported after [v0.7.0 release](/blog/2016/01/22/lotus-is-now-hanami).
 
 ## Bug Fixes
 

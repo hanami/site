@@ -17,7 +17,7 @@ So what this fresh spring 💐 has brought to you from the Hanami world?
 
 ### HTTP/2 Early Hints
 
-I experimented with [HTTP/2 Push Promise](https://en.wikipedia.org/wiki/HTTP/2_Server_Push) in the summer of 2015, when Hanami was still called [Lotus](/blog/2016/01/22/lotus-is-now-hanami.html). I presented the results at the [RubyDay of that year](https://www.youtube.com/watch?v=XCgsXUKLsOc&feature=youtu.be&t=31m4s) and build a [demo app](https://github.com/jodosha/instants).
+I experimented with [HTTP/2 Push Promise](https://en.wikipedia.org/wiki/HTTP/2_Server_Push) in the summer of 2015, when Hanami was still called [Lotus](/blog/2016/01/22/lotus-is-now-hanami). I presented the results at the [RubyDay of that year](https://www.youtube.com/watch?v=XCgsXUKLsOc&feature=youtu.be&t=31m4s) and build a [demo app](https://github.com/jodosha/instants).
 
 We didn't ship that feature because Rack and web servers didn't support Push Promise, so I had to write [a toy HTTP/2 web server for Rack](https://github.com/jodosha/panther).
 

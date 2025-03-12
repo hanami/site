@@ -24,14 +24,14 @@ As of Lotus v0.6.0, we now have a full set of features for assets management, su
   * [Compressors](/guides/assets/compressors) ([YUI](http://yui.github.io/yuicompressor), [UglifyJS2](http://lisperator.net/uglifyjs), [Google Closure Compiler](https://developers.google.com/closure/compiler), [Sass](http://sass-lang.com), etc..)
   * [Deployment](/guides/command-line/assets) (precompile, compress, checksum)
   * [Content Delivery Network](/guides/assets/content-delivery-network)
-  * [Heroku support](/blog/2015-12-29-introducing-assets.html)
+  * [Heroku support](/blog/2015/12/29/introducing-assets)
   * [Third Party Gems](/guides/assets/overview) (eg. `bootstrap` gem will support soon Lotus out of the box)
   * A new [Rack middleware](/guides/assets/overview) to serve static assets
   * Lazy precompilation + cache in development mode
 
 Thanks to [Leigh Halliday](https://github.com/leighhalliday), [Gonzalo Rodríguez-Baltanás Díaz](https://github.com/Nerian), [deepj](https://github.com/deepj), [Michael Deol](https://github.com/michaeldeol), [Benjamin Klotz](https://github.com/tak1n), [Kleber Correia](https://github.com/klebervirgilio) for their contributions and help.
 
-[Read the [guides](/guides/assets/overview) and the [announcement](/blog/2015-12-29-introducing-assets.html)]
+[Read the [guides](/guides/assets/overview) and the [announcement](/blog/2015/12/29/introducing-assets)]
 
 ### Custom Initializers
 

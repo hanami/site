@@ -21,7 +21,7 @@ This is why we took the change to focus only on stability and to introduce enhan
 
 ## RSpec is the new default testing framework 🏆
 
-Back in the days, when I started Hanami ([which used to be known as Lotus](/blog/2016/01/22/lotus-is-now-hanami.html)), the choice about the default testing framework fell on Minitest because it's lightweight and feels more _rubyish_ (if this is a thing). I used a lot Minitest at that time, especially for gems.
+Back in the days, when I started Hanami ([which used to be known as Lotus](/blog/2016/01/22/lotus-is-now-hanami)), the choice about the default testing framework fell on Minitest because it's lightweight and feels more _rubyish_ (if this is a thing). I used a lot Minitest at that time, especially for gems.
 
 But I recognized that I rarely used it for web apps. For this kind of Ruby code, the completeness of RSpec makes my life easier.
 

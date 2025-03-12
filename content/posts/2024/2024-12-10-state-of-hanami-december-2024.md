@@ -18,14 +18,14 @@ We’ll bring you these updates twice a year. This one is special, though, becau
 
 2024 was a big year for Hanami. We made two major releases:
 
-- [Hanami 2.1](https://hanamirb.org/blog/2024/02/27/hanami-210/) in February, introducing our view layer and frontend assets support.
-- [Hanami 2.2](https://hanamirb.org/blog/2024/11/05/hanami-220/) in November, introducing our database layer as well as operations.
+- [Hanami 2.1](https://hanamirb.org/blog/2024/02/27/hanami-210) in February, introducing our view layer and frontend assets support.
+- [Hanami 2.2](https://hanamirb.org/blog/2024/11/05/hanami-220) in November, introducing our database layer as well as operations.
 
-Two years after we brought you [Hanami 2.0](https://hanamirb.org/blog/2022/11/22/announcing-hanami-200/), our vision for full stack Hanami apps is now complete! This is a watershed moment for Hanami. With 2.2, we give you every essential for building your apps, while providing ourselves a solid foundation for the future of the framework.
+Two years after we brought you [Hanami 2.0](https://hanamirb.org/blog/2022/11/22/announcing-hanami-200), our vision for full stack Hanami apps is now complete! This is a watershed moment for Hanami. With 2.2, we give you every essential for building your apps, while providing ourselves a solid foundation for the future of the framework.
 
 ## New leadership
 
-In April we managed [a smooth transition of project leadership](https://hanamirb.org/blog/2024/04/04/new-leadership-for-hanami/), with Luca Guidi retiring and myself taking on the role of lead. I’m happy to be here!
+In April we managed [a smooth transition of project leadership](https://hanamirb.org/blog/2024/04/04/new-leadership-for-hanami), with Luca Guidi retiring and myself taking on the role of lead. I’m happy to be here!
 
 ## An expanded contributor group
 
@@ -35,7 +35,7 @@ This year we welcomed a number of folks to our contributors group:
 - [Adam Lassek](https://github.com/alassek), one of the world’s leading experts in both [dry-system](https://github.com/dry-rb/dry-system) and [ROM](https://rom-rb.org), as well as how we bring the two of them together in Hanami. We couldn’t have built our database layer in 2.2 without Adam’s help.
 - [Marc Busqué](https://github.com/waiting-for-dev), who built [dry-operation](http://dry-rb.org/gems/dry-operation) from scratch for Hanami 2.2. This is a gem I’ve wanted to exist for years, and I’m so excited it’s now part of our stack.
 - [Kyle Plump](https://github.com/kyleplump), who brings great energy and is ready to help with issues of all kinds.
-- [Aaron Moodie](https://github.com/aaronmoodie), the designer behind our [shiny new welcome screen](https://hanamirb.org/blog/2024/11/05/hanami-220/), and our soon-to-be shiny new website (more on this later!).
+- [Aaron Moodie](https://github.com/aaronmoodie), the designer behind our [shiny new welcome screen](https://hanamirb.org/blog/2024/11/05/hanami-220), and our soon-to-be shiny new website (more on this later!).
 
 We’ve also enjoyed continued help from users and contributors [Paweł Świątkowski](https://github.com/katafrakt), [Sven Schwyn](https://github.com/svoop), [Pat Allan](https://github.com/pat), as well as [Damian C. Rossney](https://github.com/dcr8898) who brought us this [especially amazing router fix](https://github.com/hanami/router/pull/273).
 

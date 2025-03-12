@@ -61,7 +61,7 @@ The reason why we anticipated the release of `hanami-validations` `v2.0.0.alpha1
 Because of [Semantic Versioning](https://semver.org/) reasons, Hanami 1.x depends indirectly on outdated versions of both DRY & ROM gems.
 There is a huge demand to use latest DRY & ROM gems with Hanami 1.x, and `hanami-validations` `1.3` was a blocker.
 
-With [today's release](/blog/2019/07/26/announcing-hanami-132.html) of `hanami` `v1.3.2` **it's possible to use latest DRY & ROM versions**.
+With [today's release](/blog/2019/07/26/announcing-hanami-132) of `hanami` `v1.3.2` **it's possible to use latest DRY & ROM versions**.
 
 ## How to upgrade ⬆
 

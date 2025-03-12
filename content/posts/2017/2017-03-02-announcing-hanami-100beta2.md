@@ -61,7 +61,7 @@ Then run `bundle update hanami hanami-model`.
 
 ## What's Next?
 
-[Since `v1.0.0.beta1`](/blog/2017/02/14/announcing-hanami-100beta1.html), **Hanami API's are stable and won't be changed until 2.0**.
+[Since `v1.0.0.beta1`](/blog/2017/02/14/announcing-hanami-100beta1), **Hanami API's are stable and won't be changed until 2.0**.
 
 We'll keep to release small _beta_/_rc_ versions to integrate fixes for reported bugs.
 

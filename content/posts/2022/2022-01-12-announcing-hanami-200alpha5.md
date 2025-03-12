@@ -93,7 +93,7 @@ end
 
 ## Comprehensive source dirs configuration (for advanced users)
 
-In the 2.0.0.alpha3 release, we introduced [streamlined source directories](/blog/2021/11/09/announcing-hanami-200alpha3/) for the Ruby source files within each slice. Just like we’re doing with our application logger, we ship a sensible default configuration out of the box. Now with alpha5, we’re introducing a new `config.source_dirs` setting that you can use to fully customize this configuration.
+In the 2.0.0.alpha3 release, we introduced [streamlined source directories](/blog/2021/11/09/announcing-hanami-200alpha3) for the Ruby source files within each slice. Just like we’re doing with our application logger, we ship a sensible default configuration out of the box. Now with alpha5, we’re introducing a new `config.source_dirs` setting that you can use to fully customize this configuration.
 
 This will allow you to add and configure your own additional component dirs (which are the directories used to auto-register application components):
 
@@ -177,7 +177,7 @@ Closer to home, this is also the first step towards faster code reloading when r
 
 ## Route helpers via the view context
 
-Last month we made the [route helpers available in actions](/blog/2021/12/07/announcing-hanami-200alpha4/), and now we’re making them available in views too, via our default [view context](https://dry-rb.org/gems/dry-view/0.7/context/). This means  you can access `routes` inside any template:
+Last month we made the [route helpers available in actions](/blog/2021/12/07/announcing-hanami-200alpha4), and now we’re making them available in views too, via our default [view context](https://dry-rb.org/gems/dry-view/0.7/context/). This means  you can access `routes` inside any template:
 
 ```slim
 / slices/main/web/templates/books/index.html.slim

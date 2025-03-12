@@ -16,9 +16,9 @@ So what’s next for dry-rb and ROM? The work continues as usual. I’m still a 
 
 But we’re not going to stop at that. We’re going to give these projects a real boost.
 
-[We will merge dry-rb and ROM with Hanami](https://hanamirb.org/blog/2024/12/10/state-of-hanami-december-2024/). One compelling toolkit for Rubyists of all stripes, now backed by a unified community and group of maintainers. This was a mutual vision of Peter’s and mine, and I am still very excited to make it happen.
+[We will merge dry-rb and ROM with Hanami](https://hanamirb.org/blog/2024/12/10/state-of-hanami-december-2024). One compelling toolkit for Rubyists of all stripes, now backed by a unified community and group of maintainers. This was a mutual vision of Peter’s and mine, and I am still very excited to make it happen.
 
-Bringing these projects together will take a few months. We’ll be sharing the details as we go, so make sure to follow us [here on our blog](https://hanamirb.org/blog/), or on [Mastodon](https://ruby.social/@hanami) or [Bluesky](https://bsky.app/profile/hanamirb.org).
+Bringing these projects together will take a few months. We’ll be sharing the details as we go, so make sure to follow us [here on our blog](https://hanamirb.org/blog), or on [Mastodon](https://ruby.social/@hanami) or [Bluesky](https://bsky.app/profile/hanamirb.org).
 
 Our gems themselves will continue to work as always, so in the meantime you can continue to help us by using these gems in your apps, and sharing your feedback, issues and PRs. We’d love to hear from you.
 

@@ -8,7 +8,7 @@ excerpt: >
   Fix for static assets middleware
 ---
 
-This release fixes only one regression introduced by [v0.7.1](/blog/2016/02/05/announcing-hanami-071.html).
+This release fixes only one regression introduced by [v0.7.1](/blog/2016/02/05/announcing-hanami-071).
 
 ## Bug Fixes
 
