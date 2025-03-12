@@ -4,15 +4,15 @@ RSpec.feature "Docs / Doc pages" do
   it "renders a doc index page" do
     visit "/docs/dry-operation/v1.0"
 
-    expect(page).to have_content "Doc: dry-operation"
-    expect(page).to have_content "Page: Introduction"
+    expect(page).to have_selector "header h1", text: "dry-operation"
+    expect(page).to have_selector "main header h1", text: "Introduction"
   end
 
   it "renders a doc page" do
     visit "/docs/dry-operation/v1.0/configuration"
 
-    expect(page).to have_content "Doc: dry-operation"
-    expect(page).to have_content "Page: Configuration"
+    expect(page).to have_selector "header h1", text: "dry-operation"
+    expect(page).to have_selector "main header h1", text: "Configuration"
   end
 
   it "links to all the doc's pages" do

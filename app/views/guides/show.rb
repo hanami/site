@@ -18,8 +18,19 @@ module Site
 
         expose :version, decorate: false
 
+        expose :latest_version, decorate: false do |org:|
+          guide_repo.latest_version(org:)
+        end
+
         expose :other_guides do |org:, version:|
           guide_repo.all_for(org:, version:)
+        end
+
+        scope do
+          # Strip leading "v" for docsearch:version meta, which wants a pure numerical version
+          def version_number
+            version.sub(/^v/, "")
+          end
         end
       end
     end

@@ -1,11 +1,14 @@
 <% content_for :title, post.title %>
 
-<h2><%= post.title %></h2>
+<article>
+  <header>
+    <h2><%= post.title %></h2>
 
-<p data-testid="date"><%= post.published_date %></p>
+    <p data-testid="date"><%= post.published_date %></p>
+    <p data-testid="author"><%= post.author %></p>
+  </header>
 
-<p data-testid="author"><%= post.author %></p>
-
-<div class="content">
-  <%= post.content_html %>
-</div>
+  <div class="content">
+    <%= post.content_html %>
+  </div>
+</article>

@@ -16,8 +16,19 @@ module Site
 
         expose :version, decorate: false
 
-        expose :other_versions do |slug:|
+        expose :latest_version, decorate: false do |slug:|
+          doc_repo.latest_version(slug:)
+        end
+
+        expose :other_versions, decorate: false do |slug:|
           doc_repo.versions_for(slug:)
+        end
+
+        scope do
+          # Strip leading "v" for docsearch:version meta, which wants a pure numerical version
+          def version_number
+            version.sub(/^v/, "")
+          end
         end
       end
     end

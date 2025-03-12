@@ -1,4 +1,8 @@
-<% content_for :title, "#{guide.title} / #{page.title} &middot; #{org_name(org)} #{version} Guides" %>
+<%= content_for :title, "#{guide.title} / #{page.title} &middot; #{org_name(org)} #{version} Guides" %>
+
+<%= content_for :meta do %>
+  <meta name="docsearch:version" content="<%= [version_number, ("latest" if version == latest_version)].compact.join(",") %>">
+<% end %>
 
 <h2>All guides</h1>
 <ol data-testid="guides-list">
@@ -11,16 +15,21 @@
   <% end %>
 <ol>
 
-<h1>Guide: <%= guide.title %></h1>
+<header>
+  <h1><%= guide.title %></h1>
+</header>
 
 <%= render "doc_pages/pages_nav", pages: guide.pages.nested %>
 
-<h1>Page: <%= page.title %></h1>
-
 <h2>TOC</h2>
-
 <%= render "doc_pages/headings_toc", headings: page.nested_headings %>
 
-<div class="content">
-  <%= page.content_html %>
-</div>
+<main>
+  <header>
+    <h1><%= page.title %></h1>
+  </header>
+
+  <div class="content">
+    <%= page.content_html %>
+  </div>
+</main>
