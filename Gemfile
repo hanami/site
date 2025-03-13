@@ -26,6 +26,7 @@ gem "builder"
 
 # Static site generation
 gem "parklife"
+gem "sitemap_generator"
 
 group :development do
   gem "hanami-webconsole", "~> 2.2"

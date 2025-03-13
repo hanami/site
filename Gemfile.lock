@@ -337,6 +337,8 @@ GEM
     sequel (5.90.0)
       bigdecimal
     shellany (0.0.1)
+    sitemap_generator (6.3.0)
+      builder (~> 3.0)
     sqlite3 (2.6.0-aarch64-linux-gnu)
     sqlite3 (2.6.0-aarch64-linux-musl)
     sqlite3 (2.6.0-arm-linux-gnu)
@@ -406,6 +408,7 @@ DEPENDENCIES
   puma
   rack-test
   rake
+  sitemap_generator
   sqlite3
   standard
 

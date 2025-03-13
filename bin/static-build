@@ -8,6 +8,11 @@ export HANAMI_ENV=production
 # Compile frontend assets
 bundle exec hanami assets compile
 
+# Generate sitemap
+#
+# TODO: after launch, use `rake sitemap:refresh`, to ping search engines.
+bundle exec rake sitemap:create
+
 # Build with Parklife - and forward arguments sent to this script.
 bundle exec parklife build "$@"
 

@@ -7,6 +7,10 @@ module Site
         docs.where(slug:, version:).one!
       end
 
+      def all
+        docs.to_a
+      end
+
       def latest_version(slug:)
         gems.where(slug: slug).pluck(:latest_version).first
       end

@@ -7,6 +7,10 @@ module Site
         guides.where(org:, version:, slug:).one!
       end
 
+      def all
+        guides.to_a
+      end
+
       def all_for(org:, version:)
         guides.where(org:, version:).to_a
       end
@@ -30,8 +34,10 @@ module Site
 
       def versions_by_org
         guides
-          .group(:org, :version).order(guides[:version].desc).pluck(:org, :version)
-          .each_with_object({}) { |row, hsh| (hsh[row[0]] ||= []) << row[1] }
+          .group(:org, :version)
+          .order(guides[:version].desc)
+          .pluck(:org, :version)
+          .each_with_object({}) { |guide, hsh| (hsh[guide[0]] ||= []) << guide[1] }
       end
     end
   end

@@ -2,6 +2,7 @@
 
 require "hanami/rake_tasks"
 require "rubocop/rake_task"
+require "sitemap_generator/tasks"
 
 RuboCop::RakeTask.new
 
