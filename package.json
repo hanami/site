@@ -4,6 +4,10 @@
   "type": "module",
   "dependencies": {
     "@docsearch/js": "^3.9.0",
-    "hanami-assets": "^2.2.1"
+    "hanami-assets": "^2.2.1",
+    "@tailwindcss/postcss": "^4.1.4",
+    "esbuild-postcss": "^0.0.4",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^4.1.4"
   }
 }

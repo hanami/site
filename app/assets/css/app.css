@@ -1,3 +1,6 @@
+@import "tailwindcss/index";
+@source "../../templates";
+
 body {
   background-color: #fff;
   color: #000;
