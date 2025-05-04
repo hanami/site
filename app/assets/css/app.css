@@ -1,7 +1,4 @@
-/* TODO: Ideally we wouldn’t have to reference `index` here */
-@import "tailwindcss/index";
-/* TODO: Get esbuild to rebuild when sources change */
-@source "../../templates";
+@import "../builds/tailwind.css";
 
 body {
   background-color: #fff;

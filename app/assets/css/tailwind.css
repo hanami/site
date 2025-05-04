@@ -1,0 +1,6 @@
+/**
+ * This file is compiled by the Tailwind CLI and shouldn’t be imported directly. See the Tailwind
+ * tasks in the Rakefile for details.
+ */
+@import "tailwindcss";
+@source "../../templates";

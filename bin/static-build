@@ -6,6 +6,7 @@ export SITE_STATIC_BUILD=true
 export HANAMI_ENV=production
 
 # Compile frontend assets
+bundle exec rake tailwind:compile
 bundle exec hanami assets compile
 
 # Generate sitemap
