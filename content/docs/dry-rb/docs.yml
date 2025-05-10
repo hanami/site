@@ -2,3 +2,4 @@ docs:
   - slug: dry-cli
   - slug: dry-operation
   - slug: dry-types
+  - slug: dry-view
