@@ -4,3 +4,18 @@ docs:
   - slug: dry-operation
   - slug: dry-types
   - slug: dry-view
+  - slug: dry-configurable
+  - slug: dry-core
+  - slug: dry-effects
+  - slug: dry-events
+  - slug: dry-files
+  - slug: dry-inflector
+  - slug: dry-initializer
+  - slug: dry-logger
+  - slug: dry-monads
+  - slug: dry-monitor
+  - slug: dry-rails
+  - slug: dry-schema
+  - slug: dry-struct
+  - slug: dry-system
+  - slug: dry-transaction

@@ -2,7 +2,7 @@
 title: Extensions
 layout: gem-single
 name: dry-types
-sections:
+pages:
   - maybe
   - monads
 ---
