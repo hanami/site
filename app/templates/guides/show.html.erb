@@ -19,10 +19,10 @@
   <h1><%= guide.title %></h1>
 </header>
 
-<%= render "doc_pages/pages_nav", pages: guide.pages.nested %>
+<%= render "doc_pages/pages_nav", pages: guide.pages.nested, testid: "pages-nav" %>
 
 <h2>TOC</h2>
-<%= render "doc_pages/headings_toc", headings: page.nested_headings %>
+<%= render "doc_pages/headings_toc", headings: page.nested_headings, testid: "headings-toc" %>
 
 <main>
   <header>

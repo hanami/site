@@ -1,12 +1,12 @@
-<ol data-testid="pages-nav">
+<%= tag.ol("data-testid" => testid) do %>
   <% pages.each do |(page, child_pages)| %>
     <li>
       <a href="<%= page.url_path %>">
         <%= page.title %>
       </a>
       <% if child_pages.any? %>
-        <%= render "doc_pages/pages_nav", pages: child_pages %>
+        <%= render "doc_pages/pages_nav", pages: child_pages, testid: nil %>
       <% end %>
     </li>
   <% end %>
-</ol>
+<% end %>

@@ -46,11 +46,13 @@ module Site
 
           heading_level = Integer(element.ancestors.last.gsub(/[^0-9]/, ""))
 
-          result[:headings] << {level: heading_level, href: heading_href}
+          result[:headings] << {level: heading_level, href: heading_href, text: +""}
         end
 
         def handle_text_chunk(text)
-          result[:headings].last[:text] = text.to_s
+          # Concact text rather than assigning it, since a header may contain multiple text
+          # chunks, e.g. a "Keyword arguments (`kwargs`)" markdown header contains 3 text chunks.
+          result[:headings].last[:text].concat(text.to_s)
         end
 
         private

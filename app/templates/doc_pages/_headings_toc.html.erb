@@ -1,12 +1,12 @@
-<ol data-testid="headings-toc">
+<%= tag.ol("data-testid" => testid) do %>
   <% headings.each do |(heading, child_headings)| %>
     <li>
       <a href="<%= heading.href %>">
         <%= heading.text %>
       </a>
       <% if child_headings.any? %>
-        <%= render "doc_pages/headings_toc", headings: child_headings %>
+        <%= render "doc_pages/headings_toc", headings: child_headings, testid: nil %>
       <% end %>
     </li>
   <% end %>
-</ol>
+<% end %>

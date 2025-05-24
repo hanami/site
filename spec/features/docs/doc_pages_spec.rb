@@ -75,6 +75,14 @@ RSpec.feature "Docs / Doc pages" do
     expect(heading_anchor[:href]).to eq "#basic-usage"
   end
 
+  it "shows a table of contents when headers use markdown formatting" do
+    visit "/docs/dry-auto_inject/v1.1/injection-strategies"
+
+    within "[data-testid=headings-toc]" do
+      expect(page).to have_selector "li", text: "Keyword arguments (kwargs)"
+    end
+  end
+
   it "replaces //page URLs with URLs within the current doc and version" do
     visit "/docs/dry-types/v1.8"
 
