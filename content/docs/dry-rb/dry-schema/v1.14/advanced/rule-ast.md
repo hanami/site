@@ -4,7 +4,7 @@ layout: gem-single
 name: dry-schema
 ---
 
-The DSL in `dry-schema` is used to create rule objects that are provided by [`dry-logic`](/gems/dry-logic). These rules are built using an AST, which uses simple data structures to represent predicates and how they are composed into complex rules and operations.
+The DSL in `dry-schema` is used to create rule objects that are provided by [`dry-logic`](//doc/dry-logic). These rules are built using an AST, which uses simple data structures to represent predicates and how they are composed into complex rules and operations.
 
 The AST can be used to convert it into another representation - for example meta-data that can be used to produce documentation.
 
