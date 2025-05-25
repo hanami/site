@@ -29,7 +29,7 @@ schema.(name: "")
   .or   { |r| puts "failed: #{r.errors.to_h.inspect}" }
 ```
 
-This can be useful when used with dry-monads and [do notation](/gems/dry-monads/1.0/do-notation).
+This can be useful when used with dry-monads and [do notation](//doc/dry-monads/do-notation).
 
 ## Using with pattern matching
 
