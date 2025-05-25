@@ -2,7 +2,7 @@
 title: Monads
 ---
 
-The `:monads` extension provides a `#to_monad` method that returns a `Result` compatible with [`dry-monads`](//page/dry-monads).
+The `:monads` extension provides a `#to_monad` method that returns a `Result` compatible with [`dry-monads`](//doc/dry-monads).
 
 The `.try` method returns a simple `Result` that's defined within `dry-types` (i.e. `Dry::Types::Result`).
 If you want to use the result with `dry-monads`, you can load this extension and call `#to_monad` on the `Dry::Types::Result` to get a `Result` that's defined in `dry-monads` (i.e. `Dry::Monads::Result`). This will let you use the `dry-monads` methods on the result.
