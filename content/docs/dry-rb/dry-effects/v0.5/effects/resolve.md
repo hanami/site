@@ -1,7 +1,5 @@
 ---
 title: Resolve (Dependency Injection)
-layout: gem-single
-name: dry-effects
 ---
 
 Resolve is an effect for injecting dependencies. A simple usage example:

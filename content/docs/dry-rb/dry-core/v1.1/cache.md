@@ -1,7 +1,5 @@
 ---
 title: Cache
-layout: gem-single
-name: dry-core
 ---
 
 Allows you to cache call results that are solely determined by arguments.

@@ -1,7 +1,5 @@
 ---
 title: Extensions
-layout: gem-single
-name: dry-core
 ---
 
 Define extensions that can be later enabled by the user.

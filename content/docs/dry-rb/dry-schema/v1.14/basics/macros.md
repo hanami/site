@@ -1,7 +1,5 @@
 ---
 title: Macros
-layout: gem-single
-name: dry-schema
 ---
 
 Defining rules using blocks is very flexible and powerful; however, in most common cases repeatedly defining the same rules leads to boilerplate code. That's why `dry-schema`'s DSL provides convenient macros to reduce that boilerplate. Every macro can be expanded to its block-based equivalent.

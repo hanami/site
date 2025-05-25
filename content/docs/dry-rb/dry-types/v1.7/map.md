@@ -1,7 +1,5 @@
 ---
 title: Map
-layout: gem-single
-name: dry-types
 ---
 
 `Map` describes a homogeneous hashmap. This means only types of keys and values are known. You can simply imagine a map input as a list of key-value pairs.

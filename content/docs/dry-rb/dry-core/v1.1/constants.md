@@ -1,7 +1,5 @@
 ---
 title: Constants
-layout: gem-single
-name: dry-core
 ---
 
 A list of constants you can use to avoid memory allocations or identity checks.

@@ -1,7 +1,5 @@
 ---
 title: Validated
-layout: gem-single
-name: dry-monads
 ---
 
 Suppose you've got a form to validate. If you are using `Result` combined with `Do` your code might look like this:

@@ -1,7 +1,5 @@
 ---
 title: Optional keys and values
-layout: gem-single
-name: dry-schema
 ---
 
 We make a clear distinction between specifying an optional **key** and an optional **value**. This gives you a way of being very specific about validation rules. You can define a schema which gives you precise errors when a key is missing or key is present but the value is `nil`.

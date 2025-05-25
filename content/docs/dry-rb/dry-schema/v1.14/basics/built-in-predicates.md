@@ -1,7 +1,5 @@
 ---
 title: Built-in predicates
-layout: gem-single
-name: dry-schema
 ---
 
 The DSL supports many built-in predicates that can be used to verify validity of the input. If the predicates do not meet your requirements, you probably want to look at [dry-validation](//doc/dry-validation) which offers a more advanced way of defining validations.

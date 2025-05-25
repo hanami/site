@@ -1,7 +1,5 @@
 ---
 title: Nested data
-layout: gem-single
-name: dry-schema
 ---
 
 `dry-schema` supports validation of nested data.

@@ -1,7 +1,5 @@
 ---
 title: Providers
-layout: gem-single
-name: dry-system
 ---
 
 Some components can be large, stateful, or requiring specific configuration as part of their setup (such as when dealing with third party code). You can use providers to manage and register these components across several distinct lifecycle steps.

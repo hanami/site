@@ -1,7 +1,5 @@
 ---
 title: Test Mode
-layout: gem-single
-name: dry-system
 ---
 
 In some cases it is useful to stub a component in your tests. To enable this, dry-system provides a test mode,

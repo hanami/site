@@ -1,7 +1,5 @@
 ---
 title: Type Constraints
-layout: gem-single
-name: dry-initializer
 ---
 
 ## Base Syntax

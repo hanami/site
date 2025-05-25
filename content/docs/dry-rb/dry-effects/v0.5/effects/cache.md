@@ -1,7 +1,5 @@
 ---
 title: Cache
-layout: gem-single
-name: dry-effects
 ---
 
 Cache provides two interfaces for caching. Set up a handler:

@@ -1,7 +1,5 @@
 ---
 title: Getting Started
-layout: gem-single
-name: dry-types
 ---
 
 ### Using `Dry::Types` in Your Application

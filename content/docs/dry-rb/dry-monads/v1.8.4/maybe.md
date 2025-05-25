@@ -1,7 +1,5 @@
 ---
 title: Maybe
-layout: gem-single
-name: dry-monads
 ---
 
 The `Maybe` monad is used when a series of computations could return `nil` at any point.

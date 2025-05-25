@@ -1,7 +1,5 @@
 ---
 title: Deprecations
-layout: gem-single
-name: dry-core
 ---
 
 To deprecate ruby methods you need to extend the `Dry::Core::Deprecations` module with a tag that will be displayed in the output. For example:

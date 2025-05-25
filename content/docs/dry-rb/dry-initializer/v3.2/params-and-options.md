@@ -1,7 +1,5 @@
 ---
 title: Params and Options
-layout: gem-single
-name: dry-initializer
 ---
 
 Use `param` to define plain argument:

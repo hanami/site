@@ -1,7 +1,5 @@
 ---
 title: Unexpected keys
-layout: gem-single
-name: dry-schema
 ---
 
 You can enable special key validation which will provide error messages about unexpected keys in an input. This is useful if you want to be very strict about what your system allows.

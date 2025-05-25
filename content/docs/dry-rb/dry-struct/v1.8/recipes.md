@@ -1,7 +1,5 @@
 ---
 title: Recipes
-layout: gem-single
-name: dry-struct
 ---
 
 ### Symbolize input keys

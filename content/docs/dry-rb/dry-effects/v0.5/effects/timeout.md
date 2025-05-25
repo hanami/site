@@ -1,7 +1,5 @@
 ---
 title: Timeout
-layout: gem-single
-name: dry-effects
 ---
 
 `Timeout` consists of two methods:

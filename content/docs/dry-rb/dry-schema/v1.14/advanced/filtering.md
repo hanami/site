@@ -1,7 +1,5 @@
 ---
 title: Filtering
-layout: gem-single
-name: dry-schema
 ---
 
 One of the unique features of `dry-schema` is the ability to define rules that are applied **before coercion**. This means you can ensure that **the input** has the right format for the coercion to work, or maybe you just want to restrict certain values entering your system.

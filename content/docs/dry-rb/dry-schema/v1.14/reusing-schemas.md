@@ -1,7 +1,5 @@
 ---
 title: Reusing schemas
-layout: gem-single
-name: dry-schema
 ---
 
 You can easily reuse existing schemas using nested-schema syntax:

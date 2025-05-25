@@ -1,7 +1,5 @@
 ---
 title: Attributes
-layout: gem-single
-name: dry-initializer
 ---
 
 Sometimes you need to access all attributes assigned via params and options of the object constructor.

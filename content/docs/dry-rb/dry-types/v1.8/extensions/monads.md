@@ -1,7 +1,5 @@
 ---
 title: Monads
-layout: gem-single
-name: dry-types
 ---
 
 The `:monads` extension provides a `#to_monad` method that returns a `Result` compatible with [`dry-monads`](//doc/dry-monads).

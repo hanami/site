@@ -1,7 +1,5 @@
 ---
 title: Inheritance
-layout: gem-single
-name: dry-initializer
 ---
 
 Subclassing preserves all definitions being made inside a superclass.

@@ -1,7 +1,5 @@
 ---
 title: Error messages
-layout: gem-single
-name: dry-schema
 ---
 
 By default `dry-schema` comes with a set of pre-defined error messages for every built-in predicate. They are defined in [a yaml file](https://github.com/dry-rb/dry-schema/blob/main/config/errors.yml) which is shipped with the gem. This file is compatible with `I18n` format.

@@ -1,7 +1,5 @@
 ---
 title: Hints
-layout: gem-single
-name: dry-schema
 ---
 
 In addition to error messages, you can also access hints, which are generated from your rules. While `errors` tell you which predicate checks failed, `hints` tell you which additional predicate checks *were not evaluated* because an earlier predicate failed:

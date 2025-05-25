@@ -1,7 +1,5 @@
 ---
 title: Pattern matching
-layout: gem-single
-name: dry-monads
 ---
 
 Ruby 2.7 introduces pattern matching, it is nicely supported by dry-monads 1.3+.

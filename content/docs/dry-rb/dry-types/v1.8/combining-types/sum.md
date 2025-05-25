@@ -1,7 +1,5 @@
 ---
 title: Sum
-layout: gem-single
-name: dry-types
 ---
 
 You can specify sum types using `|` operator, it is an explicit way of defining what the valid types of a value are.

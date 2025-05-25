@@ -1,7 +1,5 @@
 ---
 title: Case equality
-layout: gem-single
-name: dry-monads
 ---
 
 ### Case equality

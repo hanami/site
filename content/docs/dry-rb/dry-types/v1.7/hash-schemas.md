@@ -1,7 +1,5 @@
 ---
 title: Hash Schemas
-layout: gem-single
-name: dry-types
 ---
 
 It is possible to define a type for a hash with a known set of keys and corresponding value types. Let's say you want to describe a hash containing the name and the age of a user:

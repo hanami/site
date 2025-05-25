@@ -1,7 +1,5 @@
 ---
 title: Try
-layout: gem-single
-name: dry-monads
 ---
 
 Rescues a block from an exception. The `Try` monad is useful when you want to wrap some code that can raise exceptions of certain types. A common example is making an HTTP request or querying a database.

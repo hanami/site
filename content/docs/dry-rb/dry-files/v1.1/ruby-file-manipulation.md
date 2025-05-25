@@ -1,7 +1,5 @@
 ---
 title: Ruby File Manipulation
-layout: gem-single
-name: dry-files
 ---
 
 ### Ruby File Manipulation

@@ -1,7 +1,5 @@
 ---
 title: Testing
-layout: gem-single
-name: dry-configurable
 ---
 
 ### How to reset the config to its original state on testing environment

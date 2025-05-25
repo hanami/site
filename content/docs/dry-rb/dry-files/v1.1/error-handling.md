@@ -1,7 +1,5 @@
 ---
 title: Error Handling
-layout: gem-single
-name: dry-files
 ---
 
 ### Error Handling

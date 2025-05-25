@@ -1,7 +1,5 @@
 ---
 title: External provider sources
-layout: gem-single
-name: dry-system
 ---
 
 You can distribute your own components to other dry-system users via external provider sources, which can be used as the basis for providers within any dry-system container.

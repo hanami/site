@@ -1,7 +1,5 @@
 ---
 title: Environment
-layout: gem-single
-name: dry-effects
 ---
 
 Configuring code via `ENV` can be handy, but testing it by mutating a global constant is usually not. Env is similar to Reader but exists for passing simple key-value pairs, precisely what `ENV` does.

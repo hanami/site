@@ -1,7 +1,5 @@
 ---
 title: List
-layout: gem-single
-name: dry-monads
 ---
 
 ### `bind`

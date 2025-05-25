@@ -1,7 +1,5 @@
 ---
 title: Dependency auto-injection
-layout: gem-single
-name: dry-system
 ---
 
 After defining your container, you can use its auto-injector as a mixin to declare a component's dependencies using their container keys.

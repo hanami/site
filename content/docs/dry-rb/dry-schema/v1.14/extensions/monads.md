@@ -1,7 +1,5 @@
 ---
 title: Monads
-layout: gem-single
-name: dry-schema
 ---
 
 The monads extension makes `Dry::Schema::Result` objects compatible with dry-monads.

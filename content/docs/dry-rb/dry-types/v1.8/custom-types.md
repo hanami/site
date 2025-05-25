@@ -1,7 +1,5 @@
 ---
 title: Custom Types
-layout: gem-single
-name: dry-types
 ---
 
 There are a bunch of helpers for building your own types based on existing classes and values. These helpers are automatically defined if you're imported types in a module.

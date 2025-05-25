@@ -1,7 +1,5 @@
 ---
 title: Third Party Integrations
-layout: gem-single
-name: dry-monitor
 ---
 
 ### Shrine

@@ -1,7 +1,5 @@
 ---
 title: Fallbacks
-layout: gem-single
-name: dry-types
 ---
 
 Fallback value will be returned when invalid input is provided:

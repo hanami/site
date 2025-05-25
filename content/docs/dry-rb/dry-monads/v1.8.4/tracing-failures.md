@@ -1,7 +1,5 @@
 ---
 title: Tracing failures
-layout: gem-single
-name: dry-monads
 ---
 
 "Left" values of right-biased monads like `Maybe` and `Result` (as in, `None()` and `Failure()`) ignore blocks passed to `fmap` and `bind`. Because of this, these values travel across the application without any modification. If the place where a `Failure` was constructed is burried somewhere deep in the app or library code it may be pretty hard to find out where exactly the error occurred.

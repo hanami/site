@@ -1,7 +1,5 @@
 ---
 title: Type Attributes
-layout: gem-single
-name: dry-types
 ---
 
 Types themselves have optional attributes you can apply to get further functionality.

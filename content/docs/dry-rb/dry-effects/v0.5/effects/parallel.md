@@ -1,7 +1,5 @@
 ---
 title: Parallel execution
-layout: gem-single
-name: dry-effects
 ---
 
 There are two effects for using parallelism:

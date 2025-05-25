@@ -1,7 +1,5 @@
 ---
 title: Custom types
-layout: gem-single
-name: dry-schema
 ---
 
 You would often use `dry-schema` to transform your input. Let's say, you want to remove any whitespace characters at the beginning and the end of the string. You would probably make a type like this and use it in your schema:

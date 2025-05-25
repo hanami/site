@@ -1,7 +1,5 @@
 ---
 title: Custom predicates
-layout: gem-single
-name: dry-schema
 ---
 
 If you want to define custom predicates, you can create a special module that includes default ones along with your custom functions:

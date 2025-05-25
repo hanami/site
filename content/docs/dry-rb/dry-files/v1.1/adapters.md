@@ -1,7 +1,5 @@
 ---
 title: Adapters
-layout: gem-single
-name: dry-files
 ---
 
 ### Adapters

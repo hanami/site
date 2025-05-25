@@ -1,7 +1,5 @@
 ---
 title: Maybe
-layout: gem-single
-name: dry-types
 ---
 
 The [dry-monads gem](//doc/dry-monads) provides an approach to handling optional values by returning a [`Maybe`](//doc/dry-monads) object from operations that can return `nil`.

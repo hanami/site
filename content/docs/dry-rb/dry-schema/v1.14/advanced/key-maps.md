@@ -1,7 +1,5 @@
 ---
 title: Key maps
-layout: gem-single
-name: dry-schema
 ---
 
 When you define a schema, you get access to the key map which holds information about specified keys. Internally, `dry-schema` uses key maps to:

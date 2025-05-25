@@ -1,7 +1,5 @@
 ---
 title: Component dirs
-layout: gem-single
-name: dry-system
 ---
 
 The container auto-registers its components from one or more component dirs, the directories holding the Ruby source files for your classes.

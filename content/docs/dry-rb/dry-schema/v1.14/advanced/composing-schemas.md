@@ -1,7 +1,5 @@
 ---
 title: Composing schemas
-layout: gem-single
-name: dry-schema
 ---
 
 ^WARNING

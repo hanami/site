@@ -1,7 +1,5 @@
 ---
 title: Processor steps
-layout: gem-single
-name: dry-schema
 ---
 
 ^WARNING

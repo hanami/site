@@ -1,7 +1,5 @@
 ---
 title: Tolerance to Unknown Arguments
-layout: gem-single
-name: dry-initializer
 ---
 
 By default the initializer is tolerant for both params (positional arguments) and options.

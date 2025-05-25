@@ -1,7 +1,5 @@
 ---
 title: Getting started
-layout: gem-single
-name: dry-monads
 ---
 
 ### Installation

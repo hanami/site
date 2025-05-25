@@ -1,7 +1,5 @@
 ---
 title: Intersection
-layout: gem-single
-name: dry-types
 ---
 
 Intersection types are specified using the `&` operator. It combines two

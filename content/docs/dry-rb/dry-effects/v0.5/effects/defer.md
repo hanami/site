@@ -1,7 +1,5 @@
 ---
 title: Deferred execution
-layout: gem-single
-name: dry-effects
 ---
 
 `Defer` adds three methods for working with deferred code execution:

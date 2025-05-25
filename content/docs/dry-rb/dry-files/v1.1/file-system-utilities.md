@@ -1,7 +1,5 @@
 ---
 title: File System Utilities
-layout: gem-single
-name: dry-files
 ---
 
 ### File System Utilities

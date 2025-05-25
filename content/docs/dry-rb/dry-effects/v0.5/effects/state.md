@@ -1,7 +1,5 @@
 ---
 title: State
-layout: gem-single
-name: dry-effects
 ---
 
 State is a mutation effect. It allows [reading](//doc/dry-effects/effects/reader) and _writing_ non-local values.

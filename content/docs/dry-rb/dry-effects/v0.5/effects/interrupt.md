@@ -1,7 +1,5 @@
 ---
 title: Interrupt
-layout: gem-single
-name: dry-effects
 ---
 
 Interrupt is an effect with the semantics of `raise`/`rescue` or `throw`/`catch`. It's added for consistency and compatibility with other effects. Underneath, it uses `raise` + `rescue` so that application code can detect the bubbling.

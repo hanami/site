@@ -1,7 +1,5 @@
 ---
 title: Params
-layout: gem-single
-name: dry-schema
 ---
 
 Probably the most common use case is to validate HTTP params. This is a special kind of a validation for a couple of reasons:

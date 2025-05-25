@@ -1,7 +1,5 @@
 ---
 title: Unit
-layout: gem-single
-name: dry-monads
 ---
 
 Some constructors do not require you to pass a value. As a default they use `Unit`, a special singleton value:

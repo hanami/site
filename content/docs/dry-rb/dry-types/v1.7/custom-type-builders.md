@@ -1,7 +1,5 @@
 ---
 title: Custom Type Builders
-layout: gem-single
-name: dry-types
 ---
 
 It is idiomatic to construct new types based on existing.

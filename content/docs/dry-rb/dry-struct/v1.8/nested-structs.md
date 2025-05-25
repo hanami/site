@@ -1,7 +1,5 @@
 ---
 title: Nested Structs
-layout: gem-single
-name: dry-struct
 ---
 
 The DSL allows to define nested structs by passing a block to `attribute`:

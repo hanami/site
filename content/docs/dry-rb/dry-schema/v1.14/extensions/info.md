@@ -1,7 +1,5 @@
 ---
 title: Info
-layout: gem-single
-name: dry-schema
 ---
 
 If you need to introspect your keys and types, you can enable `:info` extension which adds `#info` method to all schema types. This method returns a simple data structure that provides basic information about keys and types.

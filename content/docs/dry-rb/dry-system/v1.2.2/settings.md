@@ -1,7 +1,5 @@
 ---
 title: Settings
-layout: gem-single
-name: dry-system
 ---
 
 ## Basic usage

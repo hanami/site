@@ -1,7 +1,5 @@
 ---
 title: Equalizer
-layout: gem-single
-name: dry-core
 ---
 
 A simple mixin that can be used to add instance variable based equality, equivalence and inspection methods to your objects.

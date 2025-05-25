@@ -1,7 +1,5 @@
 ---
 title: Type specs
-layout: gem-single
-name: dry-schema
 ---
 
 ^WARNING

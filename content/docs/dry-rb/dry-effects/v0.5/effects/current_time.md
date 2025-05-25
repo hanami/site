@@ -1,7 +1,5 @@
 ---
 title: Current Time
-layout: gem-single
-name: dry-effects
 ---
 
 Obtaining the current time with `Time.now` is a classic example of a side effect. Code relying on accessing system time is harder to test. One possible solution is passing time around explicitly, but using effects can save you some typing depending on the case.

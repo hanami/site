@@ -1,7 +1,5 @@
 ---
 title: Task
-layout: gem-single
-name: dry-monads
 ---
 
 `Task` represents an asynchronous computation. It is similar to the `IO` type in a sense it can be used to wrap side-effectful actions. `Task`s are usually run on a thread pool but also can be executed immediately on the current thread. Internally, `Task` uses `Promise` from the [`concurrent-ruby`](https://github.com/ruby-concurrency/concurrent-ruby) gem, basically it's a thin wrapper with a monadic interface which makes it easily composable with other monads.

@@ -1,7 +1,5 @@
 ---
 title: JSON Schema
-layout: gem-single
-name: dry-schema
 ---
 
 The `:json_schema` extension allows you to generate a valid [JSON Schema](https://json-schema.org/) from a `Dry::Schema`. JSON Schema is a widely used standard, so this unlocks many possibilities.

@@ -1,7 +1,5 @@
 ---
 title: Reader
-layout: gem-single
-name: dry-effects
 ---
 
 Reader is the simplest effect. It passes a value down to the stack.

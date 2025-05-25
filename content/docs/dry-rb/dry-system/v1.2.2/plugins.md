@@ -1,7 +1,5 @@
 ---
 title: Plugins
-layout: gem-single
-name: dry-system
 ---
 
 dry-system has already built-in plugins that you can enable, and it’s very easy to write your own.

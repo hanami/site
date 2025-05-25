@@ -1,7 +1,5 @@
 ---
 title: Working with schemas
-layout: gem-single
-name: dry-schema
 ---
 
 A schema is an object which contains a list of rules that will be applied to its input when you call a schema. It returns a `result object` which provides an API to retrieve `error messages` and access to the validation output.

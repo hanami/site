@@ -1,7 +1,5 @@
 ---
 title: Result
-layout: gem-single
-name: dry-monads
 ---
 
 The `Result` monad is useful to express a series of computations that might
