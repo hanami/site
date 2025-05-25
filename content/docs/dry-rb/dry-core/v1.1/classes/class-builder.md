@@ -1,7 +1,5 @@
 ---
 title: Class Builder
-layout: gem-single
-name: dry-core
 ---
 
 ```ruby

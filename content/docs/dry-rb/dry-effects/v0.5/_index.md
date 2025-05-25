@@ -1,7 +1,18 @@
 ---
 title: Introduction
 pages:
-  - effects
+  - effects:
+    - cache
+    - current_time
+    - defer
+    - env
+    - interrupt
+    - parallel
+    - reader
+    - resolve
+    - state
+    - timeout
+  
 ---
 
 `dry-effects` is a practical, production-oriented implementation of algebraic effects in Ruby.

@@ -1,12 +1,14 @@
 ---
 title: Introduction
 pages:
- - cache
- - constants
- - classes
- - deprecations
- - equalizer
- - extensions
+  - cache
+  - constants
+  - classes:
+    - class-attributes
+    - class-builder
+  - deprecations
+  - equalizer
+  - extensions
 ---
 
 `dry-core` is a simple toolset that can be used in many places.

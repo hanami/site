@@ -1,15 +1,32 @@
 ---
 title: Introduction
 pages:
-  - basics
+  - basics:
+    - built-in-predicates
+    - macros
+    - type-specs
+    - working-with-schemas
   - optional-keys-and-values
   - nested-data
   - reusing-schemas
   - params
   - json
   - error-messages
-  - advanced
-  - extensions
+  - advanced:
+    - composing-schemas
+    - custom-predicates
+    - custom-types
+    - filtering
+    - key-maps
+    - predicate-logic
+    - processor-steps
+    - rule-ast
+    - unexpected-keys
+  - extensions:
+    - hints
+    - info
+    - json_schema
+    - monads
 ---
 
 `dry-schema` is a validation library for **data structures**. It ships with a set of many built-in predicates and powerful DSL to define even complex data validations with very concise syntax.

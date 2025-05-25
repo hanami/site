@@ -1,6 +1,5 @@
 ---
 title: Introduction
-name: dry-events
 ---
 
 dry-events is a library providing pub/sub API allowing you to create event publishers and a convenient way of subscribing to the events. This library is used as the pub/sub backend in dry-monitor, which also powers monitoring plugin in dry-system.

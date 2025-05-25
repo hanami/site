@@ -1,18 +1,5 @@
 ---
 title: Effects
-layout: gem-single
-name: dry-effects
-pages:
-  - reader
-  - state
-  - resolve
-  - cache
-  - current_time
-  - env
-  - interrupt
-  - defer
-  - timeout
-  - parallel
 ---
 
 `dry-effects` has a bunch of built-in effects and providers:

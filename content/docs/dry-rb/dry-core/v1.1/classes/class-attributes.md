@@ -1,7 +1,5 @@
 ---
 title: Class Attributes
-layout: gem-single
-name: dry-core
 ---
 
 ```ruby
