@@ -4,3 +4,8 @@
  */
 @import "tailwindcss";
 @source "../../templates";
+
+a {
+  color: blue;
+  text-decoration: underline;
+}
