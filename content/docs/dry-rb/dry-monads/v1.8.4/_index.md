@@ -103,7 +103,7 @@ find_user(params[:user_id]).bind do |user|
 end
 ```
 
-Finally, since 1.0, dry-monads has support for [`do` notation](docs::do-notation) which simplifies this code even more, making it almost regular yet `nil`-safe:
+Finally, since 1.0, dry-monads has support for [`do` notation](//page/do-notation) which simplifies this code even more, making it almost regular yet `nil`-safe:
 
 ```ruby
 user = yield find_user(params[:user_id])

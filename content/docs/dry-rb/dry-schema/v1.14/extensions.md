@@ -13,7 +13,7 @@ pages:
 
 Available extensions:
 
-- [Hints](docs::extensions/hints)
-- [Info](docs::extensions/info)
-- [Monads](docs::extensions/monads)
-- [JSON Schema](docs::extensions/json_schema)
+- [Hints](//page/extensions/hints)
+- [Info](//page/extensions/info)
+- [Monads](//page/extensions/monads)
+- [JSON Schema](//page/extensions/json_schema)

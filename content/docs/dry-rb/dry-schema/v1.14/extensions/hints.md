@@ -44,4 +44,4 @@ result.messages.to_h
 
 ### Learn more
 
-- [Customizing messages](docs::error-messages)
+- [Customizing messages](//page/error-messages)

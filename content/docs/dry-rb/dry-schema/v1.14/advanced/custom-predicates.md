@@ -30,4 +30,4 @@ Notice that you need to provide custom error messages for your own predicates.
 
 ## Learn more
 
-- [Error messages](docs::error-messages)
+- [Error messages](//page/error-messages)

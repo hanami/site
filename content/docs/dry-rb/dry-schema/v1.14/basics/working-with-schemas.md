@@ -108,5 +108,5 @@ result.error?([:tags, 1])
 
 ### Learn more
 
-- [Customizing messages](docs::error-messages)
-- [Validation hints](docs::extensions/hints)
+- [Customizing messages](//page/error-messages)
+- [Validation hints](//page/extensions/hints)

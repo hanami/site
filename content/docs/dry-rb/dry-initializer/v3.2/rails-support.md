@@ -82,7 +82,7 @@ order.product  # => <Item @name='the_thing_no_123' ...>
 
 ### Container Syntax
 
-If you prefer [container syntax](docs::container-version), extend plugin inside the block:
+If you prefer [container syntax](//page/container-version), extend plugin inside the block:
 
 ```ruby
 require 'dry-initializer-rails'
@@ -96,6 +96,6 @@ end
 
 ### Types vs Models
 
-[Type constraints](docs::type-constraints) are checked before the coercion.
+[Type constraints](//page/type-constraints) are checked before the coercion.
 
 When mixing `:type` and `:model` settings for the same param/option, you should use [sum types](/gems/dry-types/1.2/sum) that accept both model instances and their attributes.

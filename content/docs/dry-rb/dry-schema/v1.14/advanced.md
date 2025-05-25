@@ -13,11 +13,11 @@ pages:
   - processor-steps
 ---
 
-- [Predicate Logic](docs::advanced/predicate-logic)
-- [Composing schemas](docs::advanced/composing-schemas)
-- [Unexpected keys](docs::advanced/unexpected-keys)
-- [Filtering](docs::advanced/filtering)
-- [Key maps](docs::advanced/key-maps)
-- [Rule AST](docs::advanced/rule-ast)
-- [Custom types](docs::advanced/custom-types)
-- [Processor steps](docs::advanced/processor-steps)
+- [Predicate Logic](//page/advanced/predicate-logic)
+- [Composing schemas](//page/advanced/composing-schemas)
+- [Unexpected keys](//page/advanced/unexpected-keys)
+- [Filtering](//page/advanced/filtering)
+- [Key maps](//page/advanced/key-maps)
+- [Rule AST](//page/advanced/rule-ast)
+- [Custom types](//page/advanced/custom-types)
+- [Processor steps](//page/advanced/processor-steps)

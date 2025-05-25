@@ -59,5 +59,5 @@ end
 
 ### Learn more
 
-- [Built-in predicates](docs::basics/built-in-predicates)
-- [Working with schemas](docs::basics/working-with-schemas)
+- [Built-in predicates](//page/basics/built-in-predicates)
+- [Working with schemas](//page/basics/working-with-schemas)

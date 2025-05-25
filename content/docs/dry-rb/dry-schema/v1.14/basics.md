@@ -41,7 +41,7 @@ When you apply this schema to an input, 3 things happen:
 
 ### Learn more
 
-- [Macros](docs::basics/macros)
-- [Type specs](docs::basics/type-specs)
-- [Built-in predicates](docs::basics/built-in-predicates)
-- [Working with schemas](docs::basics/working-with-schemas)
+- [Macros](//page/basics/macros)
+- [Type specs](//page/basics/type-specs)
+- [Built-in predicates](//page/basics/built-in-predicates)
+- [Working with schemas](//page/basics/working-with-schemas)
