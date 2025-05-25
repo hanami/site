@@ -1,10 +1,5 @@
 ---
 title: Introduction
-description: File utilities
-layout: gem-single
-order: ???
-type: gem
-name: dry-files
 pages:
   - file-system-utilities
   - ruby-file-manipulation

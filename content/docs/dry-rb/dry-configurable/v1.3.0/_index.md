@@ -1,10 +1,5 @@
 ---
 title: Introduction &amp; Usage
-description: Thread-safe configuration mixin
-layout: gem-single
-order: 7
-type: gem
-name: dry-configurable
 pages:
   - testing
 ---

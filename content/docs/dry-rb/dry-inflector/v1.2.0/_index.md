@@ -1,10 +1,5 @@
 ---
 title: Introduction
-description: Standalone inflections
-layout: gem-single
-order: 18
-type: gem
-name: dry-inflector
 ---
 
 dry-inflector is an inflector gem for Ruby, which provides a configurable inflector **object**, rather than using a singleton.

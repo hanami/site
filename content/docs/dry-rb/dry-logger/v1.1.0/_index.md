@@ -1,7 +1,5 @@
 ---
 title: Introduction
-layout: gem-single
-name: dry-logger
 type: gem
 ---
 

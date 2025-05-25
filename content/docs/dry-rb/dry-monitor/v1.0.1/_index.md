@@ -1,8 +1,5 @@
 ---
 title: Introduction
-layout: gem-single
-name: dry-monitor
-type: gem
 pages:
   - third-party-integrations
 ---

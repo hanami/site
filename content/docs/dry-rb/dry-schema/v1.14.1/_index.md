@@ -1,9 +1,5 @@
 ---
 title: Introduction
-description: Schema coercion & validation
-layout: gem-single
-type: gem
-name: dry-schema
 pages:
   - basics
   - optional-keys-and-values

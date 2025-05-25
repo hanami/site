@@ -1,8 +1,5 @@
 ---
 title: Introduction
-layout: gem-single
-type: gem
-name: dry-struct
 pages:
  - nested-structs
  - recipes

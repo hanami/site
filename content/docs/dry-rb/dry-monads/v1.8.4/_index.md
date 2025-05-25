@@ -1,9 +1,5 @@
 ---
 title: Introduction
-description: Common monads for Ruby
-layout: gem-single
-type: gem
-name: dry-monads
 pages:
   - getting-started
   - maybe

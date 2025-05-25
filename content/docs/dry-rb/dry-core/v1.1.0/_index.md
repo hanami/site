@@ -1,10 +1,5 @@
 ---
 title: Introduction
-description: A toolset of small support modules used throughout the @dry-rb & @rom-rb ecosystems
-layout: gem-single
-order: 5
-type: gem
-name: dry-core
 pages:
  - cache
  - constants

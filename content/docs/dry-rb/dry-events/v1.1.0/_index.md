@@ -1,8 +1,5 @@
 ---
 title: Introduction
-description: Standalone pub/sub API
-layout: gem-single
-type: gem
 name: dry-events
 ---
 

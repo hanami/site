@@ -1,10 +1,5 @@
 ---
 title: Introduction & Usage
-description: DSL for defining initializer params and options
-layout: gem-single
-order: 8
-type: gem
-name: dry-initializer
 pages:
   - container-version
   - params-and-options

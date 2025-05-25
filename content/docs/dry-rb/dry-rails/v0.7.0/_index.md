@@ -1,9 +1,6 @@
 ---
 title: Introduction
-description: The dry-rb railtie
-layout: gem-single
-order: 7
-type: gem
+
 name: dry-rails
 ---
 
