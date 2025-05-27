@@ -3,6 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "lint:all": "npm run lint:types",
     "lint:types": "tsc --noEmit --pretty"
   },
   "dependencies": {
