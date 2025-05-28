@@ -2,10 +2,17 @@
   "name": "site",
   "private": true,
   "type": "module",
+  "scripts": {
+    "lint:all": "npm run lint:types",
+    "lint:types": "tsc --noEmit --pretty"
+  },
   "dependencies": {
     "@docsearch/js": "^3.9.0",
     "@tailwindcss/cli": "^4.1.5",
     "hanami-assets": "^2.2.1",
     "tailwindcss": "^4.1.4"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
   }
 }
