@@ -25,15 +25,12 @@
       <a href="/conduct">Conduct</a>
       <a href="/sponsor">Sponsor</a>
     </nav>
-    <div id="docsearch"></div>
+    <div data-defo-docsearch="<%= {
+      appId: settings.docsearch_app_id,
+      apiKey: settings.docsearch_api_key,
+      indexName: settings.docsearch_index_name
+    }.to_json %>"></div>
     <%= yield %>
-    <script>
-      window.app_settings = {
-        docsearch_app_id: "<%= settings.docsearch_app_id %>",
-        docsearch_api_key: "<%= settings.docsearch_api_key %>",
-        docsearch_index_name: "<%= settings.docsearch_index_name %>"
-      }
-    </script>
     <%= javascript_tag "app" %>
   </body>
 </html>

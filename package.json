@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@docsearch/js": "^3.9.0",
+    "@icelab/defo": "^0.0.3",
     "@tailwindcss/cli": "^4.1.5",
     "hanami-assets": "^2.2.1",
     "tailwindcss": "^4.1.4"
