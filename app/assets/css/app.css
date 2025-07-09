@@ -5,3 +5,8 @@ body {
   color: #000;
   font-family: sans-serif;
 }
+
+a {
+  color: blue;
+  text-decoration: underline;
+}
