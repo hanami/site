@@ -4,32 +4,43 @@
   <meta name="docsearch:version" content="<%= [version_number, ("latest" if version == latest_version)].compact.join(",") %>">
 <% end %>
 
-<h2>All guides</h1>
-<ol data-testid="guides-list">
-  <% other_guides.each do |guide| %>
-    <li>
-      <a href="<%= guide.url_path %>">
-        <%= guide.title %>
-      </a>
-    </li>
-  <% end %>
-<ol>
+<div class="md:grid md:grid-cols-6 md:gap-4">
+  <aside class="md:col-span-1">
+    <h2 class="font-semibold">All guides</h2>
 
-<header>
-  <h1><%= guide.title %></h1>
-</header>
+    <ol data-testid="guides-list">
+      <% other_guides.each do |guide_for_nav| %>
+        <li>
+          <a href="<%= guide_for_nav.url_path %>">
+            <%= guide_for_nav.title %>
+          </a>
+          <% if guide.title == guide_for_nav.title %>
+            <div class="ml-4">
+              <%= render "doc_pages/pages_nav", pages: guide.pages.nested, testid: "pages-nav" %>
+            </div>
+          <% end %>
+        </li>
+      <% end %>
+    <ol>
+  </aside>
 
-<%= render "doc_pages/pages_nav", pages: guide.pages.nested, testid: "pages-nav" %>
+  <section class="md:col-span-5 md:grid md:grid-cols-5 md:gap-4">
+    <aside class="md:col-span-1 md:order-2">
+      <h2>On this page</h2>
+      <%= render "doc_pages/headings_toc", headings: page.nested_headings, testid: "headings-toc" %>
+    </aside>
+    <div class="md:col-span-4">
+      <header>
+        <h1><%= guide.title %></h1>
+      </header>
 
-<h2>TOC</h2>
-<%= render "doc_pages/headings_toc", headings: page.nested_headings, testid: "headings-toc" %>
+      <header>
+        <h1><%= page.title %></h1>
+      </header>
 
-<main>
-  <header>
-    <h1><%= page.title %></h1>
-  </header>
-
-  <div class="content">
-    <%= page.content_html %>
-  </div>
-</main>
+      <div class="content">
+        <%= page.content_html %>
+      </div>
+    </div>
+  </section>
+</div>
