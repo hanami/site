@@ -4,7 +4,7 @@
   <meta name="docsearch:version" content="<%= [version_number, ("latest" if version == latest_version)].compact.join(",") %>">
 <% end %>
 
-<div class="md:grid md:grid-cols-6 md:gap-4">
+<div class="md:grid md:grid-cols-6 md:gap-8">
   <aside class="md:col-span-1">
     <div class="md:pt-8 md:sticky md:top-[calc(var(--hn-nav-height))] md:overflow-y-auto md:max-h-[calc(100vh-var(--hn-nav-height))]">
       <h2 class="font-semibold">All guides</h2>
@@ -12,7 +12,7 @@
       <ol data-testid="guides-list">
         <% other_guides.each do |guide_for_nav| %>
           <li>
-            <a href="<%= guide_for_nav.url_path %>">
+            <a class="block py-1 text-gray-500" href="<%= guide_for_nav.url_path %>">
               <%= guide_for_nav.title %>
             </a>
             <% if guide.title == guide_for_nav.title %>
@@ -28,20 +28,20 @@
 
   <section class="md:col-span-5 md:grid md:grid-cols-5">
     <aside class="md:col-span-1 md:order-2">
-      <div class="md:pt-8 md:sticky md:top-[calc(var(--hn-nav-height))] md:overflow-y-auto md:max-h-[calc(100vh-var(--hn-nav-height))]">
-        <div class="border-gray-200 md:border-l-1 md:pl-4">
-        <h2>On this page</h2>
-        <%= render "doc_pages/headings_toc", headings: page.nested_headings, testid: "headings-toc" %>
+      <div class="md:pt-8 md:sticky md:top-[calc(var(--hn-nav-height))] md:overflow-y-auto md:max-h-[calc(100vh-var(--hn-nav-height))] md:h-full">
+        <div class="border-gray-200 md:border-l-1 md:pl-8 py-4">
+          <h2 class="font-semibold mb-4">On this page</h2>
+          <%= render "doc_pages/headings_toc", headings: page.nested_headings, testid: "headings-toc" %>
         </div>
       </div>
     </aside>
-    <div class="md:col-span-4 md:pr-4 md:mt-8">
+    <div class="md:col-span-4 md:pr-8 md:mt-8 md:mb-14">
       <header>
         <h1><%= guide.title %></h1>
       </header>
 
       <header>
-        <h1><%= page.title %></h1>
+        <h1 class="text-3xl font-bold mb-4"><%= page.title %></h1>
       </header>
 
       <div class="content">

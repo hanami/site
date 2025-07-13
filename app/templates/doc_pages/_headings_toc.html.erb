@@ -1,7 +1,7 @@
 <%= tag.ol("data-testid" => testid) do %>
   <% headings.each do |(heading, child_headings)| %>
     <li>
-      <a class="text-gray-500" href="<%= heading.href %>">
+      <a class="block py-1 text-gray-500" href="<%= heading.href %>">
         <%= heading.text %>
       </a>
       <% if child_headings.any? %>

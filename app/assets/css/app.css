@@ -1,5 +1,3 @@
 @import "../builds/tailwind.css";
-
-:root {
-  --hn-nav-height: 69px;
-}
+@import "./base.css";
+@import "./content.css";
