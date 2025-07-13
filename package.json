@@ -4,16 +4,19 @@
   "type": "module",
   "scripts": {
     "lint:all": "npm run lint:types",
-    "lint:types": "tsc --noEmit --pretty"
+    "lint:types": "tsc --noEmit --pretty",
+    "test": "vitest"
   },
   "dependencies": {
     "@docsearch/js": "^3.9.0",
     "@icelab/defo": "^0.0.3",
-    "@tailwindcss/cli": "^4.1.5",
+    "@tailwindcss/cli": "^4.1.11",
     "hanami-assets": "^2.2.1",
-    "tailwindcss": "^4.1.4"
+    "tailwindcss": "^4.1.11"
   },
   "devDependencies": {
-    "typescript": "^5.8.3"
+    "happy-dom": "^18.0.1",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4"
   }
 }

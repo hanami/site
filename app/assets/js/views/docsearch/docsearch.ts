@@ -1,4 +1,5 @@
 import "@docsearch/css";
+import "./docsearch.css";
 import docsearch from "@docsearch/js";
 
 type Props = { appId: string; apiKey: string; indexName: string };
