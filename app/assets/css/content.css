@@ -1,36 +1,39 @@
 .content {
-  line-height: 1.6;
-
+  line-height: var(--leading-normal);
   h1,
   h2,
   h3 {
+    color: var(--color-neutral-800);
     font-weight: var(--font-weight-bold);
     letter-spacing: -0.01em;
   }
 
   h1 {
-    font-size: var(--text-2xl);
-    margin-block-end: calc(var(--spacing) * 2);
+    color: var(--color-rose-500);
+    font-size: var(--text-3xl);
+    margin-block-end: calc(var(--spacing) * 3);
   }
 
   h2 {
-    font-size: var(--text-xl);
-    margin-block-end: calc(var(--spacing) * 2);
+    font-size: var(--text-2xl);
+    margin-block-start: calc(var(--spacing) * 7);
+    margin-block-end: calc(var(--spacing) * 2.5);
   }
 
   h3 {
-    font-size: var(--text-lg);
-    margin-block-end: calc(var(--spacing) * 2);
+    font-size: var(--text-xl);
+    margin-block-start: calc(var(--spacing) * 5);
+    margin-block-end: calc(var(--spacing) * 2.5);
   }
 
   p {
-    font-size: var(--text-md);
+    font-size: var(--text-lg);
     margin-block-end: calc(var(--spacing) * 2.5);
   }
 
   ul,
   ol {
-    font-size: var(--text-md);
+    font-size: var(--text-lg);
     margin-block-end: calc(var(--spacing) * 2.5);
 
     li {
@@ -47,9 +50,26 @@
     list-style-type: decimal;
   }
 
+  p,
+  li {
+    a {
+      color: var(--color-rose-500);
+      text-decoration-line: underline;
+      text-decoration-color: currentColor;
+
+      &:visited {
+        color: var(--color-pink-700);
+      }
+
+      &:hover {
+        color: var(--color-gray-800);
+      }
+    }
+  }
+
   code {
     border-radius: var(--radius-sm);
-    background-color: var(--color-gray-100);
+    background-color: var(--color-stone-100);
     font-family: var(--font-mono);
     font-size: var(--text-sm);
     padding: calc(var(--spacing) * 0.75) calc(var(--spacing) * 1);
@@ -57,16 +77,19 @@
 
   pre {
     border-radius: var(--radius-lg);
-    background-color: var(--color-gray-100);
+    background-color: var(--color-stone-100);
+    box-shadow: var(--shadow-sm);
     font-size: var(--text-sm);
     max-width: 100%;
     overflow: auto hidden;
     padding: calc(var(--spacing) * 5);
-    margin-block-end: calc(var(--spacing) * 4);
+    margin-block-start: calc(var(--spacing) * 3);
+    margin-block-end: calc(var(--spacing) * 5);
   }
 
   table {
-    margin-block-end: calc(var(--spacing) * 4);
+    margin-block-start: calc(var(--spacing) * 4);
+    margin-block-end: calc(var(--spacing) * 6);
   }
 
   thead {
@@ -114,5 +137,9 @@
         border-right: none;
       }
     }
+  }
+
+  > :first-child {
+    margin-block-start: 0;
   }
 }
