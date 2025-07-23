@@ -1,3 +1,4 @@
 @import "../builds/tailwind.css";
+@import "./fonts.css";
 @import "./base.css";
 @import "./content.css";
