@@ -5,7 +5,9 @@
         <%= heading.text %>
       </a>
       <% if child_headings.any? %>
-        <%= render "doc_pages/headings_toc", headings: child_headings, testid: nil %>
+        <div class="border-gray-200 border-l-1 pl-3 ml-1">
+          <%= render "doc_pages/headings_toc", headings: child_headings, testid: nil %>
+        </div>
       <% end %>
     </li>
   <% end %>
