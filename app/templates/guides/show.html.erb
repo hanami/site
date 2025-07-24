@@ -4,10 +4,10 @@
   <meta name="docsearch:version" content="<%= [version_number, ("latest" if version == latest_version)].compact.join(",") %>">
 <% end %>
 
-<div class="md:grid md:grid-cols-6 md:gap-8">
-  <aside class="md:col-span-1">
-    <div class="md:pt-8 md:sticky md:top-[calc(var(--hn-nav-height))] md:overflow-y-auto md:max-h-[calc(100vh-var(--hn-nav-height))]">
-      <h2 class="font-semibold">All guides</h2>
+<div class="lg:grid lg:grid-cols-16 lg:gap-8 md:grid md:grid-cols-5 md:gap-8">
+  <aside class="lg:col-span-3">
+    <div class="lg:pt-8 lg:sticky lg:top-[calc(var(--hn-nav-height))] lg:overflow-y-auto lg:max-h-[calc(100vh-var(--hn-nav-height))]">
+      <h2 class="font-mono uppercase text-xs tracking-wider pt-1 mb-3">All guides</h2>
 
       <ol data-testid="guides-list">
         <% other_guides.each do |guide_for_nav| %>
@@ -16,8 +16,8 @@
               <%= guide_for_nav.title %>
             </a>
             <% if guide.title == guide_for_nav.title %>
-              <div class="ml-4">
-                <%= render "doc_pages/pages_nav", pages: guide.pages.nested, testid: "pages-nav" %>
+              <div class="border-gray-200 border-l-1 pl-3 ml-1">
+                <%= render "doc_pages/pages_nav", pages: guide.pages.nested, testid: "pages-nav", current_page_title: page.title %>
               </div>
             <% end %>
           </li>
@@ -26,22 +26,26 @@
     </div>
   </aside>
 
-  <section class="md:col-span-5 md:grid md:grid-cols-5">
-    <aside class="md:col-span-1 md:order-2">
-      <div class="md:pt-8 md:sticky md:top-[calc(var(--hn-nav-height))] md:overflow-y-auto md:max-h-[calc(100vh-var(--hn-nav-height))] md:h-full">
-        <div class="border-gray-200 md:border-l-1 md:pl-8 py-4">
-          <h2 class="font-semibold mb-4">On this page</h2>
+  <section class="lg:col-span-13 lg:grid lg:grid-cols-13 md:col-span-4">
+    <aside class="lg:col-span-3 lg:order-2">
+      <div class="lg:pt-8 lg:sticky lg:top-[calc(var(--hn-nav-height))] lg:overflow-y-auto lg:max-h-[calc(100vh-var(--hn-nav-height))] lg:h-full">
+        <div class="border-gray-200 lg:border-l-1 lg:pl-8 py-4">
+          <h2 class="font-mono uppercase text-xs tracking-wider pt-1 mb-3">On this page</h2>
           <%= render "doc_pages/headings_toc", headings: page.nested_headings, testid: "headings-toc" %>
         </div>
       </div>
     </aside>
-    <div class="md:col-span-4 md:pr-8 md:mt-8 md:mb-14">
-      <header>
-        <h1><%= guide.title %></h1>
+    <div class="lg:col-span-10 lg:pr-8 lg:mt-8 lg:mb-14">
+      <header class="pt-1 mb-3">
+        <h1 class="font-mono uppercase text-xs text-rose-500 tracking-wider">
+          <a href="<%= guide.url_path %>">
+            <%= guide.title %>
+          </a>
+        </h1>
       </header>
 
       <header>
-        <h1 class="text-3xl font-black mb-4 text-rose-500"><%= page.title %></h1>
+        <h1 class="text-4xl font-black mb-4 text-rose-500"><%= page.title %></h1>
       </header>
 
       <div class="content">
