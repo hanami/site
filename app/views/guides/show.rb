@@ -22,6 +22,10 @@ module Site
           guide_repo.latest_version(org:)
         end
 
+        expose :other_versions, decorate: false do |org:|
+          guide_repo.versions_for(org:)
+        end
+
         expose :other_guides do |org:, version:|
           guide_repo.all_for(org:, version:)
         end

@@ -9,6 +9,14 @@
     <div class="lg:pt-8 lg:sticky lg:top-[calc(var(--hn-nav-height))] lg:overflow-y-auto lg:max-h-[calc(100vh-var(--hn-nav-height))]">
       <h2 class="font-mono uppercase text-xs tracking-wider pt-1 mb-3">All guides</h2>
 
+      <div data-testid="org-guide-versions">
+        <% other_versions.each do |version| %>
+          <a href="<%= "/guides/#{org}/#{version}" %>">
+            <%= version %>
+          </a>
+        <% end %>
+      </div>
+
       <ol data-testid="guides-list">
         <% other_guides.each do |guide_for_nav| %>
           <li>
