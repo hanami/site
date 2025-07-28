@@ -107,8 +107,20 @@ export function tocScrollViewFn(
   };
 }
 
-const findClosestIndex = (arr: number[], target: number) =>
-  arr.reduce(
-    (closest, curr, i) => (Math.abs(curr - target) < Math.abs(arr[closest] - target) ? i : closest),
-    0,
-  );
+/**
+ * findClosestIndex
+ * Find the value in the passed array closest to the `target`.
+ * @example
+ * const values = [1,2,10]
+ * findClosestIndex(values, 9)
+ * // -> 2
+ */
+export const findClosestIndex = (arr: number[], target: number) =>
+  arr.reduce((closestIndex, curr, i) => {
+    const closestIndexValue = arr[closestIndex] ?? 0;
+    if (Math.abs(curr - target) < Math.abs(closestIndexValue - target)) {
+      return i;
+    } else {
+      return closestIndex;
+    }
+  }, 0);
