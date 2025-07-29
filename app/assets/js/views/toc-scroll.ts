@@ -1,22 +1,22 @@
 export function tocScrollViewFn(
-  tocContainerNode: HTMLElement,
+  linkContainerNode: HTMLElement,
   {
     anchorContainerSelector,
-    tocNodeSelector = "a[href^='#']",
+    linkSelector = "a[href^='#']",
   }: {
     anchorContainerSelector?: string;
-    tocNodeSelector?: string;
+    linkSelector?: string;
   },
 ) {
-  const { anchors, anchorToTocLinkMap, tocLinks } = findElements({
+  const { anchors, anchorToLinkMap, links } = findElements({
     anchorContainerSelector,
-    tocContainerNode,
-    tocNodeSelector,
+    linkContainerNode,
+    linkSelector,
   });
 
   function onChangeAnchor(activeAnchor: Element | undefined) {
-    const activeLinkNode = activeAnchor ? anchorToTocLinkMap.get(activeAnchor) : undefined;
-    tocLinks.forEach((node) => node.classList.remove("text-rose-500"));
+    const activeLinkNode = activeAnchor ? anchorToLinkMap.get(activeAnchor) : undefined;
+    links.forEach((node) => node.classList.remove("text-rose-500"));
     if (activeLinkNode) {
       activeLinkNode.classList.add("text-rose-500");
     }
@@ -36,18 +36,19 @@ export function tocScrollViewFn(
   };
 }
 
+/**
+ * Find all the elements we need:
+ */
 export function findElements({
   anchorContainerSelector,
-  tocContainerNode,
-  tocNodeSelector,
+  linkContainerNode,
+  linkSelector,
 }: {
   anchorContainerSelector: string | undefined;
-  tocContainerNode: HTMLElement;
-  tocNodeSelector: string;
+  linkContainerNode: HTMLElement;
+  linkSelector: string;
 }) {
-  const tocLinks = Array.from(
-    tocContainerNode.querySelectorAll<HTMLAnchorElement>(tocNodeSelector),
-  );
+  const links = Array.from(linkContainerNode.querySelectorAll<HTMLAnchorElement>(linkSelector));
 
   let anchorContainer: ParentNode = document;
   if (anchorContainerSelector) {
@@ -60,9 +61,9 @@ export function findElements({
   }
 
   // Map: anchor element -> toc link
-  const anchorToTocLinkMap = new Map<Element, HTMLAnchorElement>();
+  const anchorToLinkMap = new Map<Element, HTMLAnchorElement>();
 
-  tocLinks.forEach((link) => {
+  links.forEach((link) => {
     const href = link.getAttribute("href");
     if (!href || !href.startsWith("#")) return;
     const id = href.slice(1);
@@ -71,16 +72,16 @@ export function findElements({
       anchorContainer.querySelector(`#${CSS.escape(id)}`) ||
       anchorContainer.querySelector(`[name="${CSS.escape(id)}"]`);
     if (anchor) {
-      anchorToTocLinkMap.set(anchor, link);
+      anchorToLinkMap.set(anchor, link);
     }
   });
 
-  const anchors = Array.from(anchorToTocLinkMap.keys());
+  const anchors = Array.from(anchorToLinkMap.keys());
 
   return {
     anchors,
-    anchorToTocLinkMap,
-    tocLinks,
+    anchorToLinkMap,
+    links,
   };
 }
 

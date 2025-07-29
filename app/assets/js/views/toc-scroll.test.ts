@@ -43,17 +43,17 @@ describe(findElements, () => {
   });
 
   it("finds anchors by id and name and maps them to TOC links", () => {
-    const { anchors, anchorToTocLinkMap, tocLinks } = findElements({
+    const { anchors, anchorToLinkMap, links } = findElements({
       anchorContainerSelector: "#main-content",
-      tocContainerNode: tocContainer,
-      tocNodeSelector: "a[href^='#']",
+      linkContainerNode: tocContainer,
+      linkSelector: "a[href^='#']",
     });
 
     expect(anchors.length).toBe(4);
 
-    // Each anchor should map to the correct TOC link
+    // Each anchor should map to the correct link
     anchors.forEach((anchor) => {
-      const link = anchorToTocLinkMap.get(anchor);
+      const link = anchorToLinkMap.get(anchor);
       expect(link).toBeInstanceOf(HTMLAnchorElement);
       if (anchor.id) {
         expect(link?.getAttribute("href")).toBe(`#${anchor.id}`);
@@ -62,18 +62,14 @@ describe(findElements, () => {
       }
     });
 
-    // tocLinks should include all 5 links
-    expect(tocLinks.length).toBe(5);
+    expect(links.length).toBe(5);
   });
 
   it("uses document as anchor container if selector is not provided", () => {
-    // Move anchors to document body
-    document.body.appendChild(anchorContainer);
-
     const { anchors } = findElements({
       anchorContainerSelector: undefined,
-      tocContainerNode: tocContainer,
-      tocNodeSelector: "a[href^='#']",
+      linkContainerNode: tocContainer,
+      linkSelector: "a[href^='#']",
     });
 
     expect(anchors.length).toBe(4);
@@ -83,8 +79,8 @@ describe(findElements, () => {
     expect(() =>
       findElements({
         anchorContainerSelector: "#does-not-exist",
-        tocContainerNode: tocContainer,
-        tocNodeSelector: "a[href^='#']",
+        linkContainerNode: tocContainer,
+        linkSelector: "a[href^='#']",
       }),
     ).toThrow();
   });
