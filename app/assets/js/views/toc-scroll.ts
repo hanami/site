@@ -68,8 +68,8 @@ export function tocScrollViewFn(
  * findClosestIndex(values, 9)
  * // -> 2
  */
-export const findClosestIndex = (arr: number[], target: number) =>
-  arr.reduce((closestIndex, curr, i) => {
+export function findClosestIndex(arr: number[], target: number) {
+  return arr.reduce((closestIndex, curr, i) => {
     const closestIndexValue = arr[closestIndex] ?? 0;
     if (Math.abs(curr - target) < Math.abs(closestIndexValue - target)) {
       return i;
