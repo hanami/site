@@ -8,6 +8,43 @@ export function tocScrollViewFn(
     tocNodeSelector?: string;
   },
 ) {
+  const { anchors, anchorToTocLinkMap, tocLinks } = findElements({
+    anchorContainerSelector,
+    tocContainerNode,
+    tocNodeSelector,
+  });
+
+  function onChangeAnchor(activeAnchor: Element | undefined) {
+    const activeLinkNode = activeAnchor ? anchorToTocLinkMap.get(activeAnchor) : undefined;
+    tocLinks.forEach((node) => node.classList.remove("text-rose-500"));
+    if (activeLinkNode) {
+      activeLinkNode.classList.add("text-rose-500");
+    }
+  }
+
+  const onScroll = createOnScrollFn({
+    anchors,
+    onChangeAnchor,
+  });
+
+  window.addEventListener("scroll", onScroll);
+
+  return {
+    destroy: () => {
+      window.removeEventListener("scroll", onScroll);
+    },
+  };
+}
+
+export function findElements({
+  anchorContainerSelector,
+  tocContainerNode,
+  tocNodeSelector,
+}: {
+  anchorContainerSelector: string | undefined;
+  tocContainerNode: HTMLElement;
+  tocNodeSelector: string;
+}) {
   const tocLinks = Array.from(
     tocContainerNode.querySelectorAll<HTMLAnchorElement>(tocNodeSelector),
   );
@@ -17,6 +54,8 @@ export function tocScrollViewFn(
     const foundAnchorContainer = document.querySelector(anchorContainerSelector);
     if (foundAnchorContainer) {
       anchorContainer = foundAnchorContainer;
+    } else {
+      throw new Error("Anchor container not found in document");
     }
   }
 
@@ -38,25 +77,10 @@ export function tocScrollViewFn(
 
   const anchors = Array.from(anchorToTocLinkMap.keys());
 
-  function onChange(activeLinkNode: HTMLElement | undefined) {
-    tocLinks.forEach((node) => node.classList.remove("text-rose-500"));
-    if (activeLinkNode) {
-      activeLinkNode.classList.add("text-rose-500");
-    }
-  }
-
-  const onScroll = createOnScrollFn({
+  return {
     anchors,
     anchorToTocLinkMap,
-    onChange,
-  });
-
-  window.addEventListener("scroll", onScroll);
-
-  return {
-    destroy: () => {
-      window.removeEventListener("scroll", onScroll);
-    },
+    tocLinks,
   };
 }
 
@@ -77,21 +101,23 @@ export function findClosestIndex(arr: number[], target: number) {
       return closestIndex;
     }
   }, 0);
+}
+
+// How much of the window to offset the scroll-comparison value by
+const WINDOW_THRESHOLD_PERCENTAGE = 0.1;
 
 /**
  * Create the onScroll function
  */
 function createOnScrollFn({
   anchors,
-  anchorToTocLinkMap,
-  onChange,
+  onChangeAnchor,
 }: {
   anchors: Element[];
-  anchorToTocLinkMap: Map<Element, HTMLAnchorElement>;
-  onChange: (activeLinkNode: HTMLElement | undefined) => void;
+  onChangeAnchor: (activeAnchor: Element | undefined) => void;
 }) {
   return async () => {
-    const viewportMarginThreshold = window.innerHeight * 0.1;
+    const viewportMarginThreshold = window.innerHeight * WINDOW_THRESHOLD_PERCENTAGE;
     const yPositions: number[] = [];
 
     // Create an array of Promises and their resolver functions that matches the length of the
@@ -139,10 +165,6 @@ function createOnScrollFn({
 
     // Find the closest matching position (accounting for the fake value from the scroll position)
     const closestIndex = findClosestIndex(yPositions, viewportMarginThreshold) - 1;
-    let activeAnchor = anchors[closestIndex];
-    const activeLink = activeAnchor ? anchorToTocLinkMap.get(activeAnchor) : undefined;
-
-    // Call the onChange callback
-    onChange(activeLink);
+    onChangeAnchor(anchors[closestIndex]);
   };
 }
