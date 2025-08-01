@@ -194,7 +194,7 @@ function createOnScrollFn({
     const observer = new IntersectionObserver((entries) => {
       for (const entry of entries) {
         const { target, boundingClientRect } = entry;
-        const index = anchors.indexOf(target);
+        const index = anchors.indexOf(target as HTMLElement);
 
         const { y } = boundingClientRect;
         yPositions[index] = y;
