@@ -2,25 +2,70 @@ export function tocScrollViewFn(
   linkContainerNode: HTMLElement,
   {
     anchorContainerSelector,
+    indicatorSelector = ".toc-indicator",
     linkSelector = "a[href^='#']",
   }: {
     anchorContainerSelector?: string;
+    indicatorSelector?: string;
     linkSelector?: string;
   },
 ) {
-  const { anchors, anchorToLinkMap, links } = findElements({
+  const { anchors, anchorToLinkMap, indicator, links } = findElements({
     anchorContainerSelector,
+    indicatorSelector,
     linkContainerNode,
     linkSelector,
   });
 
-  function onChangeAnchor(activeAnchor: Element | undefined) {
-    const activeLinkNode = activeAnchor ? anchorToLinkMap.get(activeAnchor) : undefined;
-    links.forEach((node) => node.classList.remove("text-rose-500"));
-    if (activeLinkNode) {
-      activeLinkNode.classList.add("text-rose-500");
-    }
+  const firstAnchor = anchors[0];
+
+  // Failed to find anything, bail out
+  if (!indicator || !firstAnchor || links.length == 0) {
+    return;
   }
+
+  // Determine the initial position of the indicator (based on the position of the first link
+  // element)
+  const firstLinkTuple = anchorToLinkMap.get(firstAnchor);
+  const firstLink = firstLinkTuple ? firstLinkTuple[0] : undefined;
+  let indicatorPosition = {
+    x: 0,
+    y: firstLink?.offsetTop ?? 0,
+    initialY: firstLink?.offsetTop ?? 0,
+  };
+
+  const activeClass = "text-rose-500";
+  const xOffset = 12;
+  const xOffsetDepth = 4;
+  const onChangeAnchor = (activeAnchor: HTMLElement | undefined) => {
+    requestAnimationFrame(() => {
+      // Remove active class from all links
+      links.forEach((node) => node.classList.remove(activeClass));
+
+      // Find the active link tuple
+      const activeLinkTuple = activeAnchor ? anchorToLinkMap.get(activeAnchor) : undefined;
+      if (activeLinkTuple) {
+        const [activeLinkNode, depth] = activeLinkTuple;
+        // Add the active class
+        activeLinkNode.classList.add(activeClass);
+        // Calculate the position of the indicator
+        indicatorPosition = {
+          ...indicatorPosition,
+          x: xOffset + depth * xOffsetDepth,
+          y: activeLinkNode.offsetTop + activeLinkNode.offsetHeight / 2 - 13,
+        };
+      } else {
+        // If no match, set the x offset to 0 to hide it
+        indicatorPosition.x = 0;
+      }
+      // Calculate the rotation between the initial position and current one
+      const circumference = 2 * Math.PI * indicator.offsetWidth;
+      const distance = Math.abs(indicatorPosition.initialY - indicatorPosition.y);
+      const rotationInDegrees = (distance / circumference) * 360;
+      // Apply the transform
+      indicator.style.transform = `translate(${indicatorPosition.x}px, ${indicatorPosition.y}px) rotate(${rotationInDegrees}deg)`;
+    });
+  };
 
   const onScroll = createOnScrollFn({
     anchors,
@@ -41,15 +86,23 @@ export function tocScrollViewFn(
  */
 export function findElements({
   anchorContainerSelector,
+  indicatorSelector,
   linkContainerNode,
   linkSelector,
 }: {
   anchorContainerSelector: string | undefined;
+  indicatorSelector: string | undefined;
   linkContainerNode: HTMLElement;
   linkSelector: string;
 }) {
+  // Resolve the links
   const links = Array.from(linkContainerNode.querySelectorAll<HTMLAnchorElement>(linkSelector));
+  // Resolve the indicator
+  const indicator = indicatorSelector
+    ? document.querySelector<HTMLElement>(indicatorSelector)
+    : undefined;
 
+  // Resolve the container
   let anchorContainer: ParentNode = document;
   if (anchorContainerSelector) {
     const foundAnchorContainer = document.querySelector(anchorContainerSelector);
@@ -60,27 +113,33 @@ export function findElements({
     }
   }
 
-  // Map: anchor element -> toc link
-  const anchorToLinkMap = new Map<Element, HTMLAnchorElement>();
+  // Create a Map of the anchors to the [linkNode, linkDepth]
+  const anchorToLinkMap = new Map<HTMLElement, [HTMLAnchorElement, number]>();
 
+  // Iterate over the links and resolve their anchors.
   links.forEach((link) => {
     const href = link.getAttribute("href");
     if (!href || !href.startsWith("#")) return;
     const id = href.slice(1);
     // Try to find by ID or by name
     const anchor =
-      anchorContainer.querySelector(`#${CSS.escape(id)}`) ||
-      anchorContainer.querySelector(`[name="${CSS.escape(id)}"]`);
+      anchorContainer.querySelector<HTMLElement>(`#${CSS.escape(id)}`) ||
+      anchorContainer.querySelector<HTMLElement>(`[name="${CSS.escape(id)}"]`);
     if (anchor) {
-      anchorToLinkMap.set(anchor, link);
+      const depth = parseInt(link.dataset.depth || "0", 10);
+      anchorToLinkMap.set(anchor, [link, depth]);
+    } else {
+      throw new Error(`Anchor missing for link with href: ${href}`);
     }
   });
 
+  // Extract the anchors
   const anchors = Array.from(anchorToLinkMap.keys());
 
   return {
     anchors,
     anchorToLinkMap,
+    indicator,
     links,
   };
 }
@@ -114,8 +173,8 @@ function createOnScrollFn({
   anchors,
   onChangeAnchor,
 }: {
-  anchors: Element[];
-  onChangeAnchor: (activeAnchor: Element | undefined) => void;
+  anchors: HTMLElement[];
+  onChangeAnchor: (activeAnchor: HTMLElement | undefined) => void;
 }) {
   return async () => {
     const viewportMarginThreshold = window.innerHeight * WINDOW_THRESHOLD_PERCENTAGE;
