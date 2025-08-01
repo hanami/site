@@ -85,6 +85,10 @@
     padding: calc(var(--spacing) * 5);
     margin-block-start: calc(var(--spacing) * 3);
     margin-block-end: calc(var(--spacing) * 5);
+
+    code {
+      padding: 0;
+    }
   }
 
   table {
