@@ -1,12 +1,19 @@
 <%= tag.ol("data-testid" => testid) do %>
   <% headings.each do |(heading, child_headings)| %>
     <li>
-      <a class="block py-1 text-gray-500" href="<%= heading.href %>">
+      <a
+        class="block py-1 text-gray-500"
+        data-depth="<%= depth %>"
+        href="<%= heading.href %>"
+      >
         <%= heading.text %>
       </a>
       <% if child_headings.any? %>
         <div class="border-gray-200 border-l-1 pl-3 ml-1">
-          <%= render "doc_pages/headings_toc", headings: child_headings, testid: nil %>
+          <%= render "doc_pages/headings_toc",
+          headings: child_headings,
+          testid: nil,
+          depth: depth + 1 %>
         </div>
       <% end %>
     </li>
