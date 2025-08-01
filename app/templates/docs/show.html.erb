@@ -17,7 +17,7 @@
 <%= render "doc_pages/pages_nav", pages: doc.pages.nested, testid: "pages-nav", current_page_title: page.title %>
 <hr>
 <h2>TOC</h2>
-<%= render "doc_pages/headings_toc", headings: page.nested_headings, testid: "headings-toc" %>
+<%= render "doc_pages/headings_toc", headings: page.nested_headings, testid: "headings-toc", depth: 0 %>
 <hr>
 <main>
   <header>
