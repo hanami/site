@@ -26,8 +26,7 @@ export function tocScrollViewFn(
 
   // Determine the initial position of the indicator (based on the position of the first link
   // element)
-  const firstLinkTuple = anchorToLinkMap.get(firstAnchor);
-  const firstLink = firstLinkTuple ? firstLinkTuple[0] : undefined;
+  const [firstLink] = anchorToLinkMap.get(firstAnchor)!;
   let indicatorPosition = {
     x: 0,
     y: firstLink?.offsetTop ?? 0,
@@ -99,7 +98,7 @@ export function findElements({
   const links = Array.from(linkContainerNode.querySelectorAll<HTMLAnchorElement>(linkSelector));
   // Resolve the indicator
   const indicator = indicatorSelector
-    ? document.querySelector<HTMLElement>(indicatorSelector)
+    ? (document.querySelector<HTMLElement>(indicatorSelector) ?? undefined)
     : undefined;
 
   // Resolve the container
