@@ -83,6 +83,7 @@ export function tocScrollViewFn(
   return {
     destroy: () => {
       window.removeEventListener("scroll", onScroll);
+      links.forEach((node) => node.classList.remove(activeClass));
     },
   };
 }

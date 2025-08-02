@@ -39,10 +39,11 @@
       <div class="relative lg:pt-8 lg:sticky lg:top-[calc(var(--hn-nav-height))] lg:overflow-y-auto lg:overflow-x-hidden lg:max-h-[calc(100vh-var(--hn-nav-height))] lg:h-full">
         <div class="border-gray-200 lg:border-l-1 lg:pl-8 py-4" data-defo-toc-scroll="<%= {
             anchorContainerSelector: ".content",
+            breakpoints: ['lg']
           }.to_json %>">
           <h2 class="font-mono uppercase text-xs tracking-wider pt-1 mb-3">On this page</h2>
           <%= render "doc_pages/headings_toc", headings: page.nested_headings, testid: "headings-toc", depth: 0 %>
-          <div class="toc-indicator absolute right-full top-0 transition-transform ease-[cubic-bezier(.58,-.25,.265,1.25)] duration-500 fill-rose-500">
+          <div class="toc-indicator hidden lg:block absolute right-full top-0 transition-transform ease-[cubic-bezier(.58,-.25,.265,1.25)] duration-500 fill-rose-500">
             <svg height="28" viewBox="0 0 45 45" width="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="m45 22.55c0-3.8-3.85-6.2-7.7-6.15 2.45-2.7 3.85-7.1 1.15-9.75-2.7-2.7-7.1-1.65-9.85 1.1-.15-3.65-2.3-7.75-6.05-7.75-3.8 0-6.2 3.9-6.15 7.75-2.7-2.45-7.1-3.85-9.75-1.15-2.7 2.7-1.65 7.1 1.1 9.8-3.65.15-7.75 2.3-7.75 6.05 0 3.8 3.9 6.2 7.7 6.15-2.45 2.7-3.85 7.1-1.15 9.75 2.7 2.7 7.1 1.65 9.85-1.1.15 3.65 2.3 7.75 6.05 7.75 3.8 0 6.2-3.9 6.15-7.75 2.7 2.45 7.1 3.85 9.75 1.15 2.7-2.7 1.65-7.1-1.1-9.8 3.65-.15 7.75-2.3 7.75-6.05zm-22.5 7.5c-4.2 0-7.55-3.4-7.55-7.55 0-4.2 3.4-7.55 7.55-7.55s7.55 3.35 7.55 7.55-3.35 7.55-7.55 7.55z"/></g></svg>
           </div>
         </div>
