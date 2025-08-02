@@ -12,6 +12,7 @@
     "@icelab/defo": "^0.0.3",
     "@tailwindcss/cli": "^4.1.11",
     "hanami-assets": "^2.2.1",
+    "lodash-es": "^4.17.21",
     "tailwindcss": "^4.1.11"
   },
   "devDependencies": {
