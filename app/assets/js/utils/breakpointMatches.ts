@@ -42,16 +42,14 @@ type ViewFnReturnValue = {
 export function breakpointFilter<T extends object>(
   viewFn: (node: HTMLElement, props: T) => ViewFnReturnValue,
 ) {
-  let returnRef: {
-    current: ViewFnReturnValue & { originalDestroy: ViewFnReturnValue["destroy"] };
-  } = {
-    current: {
-      destroy: () => {},
-      originalDestroy: () => {},
-    },
+  let returnRef: ViewFnReturnValue & { originalDestroy: ViewFnReturnValue["destroy"] } = {
+    destroy: () => {},
+    originalDestroy: () => {},
   };
 
-  const destroy = () => returnRef.current.destroy();
+  const destroy = () => returnRef.destroy();
+  const update: ViewFnReturnValue["update"] = (...args) =>
+    returnRef.update ? returnRef.update(...args) : undefined;
 
   return (node: HTMLElement, props: { breakpoints: Breakpoint[] } & T) => {
     const { breakpoints, ...rest } = props;
@@ -65,9 +63,9 @@ export function breakpointFilter<T extends object>(
     function onMatch() {
       const returnValue = viewFn(node, rest as T);
 
-      returnRef.current = {
+      returnRef = {
         ...(returnValue.update ? { update: returnValue.update } : {}),
-        originalDestroy: returnValue.destroy ?? returnRef.current,
+        originalDestroy: returnValue.destroy ?? returnRef,
         destroy: () => {
           // Remove the listener
           mediaQueryList.removeEventListener("change", onChange);
@@ -81,7 +79,7 @@ export function breakpointFilter<T extends object>(
       if (event.matches) {
         onMatch();
       } else {
-        returnRef.current.originalDestroy();
+        returnRef.originalDestroy();
       }
     }
 
@@ -89,6 +87,7 @@ export function breakpointFilter<T extends object>(
 
     return {
       destroy,
+      update,
     };
   };
 }
