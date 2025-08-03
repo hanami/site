@@ -1,5 +1,5 @@
-import { beforeAll, beforeEach, afterEach, expect, test, vi } from "vitest";
-import { breakpointFilter } from "./breakpointMatches";
+import { beforeAll, beforeEach, afterEach, expect, test, describe, vi } from "vitest";
+import { breakpointFilter, breakpointMatches } from "./breakpointMatches";
 
 // Mock MediaQueryList
 class MockMediaQueryList {
@@ -256,5 +256,74 @@ test("preserves other props when calling wrapped view function", () => {
     customProp: "value",
     anotherProp: 123,
     objectProp: { nested: true },
+  });
+});
+
+describe("breakpointMatches", () => {
+  test("returns all breakpoints as false when none match", () => {
+    mockMatchMedia.mockReturnValue(new MockMediaQueryList(false));
+
+    const result = breakpointMatches();
+
+    expect(result).toEqual({
+      sm: false,
+      md: false,
+      lg: false,
+      xl: false,
+      "2xl": false,
+    });
+
+    // Should call matchMedia for each breakpoint
+    expect(mockMatchMedia).toHaveBeenCalledTimes(5);
+    expect(mockMatchMedia).toHaveBeenCalledWith("(width >= 40rem)");
+    expect(mockMatchMedia).toHaveBeenCalledWith("(width >= 48rem)");
+    expect(mockMatchMedia).toHaveBeenCalledWith("(width >= 64rem)");
+    expect(mockMatchMedia).toHaveBeenCalledWith("(width >= 80rem)");
+    expect(mockMatchMedia).toHaveBeenCalledWith("(width >= 96rem)");
+  });
+
+  test("returns correct match status for each breakpoint", () => {
+    // Mock different match results for different breakpoints
+    mockMatchMedia.mockImplementation((query: string) => {
+      const matches = query.includes("48rem") || query.includes("64rem"); // md and lg match
+      return new MockMediaQueryList(matches);
+    });
+
+    const result = breakpointMatches();
+
+    expect(result).toEqual({
+      sm: false,
+      md: true,
+      lg: true,
+      xl: false,
+      "2xl": false,
+    });
+  });
+
+  test("returns all breakpoints as true when all match", () => {
+    mockMatchMedia.mockReturnValue(new MockMediaQueryList(true));
+
+    const result = breakpointMatches();
+
+    expect(result).toEqual({
+      sm: true,
+      md: true,
+      lg: true,
+      xl: true,
+      "2xl": true,
+    });
+  });
+
+  test("uses correct media query strings for Tailwind breakpoints", () => {
+    mockMatchMedia.mockReturnValue(new MockMediaQueryList(false));
+
+    breakpointMatches();
+
+    // Verify the exact media query strings match Tailwind's breakpoints
+    expect(mockMatchMedia).toHaveBeenCalledWith("(width >= 40rem)"); // sm
+    expect(mockMatchMedia).toHaveBeenCalledWith("(width >= 48rem)"); // md
+    expect(mockMatchMedia).toHaveBeenCalledWith("(width >= 64rem)"); // lg
+    expect(mockMatchMedia).toHaveBeenCalledWith("(width >= 80rem)"); // xl
+    expect(mockMatchMedia).toHaveBeenCalledWith("(width >= 96rem)"); // 2xl
   });
 });
