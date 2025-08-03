@@ -161,7 +161,7 @@ test("properly handles view function with update method", () => {
   const result = wrappedViewFn(node, props);
 
   // Test that update method is available and works
-  const updateArgs = [node, { newProp: "value" }];
+  const updateArgs = [node, { newProp: "value" }] as const;
   result.update(...updateArgs);
 
   expect(mockUpdate).toHaveBeenCalledWith(...updateArgs);
@@ -231,7 +231,9 @@ test("creates correct media query string for multiple breakpoints", () => {
 
   wrappedViewFn(node, { breakpoints: ["sm", "md", "xl"] });
 
-  expect(mockMatchMedia).toHaveBeenCalledWith("(width >= 40rem), (width >= 48rem), (width >= 80rem)");
+  expect(mockMatchMedia).toHaveBeenCalledWith(
+    "(width >= 40rem), (width >= 48rem), (width >= 80rem)",
+  );
 });
 
 test("preserves other props when calling wrapped view function", () => {
