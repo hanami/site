@@ -23,7 +23,9 @@ export function tocScrollViewFn(
 
   // Failed to find anything, bail out
   if (!indicator || !firstAnchor || links.length == 0) {
-    return;
+    return {
+      destroy: () => {},
+    };
   }
 
   // Determine the initial position of the indicator (based on the position of the first link
