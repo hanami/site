@@ -1,5 +1,5 @@
 import { beforeAll, beforeEach, afterEach, expect, test, describe, vi } from "vitest";
-import { breakpointFilter, breakpointMatches } from "./breakpointMatches";
+import { breakpointFilter, breakpointMatches } from "./breakpoints";
 
 // Mock MediaQueryList
 class MockMediaQueryList {
