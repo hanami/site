@@ -11,12 +11,16 @@ const breakpointMap: Record<Breakpoint, string> = {
 
 const breakpointNames = Object.keys(breakpointMap) as Breakpoint[];
 
-function createMediaQueryString(breakpoint: Breakpoint) {
+function createMediaQueryString(breakpoint: Breakpoint): string {
   const minWidth = breakpointMap[breakpoint];
   return `(width >= ${minWidth})`;
 }
 
-export function breakpointMatches() {
+/**
+ * Returns the current breakpoint match status for all defined breakpoints.
+ * Useful for checking which breakpoints are currently active.
+ */
+export function breakpointMatches(): Record<Breakpoint, boolean> {
   const matches: Record<Breakpoint, boolean> = {
     sm: false,
     md: false,
@@ -34,60 +38,78 @@ export function breakpointMatches() {
 }
 
 // TODO: This should really be in Defo
-type ViewFnReturnValue = {
-  update?: (node: HTMLElement, props: unknown) => void;
+type DefoViewFunction<T = unknown> = {
+  update?: (node: HTMLElement, props: T) => void;
   destroy: () => void;
 };
 
+/**
+ * Higher-order function that wraps a Defo view function to only activate when specified breakpoints match.
+ *
+ * @param viewFn - The Defo view function to wrap
+ * @returns A new view function that respects breakpoint matching
+ *
+ * @example
+ * const responsiveView = breakpointFilter(myViewFn);
+ * // Usage: <div data-defo-my-view='{"breakpoints": ["md", "lg"], ...otherProps}'></div>
+ */
 export function breakpointFilter<T extends object>(
-  viewFn: (node: HTMLElement, props: T) => ViewFnReturnValue,
+  viewFn: (node: HTMLElement, props: T) => DefoViewFunction,
 ) {
-  let returnRef: ViewFnReturnValue & { originalDestroy: ViewFnReturnValue["destroy"] } = {
-    destroy: () => {},
-    originalDestroy: () => {},
-  };
-
-  const destroy = () => returnRef.destroy();
-  const update: ViewFnReturnValue["update"] = (...args) =>
-    returnRef.update ? returnRef.update(...args) : undefined;
-
   return (node: HTMLElement, props: { breakpoints: Breakpoint[] } & T) => {
-    const { breakpoints, ...rest } = props;
+    const { breakpoints, ...restProps } = props;
     const mediaQueries = breakpoints.map(createMediaQueryString).join(", ");
     const mediaQueryList = window.matchMedia(mediaQueries);
 
-    if (mediaQueryList.matches) {
-      onMatch();
+    let activeViewInstance: DefoViewFunction | null = null;
+    let mediaQueryListener: ((event: MediaQueryListEvent) => void) | null = null;
+
+    function activateView(): void {
+      if (activeViewInstance) return; // Already active
+
+      activeViewInstance = viewFn(node, restProps as T);
     }
 
-    function onMatch() {
-      const returnValue = viewFn(node, rest as T);
+    function deactivateView(): void {
+      if (!activeViewInstance) return; // Already inactive
 
-      returnRef = {
-        ...(returnValue.update ? { update: returnValue.update } : {}),
-        originalDestroy: returnValue.destroy ?? returnRef,
-        destroy: () => {
-          // Remove the listener
-          mediaQueryList.removeEventListener("change", onChange);
-          // Call the destroy function of the bound viewFn
-          returnValue.destroy();
-        },
-      };
+      activeViewInstance.destroy();
+      activeViewInstance = null;
     }
 
-    function onChange(event: MediaQueryListEvent) {
+    function handleMediaQueryChange(event: MediaQueryListEvent): void {
       if (event.matches) {
-        onMatch();
+        activateView();
       } else {
-        returnRef.originalDestroy();
+        deactivateView();
       }
     }
 
-    mediaQueryList.addEventListener("change", onChange);
+    // Set up media query listener
+    mediaQueryListener = handleMediaQueryChange;
+    mediaQueryList.addEventListener("change", mediaQueryListener);
+
+    // Activate immediately if breakpoint currently matches
+    if (mediaQueryList.matches) {
+      activateView();
+    }
 
     return {
-      destroy,
-      update,
+      update: (updateNode: HTMLElement, updateProps: unknown) => {
+        // Only forward update calls to the active view instance
+        if (activeViewInstance?.update) {
+          activeViewInstance.update(updateNode, updateProps);
+        }
+      },
+      destroy: () => {
+        // Clean up media query listener
+        if (mediaQueryListener) {
+          mediaQueryList.removeEventListener("change", mediaQueryListener);
+          mediaQueryListener = null;
+        }
+        // Deactivate the view if it's currently active
+        deactivateView();
+      },
     };
   };
 }
