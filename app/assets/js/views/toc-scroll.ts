@@ -1,17 +1,21 @@
+import type { ViewFn } from "@icelab/defo";
+
 import { debounce } from "lodash-es";
 
-export function tocScrollViewFn(
+type Props = {
+  anchorContainerSelector?: string;
+  indicatorSelector?: string;
+  linkSelector?: string;
+};
+
+export const tocScrollViewFn: ViewFn<Props> = (
   linkContainerNode: HTMLElement,
   {
     anchorContainerSelector,
     indicatorSelector = ".toc-indicator",
     linkSelector = "a[href^='#']",
-  }: {
-    anchorContainerSelector?: string;
-    indicatorSelector?: string;
-    linkSelector?: string;
-  },
-) {
+  }: Props,
+) => {
   const { anchors, anchorToLinkMap, indicator, links } = findElements({
     anchorContainerSelector,
     indicatorSelector,
@@ -88,7 +92,7 @@ export function tocScrollViewFn(
       links.forEach((node) => node.classList.remove(activeClass));
     },
   };
-}
+};
 
 /**
  * Find all the elements we need:

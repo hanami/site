@@ -1,4 +1,5 @@
-import type { Views } from "@icelab/defo/dist/types";
+import type { Views } from "@icelab/defo";
+
 import { docsearchViewFn } from "./docsearch/docsearch";
 import { sizeToVarViewFn } from "./size-to-var";
 import { tocScrollViewFn } from "./toc-scroll";

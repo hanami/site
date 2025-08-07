@@ -1,3 +1,7 @@
+import type { ViewFn } from "@icelab/defo";
+
+type Props = { blockVarName?: string; inlineVarName?: string; boxSize?: "border" | "content" };
+
 /**
  * sizeToVar
  *
@@ -8,13 +12,9 @@
  * <div data-def-size-to-var='{"blockVarName": "--block"}' style="width: 50px" />
  * --> <html style="--block: 50px">
  */
-export const sizeToVarViewFn = (
+export const sizeToVarViewFn: ViewFn<Props> = (
   node: HTMLElement,
-  {
-    blockVarName,
-    inlineVarName,
-    boxSize = "border",
-  }: { blockVarName?: string; inlineVarName?: string; boxSize?: "border" | "content" },
+  { blockVarName, inlineVarName, boxSize = "border" }: Props,
 ) => {
   if (!blockVarName && !inlineVarName) return;
 

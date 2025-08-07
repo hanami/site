@@ -1,4 +1,6 @@
-type Breakpoint = "sm" | "md" | "lg" | "xl" | "2xl";
+import type { ViewFn, ViewFnReturnValue } from "@icelab/defo";
+
+export type Breakpoint = "sm" | "md" | "lg" | "xl" | "2xl";
 
 // These match Tailwind’s default breakpoints: https://tailwindcss.com/docs/responsive-design
 const breakpointMap: Record<Breakpoint, string> = {
@@ -37,12 +39,6 @@ export function breakpointMatches(): Record<Breakpoint, boolean> {
   return matches;
 }
 
-// TODO: This should really be in Defo
-type DefoViewFunction<T = unknown> = {
-  update?: (node: HTMLElement, props: T) => void;
-  destroy: () => void;
-};
-
 /**
  * Higher-order function that wraps a Defo view function to only activate when specified breakpoints match.
  *
@@ -53,27 +49,32 @@ type DefoViewFunction<T = unknown> = {
  * const responsiveView = breakpointFilter(myViewFn);
  * // Usage: <div data-defo-my-view='{"breakpoints": ["md", "lg"], ...otherProps}'></div>
  */
-export function breakpointFilter<T extends object>(
-  viewFn: (node: HTMLElement, props: T) => DefoViewFunction,
-) {
+export function breakpointFilter<T extends Record<string, unknown>>(viewFn: ViewFn<T>) {
   return (node: HTMLElement, props: { breakpoints: Breakpoint[] } & T) => {
     const { breakpoints, ...restProps } = props;
     const mediaQueries = breakpoints.map(createMediaQueryString).join(", ");
     const mediaQueryList = window.matchMedia(mediaQueries);
 
-    let activeViewInstance: DefoViewFunction | null = null;
+    let activeViewInstance: ViewFnReturnValue<T> | null = null;
     let mediaQueryListener: ((event: MediaQueryListEvent) => void) | null = null;
 
-    function activateView(): void {
-      if (activeViewInstance) return; // Already active
+    async function activateView(): Promise<void> {
+      if (activeViewInstance) {
+        // Already active
+        return;
+      }
 
-      activeViewInstance = viewFn(node, restProps as T);
+      const result = viewFn(node, restProps as any);
+      activeViewInstance = result instanceof Promise ? await result : result;
     }
 
     function deactivateView(): void {
-      if (!activeViewInstance) return; // Already inactive
+      if (activeViewInstance === null) {
+        // Already inactive
+        return;
+      }
 
-      activeViewInstance.destroy();
+      activeViewInstance?.destroy && activeViewInstance.destroy();
       activeViewInstance = null;
     }
 
@@ -95,10 +96,10 @@ export function breakpointFilter<T extends object>(
     }
 
     return {
-      update: (updateNode: HTMLElement, updateProps: unknown) => {
+      update: (newProps: T, prevProps: T) => {
         // Only forward update calls to the active view instance
         if (activeViewInstance?.update) {
-          activeViewInstance.update(updateNode, updateProps);
+          activeViewInstance.update(newProps, prevProps);
         }
       },
       destroy: () => {

@@ -1,5 +1,5 @@
 import { beforeAll, beforeEach, afterEach, expect, test, describe, vi } from "vitest";
-import { breakpointFilter, breakpointMatches } from "./breakpoints";
+import { breakpointFilter, breakpointMatches, type Breakpoint } from "./breakpoints";
 
 // Mock MediaQueryList
 class MockMediaQueryList {
@@ -63,7 +63,9 @@ test("creates a wrapped view function that respects breakpoint matching", () => 
 
   const wrappedViewFn = breakpointFilter(mockViewFn);
   const node = document.createElement("div");
-  const props = { breakpoints: ["md", "lg"], someOtherProp: "value" };
+  const props = { breakpoints: ["md", "lg"], someOtherProp: "value" } satisfies {
+    breakpoints: Breakpoint[];
+  } & Record<string, unknown>;
 
   const result = wrappedViewFn(node, props);
 
@@ -90,7 +92,10 @@ test("does not call view function when breakpoint does not match initially", () 
 
   const wrappedViewFn = breakpointFilter(mockViewFn);
   const node = document.createElement("div");
-  const props = { breakpoints: ["md"] };
+  const props = { breakpoints: ["md"] } satisfies { breakpoints: Breakpoint[] } & Record<
+    string,
+    unknown
+  >;
 
   wrappedViewFn(node, props);
 
@@ -108,7 +113,10 @@ test("calls view function when breakpoint starts matching", () => {
 
   const wrappedViewFn = breakpointFilter(mockViewFn);
   const node = document.createElement("div");
-  const props = { breakpoints: ["md"] };
+  const props = { breakpoints: ["md"] } satisfies { breakpoints: Breakpoint[] } & Record<
+    string,
+    unknown
+  >;
 
   wrappedViewFn(node, props);
 
@@ -131,7 +139,10 @@ test("calls original destroy when breakpoint stops matching", () => {
 
   const wrappedViewFn = breakpointFilter(mockViewFn);
   const node = document.createElement("div");
-  const props = { breakpoints: ["md"] };
+  const props = { breakpoints: ["md"] } satisfies { breakpoints: Breakpoint[] } & Record<
+    string,
+    unknown
+  >;
 
   wrappedViewFn(node, props);
 
@@ -156,12 +167,12 @@ test("properly handles view function with update method", () => {
 
   const wrappedViewFn = breakpointFilter(mockViewFn);
   const node = document.createElement("div");
-  const props = { breakpoints: ["md"] };
+  const props = { breakpoints: ["md"] } satisfies { breakpoints: Breakpoint[] };
 
   const result = wrappedViewFn(node, props);
 
   // Test that update method is available and works
-  const updateArgs = [node, { newProp: "value" }] as const;
+  const updateArgs = [{ newProp: "value" }, props] as const;
   result.update(...updateArgs);
 
   expect(mockUpdate).toHaveBeenCalledWith(...updateArgs);
@@ -178,12 +189,12 @@ test("handles view function without update method", () => {
 
   const wrappedViewFn = breakpointFilter(mockViewFn);
   const node = document.createElement("div");
-  const props = { breakpoints: ["md"] };
+  const props = { breakpoints: ["md"] } satisfies { breakpoints: Breakpoint[] };
 
   const result = wrappedViewFn(node, props);
 
   // Should not throw when calling update
-  expect(() => result.update(node, {})).not.toThrow();
+  expect(() => result.update({}, {})).not.toThrow();
 });
 
 test("properly cleans up event listeners on destroy", () => {
@@ -197,7 +208,7 @@ test("properly cleans up event listeners on destroy", () => {
 
   const wrappedViewFn = breakpointFilter(mockViewFn);
   const node = document.createElement("div");
-  const props = { breakpoints: ["md"] };
+  const props = { breakpoints: ["md"] } satisfies { breakpoints: Breakpoint[] };
 
   const result = wrappedViewFn(node, props);
 
@@ -248,7 +259,7 @@ test("preserves other props when calling wrapped view function", () => {
     customProp: "value",
     anotherProp: 123,
     objectProp: { nested: true },
-  };
+  } satisfies { breakpoints: Breakpoint[] } & Record<string, unknown>;
 
   wrappedViewFn(node, props);
 
