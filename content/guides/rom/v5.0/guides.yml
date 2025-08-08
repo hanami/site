@@ -7,11 +7,11 @@ guides:
     title: Core concepts
   - slug: repositories
     title: Repositories
-  # - slug: changesets
-  #   title: Changesets
+  - slug: changesets
+    title: Changesets
   - slug: sql
     title: SQL
   - slug: http
     title: HTTP
-  # - slug: factories
-  #   title: Factories
+  - slug: factories
+    title: Factories
