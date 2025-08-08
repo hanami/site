@@ -2,8 +2,7 @@
 title: Installation
 ---
 
-Choose one or more adapters that you intend to use, and run the install command
-for each one (or add it to your `Gemfile`)
+Choose one or more adapters that you intend to use, and run the install command for each one (or add it to your `Gemfile`)
 
 Compatible with rom 4.0:
 

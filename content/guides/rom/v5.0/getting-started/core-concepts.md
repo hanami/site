@@ -2,17 +2,11 @@
 title: Core Concepts
 ---
 
-Before you start writing any data access code with ROM, it's a good idea to
-get a high level overview of what each major component is and its overall
-purpose.
+Before you start writing any data access code with ROM, it's a good idea to get a high level overview of what each major component is and its overall purpose.
 
-ROM fundamentally is a series of abstractions built on one another to create
-a very flexible system for accessing and manipulating complex data in your
-applications.
+ROM fundamentally is a series of abstractions built on one another to create a very flexible system for accessing and manipulating complex data in your applications.
 
-The following diagram shows an overview of the ROM architecture and provides an
-outline of how data flows within a ROM based data access layer. Further down
-is a basic explanation of each component.
+The following diagram shows an overview of the ROM architecture and provides an outline of how data flows within a ROM based data access layer. Further down is a basic explanation of each component.
 
 ![ROM Design Overview](images/rom-overview.jpg)
 
@@ -43,8 +37,7 @@ is a basic explanation of each component.
 
 ### Writing Data
 
-Writing data with ROM is fundamentally a process of applying commands to relations
-in order to modify the stored data.
+Writing data with ROM is fundamentally a process of applying commands to relations in order to modify the stored data.
 
 **Step 7.** Application Domain has a need to update an entity.
 
@@ -63,42 +56,22 @@ in order to modify the stored data.
 
 ## Repositories
 
-Repositories provide a powerful CRUD interface built on top of relation,
-mapping and command APIs. They give you a simple way for composing data
-provided by relations, automatically mapping data to structs or custom object
-types and expose simple access to commands with support for changesets.
+Repositories provide a powerful CRUD interface built on top of relation, mapping and command APIs. They give you a simple way for composing data provided by relations, automatically mapping data to structs or custom object types and expose simple access to commands with support for changesets.
 
-An important function of repositories is to act as a boundary between the data
-access logic and Application Domain logic. This boundary helps to reduce
-the complexity of rehydrating your entities and keeps a direct dependency
-on a particular datastore out of your domain.
+An important function of repositories is to act as a boundary between the data access logic and Application Domain logic. This boundary helps to reduce the complexity of rehydrating your entities and keeps a direct dependency on a particular datastore out of your domain.
 
-To learn more about repositories, how to use them and their role in a system
-developed using ROM, check out the
-[Repositories](/%{version}/learn/repositories) section.
+To learn more about repositories, how to use them and their role in a system developed using ROM, check out the [Repositories](/%{version}/learn/repositories) section.
 
 ^INFO
-  Repositories are completely optional and while they provide powerful features
-  for encapsulating data access logic, they may not make sense for some
-  simple CRUD applications or one-off scripts.
+  Repositories are completely optional and while they provide powerful features   for encapsulating data access logic, they may not make sense for some   simple CRUD applications or one-off scripts.
 ^
 
 ## Relations
 
-A relation is defined as a set of tuples identified by unique pairs of
-attributes and their values. In ROM it is an object that responds to `#each`
-which yields hashes. It is backed by a [dataset object](#datasets) provided by
-the adapter.
+A relation is defined as a set of tuples identified by unique pairs of attributes and their values. In ROM it is an object that responds to `#each` which yields hashes. It is backed by a [dataset object](#datasets) provided by the adapter.
 
 
-An example of relations are tables in a SQL server. Tables can reference
-other tables and sometimes all of the pieces for some "view" of the data are
-spread out among two or more tables (think Multi Table Inheritance). In
-situations like this ROM really shines because relations can be created for
-each table and composed together to pull the data into a coherent form then
-finally mapped to an output object which your application can depend on safely
-without worrying about shared state, sessions or identity mapping commonly
-used in other ORMs.
+An example of relations are tables in a SQL server. Tables can reference other tables and sometimes all of the pieces for some "view" of the data are spread out among two or more tables (think Multi Table Inheritance). In situations like this ROM really shines because relations can be created for each table and composed together to pull the data into a coherent form then finally mapped to an output object which your application can depend on safely without worrying about shared state, sessions or identity mapping commonly used in other ORMs.
 
 To learn more about relations, check out the [Relations](/%{version}/learn/core/relations) guide.
 

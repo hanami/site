@@ -2,26 +2,17 @@
 title: Schemas
 ---
 
-Schemas define explicit attribute names and types within a relation. All adapters
-support relation schemas, and adapter-specific extensions can be provided as well,
-for example `rom-sql` extends schema DSL with support for database-specific types.
+Schemas define explicit attribute names and types within a relation. All adapters support relation schemas, and adapter-specific extensions can be provided as well, for example `rom-sql` extends schema DSL with support for database-specific types.
 
-Apart from adapter-specific extensions, schemas can be *extended by you* since
-you can define your own *types* as well as your own custom methods available on
-attribute objects.
+Apart from adapter-specific extensions, schemas can be *extended by you* since you can define your own *types* as well as your own custom methods available on attribute objects.
 
 ## Why?
 
-First of all, because schemas give an explicit definition for the data structures
-a given relation returns.
+First of all, because schemas give an explicit definition for the data structures a given relation returns.
 
-Both **relations** and **commands** use schemas to process data, this gives
-you type-safe commands out-of-the-box, with optional ability to perform low-level
-database coercions (like coercing a hash to a PG hash etc.), as well as optional
-coercions when reading data.
+Both **relations** and **commands** use schemas to process data, this gives you type-safe commands out-of-the-box, with optional ability to perform low-level database coercions (like coercing a hash to a PG hash etc.), as well as optional coercions when reading data.
 
-Furthermore, schemas can provide meta-data that can be used to automate many common
-tasks, like generating relations automatically for associations.
+Furthermore, schemas can provide meta-data that can be used to automate many common tasks, like generating relations automatically for associations.
 
 ## Defining schemas explicitly
 
@@ -60,9 +51,7 @@ end
 
 ## Types namespace
 
-All builtin types are defined in `ROM::Types` namespace, and individual adapters
-may provide their own namespace which extends the builtin one. For example `rom-sql`
-provides `ROM::SQL::Types` and `ROM::SQL::Types::PG`.
+All builtin types are defined in `ROM::Types` namespace, and individual adapters may provide their own namespace which extends the builtin one. For example `rom-sql` provides `ROM::SQL::Types` and `ROM::SQL::Types::PG`.
 
 ## Primary keys
 
@@ -115,8 +104,7 @@ end
 
 ## Annotations
 
-Schema types provide an API for adding arbitrary meta-information. This is mostly
-useful for adapters, or anything that may need to introspect relation schemas.
+Schema types provide an API for adding arbitrary meta-information. This is mostly useful for adapters, or anything that may need to introspect relation schemas.
 
 Here's an example:
 
@@ -128,8 +116,7 @@ class Users < ROM::Relation[:http]
 end
 ```
 
-Here we defined a `:namespace` meta-information, that can be used accessed via
-`:name` type:
+Here we defined a `:namespace` meta-information, that can be used accessed via `:name` type:
 
 ``` ruby
 Users.schema[:name].meta[:namespace] # 'details'
@@ -137,9 +124,7 @@ Users.schema[:name].meta[:namespace] # 'details'
 
 ## Using `write` types
 
-Relations commands will automatically use schema attributes when processing the input.
-This allows us to perform database-specific coercions, setting default values or applying
-low-level constraints.
+Relations commands will automatically use schema attributes when processing the input. This allows us to perform database-specific coercions, setting default values or applying low-level constraints.
 
 Let's say our setup requires generating a UUID prior executing a command:
 
@@ -155,14 +140,11 @@ class Users < ROM::Relation[:http]
 end
 ```
 
-Now when you persist data using [repositories](//guide/repositories) or
-[commands](//page/commands), your schema will be used
-to process the input data, and our `:id` value will be handled by the `UUID` type.
+Now when you persist data using [repositories](//guide/repositories) or [commands](//page/commands), your schema will be used to process the input data, and our `:id` value will be handled by the `UUID` type.
 
 ## Using `read` types
 
-Apart from `write` types, you can also specify `read` types, these are used by relations
-when they read data from a database. You can define them using `:read` option:
+Apart from `write` types, you can also specify `read` types, these are used by relations when they read data from a database. You can define them using `:read` option:
 
 ``` ruby
 class Users < ROM::Relation[:http]
@@ -178,10 +160,7 @@ Now when `Users` relation reads it data, `birthday` values will be processed via
 
 ## Type System
 
-Schemas use a type system from [dry-types](http://dry-rb.org/gems/dry-types) and
-you can define your own schema types however you want. What types you need really
-depends on your application requirements, the adapter you're using, specific use cases
-of your application and so on.
+Schemas use a type system from [dry-types](http://dry-rb.org/gems/dry-types) and you can define your own schema types however you want. What types you need really depends on your application requirements, the adapter you're using, specific use cases of your application and so on.
 
 Here are a couple of guidelines that should help you in making right decisions:
 
@@ -189,16 +168,9 @@ Here are a couple of guidelines that should help you in making right decisions:
   data received at the HTTP boundary (ie rack request params)
 * Coercion logic for input should be low-level (eg. Hash => PGHash in rom-sql)
 * Default values should be used as a low-level guarantee that some value is
-  **always set** before making a change in your database. Generating a unique id
-  is a good example. For default values that are closer to your application domain
-  it's better to handle this outside of the persistence layer. For example, setting
-  `draft` as the default value for post's `:status` attribute is part of your domain
-  more than it is part of your persistence layer.
+  **always set** before making a change in your database. Generating a unique id   is a good example. For default values that are closer to your application domain   it's better to handle this outside of the persistence layer. For example, setting   `draft` as the default value for post's `:status` attribute is part of your domain   more than it is part of your persistence layer.
 * Strict types *can be used* and they will raise `TypeError` when invalid data
-  was accidentally passed to a command. Use this with caution, typically you want
-  to validate the data prior sending them to a command, but there might be use cases
-  where you expect data to be valid already, and any type error *is indeed an exception*
-  and you want your system to crash
+  was accidentally passed to a command. Use this with caution, typically you want   to validate the data prior sending them to a command, but there might be use cases   where you expect data to be valid already, and any type error *is indeed an exception*   and you want your system to crash
 
 ## Learn more
 

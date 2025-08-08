@@ -69,11 +69,7 @@ user.full_name
 
 ### How struct classes are determined
 
-Mappers will look for struct classes based on `Relation#name`, but this is not restricted
-to canonical names of your relations, as they can be aliased too. For instance, you may
-define `:admins` relation, which is restricted to users with `type` set to `"Admin"`. Then
-if you have a `Entities::Admin` class, it will be used as the struct class for `:admins`
-relation.
+Mappers will look for struct classes based on `Relation#name`, but this is not restricted to canonical names of your relations, as they can be aliased too. For instance, you may define `:admins` relation, which is restricted to users with `type` set to `"Admin"`. Then if you have a `Entities::Admin` class, it will be used as the struct class for `:admins` relation.
 
 ``` ruby
 module Entities
@@ -110,8 +106,7 @@ admin.admin?
 
 ## Mapping to custom objects
 
-You can ask a relation to instantiate your own objects via `Relation#map_to` interface.
-Your object class must have a constructor which accepts a hash with attributes.
+You can ask a relation to instantiate your own objects via `Relation#map_to` interface. Your object class must have a constructor which accepts a hash with attributes.
 
 Here's a simple example:
 

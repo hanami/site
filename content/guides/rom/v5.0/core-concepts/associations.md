@@ -2,14 +2,11 @@
 title: Associations
 ---
 
-Associations in ROM are based on Relation API, you can configure them using `associations`
-block in schema definition. All adapters have access to this API and you can define
-associations between different databases too.
+Associations in ROM are based on Relation API, you can configure them using `associations` block in schema definition. All adapters have access to this API and you can define associations between different databases too.
 
 ## Association model explained
 
-Using associations means **composing relations**, it is really important to understand this,
-as it gives you a lot of freedom in the way you fetch complex data structures from your database.
+Using associations means **composing relations**, it is really important to understand this, as it gives you a lot of freedom in the way you fetch complex data structures from your database.
 
 Here's how it works using plain Ruby:
 
@@ -27,8 +24,7 @@ tasks_for_users.call([{ id: 2, name: "John" }])
 # [{ id: 2, user_id: 2, title: "John's task" }]
 ```
 
-This example shows **the exact conceptual model of associations in ROM**. Here are important parts
-to understand:
+This example shows **the exact conceptual model of associations in ROM**. Here are important parts to understand:
 
 - `tasks_for_users` is an association **function** which returns all tasks matching particular users
 - `user_id` is **our combine-key**, it **must be included** in the resulting data and it's used
@@ -96,10 +92,7 @@ Notice that:
   users, and `Users` and `Tasks` relations are just collections of data
 - We specified `:user_id` as our combine-key, so that data can be merged into a nested data structure via `combine` method
 
-This model is used by all adapters, even when you don't see it, it is there. In
-rom-sql default association views are generated for you, which is the whole magic
-behind associations in SQL, this is why in case of SQL, we could translate our
-previous example to this:
+This model is used by all adapters, even when you don't see it, it is there. In rom-sql default association views are generated for you, which is the whole magic behind associations in SQL, this is why in case of SQL, we could translate our previous example to this:
 
 ``` ruby
 require "rom"

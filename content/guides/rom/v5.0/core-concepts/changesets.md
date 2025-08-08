@@ -2,18 +2,13 @@
 title: Changesets
 ---
 
-Changesets are an advanced abstraction for making changes in your database. They
-work on top of commands, and provide additional data mapping functionality and
-have support for associating data.
+Changesets are an advanced abstraction for making changes in your database. They work on top of commands, and provide additional data mapping functionality and have support for associating data.
 
-Built-in changesets support all core command types, you can also define custom
-changeset classes and connect them to custom commands.
+Built-in changesets support all core command types, you can also define custom changeset classes and connect them to custom commands.
 
 ## Working with changesets
 
-You can get a changeset object via `Relation#changeset` interface. A changeset object
-wraps input data, and may optionally convert it into a representation that's compatible
-with your database schema.
+You can get a changeset object via `Relation#changeset` interface. A changeset object wraps input data, and may optionally convert it into a representation that's compatible with your database schema.
 
 Assuming you have a users relation available:
 
@@ -46,27 +41,20 @@ users.by_pk(4).changeset(:delete).commit
 
 ### Restricting relations for changesets
 
-In the examples above, we used `Relation#by_pk` method, this is a built-in method which
-restricts a relation by its primary key; however, you can use any method that's available,
-including native adapter query methods.
+In the examples above, we used `Relation#by_pk` method, this is a built-in method which restricts a relation by its primary key; however, you can use any method that's available, including native adapter query methods.
 
 ## Changeset Mapping
 
-Changesets have an extendible data-pipe mechanism available via `Changeset.map`
-(for preconfigured mapping) and `Changeset#map` (for on-demand run-time mapping).
+Changesets have an extendible data-pipe mechanism available via `Changeset.map` (for preconfigured mapping) and `Changeset#map` (for on-demand run-time mapping).
 
-Changeset mappings support all transformation functions from [transproc](https://github.com/solnic/transproc) project,
-and in addition to that we have:
+Changeset mappings support all transformation functions from [transproc](https://github.com/solnic/transproc) project, and in addition to that we have:
 
 * `:add_timestamps`–sets `created_at` and `updated_at` timestamps (don't forget to add those fields to the table in case of using `rom-sql`)
 * `:touch`–sets `updated_at` timestamp
 
 ### Pre-configured mapping
 
-If you want to process data before sending them to be persisted, you can define
-a custom Changeset class and specify your own mapping. Let's say we have a nested
-hash with `address` key but we store it as a flat structure with address attributes
-having `address_*` prefix:
+If you want to process data before sending them to be persisted, you can define a custom Changeset class and specify your own mapping. Let's say we have a nested hash with `address` key but we store it as a flat structure with address attributes having `address_*` prefix:
 
 ``` ruby
 class NewUserChangeset < ROM::Changeset::Create
@@ -91,8 +79,7 @@ changeset.commit
 
 ### Custom mapping block
 
-If you don't want to use built-in transformations, simply configure a mapping and
-pass `tuple` argument to the map block:
+If you don't want to use built-in transformations, simply configure a mapping and pass `tuple` argument to the map block:
 
 ``` ruby
 class NewUserChangeset < ROM::Changeset::Create
@@ -117,10 +104,7 @@ user_repo.create(changeset)
 
 ### On-demand mapping
 
-There are situations where you would like to perform an additional mapping but adding
-a special changeset class would be an overkill. That's why it's possible to apply
-additional mappings at run-time without having to use a custom changeset class.
-To do this simply use `Changeset#map` method:
+There are situations where you would like to perform an additional mapping but adding a special changeset class would be an overkill. That's why it's possible to apply additional mappings at run-time without having to use a custom changeset class. To do this simply use `Changeset#map` method:
 
 ``` ruby
 changeset = users
@@ -133,8 +117,7 @@ changeset.commit(changeset)
 
 ### Associating data
 
-Changesets can be associated with each other using `Changeset#associate`
-method, which will automatically set foreign keys for you, based on schema associations.
+Changesets can be associated with each other using `Changeset#associate` method, which will automatically set foreign keys for you, based on schema associations.
 
 Let's define `:users` relation that has many `:tasks`:
 
@@ -156,8 +139,7 @@ class Tasks < ROM::Relation[:sql]
 end
 ```
 
-With associations established in the schema, we can easily associate data using
-changesets and commit them in a transaction:
+With associations established in the schema, we can easily associate data using changesets and commit them in a transaction:
 
 ``` ruby
 task = tasks.transaction do

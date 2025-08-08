@@ -2,8 +2,7 @@
 title: Commands
 ---
 
-Commands are used to make changes in your data. Every adapter provides its own command
-specializations, that can use database-specific features.
+Commands are used to make changes in your data. Every adapter provides its own command specializations, that can use database-specific features.
 
 Core commands include following types:
 
@@ -13,8 +12,7 @@ Core commands include following types:
 
 ## Working with commands
 
-You can get a command object via `Relation#command` interface. All core command types are
-supported by this method.
+You can get a command object via `Relation#command` interface. All core command types are supported by this method.
 
 Assuming you have a users relation available:
 
@@ -50,8 +48,7 @@ delete_user.call
 
 ## Using custom command types
 
-You can define custom command types too. This is useful when the logic is complex and you prefer
-to encapsulate it in a single class.
+You can define custom command types too. This is useful when the logic is complex and you prefer to encapsulate it in a single class.
 
 ``` ruby
 class MyCommand < ROM::SQL::Commands::Create
