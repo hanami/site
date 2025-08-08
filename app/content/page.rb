@@ -80,7 +80,12 @@ module Site
 
       ContentPipeline = HTMLPipeline.new(
         convert_filter: HTMLPipeline::ConvertFilter::MarkdownFilter.new(
-          context: {markdown: {extension: {alerts: true}}}
+          context: {
+            markdown: {
+              extension: {alerts: true},
+              render: {unsafe: true}
+            }
+          }
         ),
         node_filters: [
           Content::Filters::LinkableHeadingsFilter.new,

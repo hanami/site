@@ -5,13 +5,13 @@ guides:
   #   title: Framework integrations
   - slug: core-concepts
     title: Core concepts
-# - slug: repositories
-#   title: Repositories
-# - slug: changesets
-#   title: Changesets
-# - slug: sql
-#   title: SQL
-# - slug: http
-#   title: HTTP
-# - slug: factories
-#   title: Factories
+  - slug: repositories
+    title: Repositories
+  # - slug: changesets
+  #   title: Changesets
+  - slug: sql
+    title: SQL
+  - slug: http
+    title: HTTP
+  # - slug: factories
+  #   title: Factories
