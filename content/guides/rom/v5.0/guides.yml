@@ -1,10 +1,10 @@
 guides:
   - slug: getting-started
     title: Getting started
-# - slug: framework-integrations
-#   title: Framework integrations
-# - slug: core-concepts
-#   title: Core concepts
+  # - slug: framework-integrations
+  #   title: Framework integrations
+  - slug: core-concepts
+    title: Core concepts
 # - slug: repositories
 #   title: Repositories
 # - slug: changesets
