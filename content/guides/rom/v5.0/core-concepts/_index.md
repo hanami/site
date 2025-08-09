@@ -11,7 +11,7 @@ pages:
 - mappers
 ---
 
-In this section you can learn about APIs that are common for all adapters. Once you understand basic concepts, you can check out [Repositories](/%{version}/learn/repositories) section.
+In this section you can learn about APIs that are common for all adapters. Once you understand basic concepts, you can check out [Repositories](//guide/repositories) section.
 
 - [Relations](//page/relations) explains the purpose and basic usage of relations
 - [Schemas](//page/schemas) explains how you can leverage relation schemas

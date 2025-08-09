@@ -6,12 +6,12 @@ Rails ActiveRecord is the most popular persistence framework in ruby land. Deplo
 
 Our intention for this guide is to act as a primer for anyone familiar with Rails' ActiveRecord and looking for a quick start guide. Examples in each set will show how ActiveRecord accomplishes each task followed by an example with the equivalent using ROM.
 
-All ROM examples are based on `rom-sql` which is an adapter needed to use SQL databases with ROM. Information on installing and configuring rom-sql for your database can be found in the [SQL](/%{version}/learn/sql) guide.
+All ROM examples are based on `rom-sql` which is an adapter needed to use SQL databases with ROM. Information on installing and configuring rom-sql for your database can be found in the [SQL](//guide/sql) guide.
 
 > [!NOTE]
 > Examples below assume a configured environment for each framework. For ROM examples this means an initialized `ROM::Container` with each component registered.
 >
->  For information on how to configure a ROM environment see either [Setup DSL](/%{version}/learn/getting-started/setup-dsl) or [Rails Setup](/%{version}/learn/getting-started/rails-setup) guides.
+>  For information on how to configure a ROM environment see either [Setup DSL](//page/setup-dsl) or [Rails Setup](//page/rails-setup) guides.
 
 > [!NOTE]
 > Both frameworks have many similar APIs but philosophically they are completely different. In this guide, we attempt to highlight these differences and provide context for why we chose a different path. That is not to say ROM is better than ActiveRecord or vise-versa, it's that they're different and each has its own strengths and weaknesses.
@@ -95,7 +95,7 @@ user.last_name
 #> "Doe"
 ```
 
-For a brief overview and links to more in-depth information about relations see the Relations section in our [Core Concepts](/%{version}/learn/getting-started/core-concepts#relations) guide.
+For a brief overview and links to more in-depth information about relations see the Relations section in our [Core Concepts](//page/core-concepts#relations) guide.
 
 ## Queries
 
@@ -431,6 +431,6 @@ end
 users_relation.changeset(NewUser, user_name: "Jane").commit
 ```
 
-## NEXT
+## Next
 
-To further understand ROM it is recommended to review the [Core Concepts](/%{version}/learn/getting-started/core-concepts) page followed by the guides under Core.
+To further understand ROM it is recommended to review the [Core Concepts](//page/core-concepts) page followed by the guides under Core.
