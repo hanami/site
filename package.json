@@ -12,6 +12,7 @@
     "@icelab/defo": "^1.0.1",
     "@tailwindcss/cli": "^4.1.11",
     "hanami-assets": "^2.2.1",
+    "js.foresight": "^3.3.0",
     "lodash-es": "^4.17.21",
     "tailwindcss": "^4.1.11"
   },

@@ -21,7 +21,10 @@
     />
     <%= javascript_tag "app", async: true %>
   </head>
-  <body class="font-sans text-gray-800 bg-white">
+  <body
+    class="font-sans text-gray-800 bg-white"
+    data-defo-foresight="<%= { elementSelector: "a[href^='/']" }.to_json %>"
+  >
     <div class="flex flex-col max-w-[1540px] mx-auto">
       <header
         class="
