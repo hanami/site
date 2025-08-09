@@ -4,6 +4,9 @@ require "hanami"
 
 module Site
   class App < Hanami::App
+    require "site/content_file_middleware"
+    config.middleware.use ContentFileMiddleware
+
     config.actions.content_security_policy[:script_src] += " 'unsafe-inline'"
     config.actions.content_security_policy[:connect_src] += " https://*.algolia.net https://*.algolianet.com https://*.algolia.io"
 
