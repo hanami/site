@@ -1,3 +1,9 @@
 :root {
   --hn-nav-height: 69px;
 }
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
