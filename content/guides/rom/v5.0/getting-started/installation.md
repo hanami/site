@@ -34,11 +34,8 @@ Outdated (help wanted!) adapters:
 |Event Store|`gem install rom-event_store`|
 |RethinkDB|`gem install rom-rethinkdb`| - |
 
-^INFO
-#### How to choose an adapter?
-
-The most popular adapter is `rom-sql`, but some projects connect to an HTTP API, or need the expandability of MongoDB and CouchDB. It's up to you to choose the appropriate solution for your application's needs.
-^
+> [!TIP]
+> **How to choose an adapter?** The most popular adapter is rom-sql, but some projects connect to an HTTP API, or need the expandability of MongoDB and CouchDB. It's up to you to choose the appropriate solution for your application's needs.
 
 ## Install rom
 
@@ -47,8 +44,8 @@ Simply install `rom` or add it to your `Gemfile`. Adapters will be auto-loaded b
 For example, if you'd like to use ROM with an SQL database, add following gems to you `Gemfile`:
 
 ``` ruby
-gem 'rom'
-gem 'rom-sql'
+gem "rom"
+gem "rom-sql"
 ```
 
 ## Next
@@ -57,10 +54,9 @@ ROM needs a setup phase to provide a persistence environment for your entities. 
 
 Depending on your application needs, you may want to use different setup strategies:
 
-* [Setup DSL](/%{version}/learn/getting-started/setup-dsl) - suitable for small scripts
-* [Rails](/%{version}/learn/getting-started/rails-setup) - setup integrated with Rails
-* [Explicit](/%{version}/learn/advanced/explicit-setup) - suitable for custom environments (**advanced usage**)
+* [Setup DSL](//page/setup-dsl) - suitable for small scripts
+* [Rails](//page/rails-setup) - setup integrated with Rails
+* [Explicit](//guide/advanced/explicit-setup) - suitable for custom environments (**advanced usage**)
 
-^INFO
-Most guide examples are written specifically for the `rom-sql` adapter. If you are using a different one, consult that adapter's documentation as well.
-^
+> [!NOTE]
+> Most guide examples are written specifically for the rom-sql adapter. If you are using a different one, consult that adapter's documentation as well.

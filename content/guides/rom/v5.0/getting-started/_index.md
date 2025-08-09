@@ -1,9 +1,11 @@
 ---
-title: Getting Started
+title: Introduction
 pages:
-- installation
-- core-concepts
 - compared-to-activerecord
+- core-concepts
+- installation
+- setup-dsl
+- rails-setup
 - glossary
 ---
 

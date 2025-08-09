@@ -14,26 +14,17 @@ The following diagram shows an overview of the ROM architecture and provides an 
 
 ### Reading Data
 
-**Step 1:** Application Domain has a need for a particular entity/entities so it
-            calls into the appropriate repository and asks for an entity
+**Step 1:** Application Domain has a need for a particular entity/entities so it calls into the appropriate repository and asks for an entity
 
-**Step 2.** The Repository accepts the request and combines all of the
-            related associations together to create a datastore-specific query
-            for the data
+**Step 2.** The Repository accepts the request and combines all of the related associations together to create a datastore-specific query for the data
 
-**Step 3.** Once a relation has been composed of all needed restrictions or
-            selections, the relations `#each` method is called which triggers
-            the <mark>dataset</mark> to fetch the data.
+**Step 3.** Once a relation has been composed of all needed restrictions or selections, the relations `#each` method is called which triggers the `dataset` to fetch the data.
 
-**Step 4.** Raw data in the form of tuples are collected from the datastore and
-            returned to the relation. Before proceeding each tuple is passed
-            through an <mark>output schema</mark>.
+**Step 4.** Raw data in the form of tuples are collected from the datastore and returned to the relation. Before proceeding each tuple is passed through an `output schema`.
 
-**Step 5.** The relation, if mappers are configured, maps the tuples into an
-            output entity/entities.
+**Step 5.** The relation, if mappers are configured, maps the tuples into an output entity/entities.
 
-**Step 6.** The repository passes the entity/entities on through to the
-            Application Domain.
+**Step 6.** The repository passes the entity/entities on through to the Application Domain.
 
 ### Writing Data
 
@@ -41,18 +32,11 @@ Writing data with ROM is fundamentally a process of applying commands to relatio
 
 **Step 7.** Application Domain has a need to update an entity.
 
-**Step 8.** The repository, accepting either an entity object or a raw `Hash`
-            representing the entity, configures either a changeset or direct
-            command on relation to make changes to the datastore.
+**Step 8.** The repository, accepting either an entity object or a raw `Hash` representing the entity, configures either a changeset or direct command on relation to make changes to the datastore.
 
-**Step 8.1.** Before the Changeset passes itself to the underlying command, you
-              can map the Changeset data into a structure that's more akin to what
-              your datastore looks like.
+**Step 8.1.** Before the Changeset passes itself to the underlying command, you can map the Changeset data into a structure that's more akin to what your datastore looks like.
 
-**Step 9.** Command processes one or more tuples through the
-            <mark>input schema</mark> then executes against the datastore which
-            updates the data.
-
+**Step 9.** Command processes one or more tuples through the `input schema` then executes against the datastore which updates the data.
 
 ## Repositories
 
@@ -60,27 +44,24 @@ Repositories provide a powerful CRUD interface built on top of relation, mapping
 
 An important function of repositories is to act as a boundary between the data access logic and Application Domain logic. This boundary helps to reduce the complexity of rehydrating your entities and keeps a direct dependency on a particular datastore out of your domain.
 
-To learn more about repositories, how to use them and their role in a system developed using ROM, check out the [Repositories](/%{version}/learn/repositories) section.
+To learn more about repositories, how to use them and their role in a system developed using ROM, check out the [Repositories](//guide/repositories) guide.
 
-^INFO
-  Repositories are completely optional and while they provide powerful features   for encapsulating data access logic, they may not make sense for some   simple CRUD applications or one-off scripts.
-^
+> [!NOTE]
+> Repositories are completely optional and while they provide powerful features for encapsulating data access logic, they may not make sense for some simple CRUD applications or one-off scripts.
 
 ## Relations
 
 A relation is defined as a set of tuples identified by unique pairs of attributes and their values. In ROM it is an object that responds to `#each` which yields hashes. It is backed by a [dataset object](#datasets) provided by the adapter.
 
-
 An example of relations are tables in a SQL server. Tables can reference other tables and sometimes all of the pieces for some "view" of the data are spread out among two or more tables (think Multi Table Inheritance). In situations like this ROM really shines because relations can be created for each table and composed together to pull the data into a coherent form then finally mapped to an output object which your application can depend on safely without worrying about shared state, sessions or identity mapping commonly used in other ORMs.
 
-To learn more about relations, check out the [Relations](/%{version}/learn/core/relations) guide.
-
+To learn more about relations, check out the [Relations](//guide/core-concepts/relations) guide.
 
 ## Commands
 
 Commands in ROM are intended to safely modify data. Commands can be used to create, update and delete. They are usually provided by the adapter, but you may define your own.
 
-To learn more about commands, check out the [Commands](/%{version}/learn/core/commands) guide.
+To learn more about commands, check out the [Commands](//guide/core-concepts/commands) guide.
 
 ## Relation Mappers
 
@@ -113,4 +94,4 @@ Gateways are provided by the adapter and after ROM finishing loading they're gen
 
 Only exposed as a private interface to [Relations](#relations), datasets act as the middle-man between relations and datastores.
 
-For example, in the SQL adapter, datasets provide the <mark>join</mark> functionality where columns in other tables can be joined together via <mark>foreign_keys</mark>. This is a prime example of relations (thru datasets) taking advantage of what the storage engine can offer while also hiding those implementation details away from the application.
+For example, in the SQL adapter, datasets provide the `join` functionality where columns in other tables can be joined together via `foreign_keys`. This is a prime example of relations (thru datasets) taking advantage of what the storage engine can offer while also hiding those implementation details away from the application.
