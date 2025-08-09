@@ -13,3 +13,5 @@ guides:
     title: HTTP
   - slug: factories
     title: Factories
+  - slug: advanced
+    title: Advanced
