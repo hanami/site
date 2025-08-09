@@ -28,7 +28,9 @@ RSpec.feature "Guides / Index page" do
 
     within "[data-testid=rom-guides]" do
       expect(page.find_all("li a").map(&:text)[0..2]).to eq [
-        "Getting started"
+        "Getting started",
+        "Core concepts",
+        "Repositories"
       ]
     end
   end
