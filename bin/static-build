@@ -17,7 +17,7 @@ bundle exec rake sitemap:create
 # Build with Parklife - and forward arguments sent to this script.
 bundle exec parklife build "$@"
 
-# Copy content files (images, etc.) to build/
+# Copy static content files to build/
 bundle exec rake content:copy_files
 
 # Copy all public resources to build/
@@ -26,6 +26,7 @@ if [ -d public ]; then
 fi
 
 # List all files in the build (useful for debugging).
+echo
 find build -type f | sort
 
 bin/generate-redirects

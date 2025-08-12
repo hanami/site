@@ -1,49 +1,33 @@
 # frozen_string_literal: true
 
 namespace :content do
-  desc "Copy content files (images, etc.) to build directory"
+  desc "Copy static content files to build directory"
   task :copy_files do
+    require_relative "../site/content_file_middleware"
     require "fileutils"
-
-    # Mimic the same file extensions and path mapping logic from ContentFileMiddleware
-    allowed_extensions = %w[.png .jpg .jpeg .gif .svg]
+    require "pathname"
 
     puts "Copying content files to build directory..."
 
-    # Find all allowed file types in content/
-    Dir.glob("content/**/*").each do |file|
+    content_pattern = "content/**/*.{#{Site::ContentFileMiddleware::ALLOWED_FILE_EXTENSIONS.join(",")}}"
+    content_dir = Pathname("content")
+
+    Dir.glob(content_pattern).each do |file|
       next unless File.file?(file)
-      next unless allowed_extensions.include?(File.extname(file).downcase)
 
-      # Extract the relative path from content/
-      rel_path = file.sub("content/", "")
+      # Build a path known to handlers/mappers in content file middlware
+      rel_path = Pathname(file).relative_path_from(content_dir).to_s
+      url_path = "/#{rel_path}"
 
-      # Handle guides: content/guides/org/version/path -> build/guides/org/version/path
-      if rel_path.match?(%r{^guides/([^/]+)/([^/]+)/(.+)$})
-        match = rel_path.match(%r{^guides/([^/]+)/([^/]+)/(.+)$})
-        org = match[1]
-        version = match[2]
-        path = match[3]
-        dest_file = "build/guides/#{org}/#{version}/#{path}"
+      handler = Site::ContentFileMiddleware::PATH_HANDLERS.find { |h| url_path.match?(h[:pattern]) }
+      next unless handler
 
-      # Handle docs: content/docs/org/slug/version/path -> build/docs/slug/version/path
-      elsif rel_path.match?(%r{^docs/([^/]+)/([^/]+)/([^/]+)/(.+)$})
-        match = rel_path.match(%r{^docs/([^/]+)/([^/]+)/([^/]+)/(.+)$})
-        org = match[1]
-        slug = match[2]
-        version = match[3]
-        path = match[4]
-        dest_file = "build/docs/#{slug}/#{version}/#{path}"
-
-      else
-        # Skip files that don't match expected patterns
-        next
-      end
-
-      # Create destination directory if it doesn't exist
-      FileUtils.mkdir_p(File.dirname(dest_file))
+      # Convert to a path for locating the file
+      content_path = handler[:mapper].call(url_path.match(handler[:pattern]))
+      dest_file = content_path.sub("content/", "build/")
 
       # Copy the file
+      FileUtils.mkdir_p(File.dirname(dest_file))
       FileUtils.cp(file, dest_file)
       puts "  Copied: #{file} -> #{dest_file}"
     end
