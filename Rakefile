@@ -4,6 +4,9 @@ require "hanami/rake_tasks"
 require "rubocop/rake_task"
 require "sitemap_generator/tasks"
 
+# Load custom rake tasks
+Dir["lib/tasks/**/*.rake"].each { |task| load task }
+
 RuboCop::RakeTask.new
 
 desc "Run code quality checks"
