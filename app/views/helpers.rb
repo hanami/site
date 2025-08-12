@@ -7,8 +7,8 @@ module Site
       def org_name(org_slug)
         case org_slug
         when "hanami" then "Hamami"
-        when "dry-rb" then "Dry RB"
-        when "rom" then "ROM"
+        when "dry" then "Dry"
+        when "rom" then "Rom"
         else
           raise ArgumentError, "unknown org slug '#{org_slug}'"
         end

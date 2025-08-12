@@ -20,7 +20,7 @@ RSpec.feature "Guides / Index page" do
       expect(page.find_link("v2.1")[:href]).to eq "/guides/hanami/v2.1"
     end
 
-    within "[data-testid=dry-rb-guides]" do
+    within "[data-testid=dry-guides]" do
       expect(page.find_all("li a").map(&:text)[0..2]).to eq [
         "Getting started"
       ]
