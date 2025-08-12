@@ -34,7 +34,7 @@ end
 ### Connect to multiple databases
 
 Sometimes you have multiple data sources. You can provide multiple
-[gateway](//page/glossary/#gateway) configurations with a name
+[gateway](//page/glossary#gateway) configurations with a name
 hash.
 
 ```ruby
