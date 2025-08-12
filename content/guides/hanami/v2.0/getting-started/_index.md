@@ -147,7 +147,7 @@ $ open http://localhost:2300
 
 You should see "Hello from Hanami".
 
-<p><img src="//file/hello-from-hanami.png" alt="Hello from Hanami" class="img-responsive"></p>
+![Hello from Hanami](//file/hello-from-hanami.png")
 
 
 ## Adding our first functionality

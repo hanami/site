@@ -172,7 +172,7 @@ $ open http://localhost:2300
 
 You should see the Hanami welcome screen. We're delighted to have you here!
 
-<p><img src="//file/hanami-welcome.png" alt="Hanami welcome screen" class="img-responsive"></p>
+![Hanami welcome screen](//file/hanami-welcome.png)
 
 ## Building a Hanami app
 

@@ -151,7 +151,7 @@ module Bookshelf
 end
 ```
 
-<p><img src="/v2.2/actions/404-response.png" alt="Hanami 404 response" class="img-responsive"></p>
+![Hanami 404 response](//file/404-response.png)
 
 As with `Response#status=`, you may use a symbolic status name instead of an integer.
 
