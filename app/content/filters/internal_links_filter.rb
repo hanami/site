@@ -21,7 +21,7 @@ module Site
       # }
       # ```
       class InternalLinksFilter < HTMLPipeline::NodeFilter
-        SELECTOR = Selma::Selector.new(match_element: "a")
+        SELECTOR = Selma::Selector.new(match_element: "a, img")
 
         def selector = SELECTOR
 
@@ -30,24 +30,31 @@ module Site
         end
 
         def handle_element(element)
-          href = element["href"]
-
-          begin
-            uri = URI.parse(href)
-          rescue
-            return
+          if element.tag_name == "a"
+            return unless element["href"]
+            element["href"] = rewrite_url(element["href"])
+          elsif element.tag_name == "img"
+            return unless element["src"]
+            # binding.irb
+            element["src"] = rewrite_url(element["src"])
           end
-
-          return unless uri.scheme.nil? && !uri.host.to_s.empty?
-
-          replacement_proc = internal_links[uri.host.to_sym]
-
-          return unless replacement_proc
-
-          element["href"] = replacement_proc.call(uri.path)
         end
 
         private
+
+        def rewrite_url(url)
+          begin
+            uri = URI.parse(url)
+          rescue
+            return url
+          end
+          return url unless uri.scheme.nil? && !uri.host.to_s.empty?
+
+          replacement_proc = internal_links[uri.host.to_sym]
+          return url unless replacement_proc
+
+          replacement_proc&.call(uri.path)
+        end
 
         def internal_links = context[:internal_links]
       end
