@@ -9,8 +9,8 @@ module Site
           super
           @slots = {}
 
-          # Evaluate the scope given to `#render_scope` so that we can fill our slots.
-          _locals[:blk]&.call(self)
+          # Evaluate the block given to `#render_scope` so that we can fill our slots.
+          _locals[:render_scope_blk]&.call(self)
         end
 
         def render(partial = "partials/card", **opts)

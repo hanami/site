@@ -8,7 +8,7 @@ module Site
         # `#scope` inside templates does not do anything with its given block at the moment. For the
         # purposes of this gemo, save the block into a special local name that we then call inside
         # the custom scope class' `#initialize`.
-        scope(scope_name, blk: block).render
+        scope(scope_name, render_scope_blk: block).render
       end
     end
   end
