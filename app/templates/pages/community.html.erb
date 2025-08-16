@@ -1,3 +1,11 @@
 <% content_for :title, "Community" %>
 
 <h1>Community</h1>
+
+<br><br>
+
+<%= render_scope :card do |card| %>
+  <% card.slot :header do %>
+    <h2>Card header!!</h2>
+  <% end %>
+<% end %>
