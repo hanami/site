@@ -1,6 +1,6 @@
 # Site
 
-This is the upcoming Hanakai website. It’s still a work in progress.
+This is the upcoming Hanami website. It’s still a work in progress.
 
 ## Setup
 
