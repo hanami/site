@@ -4,6 +4,11 @@ module Site
   module Views
     module Pages
       class Community < Site::View
+        include Deps["repos.team_member_repo"]
+
+        expose :team_members do
+          team_member_repo.all
+        end
       end
     end
   end
