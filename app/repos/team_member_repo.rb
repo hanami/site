@@ -6,10 +6,6 @@ module Site
       def all
         team_members.to_a
       end
-
-      def active_members
-        # TODO
-      end
     end
   end
 end
