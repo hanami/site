@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "yaml"
+require "front_matter_parser"
 
 module Site
   module Content
@@ -10,18 +10,16 @@ module Site
 
         include Deps[team_members_relation: "relations.team_members"]
 
-        def call(root: CONTENT_PATH)
-          team_members_file = root.join("team_members.yml")
-          return unless team_members_file.exist?
+        def call(root: TEAM_MEMBERS_PATH)
+          root.glob("**/*.md").each do |team_member_path|
+            parsed_file = FrontMatterParser::Parser.parse_file(team_member_path)
+            front_matter = parsed_file.front_matter.transform_keys(&:to_sym)
 
-          team_members_data = YAML.safe_load(team_members_file.read, symbolize_names: true)
-          
-          team_members_data.each do |member_data|
             team_member = TeamMemberData.new(
-              name: member_data.fetch(:name),
-              description: member_data.fetch(:description),
-              location: member_data.fetch(:location),
-              active_since: member_data[:active_since]
+              name: front_matter.fetch(:name),
+              description: parsed_file.content,
+              location: front_matter.fetch(:location),
+              active_since: front_matter[:active_since]
             )
 
             team_members_relation.insert(team_member.to_h)
