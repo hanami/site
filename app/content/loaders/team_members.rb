@@ -6,7 +6,7 @@ module Site
   module Content
     module Loaders
       class TeamMembers
-        TeamMemberData = Data.define(:name, :description, :location, :active_since)
+        TeamMemberData = Data.define(:name, :location, :active_since, :url, :github_user, :team)
 
         include Deps[team_members_relation: "relations.team_members"]
 
@@ -17,9 +17,11 @@ module Site
 
             team_member = TeamMemberData.new(
               name: front_matter.fetch(:name),
-              description: parsed_file.content,
               location: front_matter.fetch(:location),
-              active_since: front_matter[:active_since]
+              active_since: front_matter[:active_since],
+              url: front_matter[:url],
+              github_user: front_matter.fetch(:github_user),
+              team: front_matter.fetch(:team)
             )
 
             team_members_relation.insert(team_member.to_h)
