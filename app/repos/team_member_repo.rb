@@ -3,8 +3,8 @@
 module Site
   module Repos
     class TeamMemberRepo < Site::DB::Repo
-      def all
-        team_members.to_a
+      def all_for(team:)
+        team_members.where(team:).to_a
       end
     end
   end
