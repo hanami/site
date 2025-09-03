@@ -4,16 +4,16 @@
 
 <% if core_members.any? %>
   <h2>Core Team</h2>
-  <div class="team-members core">
+  <div>
     <% core_members.each do |member| %>
       <div class="team-member">
         <img src="https://github.com/<%= member.github_user %>.png?size=80" alt="<%= member.name %>" class="avatar">
         <h3><%= member.name %></h3>
-        <p class="location"><strong>Location:</strong> <%= member.location %></p>
-        <p class="status"><%= member.status %></p>
-        <p class="github"><strong>GitHub:</strong> <a href="https://github.com/<%= member.github_user %>" target="_blank" rel="noopener">@<%= member.github_user %></a></p>
+        <p><%= member.status %></p>
+        <p><strong>Location:</strong> <%= member.location %></p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/<%= member.github_user %>" target="_blank" rel="noopener">@<%= member.github_user %></a></p>
         <% if member.url %>
-          <p class="website"><strong>Website:</strong> <a href="<%= member.url %>" target="_blank" rel="noopener"><%= member.url %></a></p>
+          <p><strong>Website:</strong> <a href="<%= member.url %>" target="_blank" rel="noopener"><%= member.url %></a></p>
         <% end %>
       </div>
     <% end %>
@@ -22,16 +22,16 @@
 
 <% if maintainers.any? %>
   <h2>Maintainers</h2>
-  <div class="team-members maintainers">
+  <div>
     <% maintainers.each do |member| %>
       <div class="team-member">
         <img src="https://github.com/<%= member.github_user %>.png?size=80" alt="<%= member.name %>" class="avatar">
         <h3><%= member.name %></h3>
-        <p class="location"><strong>Location:</strong> <%= member.location %></p>
-        <p class="status"><%= member.status %></p>
-        <p class="github"><strong>GitHub:</strong> <a href="https://github.com/<%= member.github_user %>" target="_blank" rel="noopener">@<%= member.github_user %></a></p>
+        <p><%= member.status %></p>
+        <p><strong>Location:</strong> <%= member.location %></p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/<%= member.github_user %>" target="_blank" rel="noopener">@<%= member.github_user %></a></p>
         <% if member.url %>
-          <p class="website"><strong>Website:</strong> <a href="<%= member.url %>" target="_blank" rel="noopener"><%= member.url %></a></p>
+          <p><strong>Website:</strong> <a href="<%= member.url %>" target="_blank" rel="noopener"><%= member.url %></a></p>
         <% end %>
       </div>
     <% end %>
