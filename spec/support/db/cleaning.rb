@@ -9,6 +9,7 @@ RSpec.configure do |config|
     gems
     guides
     posts
+    team_members
     schema_migrations
   ]
 
