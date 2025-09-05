@@ -12,6 +12,7 @@ module Site
     POSTS_PATH = CONTENT_PATH.join("posts").freeze
     DOCS_PATH = CONTENT_PATH.join("docs").freeze
     GUIDES_PATH = CONTENT_PATH.join("guides").freeze
+    TEAM_MEMBERS_PATH = CONTENT_PATH.join("team_members").freeze
 
     INDEX_PAGE_PATH = "_index"
     PAGES_FRONTMATTER_KEY = :pages
