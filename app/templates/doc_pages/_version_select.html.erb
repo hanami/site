@@ -1,0 +1,47 @@
+<div class="relative" data-testid="<%= id %>">
+  <button
+    class="
+      inline-flex gap-2 items-center bg-rose-100 rounded-sm px-2 py-1 text-rose-500
+      transition-colors duration-150 cursor-pointer hover:bg-rose-200
+    "
+    data-defo-toggle-class="<%= {
+      clickAway: true,
+      triggerToggleClassName: "bg-rose-500 text-white hover:bg-rose-200 *:fill-white",
+      targetSelector: "##{id}-popover",
+      targetToggleClassName: "flex hidden -translate-y-1.5 translate-y-0 opacity-0 opacity-100"
+      }.to_json %>"
+  >
+    <%= version %>
+    <%= render "icons/check",
+    class_name: "fill-rose-500 transition-colors duration-150",
+    width: 16,
+    height: 16 %>
+  </button>
+  <div
+    id="<%= id %>-popover"
+    class="
+      hidden w-20 absolute bg-rose-500 rounded-sm transition-all flex-col
+      transition-discrete starting:-translate-y-1.5 -translate-y-1.5 duration-150
+      starting:opacity-0 opacity-0 mt-1 p-1 shadow-md min-w-28 gap-0.5
+    "
+  >
+    <% other_versions.each do |other_version| %>
+      <% active = other_version === version
+      base_classes =
+        "transition-colors duration-150 flex items-center gap-2 justify-between"
+      active_classes = "bg-rose-200 text-rose-500 px-2 py-1 rounded-xs"
+      inactive_classes = "text-white px-2 py-1 hover:bg-rose-400" %>
+      <a
+        class="
+          <%= base_classes %> <%= active ? active_classes : inactive_classes %>
+        "
+        href="<%= "#{path_prefix}/#{other_version}" %>"
+      >
+        <%= other_version %>
+        <% if active %>
+          <%= render "icons/check", class_name: "fill-rose-500", width: 16, height: 16 %>
+        <% end %>
+      </a>
+    <% end %>
+  </div>
+</div>
