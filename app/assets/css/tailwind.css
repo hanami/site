@@ -9,4 +9,48 @@
   --font-sans:
     "Faire Sprig Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
     "Noto Color Emoji";
+  --color-dry-50: oklch(96.79% 0.022 67.56);
+  --color-dry-100: oklch(93.86% 0.044 68.35);
+  --color-dry-200: oklch(87.83% 0.088 66.27);
+  --color-dry-300: oklch(82.41% 0.129 64.69);
+  --color-dry-400: oklch(77.37% 0.163 60.27);
+  --color-dry-500: oklch(73.19% 0.186 52.98);
+  --color-dry-600: oklch(62.01% 0.156 53.46);
+  --color-dry-700: oklch(50.46% 0.125 54.94);
+  --color-dry-800: oklch(38.04% 0.092 56.79);
+  --color-dry-900: oklch(24.71% 0.056 63.83);
+  --color-dry-950: oklch(17.37% 0.037 72.02);
+  --color-hanami-50: oklch(96.75% 0.016 8.28);
+  --color-hanami-100: oklch(94.38% 0.029 9.78);
+  --color-hanami-200: oklch(88.74% 0.061 9.53);
+  --color-hanami-300: oklch(83.17% 0.096 9.64);
+  --color-hanami-400: oklch(77.49% 0.136 9.92);
+  --color-hanami-500: oklch(71.93% 0.18 10.67);
+  --color-hanami-600: oklch(61.85% 0.247 12.28);
+  --color-hanami-700: oklch(49.89% 0.199 12.29);
+  --color-hanami-800: oklch(38.24% 0.153 12.34);
+  --color-hanami-900: oklch(26.33% 0.105 11.75);
+  --color-hanami-950: oklch(19.73% 0.079 11.46);
+  --color-rom-50: oklch(95.8% 0.02 279.99);
+  --color-rom-100: oklch(90.71% 0.045 278.66);
+  --color-rom-200: oklch(82.17% 0.09 276.58);
+  --color-rom-300: oklch(73.02% 0.14 273.47);
+  --color-rom-400: oklch(64.7% 0.188 268.82);
+  --color-rom-500: oklch(55.79% 0.244 261.2);
+  --color-rom-600: oklch(47.7% 0.208 261.18);
+  --color-rom-700: oklch(38.86% 0.17 261.17);
+  --color-rom-800: oklch(30.95% 0.136 261.25);
+  --color-rom-900: oklch(21.93% 0.097 261.31);
+  --color-rom-950: oklch(18.2% 0.079 261.06);
+  --color-hanakai-50: oklch(98.35% 0.017 84.56);
+  --color-hanakai-100: oklch(95.69% 0.044 83.9);
+  --color-hanakai-200: oklch(92.37% 0.09 87.84);
+  --color-hanakai-300: oklch(88.06% 0.164 91.71);
+  --color-hanakai-400: oklch(77.66% 0.159 92.5);
+  --color-hanakai-500: oklch(66.46% 0.136 92.46);
+  --color-hanakai-600: oklch(56.08% 0.115 92.94);
+  --color-hanakai-700: oklch(45.77% 0.094 92.19);
+  --color-hanakai-800: oklch(35.44% 0.073 92.5);
+  --color-hanakai-900: oklch(24.29% 0.05 93.2);
+  --color-hanakai-950: oklch(18.87% 0.039 94.73);
 }
