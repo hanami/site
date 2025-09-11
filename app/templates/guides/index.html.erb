@@ -6,9 +6,7 @@
 
 <ol data-testid="hanami-guides">
   <% guides.fetch("hanami").each do |guide| %>
-  <li>
-    <a href="<%= guide.url_path %>"><%= guide.title %></a>
-  </li>
+    <li><a href="<%= guide.url_path %>"><%= guide.title %></a></li>
   <% end %>
 </ol>
 
@@ -20,22 +18,22 @@
 
 <ol data-testid="dry-guides">
   <% guides.fetch("dry").each do |guide| %>
-  <li>
-    <a href="<%= guide.url_path %>"><%= guide.title %></a>
-  </li>
+    <li><a href="<%= guide.url_path %>"><%= guide.title %></a></li>
   <% end %>
 </ol>
 
-<div data-testid="dry-versions"><%= render :version_links, versions: versions.fetch("dry"), org_slug: "dry" %></div>
+<div data-testid="dry-versions">
+  <%= render :version_links, versions: versions.fetch("dry"), org_slug: "dry" %>
+</div>
 
 <h2>Rom</h2>
 
 <ol data-testid="rom-guides">
   <% guides.fetch("rom").each do |guide| %>
-  <li>
-    <a href="<%= guide.url_path %>"><%= guide.title %></a>
-  </li>
+    <li><a href="<%= guide.url_path %>"><%= guide.title %></a></li>
   <% end %>
 </ol>
 
-<div data-testid="rom-versions"><%= render :version_links, versions: versions.fetch("rom"), org_slug: "rom" %></div>
+<div data-testid="rom-versions">
+  <%= render :version_links, versions: versions.fetch("rom"), org_slug: "rom" %>
+</div>

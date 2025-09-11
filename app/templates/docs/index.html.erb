@@ -6,8 +6,6 @@
 
 <ol data-testid="dry-docs">
   <% docs.fetch("dry").each do |doc| %>
-  <li>
-    <a href="<%= doc.url_path %>"><%= doc.slug %></a>
-  </li>
+    <li><a href="<%= doc.url_path %>"><%= doc.slug %></a></li>
   <% end %>
 </ol>

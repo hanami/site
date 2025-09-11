@@ -1,8 +1,10 @@
-<%= content_for :title, "#{page.title} &middot; #{doc.title} #{version}" %> <%= content_for :meta do %>
-<meta
-  name="docsearch:version"
-  content='<%= [version_number, ("latest" if version == latest_version)].compact.join(",") %>'
-/>
+<%= content_for :title, "#{page.title} &middot; #{doc.title} #{version}" %>
+
+<%= content_for :meta do %>
+  <meta
+    name="docsearch:version"
+    content="<%= [version_number, ("latest" if version == latest_version)].compact.join(",") %>"
+  >
 <% end %>
 
 <header>
@@ -11,15 +13,20 @@
 
 <div data-testid="doc-versions">
   <% other_versions.each do |version| %>
-  <a href="<%= doc.url_path(version) %>"><%= version %></a>
+    <a href="<%= doc.url_path(version) %>"><%= version %></a>
   <% end %>
 </div>
 
 <%= render "doc_pages/pages_nav", pages: doc.pages.nested, testid: "pages-nav", current_page_title: page.title %>
-<hr />
+
+<hr>
+
 <h2>TOC</h2>
+
 <%= render "doc_pages/headings_toc", headings: page.nested_headings, testid: "headings-toc", depth: 0 %>
-<hr />
+
+<hr>
+
 <main>
   <header>
     <h1><%= page.title %></h1>

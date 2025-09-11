@@ -3,45 +3,79 @@
 <h1>Community</h1>
 
 <% if core_members.any? %>
-<h2>Core Team</h2>
-<div data-testid="core-team">
-  <% core_members.each do |member| %>
-  <div class="team-member">
-    <img src="https://github.com/<%= member.github_user %>.png?size=80" alt="<%= member.name %>" class="avatar" />
-    <h3><%= member.name %></h3>
-    <p><%= member.status %></p>
-    <p><strong>Location:</strong> <%= member.location %></p>
-    <p>
-      <strong>GitHub:</strong>
-      <a href="https://github.com/<%= member.github_user %>" target="_blank" rel="noopener"
-        >@<%= member.github_user %></a
-      >
-    </p>
-    <% if member.url %>
-    <p><strong>Website:</strong> <a href="<%= member.url %>" target="_blank" rel="noopener"><%= member.url %></a></p>
+  <h2>Core Team</h2>
+  <div data-testid="core-team">
+    <% core_members.each do |member| %>
+      <div class="team-member">
+        <img
+          src="https://github.com/<%= member.github_user %>.png?size=80"
+          alt="<%= member.name %>"
+          class="avatar"
+        >
+
+        <h3><%= member.name %></h3>
+
+        <p><%= member.status %></p>
+
+        <p><strong>Location:</strong><%= member.location %></p>
+
+        <p>
+          <strong>GitHub:</strong>
+          <a
+            href="https://github.com/<%= member.github_user %>"
+            target="_blank"
+            rel="noopener"
+          >
+            @<%= member.github_user %>
+          </a>
+        </p>
+
+        <% if member.url %>
+          <p>
+            <strong>Website:</strong>
+            <a href="<%= member.url %>" target="_blank" rel="noopener"><%= member.url %></a>
+          </p>
+        <% end %>
+      </div>
     <% end %>
   </div>
-  <% end %>
-</div>
-<% end %> <% if maintainers.any? %>
-<h2>Maintainers</h2>
-<div data-testid="maintainers-team">
-  <% maintainers.each do |member| %>
-  <div class="team-member">
-    <img src="https://github.com/<%= member.github_user %>.png?size=80" alt="<%= member.name %>" class="avatar" />
-    <h3><%= member.name %></h3>
-    <p><%= member.status %></p>
-    <p><strong>Location:</strong> <%= member.location %></p>
-    <p>
-      <strong>GitHub:</strong>
-      <a href="https://github.com/<%= member.github_user %>" target="_blank" rel="noopener"
-        >@<%= member.github_user %></a
-      >
-    </p>
-    <% if member.url %>
-    <p><strong>Website:</strong> <a href="<%= member.url %>" target="_blank" rel="noopener"><%= member.url %></a></p>
+<% end %>
+
+<% if maintainers.any? %>
+  <h2>Maintainers</h2>
+  <div data-testid="maintainers-team">
+    <% maintainers.each do |member| %>
+      <div class="team-member">
+        <img
+          src="https://github.com/<%= member.github_user %>.png?size=80"
+          alt="<%= member.name %>"
+          class="avatar"
+        >
+
+        <h3><%= member.name %></h3>
+
+        <p><%= member.status %></p>
+
+        <p><strong>Location:</strong><%= member.location %></p>
+
+        <p>
+          <strong>GitHub:</strong>
+          <a
+            href="https://github.com/<%= member.github_user %>"
+            target="_blank"
+            rel="noopener"
+          >
+            @<%= member.github_user %>
+          </a>
+        </p>
+
+        <% if member.url %>
+          <p>
+            <strong>Website:</strong>
+            <a href="<%= member.url %>" target="_blank" rel="noopener"><%= member.url %></a>
+          </p>
+        <% end %>
+      </div>
     <% end %>
   </div>
-  <% end %>
-</div>
 <% end %>
