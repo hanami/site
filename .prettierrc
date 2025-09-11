@@ -1,14 +1,4 @@
 {
   "printWidth": 120,
-  "trailingComma": "all",
-  "tailwindStylesheet": "./app/assets/builds/tailwind.css",
-  "plugins": ["prettier-plugin-tailwindcss"],
-  "overrides": [
-    {
-      "files": "*.html.erb",
-      "options": {
-        "parser": "html"
-      }
-    }
-  ]
+  "trailingComma": "all"
 }
