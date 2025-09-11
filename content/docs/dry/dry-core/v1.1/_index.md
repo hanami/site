@@ -4,8 +4,8 @@ pages:
   - cache
   - constants
   - classes:
-    - class-attributes
-    - class-builder
+      - class-attributes
+      - class-builder
   - deprecations
   - equalizer
   - extensions

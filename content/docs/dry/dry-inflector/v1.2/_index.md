@@ -6,7 +6,7 @@ dry-inflector is an inflector gem for Ruby, which provides a configurable inflec
 
 ### Basic usage
 
-``` ruby
+```ruby
 require "dry/inflector"
 
 inflector = Dry::Inflector.new
@@ -38,7 +38,7 @@ inflector.ordinalize(23) # => "23rd"
 
 ### Custom inflection rules
 
-``` ruby
+```ruby
 require "dry/inflector"
 
 inflector = Dry::Inflector.new do |inflections|

@@ -5,9 +5,9 @@ title: Maybe
 The [dry-monads gem](//doc/dry-monads) provides an approach to handling optional values by returning a [`Maybe`](//doc/dry-monads) object from operations that can return `nil`.
 
 `dry-types` has an extension that can return `Maybe`s from calls to types. That is, it wraps the return result in either:
+
 - a `Some` object (with the resulting value)
 - a `None` object (when the value would be `nil`)
-
 
 > **NOTE**: You must `require 'dry-monads'`, and include `Dry::Monads[:maybe]`
 
@@ -60,11 +60,12 @@ Types::Maybe::Strict::Integer["foo"]   # => raises Dry::Types::ConstraintError
 ```
 
 ### Mapping methods on `Maybe`
+
 Since these are `dry-monads` `Maybe` objects, you can `#fmap` methods to them: applying the method to the value when the value is `Some` (and keeping the `None` when the value is `None`).
 
 You can `#fmap` these, and then use `#value_or` to return the underlying value out of a `Some` or return a default when the value is `None`.
 
-``` ruby
+```ruby
 maybe_string = Types::Strict::String.maybe
 maybe_string[nil]                 # => None
 maybe_string[nil].fmap(&:upcase)  # => None

@@ -14,7 +14,7 @@ This release fixes only one regression introduced by [v0.7.1](/blog/2016/02/05/a
 
 ### hanami [v0.7.2](https://github.com/hanami/hanami/blob/master/CHANGELOG.md#v072---2016-02-09)
 
-  - Fixed routing issue when static assets server tried to hijiack paths that are matching directories in public directory [[Alfonso Uceda Pompa](https://github.com/AlfonsoUceda)]
+- Fixed routing issue when static assets server tried to hijiack paths that are matching directories in public directory [[Alfonso Uceda Pompa](https://github.com/AlfonsoUceda)]
 
 ## Upgrade Instructions
 

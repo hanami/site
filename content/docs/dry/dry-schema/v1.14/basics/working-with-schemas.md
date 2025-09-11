@@ -83,7 +83,7 @@ result.errors(locale: :pl).to_h
 
 You can ask result object if there are any errors under given path.
 
-``` ruby
+```ruby
 schema = Dry::Schema.Params do
   required(:name).filled(:string)
   optional(:tags).array(:str?)

@@ -29,7 +29,6 @@ These guides aim to introduce you to the Hanami framework and demonstrate how it
 
 Ideally, you already have some familiarity with web applications and the [Ruby language](https://www.ruby-lang.org/en/).
 
-
 ## Creating a Hanami application
 
 ### Prerequisites
@@ -99,17 +98,17 @@ As you can see, a new Hanami application has just 16 files in total.
 
 Here's how these files and directories are used:
 
-| Location               | Purpose                                      |
-|---------------------------------|--------------------------------------------|
-| Gemfile | The application's gem dependencies, installed using bundler.                   |
-| Guardfile | Supports code reloading in development. |
-| README.md | The application's readme document. |
-| Rakefile | Support for running rake tasks. |
-| app/ | This is the directory where you'll put the majority of your application's code. |
-| config/ | A directory for your application's configuration, including things like routes, settings and Puma configuration. |
-| config.ru | A Rack config file. |
-| lib/ | A directory for supporting code. |
-| spec/ | The application's RSpec test suite. |
+| Location  | Purpose                                                                                                          |
+| --------- | ---------------------------------------------------------------------------------------------------------------- |
+| Gemfile   | The application's gem dependencies, installed using bundler.                                                     |
+| Guardfile | Supports code reloading in development.                                                                          |
+| README.md | The application's readme document.                                                                               |
+| Rakefile  | Support for running rake tasks.                                                                                  |
+| app/      | This is the directory where you'll put the majority of your application's code.                                  |
+| config/   | A directory for your application's configuration, including things like routes, settings and Puma configuration. |
+| config.ru | A Rack config file.                                                                                              |
+| lib/      | A directory for supporting code.                                                                                 |
+| spec/     | The application's RSpec test suite.                                                                              |
 
 We'll see this structure in more detail as this guide progresses.
 
@@ -148,7 +147,6 @@ $ open http://localhost:2300
 You should see "Hello from Hanami".
 
 ![Hello from Hanami](//file/hello-from-hanami.png")
-
 
 ## Adding our first functionality
 
@@ -1329,7 +1327,6 @@ Finished in 0.07143 seconds (files took 1.32 seconds to load)
 ```
 
 In addition to validating title and author are present, the `params` block in the action also serves to prevent mass assignment - params not included in the schema (for example an attempt to inject a price of 0) will be discarded.
-
 
 ## What's next
 

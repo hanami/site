@@ -17,7 +17,7 @@ Thanks to all our contributors who have reported and fixed issues.
 
 [Thiago Felippe](https://github.com/theocodes) and [Alfonso Uceda](https://github.com/AlfonsoUceda) fixed duplicated route segments for applications mounted in [Lotus Container](/guides/architectures/container).
 
-The following configuration was generating the `/admin` prefix twice:  `/admin/admin/dashboard` instead of `/admin/dashboard`.
+The following configuration was generating the `/admin` prefix twice: `/admin/admin/dashboard` instead of `/admin/dashboard`.
 
 ```ruby
 Lotus::Container.configure do
@@ -56,4 +56,3 @@ A few days ago, we have [published the roadmap for v0.5.0](http://bit.ly/lotusrb
 It includes **websockets**, **assets**, **mailers**, **associations** and experimental features.
 Please join the discussion and let us to hear your opinion.
 Thank you!
-

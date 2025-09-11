@@ -342,7 +342,7 @@ The engine underpinning the new router also offers amazing performance, with Han
 
 Many of the new features we’ve seen so far would empower any kind of application, not just web applications. So with this alpha, we’re making the first release of a truly “unbundled” Hanami, with the hanami-controller, hanami-router, and hanami-view gem dependencies being moved outside of the main gem and into the Gemfiles of the generated applications.
 
-This means you can now use the hanami gem to help you better organise any kind of Ruby application.  All you’ll need to do is opt out of the web mode when booting your application.
+This means you can now use the hanami gem to help you better organise any kind of Ruby application. All you’ll need to do is opt out of the web mode when booting your application.
 
 ```
 Hanami.boot web: false

@@ -14,18 +14,18 @@ Today we're happy to announce `v1.3.5` 🙌.
 
 ## Changed ⏩
 
-  * Use JSON as default HTTP session serializer for cookie session storage
+- Use JSON as default HTTP session serializer for cookie session storage
 
 ## Bug Fixes 🐞
 
-  * Ensure to properly store exceptions in Rack environment
-  * Explicitly limit in gemspec the supported rubies (>= 2.3 and < 3) for Hanami 1k
-  * Ensure `.validations` to not raise `NoMethodError: undefined method 'size' for nil:NilClass`. Due to a breaking change in transitive dependency (`dry-configurable` `0.13.x`).
+- Ensure to properly store exceptions in Rack environment
+- Explicitly limit in gemspec the supported rubies (>= 2.3 and < 3) for Hanami 1k
+- Ensure `.validations` to not raise `NoMethodError: undefined method 'size' for nil:NilClass`. Due to a breaking change in transitive dependency (`dry-configurable` `0.13.x`).
 
 ## Released Gems 💎
 
-  * `hanami` `v1.3.5`
-  * `hanami-validations` `v1.3.8`
+- `hanami` `v1.3.5`
+- `hanami-validations` `v1.3.8`
 
 ## How to install ⌨️
 
@@ -40,7 +40,7 @@ $ hanami new bookshelf
 $ bundle update hanami
 ```
 
-⚠️ **If you're using HTTP sessions with cookies (default), please note that we changed the default session serializer from `Rack::Session::Cookie::Base64::Marshal` (Rack default) to `Rack::Session::Cookie::Base64::JSON`.**⚠️ 
+⚠️ **If you're using HTTP sessions with cookies (default), please note that we changed the default session serializer from `Rack::Session::Cookie::Base64::Marshal` (Rack default) to `Rack::Session::Cookie::Base64::JSON`.**⚠️
 
 We received a security disclosure that proves that `Marshal` based serialization is vulnerable to an attack.
 To know more, please read the discussion over [GitHub](https://github.com/hanami/hanami/pull/1127).

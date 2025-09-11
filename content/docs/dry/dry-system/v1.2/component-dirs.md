@@ -58,6 +58,7 @@ config.component_dirs.add "lib" do |dir|
   dir.memoize = true
 end
 ```
+
 ```ruby
 config.component_dirs.add "lib" do |dir|
   dir.memoize = proc do |component|

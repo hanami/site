@@ -57,16 +57,16 @@ The main Ruby gem is now [`hanami`](https://rubygems.org/gems/hanami).
 In order to reflect this reorganization, we release today all the gems under the new name.
 We bumped the minor version because this is a breaking change.
 
-  * `hanami-0.7.0` (equivalent to `lotusrb-0.6.1`)
-  * `hanami-utils-0.7.0` (equivalent to `lotus-utils-0.6.1`)
-  * `hanami-validations-0.5.0` (equivalent to `lotus-validations-0.4.0`)
-  * `hanami-router-0.6.0` (equivalent to `lotus-router-0.5.1`)
-  * `hanami-helpers-0.3.0` (equivalent to `lotus-helpers-0.2.6`)
-  * `hanami-model-0.6.0` (equivalent to `lotus-model-0.5.2`)
-  * `hanami-view-0.6.0` (equivalent to `lotus-view-0.5.0`)
-  * `hanami-controller-0.6.0` (equivalent to `lotus-controller-0.5.1`)
-  * `hanami-assets-0.2.0` (equivalent to `lotus-assets-0.1.0`)
-  * `hanami-mailer-0.2.0` (equivalent to `lotus-mailer-0.1.0`)
+- `hanami-0.7.0` (equivalent to `lotusrb-0.6.1`)
+- `hanami-utils-0.7.0` (equivalent to `lotus-utils-0.6.1`)
+- `hanami-validations-0.5.0` (equivalent to `lotus-validations-0.4.0`)
+- `hanami-router-0.6.0` (equivalent to `lotus-router-0.5.1`)
+- `hanami-helpers-0.3.0` (equivalent to `lotus-helpers-0.2.6`)
+- `hanami-model-0.6.0` (equivalent to `lotus-model-0.5.2`)
+- `hanami-view-0.6.0` (equivalent to `lotus-view-0.5.0`)
+- `hanami-controller-0.6.0` (equivalent to `lotus-controller-0.5.1`)
+- `hanami-assets-0.2.0` (equivalent to `lotus-assets-0.1.0`)
+- `hanami-mailer-0.2.0` (equivalent to `lotus-mailer-0.1.0`)
 
 ### Upgrade Notes
 

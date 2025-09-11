@@ -60,17 +60,17 @@ Then we can create and migrate with `lotus db create` and `lotus db migrate`, or
 HTML5 forms helpers are a feature that we're really proud to ship today.
 They are a powerful Ruby API that **doesn't require to monkey-patch ERb**, they are **template engine independent** and the cleaner code solution for Ruby:
 
-   * Support for complex markup without the need of concatenation
-   * Auto closing HTML5 tags
-   * Support for view local variables
-   * Method override support (`PUT`/`PATCH`/`DELETE` HTTP verbs aren't understood by browsers)
-   * Automatic generation of HTML attributes for inputs: `id`, `name`, `value`
-   * Allow to override automatic HTML attributes
-   * Read values from request params and/or given entities, to autofill `value` attributes
-   * Automatic selection of current value for radio button and select inputs
-   * CSRF Protection
-   * Infinite nested fields
-   * ORM Agnostic
+- Support for complex markup without the need of concatenation
+- Auto closing HTML5 tags
+- Support for view local variables
+- Method override support (`PUT`/`PATCH`/`DELETE` HTTP verbs aren't understood by browsers)
+- Automatic generation of HTML attributes for inputs: `id`, `name`, `value`
+- Allow to override automatic HTML attributes
+- Read values from request params and/or given entities, to autofill `value` attributes
+- Automatic selection of current value for radio button and select inputs
+- CSRF Protection
+- Infinite nested fields
+- ORM Agnostic
 
 Here an example of form to create a book.
 
@@ -91,10 +91,10 @@ It produces:
 
 ```html
 <form action="/books" id="book-form" method="POST" class="form-horizontal">
-  <input type="hidden" name="_csrf_token" value="e54fe87c03c8acb84f50826e969df4f00210af315f2e27e064741ecc09155a75">
+  <input type="hidden" name="_csrf_token" value="e54fe87c03c8acb84f50826e969df4f00210af315f2e27e064741ecc09155a75" />
   <div class="form-group">
     <label for="book-title">Title</label>
-    <input type="text" name="book[title]" id="book-title" value="">
+    <input type="text" name="book[title]" id="book-title" value="" />
   </div>
 
   <button type="submit">Create</button>
@@ -185,7 +185,7 @@ end
 
 #### CSRF Protection
 
-The second is a protection against [Cross Site Request Forgery (CSRF)](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)) attacks.
+The second is a protection against [Cross Site Request Forgery (CSRF)](<https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)>) attacks.
 This is one of the most common threats for web applications, as of today Lotus apps have a defense mechanism for that.
 
 It's activated automatically when we enable sessions.

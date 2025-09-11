@@ -8,15 +8,15 @@ Relations are really the heart of ROM. They provide APIs for reading the data fr
 
 In typical setup of an application using ROM, relations are defined as explicit classes. You can put them in separate files, namespace them or not, and configure them when it's needed (especially useful when using a legacy database with non-standard naming conventions).
 
-The most important responsibility of relations is to expose a clear API for reading data. Every relation *method* should return another relation, we call them <mark>relation views</mark>. These views can be defined in ways that make them
-*composable* by including combine-keys in the resulting tuples. This is not limited
+The most important responsibility of relations is to expose a clear API for reading data. Every relation _method_ should return another relation, we call them <mark>relation views</mark>. These views can be defined in ways that make them
+_composable_ by including combine-keys in the resulting tuples. This is not limited
 to SQL, you can compose data from different sources.
 
 ### Example relation class
 
 Let's say we have `:users` table in an SQL database, here's how you would define a relation class for it:
 
-``` ruby
+```ruby
 class Users < ROM::Relation[:sql]
   schema(infer: true)
 end
@@ -34,7 +34,7 @@ Notice two things:
 
 Every method in a relation should return another relation, this happens automatically whenever you use a query interface provided by adapters. In our example we use `rom-sql`, let's define a relation view called `listing`, using SQL query DSL:
 
-``` ruby
+```ruby
 class Users < ROM::Relation
   def listing
     select(:id, :name, :email).order(:name)
@@ -50,7 +50,7 @@ To materialize a relation means asking it to load its data from a database. Rela
 
 To get all results, simply coerce a relation to an array via `Relation#to_a`:
 
-``` ruby
+```ruby
 users.to_a
 => [{:id=>1, :name=>"Jane Doe"}, {:id=>2, :name=>"John Doe"}]
 ```
@@ -73,7 +73,7 @@ users.one!
 
 If you start iterating over a relation via `Relation#each`, the relation will get its data via `#to_a` and yield results to the block.
 
-``` ruby
+```ruby
 users.each do |user|
  puts user[:name]
 end

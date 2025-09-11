@@ -14,14 +14,14 @@ We're proud to announce that the upcoming release of Lotus (`v0.6.0`) will ship 
 
 A bunch of **new helpers** is available for your views and templates, with the purpose of building rich web pages:
 
-  * `javascript`
-  * `stylesheet`
-  * `favicon`
-  * `image`
-  * `video`
-  * `audio`
-  * `asset_path`
-  * `asset_url`
+- `javascript`
+- `stylesheet`
+- `favicon`
+- `image`
+- `video`
+- `audio`
+- `asset_path`
+- `asset_url`
 
 They have the role of assist you in the process of keeping your templates tidy.
 At the same time, they are able to output structured HTML and manage complex URL logic.
@@ -47,20 +47,20 @@ Here's a basic example:
 And the result.
 
 ```html
-<!doctype HTML>
+<!doctype html>
 <html>
   <head>
     <title>Assets example</title>
-    <link href="/assets/reset.css" type="text/css" rel="stylesheet">
-    <link href="/assets/grid.css" type="text/css" rel="stylesheet">
-    <link href="/assets/main.css" type="text/css" rel="stylesheet">
+    <link href="/assets/reset.css" type="text/css" rel="stylesheet" />
+    <link href="/assets/grid.css" type="text/css" rel="stylesheet" />
+    <link href="/assets/main.css" type="text/css" rel="stylesheet" />
   </head>
 
   <body>
-  <!-- ... -->
-  <script src="https://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
-  <script src="/assets/application.js" type="text/javascript"></script>
-  <script src="/assets/modals.js" type="text/javascript"></script>
+    <!-- ... -->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
+    <script src="/assets/application.js" type="text/javascript"></script>
+    <script src="/assets/modals.js" type="text/javascript"></script>
   </body>
 </html>
 ```
@@ -170,7 +170,10 @@ What you need to do, is to specify the CDN URL to the application and then the h
 ```
 
 ```html
-<script src="https://123.cloudfront.net/assets/application-d1829dc353b734e3adc24855693b70f9.js" type="text/javascript"></script>
+<script
+  src="https://123.cloudfront.net/assets/application-d1829dc353b734e3adc24855693b70f9.js"
+  type="text/javascript"
+></script>
 ```
 
 ## Release Date
@@ -182,7 +185,8 @@ If you can't wait, try it with [master branch](https://github.com/lotus/lotus) a
 
   <iframe src="https://ghbtns.com/github-btn.html?user=lotus&repo=lotus&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
 
-  <a href="https://news.ycombinator.com/submit" class="hn-button" data-title="Introducing Assets for Lotus (Ruby)" data-url="http://lotusrb.org/blog/2015/12/29/introducing-assets.html" data-count="horizontal" data-style="facebook">Vote on Hacker News</a>
+<a href="https://news.ycombinator.com/submit" class="hn-button" data-title="Introducing Assets for Lotus (Ruby)" data-url="http://lotusrb.org/blog/2015/12/29/introducing-assets.html" data-count="horizontal" data-style="facebook">Vote on Hacker News</a>
+
   <script type="text/javascript">var HN=[];HN.factory=function(e){return function(){HN.push([e].concat(Array.prototype.slice.call(arguments,0)))};},HN.on=HN.factory("on"),HN.once=HN.factory("once"),HN.off=HN.factory("off"),HN.emit=HN.factory("emit"),HN.load=function(){var e="hn-button.js";if(document.getElementById(e))return;var t=document.createElement("script");t.id=e,t.src="//hn-button.herokuapp.com/hn-button.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n)},HN.load();</script>
   <script type="text/javascript">
     reddit_url = "http://lotusrb.org/blog/2015/12/21/announcing-lotus-assets.html";

@@ -7,13 +7,13 @@ pages:
 
 Predicate logic and rule composition used by:
 
-* [dry-types](https://github.com/dry-rb/dry-types) for constrained types
-* [dry-validation](https://github.com/dry-rb/dry-validation) for composing validation rules
-* your project...?
+- [dry-types](https://github.com/dry-rb/dry-types) for constrained types
+- [dry-validation](https://github.com/dry-rb/dry-validation) for composing validation rules
+- your project...?
 
 ## Synopsis
 
-``` ruby
+```ruby
 require 'dry/logic'
 require 'dry/logic/predicates'
 

@@ -2,10 +2,10 @@
 title: Introduction
 pages:
   - basics:
-    - built-in-predicates
-    - macros
-    - type-specs
-    - working-with-schemas
+      - built-in-predicates
+      - macros
+      - type-specs
+      - working-with-schemas
   - optional-keys-and-values
   - nested-data
   - reusing-schemas
@@ -13,20 +13,20 @@ pages:
   - json
   - error-messages
   - advanced:
-    - composing-schemas
-    - custom-predicates
-    - custom-types
-    - filtering
-    - key-maps
-    - predicate-logic
-    - processor-steps
-    - rule-ast
-    - unexpected-keys
+      - composing-schemas
+      - custom-predicates
+      - custom-types
+      - filtering
+      - key-maps
+      - predicate-logic
+      - processor-steps
+      - rule-ast
+      - unexpected-keys
   - extensions:
-    - hints
-    - info
-    - json_schema
-    - monads
+      - hints
+      - info
+      - json_schema
+      - monads
 ---
 
 `dry-schema` is a validation library for **data structures**. It ships with a set of many built-in predicates and powerful DSL to define even complex data validations with very concise syntax.
@@ -44,13 +44,13 @@ Main focus of this library is on:
 
 There are a few features of `dry-schema` that make it unique:
 
-* [Structural validation](//page/optional-keys-and-values) where key presence can be verified separately from values. This removes ambiguity related to "presence" validation where you don't know if value is indeed `nil` or if a key is missing in the input hash
-* [Pre-coercion validation using filtering rules](//page/advanced/filtering)
-* Explicit coercion logic - rather than implementing complex generic coercions, `dry-schema` uses coercion types from `dry-types` which are faster and more strict than generic coercions
-* Support for [validating array elements](//page/basics/macros#array) with convenient access to error messages
-* Powerful introspection - you have access to [key maps](//page/advanced/key-maps) and detailed [Rule AST](//page/advanced/rule-ast)
-* Performance - multiple times faster than validations based on `ActiveModel` and `strong parameters`
-* Configurable, localized error messages with or *without* `I18n` gem
+- [Structural validation](//page/optional-keys-and-values) where key presence can be verified separately from values. This removes ambiguity related to "presence" validation where you don't know if value is indeed `nil` or if a key is missing in the input hash
+- [Pre-coercion validation using filtering rules](//page/advanced/filtering)
+- Explicit coercion logic - rather than implementing complex generic coercions, `dry-schema` uses coercion types from `dry-types` which are faster and more strict than generic coercions
+- Support for [validating array elements](//page/basics/macros#array) with convenient access to error messages
+- Powerful introspection - you have access to [key maps](//page/advanced/key-maps) and detailed [Rule AST](//page/advanced/rule-ast)
+- Performance - multiple times faster than validations based on `ActiveModel` and `strong parameters`
+- Configurable, localized error messages with or _without_ `I18n` gem
 
 ### When to use?
 

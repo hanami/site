@@ -4,7 +4,7 @@ title: Associations
 
 Changesets can be associated with each other using `Changeset#associate` method, which will automatically set foreign keys for you, based on schema associations. Let's define `:users` relation that has many `:tasks`:
 
-``` ruby
+```ruby
 class Users < ROM::Relation[:sql]
   schema(infer: true) do
     associations do
@@ -24,7 +24,7 @@ end
 
 With associations established in the schema, we can easily associate data using changesets and commit them in a transaction:
 
-``` ruby
+```ruby
 task = tasks.transaction do
   user = users.changeset(:create, name: 'Jane').commit
 

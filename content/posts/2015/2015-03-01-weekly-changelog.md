@@ -13,18 +13,18 @@ excerpt: >
 
 ## Completed
 
-  * Database console [[details](https://github.com/lotus/lotus/pull/152)]
-  * Default security headers [[details](https://github.com/lotus/lotus/pull/159)]
-  * Initialize a Git repository when generate new applications [[details](https://github.com/lotus/lotus/pull/163)]
-  * Generate a `.lotusrc` when generate new applications [[details](https://github.com/lotus/lotus/pull/162)]
+- Database console [[details](https://github.com/lotus/lotus/pull/152)]
+- Default security headers [[details](https://github.com/lotus/lotus/pull/159)]
+- Initialize a Git repository when generate new applications [[details](https://github.com/lotus/lotus/pull/163)]
+- Generate a `.lotusrc` when generate new applications [[details](https://github.com/lotus/lotus/pull/162)]
 
 ## Development
 
-  * Database migrations [[details](https://github.com/lotus/model/pull/144)]
-  * Action generator [[details](https://github.com/lotus/lotus/pull/166)]
-  * Form helpers [[details](https://github.com/lotus/helpers/pull/16)]
-  * Number formatting helpers [[details](https://github.com/lotus/helpers/pull/14)]
-  * Custom validations [[details](https://github.com/lotus/validations/pull/49)]
+- Database migrations [[details](https://github.com/lotus/model/pull/144)]
+- Action generator [[details](https://github.com/lotus/lotus/pull/166)]
+- Form helpers [[details](https://github.com/lotus/helpers/pull/16)]
+- Number formatting helpers [[details](https://github.com/lotus/helpers/pull/14)]
+- Custom validations [[details](https://github.com/lotus/validations/pull/49)]
 
 ## Roadmap
 

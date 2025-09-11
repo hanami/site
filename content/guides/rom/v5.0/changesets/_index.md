@@ -1,8 +1,8 @@
 ---
 title: Introduction
 pages:
-- mapping
-- associations
+  - mapping
+  - associations
 ---
 
 Changesets are an advanced abstraction for making changes in your database. They work on top of commands, and provide additional data mapping functionality and have support for associating data.
@@ -17,24 +17,24 @@ Assuming you have a users relation available:
 
 ### `:create`
 
-``` ruby
+```ruby
 users.changeset(:create, name: "Jane").commit
 => {:id=>1, :name=>"Jane"}
 ```
 
 ### `:update`
 
-``` ruby
+```ruby
 users.by_pk(4).changeset(:update, name: "Jane Doe").commit
 => {:id=>4, :name=>"Jane Doe"}
 ```
 
 > [!WARNING]
->  Update changesets check the difference between the original tuple and new data. If there's no diff, an update changeset **will not execute its command**.
+> Update changesets check the difference between the original tuple and new data. If there's no diff, an update changeset **will not execute its command**.
 
 ### `:delete`
 
-``` ruby
+```ruby
 users.by_pk(4).changeset(:delete).commit
 => {:id=>4, :name=>"Jane Doe"}
 

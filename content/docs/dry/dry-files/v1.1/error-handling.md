@@ -6,15 +6,15 @@ title: Error Handling
 
 dry-files raises custom errors for its operations
 
-  * `Dry::Files::Error` base error
-  * `Dry::Files::IOError` I/O error
+- `Dry::Files::Error` base error
+- `Dry::Files::IOError` I/O error
 
 ### `Dry::Files::Error`
 
 It's the base error. We suggest to catch it.
 By doing so, you'll also catch all the exceptions that dry-files will raise.
 
-``` ruby
+```ruby
 # frozen_string_literal: true
 require "dry/files"
 
@@ -32,7 +32,7 @@ end
 It wraps Ruby I/O errors such as `Errno::ENOENT`.
 All the adapters raise `Dry::Files::IOError` to provide a consistent user experience.
 
-``` ruby
+```ruby
 # frozen_string_literal: true
 require "dry/files"
 
@@ -62,7 +62,7 @@ class Foo
 end
 ```
 
-``` ruby
+```ruby
 # frozen_string_literal: true
 require "dry/files"
 

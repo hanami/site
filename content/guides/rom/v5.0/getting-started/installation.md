@@ -6,33 +6,33 @@ Choose one or more adapters that you intend to use, and run the install command 
 
 Compatible with rom 4.0:
 
-|Adapter|Install Command|On production?|
-|-------|---------------|---|
-|SQL|`gem install rom-sql`| √ |
-|Elasticsearch|`gem install rom-elasticsearch`| √ |
+| Adapter       | Install Command                 | On production? |
+| ------------- | ------------------------------- | -------------- |
+| SQL           | `gem install rom-sql`           | √              |
+| Elasticsearch | `gem install rom-elasticsearch` | √              |
 
 Compatible with rom 3.0:
 
-|Adapter|Install Command|On production?|
-|-------|---------------|---|
-|YAML|`gem install rom-yaml`| √ |
-|CouchDB|`gem install rom-couchdb`| √ |
-|HTTP|`gem install rom-http`| √ |
-|DynamoDB|`gem install rom-dynamodb`| √ |
-|Yesql|`gem install rom-yesql`| √ |
+| Adapter  | Install Command            | On production? |
+| -------- | -------------------------- | -------------- |
+| YAML     | `gem install rom-yaml`     | √              |
+| CouchDB  | `gem install rom-couchdb`  | √              |
+| HTTP     | `gem install rom-http`     | √              |
+| DynamoDB | `gem install rom-dynamodb` | √              |
+| Yesql    | `gem install rom-yesql`    | √              |
 
 Outdated (help wanted!) adapters:
 
-|Adapter|Install Command|Production ready?
-|-------|---------------|---|
-|CSV|`gem install rom-csv`| √ |
-|Git|`gem install rom-git`| - |
-|Cassandra|`gem install rom-cassandra`| √ |
-|Kafka|`gem install rom-kafka`| √ |
-|MongoDB|`gem install rom-mongo`| - |
-|Neo4j|`gem install rom-neo4j`| - |
-|Event Store|`gem install rom-event_store`|
-|RethinkDB|`gem install rom-rethinkdb`| - |
+| Adapter     | Install Command               | Production ready? |
+| ----------- | ----------------------------- | ----------------- |
+| CSV         | `gem install rom-csv`         | √                 |
+| Git         | `gem install rom-git`         | -                 |
+| Cassandra   | `gem install rom-cassandra`   | √                 |
+| Kafka       | `gem install rom-kafka`       | √                 |
+| MongoDB     | `gem install rom-mongo`       | -                 |
+| Neo4j       | `gem install rom-neo4j`       | -                 |
+| Event Store | `gem install rom-event_store` |
+| RethinkDB   | `gem install rom-rethinkdb`   | -                 |
 
 > [!TIP]
 > **How to choose an adapter?** The most popular adapter is rom-sql, but some projects connect to an HTTP API, or need the expandability of MongoDB and CouchDB. It's up to you to choose the appropriate solution for your application's needs.
@@ -43,7 +43,7 @@ Simply install `rom` or add it to your `Gemfile`. Adapters will be auto-loaded b
 
 For example, if you'd like to use ROM with an SQL database, add following gems to you `Gemfile`:
 
-``` ruby
+```ruby
 gem "rom"
 gem "rom-sql"
 ```
@@ -54,9 +54,9 @@ ROM needs a setup phase to provide a persistence environment for your entities. 
 
 Depending on your application needs, you may want to use different setup strategies:
 
-* [Setup DSL](//page/setup-dsl) - suitable for small scripts
-* [Rails](//page/rails-setup) - setup integrated with Rails
-* [Explicit](//guide/advanced/explicit-setup) - suitable for custom environments (**advanced usage**)
+- [Setup DSL](//page/setup-dsl) - suitable for small scripts
+- [Rails](//page/rails-setup) - setup integrated with Rails
+- [Explicit](//guide/advanced/explicit-setup) - suitable for custom environments (**advanced usage**)
 
 > [!NOTE]
 > Most guide examples are written specifically for the rom-sql adapter. If you are using a different one, consult that adapter's documentation as well.

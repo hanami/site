@@ -11,7 +11,7 @@ All ROM examples are based on `rom-sql` which is an adapter needed to use SQL da
 > [!NOTE]
 > Examples below assume a configured environment for each framework. For ROM examples this means an initialized `ROM::Container` with each component registered.
 >
->  For information on how to configure a ROM environment see either [Setup DSL](//page/setup-dsl) or [Rails Setup](//page/rails-setup) guides.
+> For information on how to configure a ROM environment see either [Setup DSL](//page/setup-dsl) or [Rails Setup](//page/rails-setup) guides.
 
 > [!NOTE]
 > Both frameworks have many similar APIs but philosophically they are completely different. In this guide, we attempt to highlight these differences and provide context for why we chose a different path. That is not to say ROM is better than ActiveRecord or vise-versa, it's that they're different and each has its own strengths and weaknesses.
@@ -23,12 +23,14 @@ The first difference is ROM doesn't really have a concept of models. ROM objects
 The closest implementation to models would be `ROM::Struct`, which is essentially a data object with attribute readers, coercible to a hash. More on ROM Structs later.
 
 #### Active Record
+
 ```ruby
 class User < ApplicationRecord
 end
 ```
 
 #### ROM
+
 ```ruby
 class Users < ROM::Relation[:sql]
   schema(infer: true)
@@ -36,14 +38,15 @@ end
 ```
 
 As you can see, ActiveRecord and ROM have similar boilerplate and as this guide progresses both will use similar APIs to accomplish the same tasks. The difference between models and relations lies within their scope and intended purposes. ActiveRecord models represent an all encompassing thing that contains
-*state*, *behavior*, *identity*, *persistence logic* and *validations* whereas
-ROM relations describe how data is connected to other relations and provides stateless APIs for applying *views* of that data on demand.
+_state_, _behavior_, _identity_, _persistence logic_ and _validations_ whereas
+ROM relations describe how data is connected to other relations and provides stateless APIs for applying _views_ of that data on demand.
 
 ### Models vs ROM Structs
 
 The most direct analog to ActiveRecord models in ROM is a `ROM::Struct`. ROM structs provide a quick method for adding behavior to mapped data returned from a relation. A custom type or plain hash can also be used instead, but ROM structs offer a fast alternative without having to write a lot of boilerplate.
 
 #### Active Record
+
 ```ruby
 class User < ApplicationRecord
   def first_name
@@ -66,6 +69,7 @@ user.last_name
 ```
 
 #### ROM
+
 ```ruby
 class Users < ROM::Relation[:sql]
   struct_namespace Entities
@@ -104,12 +108,14 @@ For a brief overview and links to more in-depth information about relations see 
 Once you have a relation, it becomes almost trivial to start querying for information in a similar fashion as ActiveRecord. A basic example below:
 
 #### Active Record
+
 ```ruby
 User.where(name: "Jane").first
 #> #<User id: 1, name: "Jane">
 ```
 
 #### ROM
+
 ```ruby
 users_relation.where(name: "Jane").first
 #<ROM::Struct::User id=1 name="Jane">
@@ -118,6 +124,7 @@ users_relation.where(name: "Jane").first
 ### Query Subset of Data
 
 #### Active Record
+
 ```ruby
 User.select("name").where(name: name).first
 
@@ -125,6 +132,7 @@ User.select("name").where(name: name).first
 ```
 
 #### ROM
+
 ```ruby
 users_relation.select(:name).where(name: name).one
 
@@ -134,11 +142,13 @@ users_relation.select(:name).where(name: name).one
 ### Query with Complex Conditions
 
 #### Active Record
+
 ```ruby
 User.where("admin IS ? OR moderator IS ?", true, true)
 ```
 
 #### ROM
+
 ```ruby
 users_relation.where { admin.is(true) | (moderator.is(true)) }
 ```
@@ -157,11 +167,13 @@ Similar to ActiveRecord, ROM uses associations as a means of describing the inte
 ### Join Query
 
 #### Active Record
+
 ```ruby
 Article.joins(:users)
 ```
 
 #### ROM
+
 ```ruby
 articles_relation.join(:users)
 ```
@@ -179,7 +191,6 @@ User.create(name: "Jane")
 #> #<User id: 1, name: "Jane">
 ```
 
-
 #### ROM
 
 ```ruby
@@ -191,10 +202,10 @@ users_relation
 
 Changesets are an abstraction created over commands which are what actually manipulate stored records. They are preferred over commands due to additional functionality they provide.
 
-
 ### Updating Simple Objects
 
 #### ActiveRecord
+
 ```ruby
 user = User.find_by(name: "Jane")
 user.update(name: "Jane Doe")
@@ -203,6 +214,7 @@ user.update(name: "Jane Doe")
 ```
 
 #### ROM
+
 ```ruby
 users_relation
   .where(name: "Jane")
@@ -283,7 +295,6 @@ ActiveRecord mixes domain-specific data validation with persistence layer. An ac
 
 ROM on the other hand does not have a validation concept built-in. Validations in ROM projects need to be handled externally by separate libraries and validated data can be passed down to the command layer to be persisted. We expect users to validate data at the system boundaries using rules that make sense in the current context.
 
-
 ## Where ROM Shines
 
 ### Database Support
@@ -348,7 +359,6 @@ User
 #> #<User id=1 full_name="Jane Doe">
 ```
 
-
 #### ROM
 
 ```ruby
@@ -382,8 +392,8 @@ User.where('name IS ?', 'Jane').first
 # ActiveRecord::StatementInvalid: no such column
 ```
 
-
 #### ROM
+
 ```ruby
 class Users < ROM::Relation[:sql]
   schema(:SomeHorriblyNamedUserTable, as: :users) do
@@ -397,7 +407,7 @@ users_relation.where(name: 'Jane').first
 #> #<ROM::Struct::User id=1 name="Jane">
 ```
 
-ROM makes working with legacy schemas a breeze. All that's needed is to define attributes on the relations schema along with their aliases. Afterwards just reuse the aliased names throughout your ROM queries - *quick* and *easy*.
+ROM makes working with legacy schemas a breeze. All that's needed is to define attributes on the relations schema along with their aliases. Afterwards just reuse the aliased names throughout your ROM queries - _quick_ and _easy_.
 
 Working with ActiveRecord in this regard is a bit more difficult. While you can alias attributes, there is no real supported method for changing attribute names. Worse yet, ActiveRecord breaks the rule of Least Surprise because while some parts of the ActiveRecord API takes `alias_attribute` into account, [arel](https://github.com/rails/arel) does not, causing performance tuning SQL queries to fall back on the ugly database attribute names you were trying to avoid.
 

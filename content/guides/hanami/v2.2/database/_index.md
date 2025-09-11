@@ -1,9 +1,9 @@
 ---
 title: Overview
 pages:
-- configuration
-- migrations
-- relations
+  - configuration
+  - migrations
+  - relations
 ---
 
 Hanami’s persistence layer is based on the [Ruby Object Mapper (ROM)](https://rom-rb.org/) project. ROM may be a radically different approach to persistence than what you're familiar with, but don’t let that scare you. ROM is designed to provide clear separation of responsibilities. The hardest part is shifting your perspective to think in a new paradigm.
@@ -12,10 +12,11 @@ Hanami’s persistence layer is based on the [Ruby Object Mapper (ROM)](https://
 Above all else ROM favors:
 
 - **Explicitness** over "magic" whenever possible
-- **Speed**, because performance is a *feature*
+- **Speed**, because performance is a _feature_
 - **Flexibility** in your domain layer's design
 
 [ROM: Principles & Design](https://rom-rb.org/learn/#principles-amp-design)
+
 </blockquote>
 
 While traditional Object-Relational Mapping comes from a strictly Object-Oriented approach, ROM combines the best parts of Functional Programming and OOP that play to Ruby’s inherent strengths as a language. Instead of homogenizing all datastores into a lowest-common-denominator API, ROM embraces the diversity of storage engines and the powerful features they can provide.
@@ -68,7 +69,6 @@ class Users < Hanami::DB::Relation
 end
 ```
 
-
 For more on associations, see [the relations guide]({{% ref "relations.md#associations" %}}).
 
 ## Datasets
@@ -104,7 +104,6 @@ class UserRepo < Hanami::DB::Repo
   def find(email) = users.where(email:).one
 end
 ```
-
 
 Let's say the requirement has changed, to use usernames as the principal identity instead. Without a Repository, every place in your codebase that queries a User would need to accommodate this change. But here, we can do:
 

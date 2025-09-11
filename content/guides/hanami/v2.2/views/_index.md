@@ -1,17 +1,17 @@
 ---
 title: Overview
 pages:
-- working-with-dependencies
-- input-and-exposures
-- rendering-from-actions
-- templates-and-partials
-- helpers
-- context
-- parts
-- scopes
-- rendering-errors
-- configuration
-- testing
+  - working-with-dependencies
+  - input-and-exposures
+  - rendering-from-actions
+  - templates-and-partials
+  - helpers
+  - context
+  - parts
+  - scopes
+  - rendering-errors
+  - configuration
+  - testing
 ---
 
 Hanami provides a complete view system for rendering HTML, JSON and other formats.

@@ -90,7 +90,6 @@ As first thing we need to create the database and then we can modify the schema.
 When we run `db migrate`, it applies all the pending migrations under `db/migrations`.
 Our `books` table is now created. We can ask our application what's the current schema version.
 
-
 ```shell
 % lotus db version
 20150617145519
@@ -113,9 +112,9 @@ We're fan of system automation, for this reason we have added a new command to g
 
 It performs the following operations:
 
-  * Creates database
-  * Load schema structure, if present (see next section, _Apply_).
-  * Runs pending migrations
+- Creates database
+- Load schema structure, if present (see next section, _Apply_).
+- Runs pending migrations
 
 If used with `db apply` it's **really fast** and it should be the **preferred way** to setup databases.
 
@@ -127,9 +126,9 @@ This slows down database operations for development and tests (CI).
 We have introduced an **experimental feature**: `db apply`.
 By running this command, it:
 
-  * Runs pending migrations
-  * Dumps schema informations into `db/schema.sql`
-  * Deletes all the migrations from `db/migrations`
+- Runs pending migrations
+- Dumps schema informations into `db/schema.sql`
+- Deletes all the migrations from `db/migrations`
 
 ```shell
 % lotus db apply

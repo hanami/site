@@ -107,38 +107,38 @@ We deprecated `Hanami::Action#parsed_body`, and it will be removed in future rel
 
 ## Minor Enhancements 🆙
 
-  * Preserve directory structure of assets at the precompile time
-  * Generate actions/views/mailers with nested module/class definition
-  * CLI: Introduce array type for arguments (`foo exec test spec/bookshelf/entities spec/bookshelf/repositories`)
-  * CLI: Introduce array type for options (`foo generate config --apps=web,api`)
-  * CLI: Introduce variadic arguments (`foo run ruby:latest -- ruby -v`)
+- Preserve directory structure of assets at the precompile time
+- Generate actions/views/mailers with nested module/class definition
+- CLI: Introduce array type for arguments (`foo exec test spec/bookshelf/entities spec/bookshelf/repositories`)
+- CLI: Introduce array type for options (`foo generate config --apps=web,api`)
+- CLI: Introduce variadic arguments (`foo run ruby:latest -- ruby -v`)
 
 ## Bug Fixes 🐞
 
-  * Make possible to pass extra settings for custom logger instances (eg. `logger SemanticLogger.new, :foo, :bar`)
-  * Ensure `hanami generate app` to work without `require_relative` entries in `config/enviroment.rb`
-  * Fixed regression for `hanami new .` that used to generate a broken project
-  * Don't use thread unsafe `Dir.chdir` to serve static assets
-  * Ensure that if `If-None-Match` or `If-Modified-Since` response HTTP headers are missing, `Etag` or `Last-Modified` headers will be in response HTTP headers.
-  * Don't show flash message for the request after a HTTP redirect.
-  * Ensure `Hanami::Action::Flash#each`, `#map`, and `#empty?` to not reference stale flash data.
-  * Ensure to set `:disable_escape` option only for `slim` and don't let `tilt` to emit a warning for other template engines
-  * Ensure partial rendering to respect `format` overriding
-  * Print informative message when unknown or wrong option is passed to CLI commands
+- Make possible to pass extra settings for custom logger instances (eg. `logger SemanticLogger.new, :foo, :bar`)
+- Ensure `hanami generate app` to work without `require_relative` entries in `config/enviroment.rb`
+- Fixed regression for `hanami new .` that used to generate a broken project
+- Don't use thread unsafe `Dir.chdir` to serve static assets
+- Ensure that if `If-None-Match` or `If-Modified-Since` response HTTP headers are missing, `Etag` or `Last-Modified` headers will be in response HTTP headers.
+- Don't show flash message for the request after a HTTP redirect.
+- Ensure `Hanami::Action::Flash#each`, `#map`, and `#empty?` to not reference stale flash data.
+- Ensure to set `:disable_escape` option only for `slim` and don't let `tilt` to emit a warning for other template engines
+- Ensure partial rendering to respect `format` overriding
+- Print informative message when unknown or wrong option is passed to CLI commands
 
 ## Released Gems 💎
 
-  * `hanami-1.3.0.beta1`
-  * `hanami-model-1.3.0.beta1`
-  * `hanami-assets-1.3.0.beta1`
-  * `hanami-cli-0.3.0.beta1`
-  * `hanami-mailer-1.3.0.beta1`
-  * `hanami-helpers-1.3.0.beta1`
-  * `hanami-view-1.3.0.beta1`
-  * `hamami-controller-1.3.0.beta1`
-  * `hanami-router-1.3.0.beta1`
-  * `hanami-validations-1.3.0.beta1`
-  * `hanami-utils-1.3.0.beta1`
+- `hanami-1.3.0.beta1`
+- `hanami-model-1.3.0.beta1`
+- `hanami-assets-1.3.0.beta1`
+- `hanami-cli-0.3.0.beta1`
+- `hanami-mailer-1.3.0.beta1`
+- `hanami-helpers-1.3.0.beta1`
+- `hanami-view-1.3.0.beta1`
+- `hamami-controller-1.3.0.beta1`
+- `hanami-router-1.3.0.beta1`
+- `hanami-validations-1.3.0.beta1`
+- `hanami-utils-1.3.0.beta1`
 
 ## How to try it ⌨️
 

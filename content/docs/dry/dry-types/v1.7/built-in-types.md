@@ -15,7 +15,7 @@ Built-in types are grouped under 6 categories:
 
 Assuming you included `Dry::Types` ([see instructions](//page/getting-started)) in a module called `Types`:
 
-* Nominal types:
+- Nominal types:
   - `Types::Nominal::Any`
   - `Types::Nominal::Nil`
   - `Types::Nominal::Symbol`
@@ -33,7 +33,7 @@ Assuming you included `Dry::Types` ([see instructions](//page/getting-started)) 
   - `Types::Nominal::Array`
   - `Types::Nominal::Hash`
 
-* `Strict` types will raise an error if passed a value of the wrong type:
+- `Strict` types will raise an error if passed a value of the wrong type:
   - `Types::Strict::Nil`
   - `Types::Strict::Symbol`
   - `Types::Strict::Class`
@@ -52,12 +52,12 @@ Assuming you included `Dry::Types` ([see instructions](//page/getting-started)) 
 
 > All types in the `strict` category are [constrained](//page/constraints) by a type-check that is applied to make sure that the input is an instance of the primitive:
 
-``` ruby
+```ruby
 Types::Strict::Integer[1] # => 1
 Types::Strict::Integer['1'] # => raises Dry::Types::ConstraintError
 ```
 
-* `Coercible` types will attempt to cast values to the correct class using kernel coercion methods:
+- `Coercible` types will attempt to cast values to the correct class using kernel coercion methods:
   - `Types::Coercible::String`
   - `Types::Coercible::Symbol`
   - `Types::Coercible::Integer`
@@ -66,7 +66,7 @@ Types::Strict::Integer['1'] # => raises Dry::Types::ConstraintError
   - `Types::Coercible::Array`
   - `Types::Coercible::Hash`
 
-* Types suitable for `Params` param processing with coercions:
+- Types suitable for `Params` param processing with coercions:
   - `Types::Params::Nil`
   - `Types::Params::Date`
   - `Types::Params::DateTime`
@@ -80,7 +80,7 @@ Types::Strict::Integer['1'] # => raises Dry::Types::ConstraintError
   - `Types::Params::Array`
   - `Types::Params::Hash`
 
-* Types suitable for `JSON` processing with coercions:
+- Types suitable for `JSON` processing with coercions:
   - `Types::JSON::Nil`
   - `Types::JSON::Symbol`
   - `Types::JSON::Date`
@@ -90,7 +90,7 @@ Types::Strict::Integer['1'] # => raises Dry::Types::ConstraintError
   - `Types::JSON::Array`
   - `Types::JSON::Hash`
 
-* `Maybe` strict types:
+- `Maybe` strict types:
   - `Types::Maybe::Strict::Class`
   - `Types::Maybe::Strict::String`
   - `Types::Maybe::Strict::Symbol`
@@ -105,7 +105,7 @@ Types::Strict::Integer['1'] # => raises Dry::Types::ConstraintError
   - `Types::Maybe::Strict::Array`
   - `Types::Maybe::Strict::Hash`
 
-* `Maybe` coercible types:
+- `Maybe` coercible types:
   - `Types::Maybe::Coercible::String`
   - `Types::Maybe::Coercible::Integer`
   - `Types::Maybe::Coercible::Float`

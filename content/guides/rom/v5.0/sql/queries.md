@@ -6,7 +6,7 @@ title: Queries
 
 All relations come with the default `#by_pk` method. It supports composite PKs too.
 
-``` ruby
+```ruby
 # with a single PK
 users.by_pk(1)
 
@@ -18,7 +18,7 @@ posts_tags.by_pk(1, 2)
 
 To explicitly select columns you can either use a list of symbols or relation schema:
 
-``` ruby
+```ruby
 class Users < ROM::Relation[:sql]
   schema(infer: true)
 
@@ -42,7 +42,7 @@ In a basic case, which is selecting unqualified columns using their canonical na
 
 If you have a relation with some columns already selected and you want to add more, you can use `select_append` method:
 
-``` ruby
+```ruby
 class Users < ROM::Relation[:sql]
   schema(infer: true)
 
@@ -64,7 +64,7 @@ Both `select` and `select_append` accept a block which exposes projection DSL. Y
 
 Within the block you can refer to relation attributes by their names and use [api::rom-sql::SQL](Attribute) API for projections:
 
-``` ruby
+```ruby
 class Users < ROM::Relation[:sql]
   schema(infer: true)
 
@@ -78,7 +78,7 @@ end
 
 Apart from returning column values, you can also project function results:
 
-``` ruby
+```ruby
 class Users < ROM::Relation[:sql]
   schema(infer: true)
 
@@ -91,7 +91,7 @@ end
 
 Functions can accept any number of arguments:
 
-``` ruby
+```ruby
 class Users < ROM::Relation[:sql]
   schema(infer: true)
 
@@ -110,7 +110,7 @@ To restrict a relation you can use `where` method which accepts a hash with cond
 
 If you pass a hash to `where` all conditions will be translated into SQL and ANDed together:
 
-``` ruby
+```ruby
 class Users < ROM::Relation[:sql]
   schema(infer: true)
 
@@ -135,7 +135,7 @@ end
 
 If you pass a block to `where` you can use restriction DSL to compose more complex conditions:
 
-``` ruby
+```ruby
 class Users < ROM::Relation[:sql]
   schema(infer: true)
 
@@ -159,7 +159,7 @@ end
 
 To create `HAVING` clause simply use `having` method, which works in a similar way as `where` and supports creating aggregate functions for your conditions:
 
-``` ruby
+```ruby
 class Users < ROM::Relation[:sql]
   schema(infer: true)
 
@@ -176,7 +176,7 @@ end
 
 `order` method with block will order your query:
 
-``` ruby
+```ruby
 class Users < ROM::Relation[:sql]
   schema(infer: true)
 
@@ -192,11 +192,11 @@ end
 
 ## Nullify
 
-`nullify` makes it trivial to implement the Null Object pattern on rom-sql relations.  After calling `nullify`, there will never issue a query to the database.
+`nullify` makes it trivial to implement the Null Object pattern on rom-sql relations. After calling `nullify`, there will never issue a query to the database.
 
 [Check out the Sequel docs for more information.](http://sequel.jeremyevans.net/rdoc-plugins/files/lib/sequel/extensions/null_dataset_rb.html)
 
-``` ruby
+```ruby
 class Tasks < ROM::Relation[:sql]
   schema(infer: true)
 

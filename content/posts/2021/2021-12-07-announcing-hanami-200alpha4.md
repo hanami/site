@@ -15,9 +15,9 @@ With this new cycle of monthly based releases we have smaller set of changes, bu
 Specifically, we're focusing on the cleanup of our application template.
 The template is essential for **you** to try Hanami 2, but also for **us** to shape the ergonomics of the framework.
 
-  * Content Security Policy (new API)
-  * Router helpers to be accessible from actions
-  * CLI enhancements
+- Content Security Policy (new API)
+- Router helpers to be accessible from actions
+- CLI enhancements
 
 ## Content Security Policy
 
@@ -97,9 +97,9 @@ end
 
 Minor enhancements for the command line:
 
-  * Display a custom prompt when using IRB based console (consistent with PRY based console)
-  * Support `postgresql://` URL schemes (in addition to existing `postgres://` support) for `db` subcommands
-  * Ensure slice helper methods work in console (e.g. top-level `main` method will return `Main::Slice` if an app has a "main" slice defined)
+- Display a custom prompt when using IRB based console (consistent with PRY based console)
+- Support `postgresql://` URL schemes (in addition to existing `postgres://` support) for `db` subcommands
+- Ensure slice helper methods work in console (e.g. top-level `main` method will return `Main::Slice` if an app has a "main" slice defined)
 
 ## What’s included?
 

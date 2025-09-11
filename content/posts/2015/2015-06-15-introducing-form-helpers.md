@@ -13,17 +13,17 @@ Lotus v0.4.0 (Jun 23), will include a new useful and highly requested feature: *
 
 It provides a powerful Ruby API to describe HTML5 forms, to be used both with views and templates. It ships with:
 
-   * Support for complex markup without the need of concatenation
-   * Auto closing HTML5 tags
-   * Support for view local variables
-   * Method override support (`PUT`/`PATCH`/`DELETE` HTTP verbs aren't understood by browsers)
-   * Automatic generation of HTML attributes for inputs: `id`, `name`, `value`
-   * Allow to override automatic HTML attributes
-   * Read values from request params and/or given entities, to autofill `value` attributes
-   * Automatic selection of current value for radio button and select inputs
-   * CSRF Protection
-   * Infinite nested fields
-   * ORM Agnostic
+- Support for complex markup without the need of concatenation
+- Auto closing HTML5 tags
+- Support for view local variables
+- Method override support (`PUT`/`PATCH`/`DELETE` HTTP verbs aren't understood by browsers)
+- Automatic generation of HTML attributes for inputs: `id`, `name`, `value`
+- Allow to override automatic HTML attributes
+- Read values from request params and/or given entities, to autofill `value` attributes
+- Automatic selection of current value for radio button and select inputs
+- CSRF Protection
+- Infinite nested fields
+- ORM Agnostic
 
 ## Technical notes
 
@@ -67,8 +67,8 @@ This will produce
 
 ```html
 <form action="/books" id="book-form" method="POST">
-  <input type="hidden" name="_csrf_token" value="0a800d6a8fc3c24e7eca319186beb287689a91c2a719f1cbb411f721cacd79d4">
-  <input type="text" name="book[title]" id="book-id" value="">
+  <input type="hidden" name="_csrf_token" value="0a800d6a8fc3c24e7eca319186beb287689a91c2a719f1cbb411f721cacd79d4" />
+  <input type="text" name="book[title]" id="book-id" value="" />
   <button type="submit">Create</button>
 </form>
 ```
@@ -118,10 +118,10 @@ The API is really clean and concise, **it doesn't require concatenation** betwee
 
 ```html
 <form action="/books" id="book-form" method="POST" class="form-horizontal">
-  <input type="hidden" name="_csrf_token" value="1825a0a7ea92bbe3fd60cc8b6a0ea00ce3c52030afbf4037370d937bc5248acb">
+  <input type="hidden" name="_csrf_token" value="1825a0a7ea92bbe3fd60cc8b6a0ea00ce3c52030afbf4037370d937bc5248acb" />
   <div>
     <label for="book-title">Title</label>
-    <input type="text" name="book[title]" id="book-title" value="Test Driven Development">
+    <input type="text" name="book[title]" id="book-title" value="Test Driven Development" />
   </div>
 
   <button type="submit">Create</button>
@@ -144,9 +144,9 @@ Browsers don't understand HTTP methods outside of `GET` and `POST`. On the other
 
 ```html
 <form action="/books/23" id="book-form" method="POST">
-  <input type="hidden" name="_method" value="PUT">
-  <input type="hidden" name="_csrf_token" value="5f1029dd15981648a0882ec52028208410afeaeffbca8f88975ef199e2988ce7">
-  <input type="text" name="book[title]" id="book-title" value="Test Driven Development">
+  <input type="hidden" name="_method" value="PUT" />
+  <input type="hidden" name="_csrf_token" value="5f1029dd15981648a0882ec52028208410afeaeffbca8f88975ef199e2988ce7" />
+  <input type="text" name="book[title]" id="book-title" value="Test Driven Development" />
 
   <button type="submit">Update</button>
 </form>
@@ -181,9 +181,9 @@ Developers can customize attack handling.
 
 ```html
 <form action="/deliveries" id="delivery-form" method="POST">
-  <input type="hidden" name="_csrf_token" value="4800d585b3a802682ae92cb72eed1cdd2894da106fb4e9e25f8a262b862c52ce">
-  <input type="text" name="delivery[customer_name]" id="delivery-customer-name" value="">
-  <input type="text" name="delivery[address][city]" id="delivery-address-city" value="">
+  <input type="hidden" name="_csrf_token" value="4800d585b3a802682ae92cb72eed1cdd2894da106fb4e9e25f8a262b862c52ce" />
+  <input type="text" name="delivery[customer_name]" id="delivery-customer-name" value="" />
+  <input type="text" name="delivery[address][city]" id="delivery-address-city" value="" />
 
   <button type="submit">Create</button>
 </form>
@@ -213,10 +213,10 @@ Let's compose the form.
 <%=
   form_for :delivery, routes.delivery_path(id: delivery.id), method: :patch, values: {delivery: delivery, customer: customer} do
     text_field :code
-    
+
     fields_for :customer do
       text_field :name
-      
+
       fields_for :address do
         text_field :city
       end
@@ -229,13 +229,13 @@ Let's compose the form.
 
 ```html
 <form action="/deliveries/1" id="delivery-form" method="POST">
-  <input type="hidden" name="_method" value="PATCH">
-  <input type="hidden" name="_csrf_token" value="4800d585b3a802682ae92cb72eed1cdd2894da106fb4e9e25f8a262b862c52ce">
-  
-  <input type="text" name="delivery[code]" id="delivery-code" value="123">
-  
-  <input type="text" name="delivery[customer][name]" id="delivery-customer-name" value="Luca">
-  <input type="text" name="delivery[customer][address][city]" id="delivery-customer-address-city" value="Rome">
+  <input type="hidden" name="_method" value="PATCH" />
+  <input type="hidden" name="_csrf_token" value="4800d585b3a802682ae92cb72eed1cdd2894da106fb4e9e25f8a262b862c52ce" />
+
+  <input type="text" name="delivery[code]" id="delivery-code" value="123" />
+
+  <input type="text" name="delivery[customer][name]" id="delivery-customer-name" value="Luca" />
+  <input type="text" name="delivery[customer][address][city]" id="delivery-customer-address-city" value="Rome" />
 
   <button type="submit">Update</button>
 </form>
@@ -255,13 +255,13 @@ Here how the form is rendered:
 
 ```html
 <form action="/deliveries/1" id="delivery-form" method="POST">
-  <input type="hidden" name="_method" value="PATCH">
-  <input type="hidden" name="_csrf_token" value="4800d585b3a802682ae92cb72eed1cdd2894da106fb4e9e25f8a262b862c52ce">
-  
-  <input type="text" name="delivery[code]" id="delivery-code" value="foo">
-  
-  <input type="text" name="delivery[customer][name]" id="delivery-customer-name" value="Luca">
-  <input type="text" name="delivery[customer][address][city]" id="delivery-customer-address-city" value="Rome">
+  <input type="hidden" name="_method" value="PATCH" />
+  <input type="hidden" name="_csrf_token" value="4800d585b3a802682ae92cb72eed1cdd2894da106fb4e9e25f8a262b862c52ce" />
+
+  <input type="text" name="delivery[code]" id="delivery-code" value="foo" />
+
+  <input type="text" name="delivery[customer][name]" id="delivery-customer-name" value="Luca" />
+  <input type="text" name="delivery[customer][address][city]" id="delivery-customer-address-city" value="Rome" />
 
   <button type="submit">Update</button>
 </form>

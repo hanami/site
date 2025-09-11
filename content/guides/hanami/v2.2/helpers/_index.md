@@ -1,10 +1,10 @@
 ---
 title: Overview
 pages:
-- string-escaping
-- html
-- assets
-- number-formatting
+  - string-escaping
+  - html
+  - assets
+  - number-formatting
 ---
 
 Hanami provides a range of standard helpers for you to use in your views.

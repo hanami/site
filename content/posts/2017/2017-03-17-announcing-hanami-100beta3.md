@@ -28,31 +28,31 @@ excerpt: >
 
 ## Released Gems
 
-  * `hanami-1.0.0-beta3`
-  * `hanami-model-1.0.0.beta3`
-  * `hanami-utils-1.0.0.beta3`
-  * `hanami-validations-1.0.0.beta2`
-  * `hanami-router-1.0.0.beta3`
-  * `hanami-controller-1.0.0.beta3`
-  * `hanami-view-1.0.0.beta2`
-  * `hanami-helpers-1.0.0.beta2`
-  * `hanami-mailer-1.0.0.beta2`
-  * `hanami-assets-1.0.0.beta2`
+- `hanami-1.0.0-beta3`
+- `hanami-model-1.0.0.beta3`
+- `hanami-utils-1.0.0.beta3`
+- `hanami-validations-1.0.0.beta2`
+- `hanami-router-1.0.0.beta3`
+- `hanami-controller-1.0.0.beta3`
+- `hanami-view-1.0.0.beta2`
+- `hanami-helpers-1.0.0.beta2`
+- `hanami-mailer-1.0.0.beta2`
+- `hanami-assets-1.0.0.beta2`
 
 ## Contributors
 
 We're grateful for each person who contributed to this release. These lovely people are:
 
-* [Alfonso Uceda](https://github.com/AlfonsoUceda)
-* [Anton Davydov](https://github.com/davydovanton)
-* [Dmitriy Ivliev](https://github.com/moofkit)
-* [Marcello Rocha](https://github.com/mereghost)
-* [Marion Duprey](https://github.com/TiteiKo)
-* [Marion Schleifer](https://github.com/marionschleifer)
-* [Oana Sipos](https://github.com/oana-sipos)
-* [Sean Collins](https://github.com/cllns)
-* [Semyon Pupkov](https://github.com/artofhuman)
-* [Tobias Sandelius](https://github.com/sandelius)
+- [Alfonso Uceda](https://github.com/AlfonsoUceda)
+- [Anton Davydov](https://github.com/davydovanton)
+- [Dmitriy Ivliev](https://github.com/moofkit)
+- [Marcello Rocha](https://github.com/mereghost)
+- [Marion Duprey](https://github.com/TiteiKo)
+- [Marion Schleifer](https://github.com/marionschleifer)
+- [Oana Sipos](https://github.com/oana-sipos)
+- [Sean Collins](https://github.com/cllns)
+- [Semyon Pupkov](https://github.com/artofhuman)
+- [Tobias Sandelius](https://github.com/sandelius)
 
 ## How To Update Your Project
 

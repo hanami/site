@@ -4,12 +4,11 @@ title: Introduction
 
 dry-events is a library providing pub/sub API allowing you to create event publishers and a convenient way of subscribing to the events. This library is used as the pub/sub backend in dry-monitor, which also powers monitoring plugin in dry-system.
 
-
 ### Quick start
 
 Publishers are created using `Dry::Events::Publisher` extension, which is created by providing a unique identifier. An extended class can be used to define the type of events it can publish:
 
-``` ruby
+```ruby
 require 'dry/events/publisher'
 
 class Application
@@ -21,7 +20,7 @@ end
 
 You can publish events via `Publisher#publish` method:
 
-``` ruby
+```ruby
 app = Application.new
 
 app.publish('users.created', user: 'Jane')
@@ -34,13 +33,11 @@ There are two ways that you can use to subscribe to events:
 - Block-based subscription
 - Event listener objects, where a naming convention is used in order to determine which methods should respond to events
 
-
 ### Block-based subscribers
 
 To subscribe to an event using a block, simply pass it to `Publisher#subscribe` method:
 
-
-``` ruby
+```ruby
 app.subscribe('users.created') do |event|
   puts "EVENT #{event.id}"
   puts "USER #{event[:user]}"
@@ -61,7 +58,7 @@ An event listener object must implement methods that correspond to the following
 
 Here's a simple example:
 
-``` ruby
+```ruby
 class EventListener
   def on_users_created(event)
     puts "EVENT #{event.id}"
@@ -82,7 +79,7 @@ app.publish('users.created', user: 'Jane')
 
 You can also **unsubscribe** an event listener via `Publisher#unsubscribe` method:
 
-``` ruby
+```ruby
 app.unsubscribe(event_listener)
 
 # this will no longer invoke event_listener

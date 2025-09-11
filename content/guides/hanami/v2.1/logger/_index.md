@@ -1,7 +1,7 @@
 ---
 title: Configuration
 pages:
-- usage
+  - usage
 ---
 
 Hanami provides a built-in logger that is used by default as a general-purpose logger and, if you're building a web application, a Rack request logger too.
@@ -14,7 +14,7 @@ You can tweak its configuration in your `App` class, but typically, the defaults
 
 ### Changing default config
 
-The logger configuration is namespaced as `config.logger` and you can access it in your `App` class. If you change these settings, they will be set *for all environments by default*.
+The logger configuration is namespaced as `config.logger` and you can access it in your `App` class. If you change these settings, they will be set _for all environments by default_.
 
 Here's how you could set `:json` formatter for all environments:
 

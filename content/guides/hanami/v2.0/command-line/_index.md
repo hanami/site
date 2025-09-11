@@ -25,7 +25,6 @@ $ hanami new bookshelf # generates a new Bookshelf application in ./bookshelf
 $ hanami new my_app # generates a new MyApp application in ./my_app
 ```
 
-
 ### hanami version
 
 Displays the Hanami version of the currently installed gem.
@@ -34,7 +33,6 @@ Displays the Hanami version of the currently installed gem.
 $ hanami version
 v2.0.0
 ```
-
 
 ## Project commands
 

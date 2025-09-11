@@ -14,14 +14,14 @@ Assuming you have a users relation available:
 
 ### `:create`
 
-``` ruby
+```ruby
 users.changeset(:create, name: "Jane").commit
 => {:id=>1, :name=>"Jane"}
 ```
 
 ### `:update`
 
-``` ruby
+```ruby
 users.by_pk(4).changeset(:update, name: "Jane Doe").commit
 => {:id=>4, :name=>"Jane Doe"}
 ```
@@ -31,7 +31,7 @@ users.by_pk(4).changeset(:update, name: "Jane Doe").commit
 
 ### `:delete`
 
-``` ruby
+```ruby
 users.by_pk(4).changeset(:delete).commit
 => {:id=>4, :name=>"Jane Doe"}
 
@@ -49,14 +49,14 @@ Changesets have an extendible data-pipe mechanism available via `Changeset.map` 
 
 Changeset mappings support all transformation functions from [transproc](https://github.com/solnic/transproc) project, and in addition to that we have:
 
-* `:add_timestamps`–sets `created_at` and `updated_at` timestamps (don't forget to add those fields to the table in case of using `rom-sql`)
-* `:touch`–sets `updated_at` timestamp
+- `:add_timestamps`–sets `created_at` and `updated_at` timestamps (don't forget to add those fields to the table in case of using `rom-sql`)
+- `:touch`–sets `updated_at` timestamp
 
 ### Pre-configured mapping
 
 If you want to process data before sending them to be persisted, you can define a custom Changeset class and specify your own mapping. Let's say we have a nested hash with `address` key but we store it as a flat structure with address attributes having `address_*` prefix:
 
-``` ruby
+```ruby
 class NewUserChangeset < ROM::Changeset::Create
   map do
     unwrap :address, prefix: true
@@ -66,7 +66,7 @@ end
 
 Then we can ask users relation for your changeset:
 
-``` ruby
+```ruby
 user_data = { name: 'Jane', address: { city: 'NYC', street: 'Street 1' } }
 
 changeset = users.changeset(NewUserChangeset, user_data)
@@ -81,7 +81,7 @@ changeset.commit
 
 If you don't want to use built-in transformations, simply configure a mapping and pass `tuple` argument to the map block:
 
-``` ruby
+```ruby
 class NewUserChangeset < ROM::Changeset::Create
   map do |tuple|
     tuple.merge(created_on: Date.today)
@@ -106,7 +106,7 @@ user_repo.create(changeset)
 
 There are situations where you would like to perform an additional mapping but adding a special changeset class would be an overkill. That's why it's possible to apply additional mappings at run-time without having to use a custom changeset class. To do this simply use `Changeset#map` method:
 
-``` ruby
+```ruby
 changeset = users
   .changeset(:create, name: 'Joe', email: 'joe@doe.org')
   .map(:add_timestamps)
@@ -121,7 +121,7 @@ Changesets can be associated with each other using `Changeset#associate` method,
 
 Let's define `:users` relation that has many `:tasks`:
 
-``` ruby
+```ruby
 class Users < ROM::Relation[:sql]
   schema(infer: true) do
     associations do
@@ -141,7 +141,7 @@ end
 
 With associations established in the schema, we can easily associate data using changesets and commit them in a transaction:
 
-``` ruby
+```ruby
 task = tasks.transaction do
   user = users.changeset(:create, name: 'Jane').commit
 
@@ -155,6 +155,7 @@ task
 ```
 
 ^INFO
+
 #### Association name
 
 Notice that `associate` method can accept a rom struct and it will try to infer association name from it. If this fails because you have an aliased association then pass association name explicitly as the second argument, ie: `associate(user, :author)`.

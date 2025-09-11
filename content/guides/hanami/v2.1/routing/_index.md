@@ -189,7 +189,6 @@ Hanami.app["routes"].path(:book, id: 1)
 => "/books/1"
 ```
 
-
 To set a base URL for the `url` helper, configure it in `config/app.rb`:
 
 ```ruby title="config/app.rb"

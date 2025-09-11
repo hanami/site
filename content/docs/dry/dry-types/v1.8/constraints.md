@@ -8,7 +8,7 @@ All types support the constraints API, but not all constraints are suitable for 
 
 Under the hood it uses [dry-logic](//doc/dry-logic) and all of its predicates are supported.
 
-``` ruby
+```ruby
 string = Types::String.constrained(min_size: 3)
 
 string['foo']

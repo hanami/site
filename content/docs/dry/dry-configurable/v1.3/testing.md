@@ -17,9 +17,9 @@ end
 
 and on spec file (`xxx_spec.rb`) :
 
-```ruby 
+```ruby
 before(:all) { AwesomeModule.reset_config }
-# or 
+# or
 before(:each) { AwesomeModule.reset_config }
 
 ```

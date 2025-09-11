@@ -5,10 +5,7 @@ import type { ViewFn } from "@icelab/defo";
 
 type Props = { appId: string; apiKey: string; indexName: string };
 
-export const docsearchViewFn: ViewFn<Props> = (
-  container: HTMLElement,
-  { appId, apiKey, indexName }: Props,
-) => {
+export const docsearchViewFn: ViewFn<Props> = (container: HTMLElement, { appId, apiKey, indexName }: Props) => {
   docsearch({
     container,
     appId,

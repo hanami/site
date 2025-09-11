@@ -101,53 +101,53 @@ end
 
 Please use the corresponding webserver (eg. Nginx) feature, a Rack middleware (eg. `rack-ssl-enforcer`), or another strategy to force HTTPS connection.
 
-### Action's parsed\_request\_body 🚫
+### Action's parsed_request_body 🚫
 
 We deprecated `Hanami::Action#parsed_request_body`, and it will be removed in future releases of Hanami.
 
 ## Minor Enhancements 🆙
 
-  * Automatically log body payload from body parsers (only in `Hanami::Middleware::BodyParser`)
-  * Preserve directory structure of assets at the precompile time
-  * Generate actions/views/mailers with nested module/class definition
-  * CLI: Introduce array type for arguments (`foo exec test spec/bookshelf/entities spec/bookshelf/repositories`)
-  * CLI: Introduce array type for options (`foo generate config --apps=web,api`)
-  * CLI: Introduce variadic arguments (`foo run ruby:latest -- ruby -v`)
-  * Swappable JSON backend for `Hanami::Action::Flash` based on `Hanami::Utils::Json`
-  * Added `Hanami::Mailer.reply_to`
-  * Added `Hanami::Utils::Files.inject_line_before_last` and `.inject_line_after_last`
+- Automatically log body payload from body parsers (only in `Hanami::Middleware::BodyParser`)
+- Preserve directory structure of assets at the precompile time
+- Generate actions/views/mailers with nested module/class definition
+- CLI: Introduce array type for arguments (`foo exec test spec/bookshelf/entities spec/bookshelf/repositories`)
+- CLI: Introduce array type for options (`foo generate config --apps=web,api`)
+- CLI: Introduce variadic arguments (`foo run ruby:latest -- ruby -v`)
+- Swappable JSON backend for `Hanami::Action::Flash` based on `Hanami::Utils::Json`
+- Added `Hanami::Mailer.reply_to`
+- Added `Hanami::Utils::Files.inject_line_before_last` and `.inject_line_after_last`
 
 ## Bug Fixes 🐞
 
-  * Make possible to pass extra settings for custom logger instances (eg. `logger SemanticLogger.new, :foo, :bar`)
-  * Ensure `hanami generate app` to work without `require_relative` entries in `config/enviroment.rb`
-  * Fixed regression for `hanami new .` that used to generate a broken project
-  * Don't use thread unsafe `Dir.chdir` to serve static assets
-  * Generate correct syntax for layout unit tests
-  * Fix concatenation of `Pathname` and `String` in `Hanami::CommonLogger`
-  * Ensure that if `If-None-Match` or `If-Modified-Since` response HTTP headers are missing, `Etag` or `Last-Modified` headers will be in response HTTP headers.
-  * Don't show flash message for the request after a HTTP redirect.
-  * Ensure `Hanami::Action::Flash#each`, `#map`, and `#empty?` to not reference stale flash data.
-  * Ensure to set `:disable_escape` option only for `slim` and don't let `tilt` to emit a warning for other template engines
-  * Ensure partial rendering to respect `format` overriding
-  * Print informative message when unknown or wrong option is passed to CLI commands
-  * Skip attempting to parse unknown MIME types (only in `Hanami::Middleware::BodyParser`)
-  * Reliably parse query params for `Hanami::Model` URL connection string
-  * Print meaningful error message when `Hanami::Model` URL connection is misconfigured
+- Make possible to pass extra settings for custom logger instances (eg. `logger SemanticLogger.new, :foo, :bar`)
+- Ensure `hanami generate app` to work without `require_relative` entries in `config/enviroment.rb`
+- Fixed regression for `hanami new .` that used to generate a broken project
+- Don't use thread unsafe `Dir.chdir` to serve static assets
+- Generate correct syntax for layout unit tests
+- Fix concatenation of `Pathname` and `String` in `Hanami::CommonLogger`
+- Ensure that if `If-None-Match` or `If-Modified-Since` response HTTP headers are missing, `Etag` or `Last-Modified` headers will be in response HTTP headers.
+- Don't show flash message for the request after a HTTP redirect.
+- Ensure `Hanami::Action::Flash#each`, `#map`, and `#empty?` to not reference stale flash data.
+- Ensure to set `:disable_escape` option only for `slim` and don't let `tilt` to emit a warning for other template engines
+- Ensure partial rendering to respect `format` overriding
+- Print informative message when unknown or wrong option is passed to CLI commands
+- Skip attempting to parse unknown MIME types (only in `Hanami::Middleware::BodyParser`)
+- Reliably parse query params for `Hanami::Model` URL connection string
+- Print meaningful error message when `Hanami::Model` URL connection is misconfigured
 
 ## Released Gems 💎
 
-  * `hanami-1.3.0`
-  * `hanami-model-1.3.0`
-  * `hanami-assets-1.3.0`
-  * `hanami-cli-0.3.0`
-  * `hanami-mailer-1.3.0`
-  * `hanami-helpers-1.3.0`
-  * `hanami-view-1.3.0`
-  * `hamami-controller-1.3.0`
-  * `hanami-router-1.3.0`
-  * `hanami-validations-1.3.0`
-  * `hanami-utils-1.3.0`
+- `hanami-1.3.0`
+- `hanami-model-1.3.0`
+- `hanami-assets-1.3.0`
+- `hanami-cli-0.3.0`
+- `hanami-mailer-1.3.0`
+- `hanami-helpers-1.3.0`
+- `hanami-view-1.3.0`
+- `hamami-controller-1.3.0`
+- `hanami-router-1.3.0`
+- `hanami-validations-1.3.0`
+- `hanami-utils-1.3.0`
 
 ## How to install it ⌨️
 

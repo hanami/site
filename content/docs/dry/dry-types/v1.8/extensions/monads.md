@@ -37,6 +37,7 @@ monad
 Note that you must use the `.try` method and not the `.[]` method, since that skips the intermediate `Result` object and just returns the value. If you want to use the `.[]` method and also have errors be raised rather than captured in `Failure`, then you can consider using the [`:maybe` extension](//page/extensions/maybe) instead.
 
 ## `dry-monads` Do notation
+
 This can be useful with [`do` notation](//doc/dry-monads/do-notation) in `dry-monads`.
 
 ```ruby

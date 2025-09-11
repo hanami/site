@@ -86,7 +86,7 @@ end
 
 ### schema
 
-This works like `hash` but does not prepend `hash?` predicate. It's a simpler building block for checking nested hashes. Use it when *you* want to provide base checks prior applying rules to values.
+This works like `hash` but does not prepend `hash?` predicate. It's a simpler building block for checking nested hashes. Use it when _you_ want to provide base checks prior applying rules to values.
 
 ```ruby
 Dry::Schema.Params do
@@ -121,7 +121,7 @@ end
 
 ### each
 
-This works like `array` but does not prepend `array?` predicate. It's a simpler building block for checking each element of an array. Use it when *you* want to provide base checks prior applying rules to elements.
+This works like `array` but does not prepend `array?` predicate. It's a simpler building block for checking each element of an array. Use it when _you_ want to provide base checks prior applying rules to elements.
 
 ```ruby
 Dry::Schema.Params do

@@ -6,9 +6,9 @@ Commands are used to make changes in your data. Every adapter provides its own c
 
 Core commands include following types:
 
-* `:create` - a command which inserts new tuples
-* `:update` - a command which updates existing tuples
-* `:delete` - a command which deletes existing tuples
+- `:create` - a command which inserts new tuples
+- `:update` - a command which updates existing tuples
+- `:delete` - a command which deletes existing tuples
 
 ## Working with commands
 
@@ -18,7 +18,7 @@ Assuming you have a users relation available:
 
 ### `:create`
 
-``` ruby
+```ruby
 # inserting a single tuple
 create_user = users.command(:create)
 
@@ -32,7 +32,7 @@ create_user.call([{ name: "Jane" }, { name: "John" }])
 
 ### `:update`
 
-``` ruby
+```ruby
 update_user = users.by_pk(1).command(:update)
 
 update_user.call(name: "Jane Doe")
@@ -40,7 +40,7 @@ update_user.call(name: "Jane Doe")
 
 ### `:delete`
 
-``` ruby
+```ruby
 delete_user = users.by_pk(1).command(:delete)
 
 delete_user.call
@@ -50,7 +50,7 @@ delete_user.call
 
 You can define custom command types too. This is useful when the logic is complex and you prefer to encapsulate it in a single class.
 
-``` ruby
+```ruby
 class MyCommand < ROM::SQL::Commands::Create
   relation :users
   register_as :my_command
@@ -63,7 +63,7 @@ end
 
 When your command is available in the configured rom container, you can get it in the standard way:
 
-``` ruby
+```ruby
 my_command = users.command(:my_command)
 
 my_command.call(name: "Jane")

@@ -78,4 +78,3 @@ obj.foo = 'changed'
 old_hash == obj.hash
 # => true
 ```
-

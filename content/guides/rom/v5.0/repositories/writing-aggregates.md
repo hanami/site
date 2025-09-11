@@ -11,7 +11,7 @@ Repositories provide a command builder interface which you can use to construct 
 
 Let's say we have `:users` with `:tasks` and we'd like to persist a nested data structure which represents this association.
 
-``` ruby
+```ruby
 require 'rom-repository'
 
 rom = ROM.container(:sql, 'sqlite::memory') do |config|
@@ -49,7 +49,7 @@ Once we establish canonical associations for our relations, repositories will kn
 
 Let's define a repository which exposes an interface for persisting a new user along with associated tasks:
 
-``` ruby
+```ruby
 class UserRepo < ROM::Repository[:users]
   def create_with_tasks(user)
     users.combine(:tasks).command(:create).call(user)

@@ -14,15 +14,15 @@ Today we're happy to announce `v1.3.3` 🙌.
 
 ## Enhancements 🆙
 
-  * Standardize file loading for `.env` files (see: [`dotenv` documentation](https://github.com/bkeepers/dotenv#what-other-env-files-can-i-use))
+- Standardize file loading for `.env` files (see: [`dotenv` documentation](https://github.com/bkeepers/dotenv#what-other-env-files-can-i-use))
 
 ## Bug Fixes 🐞
 
-  * Ensure to use `:host` option when mounting an application in main router (e.g. `mount Beta::Application.new, at: "/", host: "beta.hanami.test"`)
+- Ensure to use `:host` option when mounting an application in main router (e.g. `mount Beta::Application.new, at: "/", host: "beta.hanami.test"`)
 
 ## Released Gems 💎
 
-  * `hanami-1.3.3`
+- `hanami-1.3.3`
 
 ## How to install ⌨️
 

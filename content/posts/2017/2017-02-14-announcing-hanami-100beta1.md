@@ -8,7 +8,7 @@ excerpt: >
   Feature freeze, project logger, automatic logging of requests, SQL queries, and migrations. Minor bug fixes.
 ---
 
-This `v1.0.0.beta1` release marks Hanami's [feature freeze](https://en.wikipedia.org/wiki/Freeze_(software_engineering)) for 1.0, along with a couple new features, and a few bug fixes.
+This `v1.0.0.beta1` release marks Hanami's [feature freeze](<https://en.wikipedia.org/wiki/Freeze_(software_engineering)>) for 1.0, along with a couple new features, and a few bug fixes.
 
 From now on, **Hanami API's are stable and won't be changed until 2.0**.
 
@@ -44,7 +44,19 @@ For the production environment, the default format is **JSON** instead.
 JSON is parseable and more machine-oriented. It works great with log aggregators or SaaS logging products.
 
 ```json
-{"app":"bookshelf","severity":"INFO","time":"2017-02-10T22:31:51Z","http":"HTTP/1.1","verb":"GET","status":"200","ip":"127.0.0.1","path":"/books/1","query":"","length":"451","elapsed":0.000391478}
+{
+  "app": "bookshelf",
+  "severity": "INFO",
+  "time": "2017-02-10T22:31:51Z",
+  "http": "HTTP/1.1",
+  "verb": "GET",
+  "status": "200",
+  "ip": "127.0.0.1",
+  "path": "/books/1",
+  "query": "",
+  "length": "451",
+  "elapsed": 0.000391478
+}
 ```
 
 Migrations will print on standard output the operations applied to the database schema.
@@ -112,51 +124,51 @@ For the entire list of changes, please have a look at our [CHANGELOG](https://gi
 
 ## Released Gems
 
-  * `hanami-1.0.0.beta1`
-  * `hanami-model-1.0.0.beta1`
-  * `hamami-controller-1.0.0.beta1`
-  * `hanami-assets-1.0.0.beta1`
-  * `hanami-mailer-1.0.0.beta1`
-  * `hanami-helpers-1.0.0.beta1`
-  * `hanami-view-1.0.0.beta1`
-  * `hanami-validations-1.0.0.beta1`
-  * `hanami-router-1.0.0.beta1`
-  * `hanami-utils-1.0.0.beta1`
+- `hanami-1.0.0.beta1`
+- `hanami-model-1.0.0.beta1`
+- `hamami-controller-1.0.0.beta1`
+- `hanami-assets-1.0.0.beta1`
+- `hanami-mailer-1.0.0.beta1`
+- `hanami-helpers-1.0.0.beta1`
+- `hanami-view-1.0.0.beta1`
+- `hanami-validations-1.0.0.beta1`
+- `hanami-router-1.0.0.beta1`
+- `hanami-utils-1.0.0.beta1`
 
 ## Contributors
 
 We're grateful for each person who contributed to this release. These lovely people are:
 
-* [Adrian Madrid](https://github.com/aemadrid)
-* [Alfonso Uceda](https://github.com/AlfonsoUceda)
-* [Andy Holland](https://github.com/AMHOL)
-* [Bhanu Prakash](https://github.com/bhanuone)
-* [Gabriel Gizotti](https://github.com/gizotti)
-* [Jakub Pavlík](https://github.com/igneus)
-* [Kai Kuchenbecker](https://github.com/kaikuchn)
-* [Ksenia Zalesnaya](https://github.com/ksenia-zalesnaya)
-* [Leonardo Saraiva](https://github.com/vyper)
-* [Lucas Hosseini](https://github.com/beauby)
-* [Marcello Rocha](https://github.com/mereghost)
-* [Marion Duprey](https://github.com/TiteiKo)
-* [Marion Schleifer](https://github.com/marionschleifer)
-* [Matias H. Leidemer](https://github.com/matiasleidemer)
-* [Mikhail Grachev](https://github.com/mgrachev)
-* [Nick Rowlands](https://github.com/rowlando)
-* [Nikita Shilnikov](https://github.com/flash-gordon)
-* [Oana Sipos](https://github.com/oana-sipos)
-* [Ozawa Sakuro](https://github.com/sakuro)
-* [Pascal Betz](https://github.com/pascalbetz)
-* [Philip Arndt](https://github.com/parndt)
-* [Piotr Solnica](https://github.com/solnic)
-* [Semyon Pupkov](https://github.com/artofhuman)
-* [Thorbjørn Hermansen](https://github.com/thhermansen)
-* [Tiago Farias](https://github.com/tiagofsilva)
-* [Victor Franco](https://github.com/docStonehenge)
-* [Vladimir Dralo](https://github.com/vladra)
-* [alexd16](https://github.com/alexd16)
-* [b264](https://github.com/b264)
-* [yjukaku](https://github.com/yjukaku)
+- [Adrian Madrid](https://github.com/aemadrid)
+- [Alfonso Uceda](https://github.com/AlfonsoUceda)
+- [Andy Holland](https://github.com/AMHOL)
+- [Bhanu Prakash](https://github.com/bhanuone)
+- [Gabriel Gizotti](https://github.com/gizotti)
+- [Jakub Pavlík](https://github.com/igneus)
+- [Kai Kuchenbecker](https://github.com/kaikuchn)
+- [Ksenia Zalesnaya](https://github.com/ksenia-zalesnaya)
+- [Leonardo Saraiva](https://github.com/vyper)
+- [Lucas Hosseini](https://github.com/beauby)
+- [Marcello Rocha](https://github.com/mereghost)
+- [Marion Duprey](https://github.com/TiteiKo)
+- [Marion Schleifer](https://github.com/marionschleifer)
+- [Matias H. Leidemer](https://github.com/matiasleidemer)
+- [Mikhail Grachev](https://github.com/mgrachev)
+- [Nick Rowlands](https://github.com/rowlando)
+- [Nikita Shilnikov](https://github.com/flash-gordon)
+- [Oana Sipos](https://github.com/oana-sipos)
+- [Ozawa Sakuro](https://github.com/sakuro)
+- [Pascal Betz](https://github.com/pascalbetz)
+- [Philip Arndt](https://github.com/parndt)
+- [Piotr Solnica](https://github.com/solnic)
+- [Semyon Pupkov](https://github.com/artofhuman)
+- [Thorbjørn Hermansen](https://github.com/thhermansen)
+- [Tiago Farias](https://github.com/tiagofsilva)
+- [Victor Franco](https://github.com/docStonehenge)
+- [Vladimir Dralo](https://github.com/vladra)
+- [alexd16](https://github.com/alexd16)
+- [b264](https://github.com/b264)
+- [yjukaku](https://github.com/yjukaku)
 
 ## How To Update Your Project
 

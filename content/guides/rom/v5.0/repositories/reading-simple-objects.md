@@ -88,7 +88,6 @@ user_repo = UserRepo.new(rom)
 > [!NOTE]
 > Notice that `users.where` and `users.by_pk` are SQL-specific interfaces that **should not leak into your application domain layer**, that's why we hide them behind our own repository interface.
 
-
 And then in our app we can use the selector methods:
 
 ```ruby

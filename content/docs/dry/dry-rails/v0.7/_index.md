@@ -111,7 +111,7 @@ irb(main):007:0> MyApp::Container[:inflector].demodulize("MyApp::Container")
 ```
 
 ^INFO
-It is *recommended* to inject the inflector via the import module, instead of referring to the global `ActiveSupport::Inflector` constant. Otherwise you'll lose the ability to easily switch inflectors when you have a need, which *can happen*. Your future-self will be grateful.
+It is _recommended_ to inject the inflector via the import module, instead of referring to the global `ActiveSupport::Inflector` constant. Otherwise you'll lose the ability to easily switch inflectors when you have a need, which _can happen_. Your future-self will be grateful.
 ^
 
 ## Safe Params
@@ -220,6 +220,6 @@ end
 
 The railtie simply puts together other dry-rb gems and make them work out-of-the-box in a typical Rails application. If you want to fully leverage the power of these tools, it is recommended to check out individual gem documentation pages:
 
-* [dry-system](//doc/dry-system) - which is the backbone of `Dry::Rails::Container`, your application container
-* [dry-schema](//doc/dry-schema) - which gives you the safe params feature
-* [dry-validation](//doc/dry-validation) - which gives you the application contract feature
+- [dry-system](//doc/dry-system) - which is the backbone of `Dry::Rails::Container`, your application container
+- [dry-schema](//doc/dry-schema) - which gives you the safe params feature
+- [dry-validation](//doc/dry-validation) - which gives you the application contract feature

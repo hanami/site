@@ -12,7 +12,7 @@ Keen followers of dry-rb will note that dry-view has been around for a little wh
 
 With today’s release, dry-view sees major feature upgrades and usability improvements, making it ready for integration with your apps.
 
-dry-view is a simple, standalone view rendering system for Ruby.  It brings the “functional object” paradigm to the view layer, allowing your views to act as stateless transformations, accepting user input and returning your rendered view.
+dry-view is a simple, standalone view rendering system for Ruby. It brings the “functional object” paradigm to the view layer, allowing your views to act as stateless transformations, accepting user input and returning your rendered view.
 
 You should consider dry-view if:
 
@@ -20,7 +20,7 @@ You should consider dry-view if:
 - You’re using a lightweight routing DSL like Roda or Sinatra and you want to keep your routes clean and easy to understand (dry-view handles the integration with your application’s objects, all you need to provide from your routes is the user input data).
 - Your application uses dependency injection as its preferred approach to make objects available to each other (dry-view fits perfectly with dry-web and [dry-system](/gems/dry-system)).
 
-dry-view is built around pairings of functional view controllers  and view templates. To get started, build a view controller:
+dry-view is built around pairings of functional view controllers and view templates. To get started, build a view controller:
 
 ```ruby
 require "dry-view"

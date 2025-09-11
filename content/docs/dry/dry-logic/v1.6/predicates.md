@@ -4,7 +4,7 @@ title: Predicates
 
 dry-logic comes with a lot predicates to compose multiple rules:
 
-``` ruby
+```ruby
 require 'dry/logic'
 require 'dry/logic/predicates'
 
@@ -13,7 +13,7 @@ include Dry::Logic
 
 Now you can access all built-in predicates:
 
-``` ruby
+```ruby
 Predicates[:key?]
 # => #<Method: Module(Dry::Logic::Predicates::Methods)#key?>
 ```
@@ -25,7 +25,7 @@ Predicates[:key?].(:name, {name: 'John'})
 # => true
 ```
 
-* Built-in:
+- Built-in:
   - `type?`
   - `none?`
   - `key?`
@@ -76,7 +76,7 @@ Predicates[:key?].(:name, {name: 'John'})
 With predicates you can build more composable and complex operations:
 For example, let's say we want to check that a given input is a hash and has a specify key.
 
-``` ruby
+```ruby
 require 'dry/logic'
 require 'dry/logic/predicates'
 

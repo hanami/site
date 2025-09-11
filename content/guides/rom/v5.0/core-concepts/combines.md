@@ -234,8 +234,7 @@ user_relation
 ```
 
 > [!IMPORTANT]
->  When adjusting combines, the order of `#combine` and `#node` is important. `#node` must come after `#combine` in the call chain otherwise the *block* will be ignored and the adjustment will fail.
-
+> When adjusting combines, the order of `#combine` and `#node` is important. `#node` must come after `#combine` in the call chain otherwise the _block_ will be ignored and the adjustment will fail.
 
 <!-- TODO link to API docs again when we have them
 ## Learn More

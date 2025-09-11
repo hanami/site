@@ -8,9 +8,9 @@ This feature is experimental until dry-schema reaches 2.0.0
 
 You can compose schemas using the following standard logic operators:
 
-* `s1 & s2` - both schemas must pass
-* `s1 | s2` - both or one of the schemas must pass
-* `s1 > s2` - if `s1` passes then `s2` must be pass too, otherwise the entire statement passes
+- `s1 & s2` - both schemas must pass
+- `s1 | s2` - both or one of the schemas must pass
+- `s1 > s2` - if `s1` passes then `s2` must be pass too, otherwise the entire statement passes
 
 ^INFO
 Currently `^` (`xor`) is not supported because it's not yet clear how to generate errors messages in this case

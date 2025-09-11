@@ -67,8 +67,8 @@ As first thing, you must add `hanami-ujs` to your `Gemfile` and run `bundle inst
 
 Then you have to add two lines to the application layout (eg. `apps/web/templates/application.html.erb`):
 
-  1. `<%= csrf_meta_tags %>` inside `<head>`
-  2. `<%= javascript "hanami-ujs" %>` the location is optional, but before `</body>` is a good spot.
+1. `<%= csrf_meta_tags %>` inside `<head>`
+2. `<%= javascript "hanami-ujs" %>` the location is optional, but before `</body>` is a good spot.
 
 Now we can use the new option for `form_for`: `remote: true`
 
@@ -145,19 +145,19 @@ For the entire list of changes, please have a look at our [CHANGELOG](https://gi
 
 ## Released Gems
 
-  * `hanami-1.2.0.beta1`
-  * `hanami-model-1.2.0.beta1`
-  * `hanami-assets-1.2.0.beta1`
-  * `hanami-cli-0.2.0.beta1`
-  * `hanami-mailer-1.2.0.beta1`
-  * `hanami-helpers-1.2.0.beta1`
-  * `hanami-view-1.2.0.beta1`
-  * `hamami-controller-1.2.0.beta1`
-  * `hanami-router-1.2.0.beta1`
-  * `hanami-validations-1.2.0.beta1`
-  * `hanami-utils-1.2.0.beta1`
-  * `hanami-webconsole-0.1.0.beta1`
-  * `hanami-ujs-0.1.0.beta1`
+- `hanami-1.2.0.beta1`
+- `hanami-model-1.2.0.beta1`
+- `hanami-assets-1.2.0.beta1`
+- `hanami-cli-0.2.0.beta1`
+- `hanami-mailer-1.2.0.beta1`
+- `hanami-helpers-1.2.0.beta1`
+- `hanami-view-1.2.0.beta1`
+- `hamami-controller-1.2.0.beta1`
+- `hanami-router-1.2.0.beta1`
+- `hanami-validations-1.2.0.beta1`
+- `hanami-utils-1.2.0.beta1`
+- `hanami-webconsole-0.1.0.beta1`
+- `hanami-ujs-0.1.0.beta1`
 
 ## How to try it
 

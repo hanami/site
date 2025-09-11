@@ -164,6 +164,7 @@ Failure("oops").alt_map(&:upcase) # => Failure("OOPS")
 ```
 
 ### Adding constraints to `Failure` values.
+
 You can add type constraints to values passed to `Failure`. This will raise an exception if value doesn't meet the constraints:
 
 ```ruby

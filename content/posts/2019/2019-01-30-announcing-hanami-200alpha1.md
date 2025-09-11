@@ -30,15 +30,15 @@ The big change from Hanami 1 is the removal of all the applications (`web`, `adm
 
 In the past we had:
 
-  * `config/enviroment.rb`
-  * `apps/{web,admin,...}/application.rb`
+- `config/enviroment.rb`
+- `apps/{web,admin,...}/application.rb`
 
 To configure where to load files from, which was the default response format for each single app, the sessions, cookies, base URL, just to name a few.
 
 The concept is to **unify** all these settings at the level of `config/application.rb`, so they are **propagated** to the apps.
 DRY at its finest.
 
-Here's an example of  `config/application.rb`:
+Here's an example of `config/application.rb`:
 
 ```ruby
 # frozen_string_literal: true
@@ -97,6 +97,7 @@ security.x_frame_options = "DENY"
 Now the configuration has that value as a default, so the generated code is **empty**:
 
 ```ruby
+
 ```
 
 In case a developer needs to change the default, they will do it for the **whole app**:
@@ -133,11 +134,11 @@ end
 
 Please note the differences from the past:
 
-  * No more multiple files and multiple routers instances for multiple apps
-  * Single router for the whole app 🙌 
-  * Mounting apps is no longer delegated to the gone `Hanami.configure`, which was cluttering `config/environment.rb`
-  * Apps as concrete classes are gone (e.g. `Web::Application`), in favor of symbols
-  * The apps registered with `mount` are the ones that are activated in the internal container
+- No more multiple files and multiple routers instances for multiple apps
+- Single router for the whole app 🙌
+- Mounting apps is no longer delegated to the gone `Hanami.configure`, which was cluttering `config/environment.rb`
+- Apps as concrete classes are gone (e.g. `Web::Application`), in favor of symbols
+- The apps registered with `mount` are the ones that are activated in the internal container
 
 ## Actions
 
@@ -201,19 +202,19 @@ This is useful in production, where you don't need code reloading.
 
 Because this is the first preview of 2.0, only two CLI commands are available for now:
 
-  * `hanami version`
-  * `hanami server`
+- `hanami version`
+- `hanami server`
 
 We'll re-add all the usual CLI commands from 1.3, as soon we'll implement the related features.
 
 ## Released Gems 💎
 
-  * `hanami-2.0.0.alpha1`
-  * `hanami-cli-1.0.0.alpha1`
-  * `hamami-controller-2.0.0.alpha1`
-  * `hanami-router-2.0.0.alpha1`
-  * `hanami-utils-2.0.0.alpha1`
-  * `hanami-reloader-1.0.0.alpha1`
+- `hanami-2.0.0.alpha1`
+- `hanami-cli-1.0.0.alpha1`
+- `hamami-controller-2.0.0.alpha1`
+- `hanami-router-2.0.0.alpha1`
+- `hanami-utils-2.0.0.alpha1`
+- `hanami-reloader-1.0.0.alpha1`
 
 ## How to try it ⌨️
 

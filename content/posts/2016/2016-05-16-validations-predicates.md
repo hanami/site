@@ -25,7 +25,7 @@ These rules are wrapped by lambdas (or special DSL) that check the input for a s
 To do that, we translate business requirements into predicates that are chained together with Ruby _faux boolean logic_ operators (eg. `&` or `|`).
 
 Think of a signup form.
-We need to ensure data integrity for the  `name` field with the following rules.
+We need to ensure data integrity for the `name` field with the following rules.
 It is required, it has to be: filled **and** a string **and** its size must be greater than 3 chars, but lesser than 64.
 Here’s the code, **read it aloud** and notice how it perfectly expresses our needs for `name`.
 
@@ -63,7 +63,7 @@ This time we will map the natural language rules with programming language rules
 required(:name)      { filled?  &       str?   &      size?              (3 .. 64) }
 ```
 
-Now, I hope you’ll never format code like that, but in this case, that formatting serves well our purpose to show how Ruby’s  simplicity helps to define complex rules with no effort.
+Now, I hope you’ll never format code like that, but in this case, that formatting serves well our purpose to show how Ruby’s simplicity helps to define complex rules with no effort.
 
 From a high level perspective, we can tell that input data for `name` is _valid_ only if **all** the requirements are satisfied. That’s because we used `&`.
 

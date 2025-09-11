@@ -5,7 +5,7 @@ type: gem
 
 dry-logger provides a standalone, dependency-free logging solution suitable for any Ruby application.
 
-- Structured logging *by default*
+- Structured logging _by default_
 - Logging to multiple destinations via pluggable logging `backends`
 - Fine-grained log formatting using `formatters`
 - Customizable logging logic via log filtering
@@ -107,7 +107,7 @@ The following tokens are supported:
 - `%<message>s` - log text message passed as a string, ie `logger.info("Hello World")` sets `message` to `"Hello World"`
 - `%<payload>s` - optional log entry payload provided as keywords, ie `logger.info(text: "Hello World")` sets `payload` to `{text: "Hello World"}` and its presentation depends on the formatter that was used
 
-Furthermore, you can use *payload keys* that are expected to be passed to a specific logging backend.
+Furthermore, you can use _payload keys_ that are expected to be passed to a specific logging backend.
 Here's an example:
 
 ```ruby

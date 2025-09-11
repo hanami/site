@@ -216,7 +216,6 @@ So the servers A, B, and C are for customers (`web` application), D is for admin
 
 To serve this purpose we introduced _selective booting_ feature.
 
-
 ```ruby
 # config/environment.rb
 # ...
@@ -302,67 +301,67 @@ For the entire list of changes, please have a look at our [CHANGELOG](https://gi
 
 ## Released Gems
 
-  * `hanami-1.1.0.beta1`
-  * `hanami-model-1.1.0.beta1`
-  * `hanami-assets-1.1.0.beta1`
-  * `hanami-cli-0.1.0.beta1`
-  * `hanami-mailer-1.1.0.beta1`
-  * `hanami-helpers-1.1.0.beta1`
-  * `hanami-view-1.1.0.beta1`
-  * `hamami-controller-1.1.0.beta1`
-  * `hanami-router-1.1.0.beta1`
-  * `hanami-validations-1.1.0.beta1`
-  * `hanami-utils-1.1.0.beta1`
+- `hanami-1.1.0.beta1`
+- `hanami-model-1.1.0.beta1`
+- `hanami-assets-1.1.0.beta1`
+- `hanami-cli-0.1.0.beta1`
+- `hanami-mailer-1.1.0.beta1`
+- `hanami-helpers-1.1.0.beta1`
+- `hanami-view-1.1.0.beta1`
+- `hamami-controller-1.1.0.beta1`
+- `hanami-router-1.1.0.beta1`
+- `hanami-validations-1.1.0.beta1`
+- `hanami-utils-1.1.0.beta1`
 
 ## Contributors
 
 We're grateful for each person who contributed to this release. These lovely people are:
 
-* [Alfonso Uceda](https://github.com/AlfonsoUceda)
-* [Anton Davydov](https://github.com/davydovanton)
-* [Bartosz Bonisławski](https://github.com/bbonislawski)
-* [Ben Johnson](https://github.com/binarylogic)
-* [Cecile Veneziani](https://github.com/cveneziani)
-* [Daniel Amireh](https://github.com/damireh)
-* [David Dymko](https://github.com/ddymko)
-* [Dmitriy Ivliev](https://github.com/moofkit)
-* [Ferdinand Niedermann](https://github.com/nerdinand)
-* [Gabriel Gizotti](https://github.com/gizotti)
-* [Gernot Poetsch](https://github.com/gernot)
-* [Hélio Costa e Silva](https://github.com/hlegius)
-* [Jaymie Jones](https://github.com/jaymiejones86)
-* [John Hager](https://github.com/jphager2)
-* [Kai Kuchenbecker](https://github.com/kaikuchn)
-* [Karolis Mažukna](https://github.com/Nikamura)
-* [Koichi ITO](https://github.com/koic)
-* [Luca Guidi](https://github.com/jodosha)
-* [Lucas Hosseini](https://github.com/beauby)
-* [Marcello Rocha](https://github.com/mereghost)
-* [Marion Duprey](https://github.com/TiteiKo)
-* [Marion Schleifer](https://github.com/marionschleifer)
-* [Maurizio De Magnis](https://github.com/olistik)
-* [Nick Pridorozhko](https://github.com/nplusp)
-* [Nikita Shilnikov](https://github.com/flash-gordon)
-* [Oana Sipos](https://github.com/oana-sipos)
-* [Paweł Świątkowski](https://github.com/katafrakt)
-* [Radan Skorić](https://github.com/radanskoric)
-* [Rogério Zambon](https://github.com/rogeriozambon)
-* [Sean Collins](https://github.com/cllns)
-* [Semyon Pupkov](https://github.com/artofhuman)
-* [Sergey Sein](https://github.com/linchus)
-* [Tim Riley](https://github.com/timriley)
-* [Tudor Pavel](https://github.com/tudorpavel)
-* [akhramov](https://github.com/akhramov)
-* [autopp](https://github.com/autopp)
-* [chenge](https://github.com/chenge)
-* [derekpovah](https://github.com/derekpovah)
-* [jarosluv](https://github.com/jarosluv)
-* [mbajur](https://github.com/mbajur)
-* [milovidov](https://github.com/milovidov)
-* [morrme](https://github.com/morrme)
-* [ryu39](https://github.com/ryu39)
-* [sovetnik](https://github.com/sovetnik)
-* [yjukaku](https://github.com/yjukaku)
+- [Alfonso Uceda](https://github.com/AlfonsoUceda)
+- [Anton Davydov](https://github.com/davydovanton)
+- [Bartosz Bonisławski](https://github.com/bbonislawski)
+- [Ben Johnson](https://github.com/binarylogic)
+- [Cecile Veneziani](https://github.com/cveneziani)
+- [Daniel Amireh](https://github.com/damireh)
+- [David Dymko](https://github.com/ddymko)
+- [Dmitriy Ivliev](https://github.com/moofkit)
+- [Ferdinand Niedermann](https://github.com/nerdinand)
+- [Gabriel Gizotti](https://github.com/gizotti)
+- [Gernot Poetsch](https://github.com/gernot)
+- [Hélio Costa e Silva](https://github.com/hlegius)
+- [Jaymie Jones](https://github.com/jaymiejones86)
+- [John Hager](https://github.com/jphager2)
+- [Kai Kuchenbecker](https://github.com/kaikuchn)
+- [Karolis Mažukna](https://github.com/Nikamura)
+- [Koichi ITO](https://github.com/koic)
+- [Luca Guidi](https://github.com/jodosha)
+- [Lucas Hosseini](https://github.com/beauby)
+- [Marcello Rocha](https://github.com/mereghost)
+- [Marion Duprey](https://github.com/TiteiKo)
+- [Marion Schleifer](https://github.com/marionschleifer)
+- [Maurizio De Magnis](https://github.com/olistik)
+- [Nick Pridorozhko](https://github.com/nplusp)
+- [Nikita Shilnikov](https://github.com/flash-gordon)
+- [Oana Sipos](https://github.com/oana-sipos)
+- [Paweł Świątkowski](https://github.com/katafrakt)
+- [Radan Skorić](https://github.com/radanskoric)
+- [Rogério Zambon](https://github.com/rogeriozambon)
+- [Sean Collins](https://github.com/cllns)
+- [Semyon Pupkov](https://github.com/artofhuman)
+- [Sergey Sein](https://github.com/linchus)
+- [Tim Riley](https://github.com/timriley)
+- [Tudor Pavel](https://github.com/tudorpavel)
+- [akhramov](https://github.com/akhramov)
+- [autopp](https://github.com/autopp)
+- [chenge](https://github.com/chenge)
+- [derekpovah](https://github.com/derekpovah)
+- [jarosluv](https://github.com/jarosluv)
+- [mbajur](https://github.com/mbajur)
+- [milovidov](https://github.com/milovidov)
+- [morrme](https://github.com/morrme)
+- [ryu39](https://github.com/ryu39)
+- [sovetnik](https://github.com/sovetnik)
+- [yjukaku](https://github.com/yjukaku)
 
 ## How to try it
 

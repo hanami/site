@@ -72,7 +72,7 @@ container = ROM.container(configuration)
 
 If your directory structure doesn't reflect module/class organization but you do namespace components, then you can set up auto-registration via `:namespace` option:
 
-``` ruby
+```ruby
 # lib/relations/users.rb
 module Persistence
   module Relations
@@ -127,7 +127,7 @@ end
 
 If you keep all components under `{path}/(relations|commands|mappers)` directories and don't namespace them, then you can simply turn namespacing off:
 
-``` ruby
+```ruby
 # lib/relations/users.rb
 class Users < ROM::Relation[:sql]
   schema(infer: true)

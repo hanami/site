@@ -10,7 +10,7 @@ Using associations means **composing relations**, it is really important to unde
 
 Here's how it works using plain Ruby:
 
-``` ruby
+```ruby
 users = [{ id: 1, name: "Jane" }, { id: 2, name: "John" }]
 tasks = [{ id: 1, user_id: 1, title: "Jane's task" }, { id: 2, user_id: 2, title: "John's task" }]
 
@@ -32,7 +32,7 @@ This example shows **the exact conceptual model of associations in ROM**. Here a
 
 Let's translate this to actual relations using the memory adapter:
 
-``` ruby
+```ruby
 require "rom"
 require "rom/memory"
 
@@ -94,7 +94,7 @@ Notice that:
 
 This model is used by all adapters, even when you don't see it, it is there. In rom-sql default association views are generated for you, which is the whole magic behind associations in SQL, this is why in case of SQL, we could translate our previous example to this:
 
-``` ruby
+```ruby
 require "rom"
 
 rom = ROM.container(:sql, 'sqlite::memory') do |config|

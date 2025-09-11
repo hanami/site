@@ -23,7 +23,7 @@ User.dry_initializer.attributes(user)
 # => { name: "Andy", phone: "71002003040" }
 ```
 
-What the method does is extracts *variables assigned* to the object (and skips unassigned ones like the `email` above). It doesn't matter whether you send it via `params` or `option`; we look at the result of the instantiation, not at the interface.
+What the method does is extracts _variables assigned_ to the object (and skips unassigned ones like the `email` above). It doesn't matter whether you send it via `params` or `option`; we look at the result of the instantiation, not at the interface.
 
 Method `public_attributes` works different. Let's look at the following example to see the difference:
 
@@ -49,7 +49,7 @@ User.dry_initializer.public_attributes(user)
 # => { name: "Andy", phone: "71002003040", email: nil }
 ```
 
-Notice that `public_attribute` reads *public reader methods*, not variables. That's why it skips both the private `token`, and the `password` whose reader hasn't been defined.
+Notice that `public_attribute` reads _public reader methods_, not variables. That's why it skips both the private `token`, and the `password` whose reader hasn't been defined.
 
 Another difference concerns unassigned values. Because the reader `user.email` returns `nil` (its `@email` variable contains `Dry::Initializer::UNDEFINED` constant), the `public_attributes` adds this value to the hash using the method.
 

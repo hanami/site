@@ -1,7 +1,7 @@
 ---
 title: Upgrade to 2.2
 pages:
-- v2.1
+  - v2.1
 ---
 
 These notes cover an upgrade from 2.1 to 2.2.

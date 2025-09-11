@@ -1057,7 +1057,6 @@ Finished in 0.07143 seconds (files took 1.32 seconds to load)
 
 In addition to validating title and author are present, the `params` block in the action also serves to prevent mass assignment - params not included in the schema (for example an attempt to inject a price of 0) will be discarded.
 
-
 ## What's next
 
 So far we've seen how to create a new Hanami app, explored some of the basics of how an app is structured, and seen how we can list, display and create a simple book entity while validating user input.

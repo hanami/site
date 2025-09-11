@@ -10,7 +10,7 @@ An object that represents data in your system, implements `each` and yields [tup
 
 #### Repository
 
-An object that uses _relations_ to interact with a datastore.  A repository is a class that is used to define a clear API between your database and your application.
+An object that uses _relations_ to interact with a datastore. A repository is a class that is used to define a clear API between your database and your application.
 
 #### Mapper
 
@@ -20,7 +20,7 @@ An object that receives a relation and maps it to another representation. Anythi
 
 An object that executes a datastore-specific operation in order to create, update or delete tuples in a relation. Commands execute operations using relation interface which is datastore-specific; however, on the surface they simply respond to `call`.
 
-Every adapter *can provide custom command types*.
+Every adapter _can provide custom command types_.
 
 #### Tuple
 

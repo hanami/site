@@ -1,15 +1,15 @@
 ---
 title: Booting
 pages:
-- container-and-components
-- providers
-- settings
-- autoloading
-- environments
-- app-config
-- inflector
-- code-reloading
-- slices
+  - container-and-components
+  - providers
+  - settings
+  - autoloading
+  - environments
+  - app-config
+  - inflector
+  - code-reloading
+  - slices
 ---
 
 Hanami applications support a **prepared** state and a **booted** state.

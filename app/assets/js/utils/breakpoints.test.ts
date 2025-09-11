@@ -92,10 +92,7 @@ test("does not call view function when breakpoint does not match initially", () 
 
   const wrappedViewFn = breakpointFilter(mockViewFn);
   const node = document.createElement("div");
-  const props = { breakpoints: ["md"] } satisfies { breakpoints: Breakpoint[] } & Record<
-    string,
-    unknown
-  >;
+  const props = { breakpoints: ["md"] } satisfies { breakpoints: Breakpoint[] } & Record<string, unknown>;
 
   wrappedViewFn(node, props);
 
@@ -113,10 +110,7 @@ test("calls view function when breakpoint starts matching", () => {
 
   const wrappedViewFn = breakpointFilter(mockViewFn);
   const node = document.createElement("div");
-  const props = { breakpoints: ["md"] } satisfies { breakpoints: Breakpoint[] } & Record<
-    string,
-    unknown
-  >;
+  const props = { breakpoints: ["md"] } satisfies { breakpoints: Breakpoint[] } & Record<string, unknown>;
 
   wrappedViewFn(node, props);
 
@@ -139,10 +133,7 @@ test("calls original destroy when breakpoint stops matching", () => {
 
   const wrappedViewFn = breakpointFilter(mockViewFn);
   const node = document.createElement("div");
-  const props = { breakpoints: ["md"] } satisfies { breakpoints: Breakpoint[] } & Record<
-    string,
-    unknown
-  >;
+  const props = { breakpoints: ["md"] } satisfies { breakpoints: Breakpoint[] } & Record<string, unknown>;
 
   wrappedViewFn(node, props);
 
@@ -242,9 +233,7 @@ test("creates correct media query string for multiple breakpoints", () => {
 
   wrappedViewFn(node, { breakpoints: ["sm", "md", "xl"] });
 
-  expect(mockMatchMedia).toHaveBeenCalledWith(
-    "(width >= 40rem), (width >= 48rem), (width >= 80rem)",
-  );
+  expect(mockMatchMedia).toHaveBeenCalledWith("(width >= 40rem), (width >= 48rem), (width >= 80rem)");
 });
 
 test("preserves other props when calling wrapped view function", () => {

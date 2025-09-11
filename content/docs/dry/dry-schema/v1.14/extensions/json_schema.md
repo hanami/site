@@ -13,7 +13,7 @@ UserSchema = Dry::Schema.JSON do
   optional(:age).filled(:int?)
 end
 
-UserSchema.json_schema 
+UserSchema.json_schema
 # {
 #   "type": "object",
 #   "properties": {
@@ -29,7 +29,7 @@ UserSchema.json_schema
 #       "type": "integer"
 #     },
 #   },
-#   "required": ["email"] 
+#   "required": ["email"]
 # }
 ```
 
@@ -38,4 +38,3 @@ UserSchema.json_schema
 - [Official JSON Schema docs](https://json-schema.org/)
 - [Auto-generate forms with React + JSON Schema](https://github.com/rjsf-team/react-jsonschema-form))
 - [Integrate with other languages more easily](https://json-schema.org/implementations.html)
-

@@ -1,27 +1,22 @@
-<% content_for :title, "Blog" %>
-
-<% posts.each do |post| %>
-  <div data-testid="blog-post">
-    <h2>
-      <a href="<%= post.url_path %>"><%= post.title %></a>
-    </h2>
-    <p data-testid="date"><%= post.published_date %></p>
-    <p><%= post.excerpt %></p>
-  </div>
-<% end %>
-
-<% if posts.none? %>
-  <p>
-    No more posts.
-    <a href="/blog">Back to the beginning.</a>
-  </p>
+<% content_for :title, "Blog" %> <% posts.each do |post| %>
+<div data-testid="blog-post">
+  <h2>
+    <a href="<%= post.url_path %>"><%= post.title %></a>
+  </h2>
+  <p data-testid="date"><%= post.published_date %></p>
+  <p><%= post.excerpt %></p>
+</div>
+<% end %> <% if posts.none? %>
+<p>
+  No more posts.
+  <a href="/blog">Back to the beginning.</a>
+</p>
 <% end %>
 
 <div class="pagination">
   <% if page > 1 %>
-    <a href=<%= "/blog/page/#{page - 1}" %>>Previous page</a>
-  <% end %>
-  <% if posts.any? %>
-    <a href=<%= "/blog/page/#{page + 1}" %>>Next page</a>
+  <a href='<%= "/blog/page/#{page - 1}" %>'>Previous page</a>
+  <% end %> <% if posts.any? %>
+  <a href='<%= "/blog/page/#{page + 1}" %>'>Next page</a>
   <% end %>
 </div>

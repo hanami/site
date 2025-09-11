@@ -79,7 +79,6 @@ Real-life code looks the same in general but usually combines more operations to
 
 The name "do" comes from Haskell, where it's a reserved word for a block of code that uses monads to compose results of several operations. We don't have first-class support for it in Ruby, but it's quite possible to emulate it using blocks. Here's a typical piece of code written with `do`:
 
-
 ```ruby
 require 'dry/monads/do'
 require 'dry/monads/result'

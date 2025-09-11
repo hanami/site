@@ -6,7 +6,7 @@ After defining your container, you can use its auto-injector as a mixin to decla
 
 For example, if you have an `Application` container and an object that will need a logger:
 
-``` ruby
+```ruby
 # system/import.rb
 require "system/container"
 Import = Application.injector
@@ -37,7 +37,7 @@ For example, if you have a group of repository objects that need a `persistence`
 
 Here's a sample setup for this scenario:
 
-``` ruby
+```ruby
 # system/container.rb
 require "dry/system"
 

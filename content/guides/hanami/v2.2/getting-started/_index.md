@@ -1,8 +1,8 @@
 ---
 title: Getting Started
 pages:
-- building-a-web-app
-- building-an-api
+  - building-a-web-app
+  - building-an-api
 ---
 
 <p id="getting-started-lead" class="lead">
@@ -27,7 +27,6 @@ Hanami is a Ruby framework designed to create software that is well-architected,
 These guides aim to introduce you to the Hanami framework and demonstrate how its components fit together to produce a coherent app.
 
 Ideally, you already have some familiarity with web apps and the [Ruby language](https://www.ruby-lang.org/en/).
-
 
 ## Creating a Hanami app
 
@@ -131,19 +130,19 @@ $ tree --gitignore .
 
 Here's how these files and directories are used:
 
-| Location               | Purpose                                      |
-|---------------------------------|--------------------------------------------|
-| Gemfile | The app's gem dependencies, installed using bundler.                   |
-| Guardfile | Supports code reloading in development. |
-| Procfile.dev | For running Hanami dev server processes: both the server and assets watcher. |
-| package.json | The app's Node.js package dependencies, for assets management, installed using npm. |
-| README.md | The app's README document. |
-| Rakefile | Support for running Rake tasks. |
-| app/ | This is the directory where you'll put the majority of your app's code. |
-| config/ | A directory for your app and assets configuration, also including things like routes, settings and Puma configuration. |
-| config.ru | The Rack config file. |
-| lib/ | A directory for supporting code. |
-| spec/ | The app's RSpec test suite. |
+| Location     | Purpose                                                                                                                |
+| ------------ | ---------------------------------------------------------------------------------------------------------------------- |
+| Gemfile      | The app's gem dependencies, installed using bundler.                                                                   |
+| Guardfile    | Supports code reloading in development.                                                                                |
+| Procfile.dev | For running Hanami dev server processes: both the server and assets watcher.                                           |
+| package.json | The app's Node.js package dependencies, for assets management, installed using npm.                                    |
+| README.md    | The app's README document.                                                                                             |
+| Rakefile     | Support for running Rake tasks.                                                                                        |
+| app/         | This is the directory where you'll put the majority of your app's code.                                                |
+| config/      | A directory for your app and assets configuration, also including things like routes, settings and Puma configuration. |
+| config.ru    | The Rack config file.                                                                                                  |
+| lib/         | A directory for supporting code.                                                                                       |
+| spec/        | The app's RSpec test suite.                                                                                            |
 
 We'll see this structure in more detail as this guide progresses.
 
@@ -183,6 +182,7 @@ $ open http://localhost:2300
 You should see the Hanami welcome screen. We're delighted to have you here!
 
 <!-- TODO: update this screenshot for 2.2 -->
+
 ![Hanami welcome screen](//file/hanami-welcome.png)
 
 ## Building a Hanami app

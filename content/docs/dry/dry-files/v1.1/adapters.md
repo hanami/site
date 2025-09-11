@@ -6,10 +6,10 @@ title: Adapters
 
 dry-files ships with two adapters:
 
-  * File System adapter (default), for real file manipulation. It's meant to be used in production and integration tests.
-  * Memory adapter (experimental), for in-memory file manipulation. It's meant to be used for unit test.
+- File System adapter (default), for real file manipulation. It's meant to be used in production and integration tests.
+- Memory adapter (experimental), for in-memory file manipulation. It's meant to be used for unit test.
 
-``` ruby
+```ruby
 # frozen_string_literal: true
 require "dry/files"
 

@@ -12,7 +12,7 @@ First, we want to define our canonical associations. We call them canonical sinc
 
 We're going to define `:users` that have many `:tasks`. To keep things simpler let's define relations using [block-style setup](//guide/getting-started/setup-dsl):
 
-``` ruby
+```ruby
 require 'rom'
 
 rom = ROM.container(:sql, 'sqlite::memory') do |conf|
@@ -52,7 +52,7 @@ With associations defined in the relation schemas we established common queries 
 
 Let's say we'd like to expose an aggregate where a user is loaded with its tasks. We need to define a root repository with `:users` set up as the root and provide access to `:tasks` relation:
 
-``` ruby
+```ruby
 class UserRepo < ROM::Repository[:users]
   def user_with_tasks
     users.combine(:tasks)
@@ -62,7 +62,7 @@ end
 
 Now loading an aggregate is as simple as this:
 
-``` ruby
+```ruby
 user_repo = UserRepo.new(rom)
 
 user_repo.user_with_tasks.one
@@ -71,7 +71,7 @@ user_repo.user_with_tasks.one
 
 We can do the other way around, starting with `:tasks` relation as the root, which means we're going to load a task with its user:
 
-``` ruby
+```ruby
 class TaskRepo < ROM::Repository[:tasks]
   def tasks_with_assignee
     tasks.combine(:user)

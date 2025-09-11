@@ -30,6 +30,7 @@ Factory.define(:user) do |f|
   f.age 42
 end
 ```
+
 #### Specify relations
 
 You can specify ROM relation if you want. It'll be pluralized factory name by default.
@@ -76,7 +77,7 @@ end
 
 #### Associations
 
-* belongs_to
+- belongs_to
 
 ```ruby
 Factory.define(:group) do |f|
@@ -89,7 +90,7 @@ Factory.define(:user) do |f|
 end
 ```
 
-* has_many
+- has_many
 
 ```ruby
 Factory.define(:group) do |f|

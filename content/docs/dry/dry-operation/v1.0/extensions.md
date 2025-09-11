@@ -104,7 +104,7 @@ transaction(isolation: :serializable) do
 end
 ```
 
-⚠️  Warning: The `:savepoint` option for nested transactions is not yet supported.
+⚠️ Warning: The `:savepoint` option for nested transactions is not yet supported.
 
 ## ActiveRecord
 
@@ -166,4 +166,4 @@ transaction(isolation: :serializable) do
 end
 ```
 
-⚠️  Warning: The `:requires_new` option for nested transactions is not yet fully supported.
+⚠️ Warning: The `:requires_new` option for nested transactions is not yet fully supported.

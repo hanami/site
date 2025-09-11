@@ -14,13 +14,13 @@ Today we're happy to announce `v1.3.4` 🙌.
 
 ## Bug Fixes 🐞
 
-  * Fix generated `config.ru` `require_relative` statement
-  * Fix `Hanami::CommonLogger` elapsed time compatibility with `rack` 2.1.0+
-  * Fix generated tests compatibility with `minitest` 6.0+
+- Fix generated `config.ru` `require_relative` statement
+- Fix `Hanami::CommonLogger` elapsed time compatibility with `rack` 2.1.0+
+- Fix generated tests compatibility with `minitest` 6.0+
 
 ## Released Gems 💎
 
-  * `hanami-1.3.4`
+- `hanami-1.3.4`
 
 ## How to install ⌨️
 

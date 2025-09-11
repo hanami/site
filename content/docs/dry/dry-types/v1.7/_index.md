@@ -15,8 +15,8 @@ pages:
   - custom-types
   - custom-type-builders
   - extensions:
-    - maybe
-    - monads
+      - maybe
+      - monads
 ---
 
 `dry-types` is a simple and extendable type system for Ruby; useful for value coercions, applying constraints, defining complex structs or value objects and more. It was created as a successor to [Virtus](https://github.com/solnic/virtus).
@@ -125,36 +125,36 @@ Types::Strict::String[10000]
 
 ### Features
 
-* Support for [constrained types](//page/constraints)
-* Support for [optional values](//page/optional-values)
-* Support for [default values](//page/default-values)
-* Support for [sum types](//page/sum)
-* Support for [enums](//page/enum)
-* Support for [hash type with type schemas](//page/hash-schemas)
-* Support for [array type with members](//page/array-with-member)
-* Support for arbitrary meta information
-* Support for typed struct objects via [dry-struct](//doc/dry-struct)
-* Types are [categorized](//page/built-in-types), which is especially important for optimized and dedicated coercion logic
-* Types are composable and reusable objects
-* No const-missing magic and complicated const lookups
-* Roughly 6-10 x faster than Virtus
+- Support for [constrained types](//page/constraints)
+- Support for [optional values](//page/optional-values)
+- Support for [default values](//page/default-values)
+- Support for [sum types](//page/sum)
+- Support for [enums](//page/enum)
+- Support for [hash type with type schemas](//page/hash-schemas)
+- Support for [array type with members](//page/array-with-member)
+- Support for arbitrary meta information
+- Support for typed struct objects via [dry-struct](//doc/dry-struct)
+- Types are [categorized](//page/built-in-types), which is especially important for optimized and dedicated coercion logic
+- Types are composable and reusable objects
+- No const-missing magic and complicated const lookups
+- Roughly 6-10 x faster than Virtus
 
 ### Use cases
 
 `dry-types` is suitable for many use-cases, for example:
 
-  * Value coercions
-  * Processing arrays
-  * Processing hashes with explicit schemas
-  * Defining various domain-specific information shared between multiple parts of your application
-  * Annotating objects
+- Value coercions
+- Processing arrays
+- Processing hashes with explicit schemas
+- Defining various domain-specific information shared between multiple parts of your application
+- Annotating objects
 
 ### Other gems using dry-types
 
 `dry-types` is often used as a low-level abstraction. The following gems use it already:
 
-* [dry-struct](//doc/dry-struct)
-* [dry-initializer](//doc/dry-initializer)
-* [Hanami](http://hanamirb.org)
-* [rom-rb](http://rom-rb.org)
-* [Trailblazer](http://trailblazer.to)
+- [dry-struct](//doc/dry-struct)
+- [dry-initializer](//doc/dry-initializer)
+- [Hanami](http://hanamirb.org)
+- [rom-rb](http://rom-rb.org)
+- [Trailblazer](http://trailblazer.to)
