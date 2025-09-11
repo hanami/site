@@ -3,7 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "lint:all": "npm run lint:types && npm run lint:format",
+    "lint:all": "npm run lint:types && npm run lint:format && npm run lint:herb",
+    "lint:herb": "npx --no-install herb-lint",
     "lint:format": "npx --no-install prettier . --check && npx --no-install herb-format app/templates --check",
     "lint:format:fix": "npx --no-install prettier . --write && npx --no-install herb-format app/templates",
     "lint:types": "tsc --noEmit --pretty",
@@ -20,6 +21,7 @@
   },
   "devDependencies": {
     "@herb-tools/formatter": "^0.7.0",
+    "@herb-tools/linter": "^0.7.0",
     "@types/lodash-es": "^4.17.12",
     "happy-dom": "^18.0.1",
     "prettier": "^3.6.2",

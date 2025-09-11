@@ -23,7 +23,12 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      - run: npm run lint:all
+      - name: Types
+        run: npm run lint:types
+      - name: Formatting
+        run: npm run lint:format
+      - name: Herb linting
+        run: npm run lint:herb -- --github
 
   test-js:
     name: Test (JS)
