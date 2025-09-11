@@ -5,7 +5,7 @@ title: Test Mode
 In some cases it is useful to stub a component in your tests. To enable this, dry-system provides a test mode,
 in which a container will not be frozen during finalization. This allows you to use `stub` API to stub a given component.
 
-``` ruby
+```ruby
 require 'dry/system'
 
 class Application < Dry::System::Container

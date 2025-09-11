@@ -14,7 +14,7 @@ This release introduces faster static assets in development.
 
 ### hanami [v0.7.3](https://github.com/hanami/hanami/blob/0.7.x/CHANGELOG.md#v073---2016-05-23)
 
-  - Use `Shotgun::Static` to serve static files in development mode and avoid to reload the env [Pascal Betz](https://github.com/pascalbetz)
+- Use `Shotgun::Static` to serve static files in development mode and avoid to reload the env [Pascal Betz](https://github.com/pascalbetz)
 
 ## Upgrade Instructions
 

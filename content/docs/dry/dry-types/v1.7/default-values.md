@@ -4,7 +4,7 @@ title: Default Values
 
 A type with a default value will return the configured value when the input is not defined:
 
-``` ruby
+```ruby
 PostStatus = Types::String.default('draft')
 
 PostStatus[] # "draft"
@@ -14,7 +14,7 @@ PostStatus[true] # raises ConstraintError
 
 It works with a callable value:
 
-``` ruby
+```ruby
 CallableDateTime = Types::DateTime.default { DateTime.now }
 
 CallableDateTime[]

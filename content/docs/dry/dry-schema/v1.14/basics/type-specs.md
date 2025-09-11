@@ -9,12 +9,13 @@ Starting from dry-schema 2.0 type specs will be obligatory arguments. ie `filled
 To define what the expected type of a value is, you should use type specs. All macros support type specs as the first argument, whenever you pass a symbol that doesn't end with a question mark, or you explicitly pass in an instance of a `Dry::Types::Type` object, it will be set as the type.
 
 > Whenever you define a type spec, `dry-schema` will infer a type-check predicate. ie:
-> * `:string` => `str?`
-> * `:integer` => `:int?`
-> * `:array` => `:array?`
-> * etc.
 >
-> These predicates will be *prepended* to the list of the predicates you specified (if any).
+> - `:string` => `str?`
+> - `:integer` => `:int?`
+> - `:array` => `:array?`
+> - etc.
+>
+> These predicates will be _prepended_ to the list of the predicates you specified (if any).
 
 ### Using type identifiers
 
@@ -31,7 +32,7 @@ end
 
 To define an array with a member, you can use a shortcut method `array`. Here's an example of an array with `:integer` set as its member type:
 
-``` ruby
+```ruby
 UserSchema = Dry::Schema.Params do
   # expands to: `array? & each { int? } & size?(3)`
   required(:nums).value(array[:integer], size?: 3)

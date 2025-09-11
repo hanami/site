@@ -21,4 +21,4 @@ puts errors.inspect
 # }
 ```
 
-> **Notice** that JSON schemas are suitable for checking hash objects *exclusively*. There's an outstanding [issue](https://github.com/dry-rb/dry-schema/issues/23) about making it work with any JSON-compatible input.
+> **Notice** that JSON schemas are suitable for checking hash objects _exclusively_. There's an outstanding [issue](https://github.com/dry-rb/dry-schema/issues/23) about making it work with any JSON-compatible input.

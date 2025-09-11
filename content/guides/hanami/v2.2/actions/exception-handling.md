@@ -35,7 +35,6 @@ In the above action, when `StandardError` is raised in the `#handle` method, a b
 
 To do more with an exception than simply rendering a particular status code, call a method by providing a symbol with the method's name:
 
-
 ```ruby
 module Bookshelf
   module Actions

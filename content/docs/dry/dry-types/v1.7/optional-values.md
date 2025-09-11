@@ -8,7 +8,7 @@ Types themselves have optional attributes you can apply to get further functiona
 
 By default, nil values raise an error:
 
-``` ruby
+```ruby
 Types::Strict::String[nil]
 # => raises Dry::Types::ConstraintError
 ```

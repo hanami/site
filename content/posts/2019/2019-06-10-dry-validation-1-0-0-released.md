@@ -62,7 +62,7 @@ Another nice improvement is support for **base messages**. This means you can pr
 
 Here's an example:
 
-``` ruby
+```ruby
 class EventContract < Dry::Validation::Contract
   option :today, default: Date.method(:today)
 
@@ -81,7 +81,7 @@ end
 
 Now we can access base errors (assuming it's a weekend):
 
-``` ruby
+```ruby
 contract = EventContract.new
 
 contract.call(start_date: Date.today+1, end_date: Date.today+2).errors
@@ -99,7 +99,7 @@ As mentioned above, you can use the new macro system to reduce code duplication.
 
 Here's an example how you could use the `:acceptance` macro:
 
-``` ruby
+```ruby
 class NewUserContract < Dry::Validation::Contract
   schema do
     required(:email).filled(:string)
@@ -120,7 +120,7 @@ contract.call(email: "jane@doe.org", terms: "true").errors.to_h
 
 Defining your own macros is very simple and you're encouraged to do so. Let's say we want to encapsulate checking if a string is of a minimum length, here's how you could do it with a macro:
 
-``` ruby
+```ruby
 class ApplicationContract < Dry::Validation::Contract
   register_macro(:min_length) do |macro:|
     key.failure("is too short") if value.length < macro.args[0]
@@ -154,7 +154,7 @@ Validating array elements can be tricky business, but it's become nice and simpl
 
 To validate array elements, use `Rule#each`:
 
-``` ruby
+```ruby
 class NewSongContract < Dry::Validation::Contract
   params do
     required(:artist).filled(:string)
@@ -169,7 +169,6 @@ end
 ```
 
 Now let's see it in action:
-
 
 ```ruby
 contract = NewSongContract.new

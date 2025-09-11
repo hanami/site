@@ -8,7 +8,7 @@ Relation schemas in SQL land can be used to define canonical associations. These
 
 The `belongs_to` definition establishes a many-to-one association type.
 
-``` ruby
+```ruby
 class Posts < ROM::Relation[:sql]
   schema(infer: true) do
     associations do
@@ -25,7 +25,7 @@ end
 
 The `has_many` definition establishes a one-to-many association type.
 
-``` ruby
+```ruby
 class Users < ROM::Relation[:sql]
   schema(infer: true) do
     associations do
@@ -39,7 +39,7 @@ end
 
 The `has_many` definition supports `:through` option which establishes a many-to-many association type.
 
-``` ruby
+```ruby
 class Users < ROM::Relation[:sql]
   schema(infer: true) do
     associations do
@@ -63,7 +63,7 @@ end
 
 The `has_one` definition establishes a one-to-one association type.
 
-``` ruby
+```ruby
 class Users < ROM::Relation[:sql]
   schema(infer: true) do
     associations do
@@ -80,7 +80,7 @@ end
 
 The `has_one` definition supports `:through` option which establishes a one-to-one-through association type.
 
-``` ruby
+```ruby
 class Users < ROM::Relation[:sql]
   schema(infer: true) do
     associations do
@@ -105,7 +105,7 @@ If you want to use a different name for an association, you can use `:as` option
 
 For example, we have `:posts` belonging to `:users` but we'd like to call them `:authors`:
 
-``` ruby
+```ruby
 class Posts < ROM::Relation[:sql]
   schema(infer: true) do
     associations do
@@ -122,7 +122,7 @@ end
 
 You can use `:view` option and specify which relation view should be used to extend default association relation. Let's say you have users with many accounts through users_accounts and you want to add attributes from the join relation to accounts:
 
-``` ruby
+```ruby
 class Users < ROM::Relation[:sql]
   schema(infer: true) do
     associations do
@@ -146,7 +146,7 @@ This way when you load users with their accounts, they will include `:position` 
 
 You can use `:override` option along with `:view` and specify which relation view should be used to **override** default association relation. Let's say we have `Users` that have many `Accounts` and we want to provide our custom query to fetch all accounts for particular users, we can achieve that by defining `Accounts#for_users` and setting it as the overridden association view in `Users` associations. This method receives related association object, and a loaded users relation.
 
-``` ruby
+```ruby
 class Users < ROM::Relation[:sql]
   schema(infer: true) do
     associations do
@@ -169,13 +169,13 @@ There are 2 requirements that every overridden association view must meet:
 
 - They must always return a relation instance
 - Returned relation's schema **must include a valid combine key**, which is used
-  to merge data into nested structures. Typically, combine keys are simply the same   as join keys. See `Combine keys vs join keys` sub-section to learn more
+  to merge data into nested structures. Typically, combine keys are simply the same as join keys. See `Combine keys vs join keys` sub-section to learn more
 
 ## Using associations to manually preload relations
 
 You can reuse queries that associations use in your own methods too via `assoc` shortcut method:
 
-``` ruby
+```ruby
 class Users < ROM::Relation[:sql]
   schema(infer: true) do
     associations do
@@ -193,7 +193,7 @@ end
 
 By default, foreign keys found in schemas are used, but you can provide custom names too via `:foreign_key` option:
 
-``` ruby
+```ruby
 class Flights < ROM::Relation[:sql]
   schema(infer: true) do
     associations do
@@ -208,7 +208,7 @@ end
 
 It's a common case for legacy databases to have tables named differently from relations. Your legacy table name must be the first argument and the corresponding relation name must go with `:relation` option:
 
-``` ruby
+```ruby
 class Users < ROM::Relation[:sql]
   schema(infer: true) do
     associations do
@@ -220,7 +220,6 @@ end
 
 > [!NOTE]
 > All association types support this option.
-
 
 <!-- TODO restore when we have API docs again
 ## Learn more

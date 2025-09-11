@@ -1,19 +1,19 @@
 ---
 title: Overview
 pages:
-- parameters
-- rendering-views
-- request-and-response
-- status-codes
-- rack-integration
-- formats-and-mime-types
-- cookies
-- sessions
-- exception-handling
-- control-flow
-- inheritance
-- http-caching
-- testing
+  - parameters
+  - rendering-views
+  - request-and-response
+  - status-codes
+  - rack-integration
+  - formats-and-mime-types
+  - cookies
+  - sessions
+  - exception-handling
+  - control-flow
+  - inheritance
+  - http-caching
+  - testing
 ---
 
 ## Actions

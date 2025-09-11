@@ -4,7 +4,7 @@ title: Ruby File Manipulation
 
 ### Ruby File Manipulation
 
-``` ruby
+```ruby
 # frozen_string_literal: true
 require "dry/files"
 

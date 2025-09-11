@@ -177,7 +177,7 @@ Closer to home, this is also the first step towards faster code reloading when r
 
 ## Route helpers via the view context
 
-Last month we made the [route helpers available in actions](/blog/2021/12/07/announcing-hanami-200alpha4), and now we’re making them available in views too, via our default [view context](https://dry-rb.org/gems/dry-view/0.7/context/). This means  you can access `routes` inside any template:
+Last month we made the [route helpers available in actions](/blog/2021/12/07/announcing-hanami-200alpha4), and now we’re making them available in views too, via our default [view context](https://dry-rb.org/gems/dry-view/0.7/context/). This means you can access `routes` inside any template:
 
 ```slim
 / slices/main/web/templates/books/index.html.slim

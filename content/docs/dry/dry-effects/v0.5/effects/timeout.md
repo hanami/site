@@ -26,7 +26,7 @@ Handling timeouts:
 ```ruby
 class WithTimeout
   include Dry::Effects::Handler.Timeout(:http)
-  
+
   def initialize(app)
     @app = app
   end

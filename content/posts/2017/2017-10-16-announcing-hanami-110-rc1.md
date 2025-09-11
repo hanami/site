@@ -120,42 +120,41 @@ end
 
 Available types are:
 
-  * `:action`
-  * `:view`
-  * `:mailer`
-  * `:entity`
-  * `:repository`
-
+- `:action`
+- `:view`
+- `:mailer`
+- `:entity`
+- `:repository`
 
 ## Released Gems
 
-  * `hanami-1.1.0.rc1`
-  * `hanami-model-1.1.0.rc1`
-  * `hanami-assets-1.1.0.rc1`
-  * `hanami-cli-0.1.0.rc1`
-  * `hanami-mailer-1.1.0.rc1`
-  * `hanami-helpers-1.1.0.rc1`
-  * `hanami-view-1.1.0.rc1`
-  * `hamami-controller-1.1.0.rc1`
-  * `hanami-router-1.1.0.rc1`
-  * `hanami-validations-1.1.0.rc1`
-  * `hanami-utils-1.1.0.rc1`
+- `hanami-1.1.0.rc1`
+- `hanami-model-1.1.0.rc1`
+- `hanami-assets-1.1.0.rc1`
+- `hanami-cli-0.1.0.rc1`
+- `hanami-mailer-1.1.0.rc1`
+- `hanami-helpers-1.1.0.rc1`
+- `hanami-view-1.1.0.rc1`
+- `hamami-controller-1.1.0.rc1`
+- `hanami-router-1.1.0.rc1`
+- `hanami-validations-1.1.0.rc1`
+- `hanami-utils-1.1.0.rc1`
 
 ## Contributors
 
 We're grateful for each person who contributed to this release. These lovely people are:
 
-* [Alfonso Uceda](https://github.com/AlfonsoUceda)
-* [Anton Davydov](https://github.com/davydovanton)
-* [Luca Guidi](https://github.com/jodosha)
-* [Marcello Rocha](https://github.com/mereghost)
-* [Marion Duprey](https://github.com/TiteiKo)
-* [Marion Schleifer](https://github.com/marionschleifer)
-* [Oana Sipos](https://github.com/oana-sipos)
-* [Sean Collins](https://github.com/cllns)
-* [Sergey Fedorov](https://github.com/Strech)
-* [Yuji Ueki](https://github.com/unhappychoice)
-* [Kirill](https://github.com/likeath)
+- [Alfonso Uceda](https://github.com/AlfonsoUceda)
+- [Anton Davydov](https://github.com/davydovanton)
+- [Luca Guidi](https://github.com/jodosha)
+- [Marcello Rocha](https://github.com/mereghost)
+- [Marion Duprey](https://github.com/TiteiKo)
+- [Marion Schleifer](https://github.com/marionschleifer)
+- [Oana Sipos](https://github.com/oana-sipos)
+- [Sean Collins](https://github.com/cllns)
+- [Sergey Fedorov](https://github.com/Strech)
+- [Yuji Ueki](https://github.com/unhappychoice)
+- [Kirill](https://github.com/likeath)
 
 ## How to try it
 

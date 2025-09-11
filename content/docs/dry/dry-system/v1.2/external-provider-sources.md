@@ -8,7 +8,7 @@ Provider sources look and work the same as regular providers, which means allowi
 
 To distribute a group of provider sources (defined in their own files), register them with `Dry::System`:
 
-``` ruby
+```ruby
 # my_gem
 #  |- lib/my_gem/provider_sources.rb
 
@@ -17,7 +17,7 @@ Dry::System.register_provider_sources(:common, boot_path: File.join(__dir__, "pr
 
 Then, define your provider source:
 
-``` ruby
+```ruby
 # my_gem
 #  |- lib/my_gem/provider_sources/exception_notifier.rb
 
@@ -34,7 +34,7 @@ end
 
 Then you can use this provider source when you register a provider in a dry-system container:
 
-``` ruby
+```ruby
 # system/app/container.rb
 
 require "dry/system"
@@ -55,7 +55,7 @@ You can customize a provider source for your application via `before` and `after
 
 For example, you can register additional components based on the provider source's own registrations via an `after(:start)` callback:
 
-``` ruby
+```ruby
 module App
   class Container < Dry::System::Container
     register_provider(:exception_notifier, from: :my_gem) do
@@ -80,7 +80,7 @@ Provider sources can define their own settings using [dry-configurable’s](//do
 
 For example, here’s an extended `:exception_notifier` provider source with settings:
 
-``` ruby
+```ruby
 # my_gem
 #  |- lib/my_gem/provider_sources/exception_notifier.rb
 
@@ -106,7 +106,7 @@ This defines two settings:
 
 To configure this provider source, you can use a `configure` block when defining your provider using the source:
 
-``` ruby
+```ruby
 module App
   class Container < Dry::System::Container
     register_provider(:exception_notifier, from: :my_gem) do

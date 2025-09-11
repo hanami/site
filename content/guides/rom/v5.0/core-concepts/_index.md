@@ -1,14 +1,14 @@
 ---
 title: Core concepts
 pages:
-- relations
-- schemas
-- associations
-- combines
-- changesets
-- commands
-- structs
-- mappers
+  - relations
+  - schemas
+  - associations
+  - combines
+  - changesets
+  - commands
+  - structs
+  - mappers
 ---
 
 In this section you can learn about APIs that are common for all adapters. Once you understand basic concepts, you can check out [Repositories](//guide/repositories) section.

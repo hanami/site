@@ -62,7 +62,7 @@ class DocCompiler
 
     { key: name, validations: validations }
   end
-  
+
   def visit_implication(node)
     _, right = node.map(&method(:visit))
     right.merge(optional: true)
@@ -91,7 +91,7 @@ end
 
 With such a compiler we can now turn schema's rule AST into a list of hashes that describe keys and their validations:
 
-``` ruby
+```ruby
 compiler = DocCompiler.new
 
 compiler.visit(schema.to_ast)

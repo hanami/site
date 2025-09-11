@@ -75,31 +75,31 @@ end
 
 ## Released Gems
 
-  * `hanami-1.1.0.beta2`
-  * `hanami-model-1.1.0.beta2`
-  * `hanami-assets-1.1.0.beta2`
-  * `hanami-cli-0.1.0.beta2`
-  * `hanami-mailer-1.1.0.beta2`
-  * `hanami-helpers-1.1.0.beta2`
-  * `hanami-view-1.1.0.beta2`
-  * `hamami-controller-1.1.0.beta2`
-  * `hanami-router-1.1.0.beta2`
-  * `hanami-validations-1.1.0.beta2`
-  * `hanami-utils-1.1.0.beta2`
+- `hanami-1.1.0.beta2`
+- `hanami-model-1.1.0.beta2`
+- `hanami-assets-1.1.0.beta2`
+- `hanami-cli-0.1.0.beta2`
+- `hanami-mailer-1.1.0.beta2`
+- `hanami-helpers-1.1.0.beta2`
+- `hanami-view-1.1.0.beta2`
+- `hamami-controller-1.1.0.beta2`
+- `hanami-router-1.1.0.beta2`
+- `hanami-validations-1.1.0.beta2`
+- `hanami-utils-1.1.0.beta2`
 
 ## Contributors
 
 We're grateful for each person who contributed to this release. These lovely people are:
 
-* [Alfonso Uceda](https://github.com/AlfonsoUceda)
-* [Anton Davydov](https://github.com/davydovanton)
-* [Gabriel Gizotti](https://github.com/gizotti)
-* [Luca Guidi](https://github.com/jodosha)
-* [Marcello Rocha](https://github.com/mereghost)
-* [Marion Duprey](https://github.com/TiteiKo)
-* [Marion Schleifer](https://github.com/marionschleifer)
-* [Oana Sipos](https://github.com/oana-sipos)
-* [Sean Collins](https://github.com/cllns)
+- [Alfonso Uceda](https://github.com/AlfonsoUceda)
+- [Anton Davydov](https://github.com/davydovanton)
+- [Gabriel Gizotti](https://github.com/gizotti)
+- [Luca Guidi](https://github.com/jodosha)
+- [Marcello Rocha](https://github.com/mereghost)
+- [Marion Duprey](https://github.com/TiteiKo)
+- [Marion Schleifer](https://github.com/marionschleifer)
+- [Oana Sipos](https://github.com/oana-sipos)
+- [Sean Collins](https://github.com/cllns)
 
 ## How to try it
 

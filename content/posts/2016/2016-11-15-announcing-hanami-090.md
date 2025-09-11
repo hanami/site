@@ -259,21 +259,21 @@ Thank you Piotr Solnica, Nikita Shilnikov, Andy Holland, and Tim Riley for your 
 We're grateful for each person who contributed to this release.
 These lovely people are:
 
-  * Alfonso Uceda
-  * Anton Davydov
-  * Bruz Marzolf
-  * Grachev Mikhail
-  * Ivan Lasorsa
-  * Jakub Pavlík
-  * James Hamilton
-  * Kyle Chong
-  * Lucas Allan
-  * Marion Duprey
-  * Maxim Dzhuliy
-  * Pascal Betz
-  * Russell Cloak
-  * Sean Collins
-  * Tomas Craig
-  * Trung Lê
+- Alfonso Uceda
+- Anton Davydov
+- Bruz Marzolf
+- Grachev Mikhail
+- Ivan Lasorsa
+- Jakub Pavlík
+- James Hamilton
+- Kyle Chong
+- Lucas Allan
+- Marion Duprey
+- Maxim Dzhuliy
+- Pascal Betz
+- Russell Cloak
+- Sean Collins
+- Tomas Craig
+- Trung Lê
 
 Thank you all!

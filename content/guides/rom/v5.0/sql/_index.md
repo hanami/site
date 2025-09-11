@@ -1,15 +1,15 @@
 ---
 title: SQL
 pages:
-- relations
-- schemas
-- queries
-- attributes
-- associations
-- joins
-- transactions
-- migrations
-- advanced-pg-support
+  - relations
+  - schemas
+  - queries
+  - attributes
+  - associations
+  - joins
+  - transactions
+  - migrations
+  - advanced-pg-support
 ---
 
 ROM supports SQL databases via the <code>rom-sql</code> adapter which augments and enhances `Relation`. <code>rom-sql</code> supports a sql-specific query DSL and association macros that simplify constructing joins and exposes the flexibility & power of the RDMS to relation users.
@@ -17,11 +17,11 @@ ROM supports SQL databases via the <code>rom-sql</code> adapter which augments a
 Direct interactions between the database and ROM happen through the use of the excellent [Sequel](http://sequel.jeremyevans.net/) gem by Jeremy Evans. However, Sequel is an implementation detail of ROM and as such should not be relied upon for functionality. If <code>rom-sql</code> is missing functionality that can be accomplished in Sequel then please leave a report in our [issue tracker](https://github.com/rom-rb/rom-rb.org/issues).
 
 > [!NOTE]
-> The SQL Adapter documentation is still being created & revised. If something isn't documented or requires more information, please click the  "Provide Feedback" buttons at the bottom of the pages and let us know. In the mean time you may need to look towards [Sequel's](http://sequel.jeremyevans.net/documentation.html) Databases & Datasets documentation for further guidance.
+> The SQL Adapter documentation is still being created & revised. If something isn't documented or requires more information, please click the "Provide Feedback" buttons at the bottom of the pages and let us know. In the mean time you may need to look towards [Sequel's](http://sequel.jeremyevans.net/documentation.html) Databases & Datasets documentation for further guidance.
 
 ## Installing
 
-*Depends on:* `ruby v2.3.0` or greater
+_Depends on:_ `ruby v2.3.0` or greater
 
 To install <code>rom-sql</code> add the following to your <code>Gemfile</code>.
 
@@ -36,7 +36,7 @@ Afterwards either load `rom-sql` through your bundler setup or manually in your 
 require 'rom-sql'
 ```
 
-Once loaded the SQL Adapter will register itself with ROM and become available  for immediate use via the `:sql` identifier.
+Once loaded the SQL Adapter will register itself with ROM and become available for immediate use via the `:sql` identifier.
 
 > [!NOTE]
 > Each database type requires a separate driver gem to also be installed. Be sure to check out the documentation of your preferred database for more information.
@@ -45,9 +45,9 @@ Once loaded the SQL Adapter will register itself with ROM and become available  
 
 Configuring ROM and opening a connection to a database requires three parts.
 
-  1. The name of an adapter,
-  2. a connection string, and
-  3. any additional options
+1. The name of an adapter,
+2. a connection string, and
+3. any additional options
 
 The adapter name for the SQL Adapter is always `:sql`, which makes things easy; whereas connection strings are database driver specific. Connection strings tell the SQL Adapter which driver to use for the connection along with the port and host address of the database server. Connection strings can also be used to set most of the available options, however it's generally better to keep the connection string short and focused on network routing. Additional options can be provided in a convenient hash structure or by named parameters on the configuration method signature.
 
@@ -115,6 +115,7 @@ Options below are available to all database drivers and can be used to configure
         <li>:mysql</li>
       </ul>
     </td>
+
   </tr>
 
   <tr>
@@ -143,10 +144,10 @@ Options below are available to all database drivers and can be used to configure
 
 ### PostgreSQL
 
-*Requires:* `pg` gem <br>
-*Recommends:* `sequel_pg` gem in addition to `pg` gem
+_Requires:_ `pg` gem <br>
+_Recommends:_ `sequel_pg` gem in addition to `pg` gem
 
-The only supported structure for connecting to PostgreSQL databases is the  Connection String URI format:
+The only supported structure for connecting to PostgreSQL databases is the Connection String URI format:
 
 ```
 'postgres://[user[:password]@][host][:port][,...][/database][?param1=value1&...]'
@@ -256,6 +257,7 @@ config = ROM::Configuration.new(:sql, 'postgres://localhost/database_name', opts
     </td>
     <td>String</td>
     <td>'disable'</td>
+
   </tr>
 
   <tr>
@@ -298,6 +300,7 @@ config = ROM::Configuration.new(:sql, 'postgres://localhost/database_name', opts
     </td>
     <td>Symbol</td>
     <td>true</td>
+
   </tr>
 
 </tbody>
@@ -305,8 +308,8 @@ config = ROM::Configuration.new(:sql, 'postgres://localhost/database_name', opts
 
 ### MySQL
 
-*Requires:* `mysql` or `mysql2` gems <br>
-*Recommends:* using `mysql2` gem
+_Requires:_ `mysql` or `mysql2` gems <br>
+_Recommends:_ using `mysql2` gem
 
 MySQL2 driver connection string uses the following pattern:
 
@@ -401,6 +404,7 @@ config = ROM::Configuration.new(:sql, 'mysql2://localhost/database_name', opts)
     </td>
     <td>Array&lt;String, Symbol&gt;, String, Symbol</td>
     <td></td>
+
   </tr>
 
   <tr>
@@ -424,6 +428,7 @@ config = ROM::Configuration.new(:sql, 'mysql2://localhost/database_name', opts)
     </td>
     <td>String, Array&lt;String&gt;</td>
     <td></td>
+
   </tr>
 
   <tr>
@@ -473,6 +478,7 @@ config = ROM::Configuration.new(:sql, 'mysql2://localhost/database_name', opts)
     </td>
     <td>Symbol</td>
     <td>:disabled</td>
+
   </tr>
 
   <tr>
@@ -536,7 +542,7 @@ config = ROM::Configuration.new(:sql, 'mysql2://localhost/database_name', opts)
 
 ### SQLite
 
-*Requires:* `sqlite3` gem
+_Requires:_ `sqlite3` gem
 
 SQLite is a self contained in-process database that supports loading databases from files located on the file system or by creating and running the database completely in-memory.
 
@@ -629,7 +635,7 @@ config = ROM::Configuration.new(:sql, 'sqlite::memory', opts)
 
 ### Oracle
 
-*Requires:* `ruby-oci8` gem
+_Requires:_ `ruby-oci8` gem
 
 OCI8 driver connection strings use the following pattern:
 
@@ -721,26 +727,26 @@ The SQL Adapter supports other drivers and URI connection schemes outside the on
 - `swift`
 - `tinytds`
 
-These drivers have not been documented because their use is fairly uncommon however they should work and documentation for connecting with each of these drivers can be found in Sequel's  [Opening Databases](http://sequel.jeremyevans.net/rdoc/files/doc/opening_databases_rdoc.html) document.
+These drivers have not been documented because their use is fairly uncommon however they should work and documentation for connecting with each of these drivers can be found in Sequel's [Opening Databases](http://sequel.jeremyevans.net/rdoc/files/doc/opening_databases_rdoc.html) document.
 
 ### JRuby
 
-*Requires:* `java`, & the `jruby` runtime
+_Requires:_ `java`, & the `jruby` runtime
 
 In a JRuby environment, it's best to use the `JDBC` driver available to you via the Java SDK. Support for databases in JRuby is handled via Sequel's JDBC sub adapters.
 
 A list of supported databases can be found below along with additional
 requirements:
 
-| Database   | Required Gem     |
-| ---------- | ---------------- |
-| Derby      | jdbc-derby       |
-| H2         | jdbc-h2          |
-| HSQLDB     | jdbc-hsqldb      |
-| JTDS       | jdbc-jtds        |
-| MySQL      | jdbc-mysql       |
-| PostgreSQL | jdbc-postgres    |
-| SQLite     | jdbc-sqlite3     |
+| Database   | Required Gem  |
+| ---------- | ------------- |
+| Derby      | jdbc-derby    |
+| H2         | jdbc-h2       |
+| HSQLDB     | jdbc-hsqldb   |
+| JTDS       | jdbc-jtds     |
+| MySQL      | jdbc-mysql    |
+| PostgreSQL | jdbc-postgres |
+| SQLite     | jdbc-sqlite3  |
 
 For the databases `DB2`, `Oracle` & `SQL Server`, the `.jar` file will need to either be in your `CLASSPATH` or manually preloaded before making a connection.
 
@@ -757,7 +763,7 @@ jdbc:mysql://localhost/database?user=root&password=root
 jdbc:sqlite::memory
 ```
 
-For more information see  [Sequel's JDBC](http://sequel.jeremyevans.net/rdoc/files/doc/opening_databases_rdoc.html#label-jdbc+) and [Java SE - Database](http://www.oracle.com/technetwork/java/javase/jdbc/index.html) documentation
+For more information see [Sequel's JDBC](http://sequel.jeremyevans.net/rdoc/files/doc/opening_databases_rdoc.html#label-jdbc+) and [Java SE - Database](http://www.oracle.com/technetwork/java/javase/jdbc/index.html) documentation
 
 <!--
 

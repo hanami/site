@@ -12,7 +12,7 @@ The major highlight of the new 0.7.3 dry-validation release is improved integrat
 
 Here's what it means in practice:
 
-``` ruby
+```ruby
 require 'dry-validation'
 require 'dry-types'
 
@@ -41,7 +41,7 @@ Another fantastic improvement is support for custom constructor types in validat
 
 Simple example:
 
-``` ruby
+```ruby
 require 'dry-validation'
 require 'dry-types'
 
@@ -68,7 +68,7 @@ This is a clean way of encapsulating custom coercion or sanitization logic. Noti
 
 dry-validation infers both validation rules and value constructors from your types, notice that `Types::DataImport::StrippedString` is a strict string, which means a proper validation rule is set too:
 
-``` ruby
+```ruby
 UserSchema.(name: '   Jane  ', email: nil).messages
 # { email: ["must be filled", "must be String"] }
 ```
@@ -77,7 +77,7 @@ UserSchema.(name: '   Jane  ', email: nil).messages
 
 When defining a high-level rule, you can now delegate validation to an external schema. Why would you want to do that? Let's say you have a nested data structure, and parts of that structure should be validated using different schemas based on other values from that data structure. In example:
 
-``` ruby
+```ruby
 CreateCommandSchema = Dry::Validation.Schema do
   key(:name).required
   key(:email).required
@@ -121,7 +121,7 @@ Notice that our high-level rules explicitly define which values they rely on. It
 
 You can now specify that a value must be a number, in case of `Form` schemas a proper coercion is applied:
 
-``` ruby
+```ruby
 UserSchema = Dry::Validation.Form do
   key(:age).required(:number?, :int?)
 end
@@ -142,7 +142,7 @@ dry-types 0.7.0 focused on improving support for complex types and better except
 
 Let's say you want to specify `Options` type which is an array with either strings or string pairs inside nested arrays:
 
-``` ruby
+```ruby
 require 'dry-types'
 
 module Types
@@ -172,7 +172,7 @@ Exception messages have been improved too; however, they're still a work in prog
 
 Here's what you'd get if a simple constraint was violated:
 
-``` ruby
+```ruby
 Password = Types::Strict::String.constrained(size: 10)
 
 Password["foo"]
@@ -185,7 +185,7 @@ We hope you'll find new features useful. In case of any issues, please report th
 
 If you want to use new features, just add latest versions to your Gemfile:
 
-``` ruby
+```ruby
 gem "dry-types", "~> 0.7.0"
 gem "dry-validation", "~> 0.7.3"
 ```

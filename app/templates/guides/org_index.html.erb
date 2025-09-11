@@ -5,12 +5,11 @@
 <h2><%= version %></h2>
 
 <h3>Versions</h3>
+
 <%= render :version_links, versions:, org_slug: %>
 
 <ol data-testid="guides">
   <% guides.each do |guide| %>
-    <li>
-      <a href="<%= guide.url_path %>"><%= guide.title %></a>
-    </li>
+    <li><a href="<%= guide.url_path %>"><%= guide.title %></a></li>
   <% end %>
 </ol>

@@ -12,7 +12,7 @@ Inference will define normal attributes, foreign keys and primary key (even when
 
 To infer a schema automatically:
 
-``` ruby
+```ruby
 require 'rom-sql'
 
 class Users < ROM::Relation[:sql]
@@ -24,7 +24,7 @@ end
 
 Relations and commands can coerce output and input data automatically based on your schema attributes. Default attribute types in schemas are used for input coercions in commands, if you want to apply additional coercions when relations read their data, you can do it via `:read` type in schema definitions:
 
-``` ruby
+```ruby
 class Posts < ROM::Relation[:sql]
   schema(infer: true) do
     attribute :status, Types::String, read: Types.Constructor(Symbol, &:to_sym)
@@ -41,7 +41,7 @@ posts.by_pk(1).one
 
 When you define relation schema attributes using custom PG types, the values will be automatically coerced before executing commands, so you don't have to handle that yourself.
 
-``` ruby
+```ruby
 require 'rom-sql'
 
 class Users < ROM::Relation[:sql]

@@ -14,29 +14,29 @@ Today we're happy to announce `v1.2.0.beta2` release 🙌 , with the stable rele
 
 ## Features 🍎
 
-  * Support objects as CLI callbacks
+- Support objects as CLI callbacks
 
 ## Bug fixes 🐛
 
-  * Ensure CLI callbacks' context of execution (aka `self`) to be the command that is being executed
-  * Raise meaningful error message when trying to access `session` or `flash` with disabled sessions
-  * Print stack trace to standard output when a CLI command raises an error
+- Ensure CLI callbacks' context of execution (aka `self`) to be the command that is being executed
+- Raise meaningful error message when trying to access `session` or `flash` with disabled sessions
+- Print stack trace to standard output when a CLI command raises an error
 
 ## Released Gems 💎
 
-  * `hanami-1.2.0.beta2`
-  * `hanami-model-1.2.0.beta2`
-  * `hanami-assets-1.2.0.beta2`
-  * `hanami-cli-0.2.0.beta2`
-  * `hanami-mailer-1.2.0.beta2`
-  * `hanami-helpers-1.2.0.beta2`
-  * `hanami-view-1.2.0.beta2`
-  * `hamami-controller-1.2.0.beta2`
-  * `hanami-router-1.2.0.beta2`
-  * `hanami-validations-1.2.0.beta2`
-  * `hanami-utils-1.2.0.beta2`
-  * `hanami-webconsole-0.1.0.beta2`
-  * `hanami-ujs-0.1.0.beta2`
+- `hanami-1.2.0.beta2`
+- `hanami-model-1.2.0.beta2`
+- `hanami-assets-1.2.0.beta2`
+- `hanami-cli-0.2.0.beta2`
+- `hanami-mailer-1.2.0.beta2`
+- `hanami-helpers-1.2.0.beta2`
+- `hanami-view-1.2.0.beta2`
+- `hamami-controller-1.2.0.beta2`
+- `hanami-router-1.2.0.beta2`
+- `hanami-validations-1.2.0.beta2`
+- `hanami-utils-1.2.0.beta2`
+- `hanami-webconsole-0.1.0.beta2`
+- `hanami-ujs-0.1.0.beta2`
 
 ## How to try it
 

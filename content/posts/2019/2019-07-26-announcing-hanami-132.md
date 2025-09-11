@@ -14,18 +14,18 @@ Today we're happy to announce `v1.3.2` 🙌.
 
 ## Enhancements 🆙
 
-  * Support for `hanami-validations` 1 & 2
+- Support for `hanami-validations` 1 & 2
 
 ## Bug Fixes 🐞
 
-  * Ensure `hanami generate` syntax for Welcome page is compatible with ZSH
-  * Don't let `hanami` executable to crash when called without `bundle exec`
-  * Ensure to load i18n backend (including `i18n` gem), when validations messages engine is `:i18n`
+- Ensure `hanami generate` syntax for Welcome page is compatible with ZSH
+- Don't let `hanami` executable to crash when called without `bundle exec`
+- Ensure to load i18n backend (including `i18n` gem), when validations messages engine is `:i18n`
 
 ## Released Gems 💎
 
-  * `hanami-1.3.2`
-  * `hanami-validations-1.3.4`
+- `hanami-1.3.2`
+- `hanami-validations-1.3.4`
 
 ## How to install ⌨️
 

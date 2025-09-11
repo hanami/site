@@ -2,7 +2,7 @@
 title: Hints
 ---
 
-In addition to error messages, you can also access hints, which are generated from your rules. While `errors` tell you which predicate checks failed, `hints` tell you which additional predicate checks *were not evaluated* because an earlier predicate failed:
+In addition to error messages, you can also access hints, which are generated from your rules. While `errors` tell you which predicate checks failed, `hints` tell you which additional predicate checks _were not evaluated_ because an earlier predicate failed:
 
 ```ruby
 # enable :hints

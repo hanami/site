@@ -52,6 +52,7 @@ end
 # Usage
 Mailers::ForgotPassword.deliver
 ```
+
 [Lotus::Mailer](https://github.com/lotus/mailer) is built on top of the rock solid `mail` [gem](https://github.com/mikel/mail) by Mikel Lindsaar.
 
 [Read the guides](/guides/mailers/overview)

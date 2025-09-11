@@ -66,8 +66,8 @@ As first thing, you must add `hanami-ujs` to your `Gemfile` and run `bundle inst
 
 Then you have to add two lines to the application layout (eg. `apps/web/templates/application.html.erb`):
 
-  1. `<%= csrf_meta_tags %>` inside `<head>`
-  2. `<%= javascript "hanami-ujs" %>` the location is optional, but before `</body>` is a good spot.
+1. `<%= csrf_meta_tags %>` inside `<head>`
+2. `<%= javascript "hanami-ujs" %>` the location is optional, but before `</body>` is a good spot.
 
 Now we can use the new option for `form_for`: `remote: true`
 
@@ -171,19 +171,19 @@ For the entire list of changes, please have a look at our [CHANGELOG](https://gi
 
 ## Released Gems 💎
 
-  * `hanami-1.2.0` - [CHANGELOG](https://github.com/hanami/hanami/blob/master/CHANGELOG.md)
-  * `hanami-model-1.2.0` - [CHANGELOG](https://github.com/hanami/model/blob/master/CHANGELOG.md)
-  * `hanami-assets-1.2.0` - [CHANGELOG](https://github.com/hanami/assets/blob/master/CHANGELOG.md)
-  * `hanami-cli-0.2.0` - [CHANGELOG](https://github.com/hanami/cli/blob/master/CHANGELOG.md)
-  * `hanami-mailer-1.2.0` - [CHANGELOG](https://github.com/hanami/mailer/blob/master/CHANGELOG.md)
-  * `hanami-helpers-1.2.0` - [CHANGELOG](https://github.com/hanami/helpers/blob/master/CHANGELOG.md)
-  * `hanami-view-1.2.0` - [CHANGELOG](https://github.com/hanami/view/blob/master/CHANGELOG.md)
-  * `hamami-controller-1.2.0` - [CHANGELOG](https://github.com/hanami/controller/blob/master/CHANGELOG.md)
-  * `hanami-router-1.2.0` - [CHANGELOG](https://github.com/hanami/router/blob/master/CHANGELOG.md)
-  * `hanami-validations-1.2.0` - [CHANGELOG](https://github.com/hanami/validations/blob/master/CHANGELOG.md)
-  * `hanami-utils-1.2.0` - [CHANGELOG](https://github.com/hanami/utils/blob/master/CHANGELOG.md)
-  * `hanami-webconsole-0.1.0` - [CHANGELOG](https://github.com/hanami/webconsole/blob/master/CHANGELOG.md)
-  * `hanami-ujs-0.1.0` - [CHANGELOG](https://github.com/hanami/ujs/blob/master/CHANGELOG.md)
+- `hanami-1.2.0` - [CHANGELOG](https://github.com/hanami/hanami/blob/master/CHANGELOG.md)
+- `hanami-model-1.2.0` - [CHANGELOG](https://github.com/hanami/model/blob/master/CHANGELOG.md)
+- `hanami-assets-1.2.0` - [CHANGELOG](https://github.com/hanami/assets/blob/master/CHANGELOG.md)
+- `hanami-cli-0.2.0` - [CHANGELOG](https://github.com/hanami/cli/blob/master/CHANGELOG.md)
+- `hanami-mailer-1.2.0` - [CHANGELOG](https://github.com/hanami/mailer/blob/master/CHANGELOG.md)
+- `hanami-helpers-1.2.0` - [CHANGELOG](https://github.com/hanami/helpers/blob/master/CHANGELOG.md)
+- `hanami-view-1.2.0` - [CHANGELOG](https://github.com/hanami/view/blob/master/CHANGELOG.md)
+- `hamami-controller-1.2.0` - [CHANGELOG](https://github.com/hanami/controller/blob/master/CHANGELOG.md)
+- `hanami-router-1.2.0` - [CHANGELOG](https://github.com/hanami/router/blob/master/CHANGELOG.md)
+- `hanami-validations-1.2.0` - [CHANGELOG](https://github.com/hanami/validations/blob/master/CHANGELOG.md)
+- `hanami-utils-1.2.0` - [CHANGELOG](https://github.com/hanami/utils/blob/master/CHANGELOG.md)
+- `hanami-webconsole-0.1.0` - [CHANGELOG](https://github.com/hanami/webconsole/blob/master/CHANGELOG.md)
+- `hanami-ujs-0.1.0` - [CHANGELOG](https://github.com/hanami/ujs/blob/master/CHANGELOG.md)
 
 ## How to install
 
@@ -216,9 +216,9 @@ We'll work to improve the integration between our three projects, to offer a roc
 Starting from tomorrow we'll work in parallel on Hanami 2.0 and 1.3.
 If you want to follow along the progress, keep an eye on the branches in our [GitHub repositories](https://github.com/hanami):
 
-  * `master` targets `1.2` (bugfixes)
-  * `develop` targets `1.3` (new features, deprecations for 2.0)
-  * `unstable` targets `2.0` (new features, breaking changes)
+- `master` targets `1.2` (bugfixes)
+- `develop` targets `1.3` (new features, deprecations for 2.0)
+- `unstable` targets `2.0` (new features, breaking changes)
 
 While we don't have an ETA for 2.0, the **first beta for 1.3** will be released on **August 2018**.
 

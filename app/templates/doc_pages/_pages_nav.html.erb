@@ -1,10 +1,11 @@
 <%= tag.ol("data-testid" => testid) do %>
   <% pages.each do |(page, child_pages)| %>
+    <!-- prettier-ignore -->
     <% selected = page.title == current_page_title %>
     <li>
-      <% base_link_classes =
-        "block py-1 text-gray-500 hover:underline hover:text-gray-800"
-      selected_link_classes = "block py-1 font-bold text-rose-500" %>
+      <!-- prettier-ignore -->
+      <% base_link_classes = "block py-1 text-gray-500 hover:underline hover:text-gray-800"
+    selected_link_classes = "block py-1 font-bold text-rose-500" %>
       <a
         class="<%= selected ? selected_link_classes : base_link_classes %>"
         href="<%= page.url_path %>"
@@ -12,11 +13,8 @@
         <%= page.title %>
       </a>
       <% if child_pages.any? %>
-        <div class="border-rose-200 border-l-1 pl-3 ml-1">
-          <%= render "doc_pages/pages_nav",
-          pages: child_pages,
-          testid: nil,
-          current_page_title: "foo" %>
+        <div class="border-rose-200 pl-3 ml-1 border-l-1">
+          <%= render "doc_pages/pages_nav", pages: child_pages, testid: nil, current_page_title: "foo" %>
         </div>
       <% end %>
     </li>

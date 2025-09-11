@@ -49,7 +49,8 @@ require "dry/system/container"
 require "dry/system"
 ```
 
-- In case of dry-validation and its own dry-rb dependencies, please make sure that you upgrade everything to the **current** versions.  Unfortunately, dry-validation 1.9.0 may still be installed with dry-schema < 1.11 due to how version requirements work in Rubygems. It’s best to have something like this in your Gemfile:
+- In case of dry-validation and its own dry-rb dependencies, please make sure that you upgrade everything to the **current** versions. Unfortunately, dry-validation 1.9.0 may still be installed with dry-schema < 1.11 due to how version requirements work in Rubygems. It’s best to have something like this in your Gemfile:
+
 ```ruby
 gem "dry-validation", "~> 1.9.0"
 gem "dry-schema", "~> 1.11.2"

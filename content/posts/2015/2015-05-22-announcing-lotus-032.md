@@ -37,7 +37,6 @@ end
 There is a new API available for routes interaction.
 It's available as private method in actions and provides useful facilities to generate URLs for named routes.
 
-
 ```ruby
 # apps/web/controllers/home/index.rb
 module Web::Controllers::Home
@@ -64,7 +63,6 @@ The same feature for views was already introduced by v0.3.0.
 Another useful addition for actions is `#send_file`.
 It accepts a Ruby `File` objects and deliver to the client.
 It supports automatic MIME type handling, Conditional GET, HEAD requests and chunked responses (via `Range` header).
-
 
 ```ruby
 # apps/web/controllers/home/index.rb

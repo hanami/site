@@ -83,17 +83,20 @@ Try { 10 / 0 }.recover(ZeroDivisionError) { 1 } # => Try::Value(1)
 ```
 
 No explicit list of exceptions required, StandardError will be the default:
+
 ```ruby
 extend Dry::Monads[:try]
 Try { Hash.new.fetch(:missing) }.recover { :found } # => Try::Value(:found)
 ```
 
 Of course, it's a no-op on values:
+
 ```ruby
 Try { 10 }.recover { 1 } # => Try::Value(10)
 ```
 
 Multiple exception types are allowed:
+
 ```ruby
 extend Dry::Monads[:try]
 

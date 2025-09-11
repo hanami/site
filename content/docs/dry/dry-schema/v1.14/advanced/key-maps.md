@@ -4,8 +4,8 @@ title: Key maps
 
 When you define a schema, you get access to the key map which holds information about specified keys. Internally, `dry-schema` uses key maps to:
 
-* Rebuild the original input hash by rejecting unknown keys
-* (optional) coerce keys from strings to symbols
+- Rebuild the original input hash by rejecting unknown keys
+- (optional) coerce keys from strings to symbols
 
 ### Accessing key map
 
@@ -28,7 +28,7 @@ schema.key_map.write("email" => "jane@doe.org", "age" => 21, "something_unexpect
 
 You can use `Enumerable` API when working with key maps:
 
-``` ruby
+```ruby
 schema.key_map.each { |key| puts key.inspect }
 # #<Dry::Schema::Key name="email" coercer=#<Proc:0x00007feb288ff848(&:to_sym)>>
 # #<Dry::Schema::Key name="age" coercer=#<Proc:0x00007feb288ff848(&:to_sym)>>

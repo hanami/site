@@ -6,7 +6,7 @@ Some components can be large, stateful, or requiring specific configuration as p
 
 You can define your providers as individual source files in `system/providers/`, for example:
 
-``` ruby
+```ruby
 # system/providers/persistence.rb
 
 Application.register_provider(:database) do
@@ -24,7 +24,7 @@ The provider’s lifecycle steps will not run until the provider is required by 
 
 This means you can require your container and ask it to start just that one provider:
 
-``` ruby
+```ruby
 # system/application/container.rb
 class Application < Dry::System::Container
   configure do |config|
@@ -42,13 +42,13 @@ Application["database"]
 
 The provider lifecycle consists of three steps, each with a distinct purpose:
 
-* `prepare` - basic setup code, here you can require third party code and perform basic configuration
-* `start` - code that needs to run for a component to be usable at application's runtime
-* `stop` - code that needs to run to stop a component, ie close a database connection, clear some artifacts etc.
+- `prepare` - basic setup code, here you can require third party code and perform basic configuration
+- `start` - code that needs to run for a component to be usable at application's runtime
+- `stop` - code that needs to run to stop a component, ie close a database connection, clear some artifacts etc.
 
 Here's a simple example:
 
-``` ruby
+```ruby
 # system/providers/db.rb
 
 Application.register_provider(:database) do
@@ -72,7 +72,7 @@ end
 
 You can start one provider as a dependency of another by invoking the provider’s lifecycle directly on the `target` container (i.e. your application container):
 
-``` ruby
+```ruby
 # system/providers/logger.rb
 Application.register_provider(:logger) do
   prepare do

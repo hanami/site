@@ -6,9 +6,7 @@
 
 <ol data-testid="hanami-guides">
   <% guides.fetch("hanami").each do |guide| %>
-    <li>
-      <a href="<%= guide.url_path %>"><%= guide.title %></a>
-    </li>
+    <li><a href="<%= guide.url_path %>"><%= guide.title %></a></li>
   <% end %>
 </ol>
 
@@ -20,9 +18,7 @@
 
 <ol data-testid="dry-guides">
   <% guides.fetch("dry").each do |guide| %>
-    <li>
-      <a href="<%= guide.url_path %>"><%= guide.title %></a>
-    </li>
+    <li><a href="<%= guide.url_path %>"><%= guide.title %></a></li>
   <% end %>
 </ol>
 
@@ -34,9 +30,7 @@
 
 <ol data-testid="rom-guides">
   <% guides.fetch("rom").each do |guide| %>
-    <li>
-      <a href="<%= guide.url_path %>"><%= guide.title %></a>
-    </li>
+    <li><a href="<%= guide.url_path %>"><%= guide.title %></a></li>
   <% end %>
 </ol>
 

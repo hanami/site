@@ -65,7 +65,7 @@ scope(:media_player, item: audio_file).render
 
 This will use the scope's name for the name of the partial. In the example above, this is the equivalent of calling `#render(:media_player)`.
 
-You can also render partials from  within your scope class' own methods:
+You can also render partials from within your scope class' own methods:
 
 ```ruby
 class MediaPlayer < Dry::View::Scope

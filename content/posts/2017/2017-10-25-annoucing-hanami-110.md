@@ -222,7 +222,6 @@ So the servers A, B, and C are for customers (`web` application), D is for admin
 
 To serve this purpose we introduced _selective booting_ feature.
 
-
 ```ruby
 # config/environment.rb
 # ...
@@ -310,89 +309,89 @@ For the entire list of changes, please have a look at our [CHANGELOG](https://gi
 
 ## Released Gems
 
-  * `hanami-1.1.0` - [[CHANGELOG](https://github.com/hanami/hanami/blob/master/CHANGELOG.md)]
-  * `hanami-model-1.1.0` - [[CHANGELOG](https://github.com/hanami/model/blob/master/CHANGELOG.md)]
-  * `hanami-assets-1.1.0` - [[CHANGELOG](https://github.com/hanami/assets/blob/master/CHANGELOG.md)]
-  * `hanami-cli-0.1.0` - [[CHANGELOG](https://github.com/hanami/cli/blob/master/CHANGELOG.md)]
-  * `hanami-mailer-1.1.0` - [[CHANGELOG](https://github.com/hanami/mailer/blob/master/CHANGELOG.md)]
-  * `hanami-helpers-1.1.0` - [[CHANGELOG](https://github.com/hanami/helpers/blob/master/CHANGELOG.md)]
-  * `hanami-view-1.1.0` - [[CHANGELOG](https://github.com/hanami/view/blob/master/CHANGELOG.md)]
-  * `hamami-controller-1.1.0` - [[CHANGELOG](https://github.com/hanami/controller/blob/master/CHANGELOG.md)]
-  * `hanami-router-1.1.0` - [[CHANGELOG](https://github.com/hanami/router/blob/master/CHANGELOG.md)]
-  * `hanami-validations-1.1.0` - [[CHANGELOG](https://github.com/hanami/validations/blob/master/CHANGELOG.md)]
-  * `hanami-utils-1.1.0` - [[CHANGELOG](https://github.com/hanami/utils/blob/master/CHANGELOG.md)]
+- `hanami-1.1.0` - [[CHANGELOG](https://github.com/hanami/hanami/blob/master/CHANGELOG.md)]
+- `hanami-model-1.1.0` - [[CHANGELOG](https://github.com/hanami/model/blob/master/CHANGELOG.md)]
+- `hanami-assets-1.1.0` - [[CHANGELOG](https://github.com/hanami/assets/blob/master/CHANGELOG.md)]
+- `hanami-cli-0.1.0` - [[CHANGELOG](https://github.com/hanami/cli/blob/master/CHANGELOG.md)]
+- `hanami-mailer-1.1.0` - [[CHANGELOG](https://github.com/hanami/mailer/blob/master/CHANGELOG.md)]
+- `hanami-helpers-1.1.0` - [[CHANGELOG](https://github.com/hanami/helpers/blob/master/CHANGELOG.md)]
+- `hanami-view-1.1.0` - [[CHANGELOG](https://github.com/hanami/view/blob/master/CHANGELOG.md)]
+- `hamami-controller-1.1.0` - [[CHANGELOG](https://github.com/hanami/controller/blob/master/CHANGELOG.md)]
+- `hanami-router-1.1.0` - [[CHANGELOG](https://github.com/hanami/router/blob/master/CHANGELOG.md)]
+- `hanami-validations-1.1.0` - [[CHANGELOG](https://github.com/hanami/validations/blob/master/CHANGELOG.md)]
+- `hanami-utils-1.1.0` - [[CHANGELOG](https://github.com/hanami/utils/blob/master/CHANGELOG.md)]
 
 ## Contributors
 
 We're grateful for each person who contributed to this release. These lovely people are:
 
-* [Alfonso Uceda](https://github.com/AlfonsoUceda)
-* [Anton Davydov](https://github.com/davydovanton)
-* [Bartosz Bonisławski](https://github.com/bbonislawski)
-* [Ben Johnson](https://github.com/binarylogic)
-* [Brooke Kuhlmann](https://github.com/bkuhlmann)
-* [Cecile Veneziani](https://github.com/cveneziani)
-* [Daniel Amireh](https://github.com/damireh)
-* [David Dymko](https://github.com/ddymko)
-* [Dmitriy Ivliev](https://github.com/moofkit)
-* [Dmitriy Strukov](https://github.com/dmitriy-strukov)
-* [Ferdinand Niedermann](https://github.com/nerdinand)
-* [Gabriel Gizotti](https://github.com/gizotti)
-* [Gernot Poetsch](https://github.com/gernot)
-* [Hélio Costa e Silva](https://github.com/hlegius)
-* [Ilya Ponomarev](https://github.com/ilyario)
-* [Janko Marohnić](https://github.com/janko-m)
-* [Jaymie Jones](https://github.com/jaymiejones86)
-* [John Hager](https://github.com/jphager2)
-* [Kai Kuchenbecker](https://github.com/kaikuchn)
-* [Karolis Mažukna](https://github.com/Nikamura)
-* [Kate Donaldson](https://github.com/katelovescode)
-* [Kirill](https://github.com/likeath)
-* [Koichi ITO](https://github.com/koic)
-* [Luca Guidi](https://github.com/jodosha)
-* [Lucas Hosseini](https://github.com/beauby)
-* [Marcello Rocha](https://github.com/mereghost)
-* [Marion Duprey](https://github.com/TiteiKo)
-* [Marion Schleifer](https://github.com/marionschleifer)
-* [Masato Oba](https://github.com/masatooba)
-* [Maurizio De Magnis](https://github.com/olistik)
-* [Miguel Angel Arenas Correa](https://github.com/maac4422)
-* [Nick Pridorozhko](https://github.com/nplusp)
-* [Nicolas Filzi](https://github.com/nfilzi)
-* [Nikita Shilnikov](https://github.com/flash-gordon)
-* [Oana Sipos](https://github.com/oana-sipos)
-* [Paul Smith](https://github.com/paulcsmith)
-* [Paweł Świątkowski](https://github.com/katafrakt)
-* [Phil Nash](https://github.com/philnash)
-* [Piotr Solnica](https://github.com/solnic)
-* [Radan Skorić](https://github.com/radanskoric)
-* [Rogério Zambon](https://github.com/rogeriozambon)
-* [Ruslan Gafurov](https://github.com/Shkrt)
-* [Sean Collins](https://github.com/cllns)
-* [Semyon Pupkov](https://github.com/artofhuman)
-* [Sergey Fedorov](https://github.com/Strech)
-* [Sergey Sein](https://github.com/linchus)
-* [Thiago Kenji Okada](https://github.com/m45t3r)
-* [Tim Riley](https://github.com/timriley)
-* [Tudor Pavel](https://github.com/tudorpavel)
-* [Vladislav Yashin](https://github.com/funk-yourself)
-* [Xavier Barbosa](https://github.com/johnnoone)
-* [Yousuf J](https://github.com/yjukaku)
-* [Yuji Ueki](https://github.com/unhappychoice)
-* [Yuji Yaginuma](https://github.com/y-yagi)
-* [akhramov](https://github.com/akhramov)
-* [autopp](https://github.com/autopp)
-* [chenge](https://github.com/chenge)
-* [derekpovah](https://github.com/derekpovah)
-* [graywolf](https://github.com/graywolf)
-* [jarosluv](https://github.com/jarosluv)
-* [malin-as](https://github.com/malin-as)
-* [mbajur](https://github.com/mbajur)
-* [milovidov](https://github.com/milovidov)
-* [morrme](https://github.com/morrme)
-* [ryu39](https://github.com/ryu39)
-* [sovetnik](https://github.com/sovetnik)
-* [yjukaku](https://github.com/yjukaku)
+- [Alfonso Uceda](https://github.com/AlfonsoUceda)
+- [Anton Davydov](https://github.com/davydovanton)
+- [Bartosz Bonisławski](https://github.com/bbonislawski)
+- [Ben Johnson](https://github.com/binarylogic)
+- [Brooke Kuhlmann](https://github.com/bkuhlmann)
+- [Cecile Veneziani](https://github.com/cveneziani)
+- [Daniel Amireh](https://github.com/damireh)
+- [David Dymko](https://github.com/ddymko)
+- [Dmitriy Ivliev](https://github.com/moofkit)
+- [Dmitriy Strukov](https://github.com/dmitriy-strukov)
+- [Ferdinand Niedermann](https://github.com/nerdinand)
+- [Gabriel Gizotti](https://github.com/gizotti)
+- [Gernot Poetsch](https://github.com/gernot)
+- [Hélio Costa e Silva](https://github.com/hlegius)
+- [Ilya Ponomarev](https://github.com/ilyario)
+- [Janko Marohnić](https://github.com/janko-m)
+- [Jaymie Jones](https://github.com/jaymiejones86)
+- [John Hager](https://github.com/jphager2)
+- [Kai Kuchenbecker](https://github.com/kaikuchn)
+- [Karolis Mažukna](https://github.com/Nikamura)
+- [Kate Donaldson](https://github.com/katelovescode)
+- [Kirill](https://github.com/likeath)
+- [Koichi ITO](https://github.com/koic)
+- [Luca Guidi](https://github.com/jodosha)
+- [Lucas Hosseini](https://github.com/beauby)
+- [Marcello Rocha](https://github.com/mereghost)
+- [Marion Duprey](https://github.com/TiteiKo)
+- [Marion Schleifer](https://github.com/marionschleifer)
+- [Masato Oba](https://github.com/masatooba)
+- [Maurizio De Magnis](https://github.com/olistik)
+- [Miguel Angel Arenas Correa](https://github.com/maac4422)
+- [Nick Pridorozhko](https://github.com/nplusp)
+- [Nicolas Filzi](https://github.com/nfilzi)
+- [Nikita Shilnikov](https://github.com/flash-gordon)
+- [Oana Sipos](https://github.com/oana-sipos)
+- [Paul Smith](https://github.com/paulcsmith)
+- [Paweł Świątkowski](https://github.com/katafrakt)
+- [Phil Nash](https://github.com/philnash)
+- [Piotr Solnica](https://github.com/solnic)
+- [Radan Skorić](https://github.com/radanskoric)
+- [Rogério Zambon](https://github.com/rogeriozambon)
+- [Ruslan Gafurov](https://github.com/Shkrt)
+- [Sean Collins](https://github.com/cllns)
+- [Semyon Pupkov](https://github.com/artofhuman)
+- [Sergey Fedorov](https://github.com/Strech)
+- [Sergey Sein](https://github.com/linchus)
+- [Thiago Kenji Okada](https://github.com/m45t3r)
+- [Tim Riley](https://github.com/timriley)
+- [Tudor Pavel](https://github.com/tudorpavel)
+- [Vladislav Yashin](https://github.com/funk-yourself)
+- [Xavier Barbosa](https://github.com/johnnoone)
+- [Yousuf J](https://github.com/yjukaku)
+- [Yuji Ueki](https://github.com/unhappychoice)
+- [Yuji Yaginuma](https://github.com/y-yagi)
+- [akhramov](https://github.com/akhramov)
+- [autopp](https://github.com/autopp)
+- [chenge](https://github.com/chenge)
+- [derekpovah](https://github.com/derekpovah)
+- [graywolf](https://github.com/graywolf)
+- [jarosluv](https://github.com/jarosluv)
+- [malin-as](https://github.com/malin-as)
+- [mbajur](https://github.com/mbajur)
+- [milovidov](https://github.com/milovidov)
+- [morrme](https://github.com/morrme)
+- [ryu39](https://github.com/ryu39)
+- [sovetnik](https://github.com/sovetnik)
+- [yjukaku](https://github.com/yjukaku)
 
 ## How to install
 

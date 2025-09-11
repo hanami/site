@@ -12,7 +12,7 @@ Huge props go to [Nikita Shilnikov](https://github.com/flash-gordon) who has wor
 
 Previously you could include all built-in types into your own module via `include Dry::Types.module`. This was changed to a configurable module builder. Now you can cherry-pick which type namespaced categories you want, which types should be used by default and even rename namespaces. Here are some examples:
 
-``` ruby
+```ruby
 # Cherry-pick which categories you want
 module Types
   include Dry.Types(:strict, :nominal, :coercible)
@@ -45,7 +45,7 @@ Types::Kernel::String
 
 Previously it was only possible to append a constructor function. This was too limiting because it wasn't easy to extend and re-use existing constructors. Now it's possible to either append or prepend a new constructor:
 
-``` ruby
+```ruby
 to_int = Types::Coercible::Integer
 inc = to_int.append { |x| x + 2 }
 inc.("1") # => "1" -> 1 -> 3
@@ -60,7 +60,7 @@ This feature should be very useful in places like rom-rb's schemas or dry-schema
 
 You can now use key names ending with `?` to denote an optional key. Here's how it looks in practice in a struct definition:
 
-``` ruby
+```ruby
 hash_schema = Types::Hash.schema(email: Types::String, name?: Types::String, age?: Types::Integer)
 
 hash_schema[email: 'jane@doe.org']
@@ -72,9 +72,9 @@ hash_schema[email: 'jane@doe.org', name: 'Jane', age: 31]
 
 ### Type-safe coercions by default and Lax types
 
-All the built-in coercion types have been changed to *raise exceptions on unexpected input*. If you want to get back the original input when coercion fails, rather than getting an exception, you can use `Lax` types, which will rescue known type-related errors:
+All the built-in coercion types have been changed to _raise exceptions on unexpected input_. If you want to get back the original input when coercion fails, rather than getting an exception, you can use `Lax` types, which will rescue known type-related errors:
 
-``` ruby
+```ruby
 Types::Params::Float['oops']
 # Dry::Types::CoercionError: invalid value for Float(): "oops"
 
@@ -85,10 +85,10 @@ lax_float['oops']
 
 ### ...and more
 
-There are a lot of other features, improvements, optimizations and fixes in this release. *Please refer to the CHANGELOGS* for a full overview:
+There are a lot of other features, improvements, optimizations and fixes in this release. _Please refer to the CHANGELOGS_ for a full overview:
 
-* [`dry-types 1.0.0 CHANGELOG`](https://github.com/dry-rb/dry-types/blob/main/CHANGELOG.md#100-2019-04-23)
-* [`dry-struct 1.0.0 CHANGELOG`](https://github.com/dry-rb/dry-struct/blob/main/CHANGELOG.md#100-2019-04-23)
+- [`dry-types 1.0.0 CHANGELOG`](https://github.com/dry-rb/dry-types/blob/main/CHANGELOG.md#100-2019-04-23)
+- [`dry-struct 1.0.0 CHANGELOG`](https://github.com/dry-rb/dry-struct/blob/main/CHANGELOG.md#100-2019-04-23)
 
 Please give it a go and let us know what you think!
 

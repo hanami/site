@@ -8,7 +8,7 @@ The SQL adapter uses Sequel migration API exposed by SQL gateways. You can eithe
 
 To load migration tasks simply require them and provide `db:setup` task which sets up ROM.
 
-``` ruby
+```ruby
 # Your Rakefile
 
 require "rom/sql/rake_task"
@@ -24,11 +24,11 @@ end
 
 The following tasks are available:
 
-* `rake db:create_migration[create_users]` - create migration file under
+- `rake db:create_migration[create_users]` - create migration file under
   `db/migrate`
-* `rake db:migrate` - runs migrations located in `db/migrate`
-* `rake db:clean` - removes all tables
-* `rake db:reset` - removes all tables and re-runs migrations
+- `rake db:migrate` - runs migrations located in `db/migrate`
+- `rake db:clean` - removes all tables
+- `rake db:reset` - removes all tables and re-runs migrations
 
 ### File-based migrations
 
@@ -53,7 +53,7 @@ Filenames for migrations begin with the datestamp following this convention `dat
 
 You can also use migrations by using a gateway's interface:
 
-``` ruby
+```ruby
 rom = ROM.container(:sql, 'postgres://localhost/rom')
 
 gateway = rom.gateways[:default]
@@ -75,4 +75,5 @@ migration.apply(gateway.connection, :up)
 <!-- TODO restore when we have API docs again
 * [api::rom-sql::SQL](Migration)
 -->
-* [Sequel migration documentation](https://github.com/jeremyevans/sequel/blob/main/doc/schema_modification.rdoc)
+
+- [Sequel migration documentation](https://github.com/jeremyevans/sequel/blob/main/doc/schema_modification.rdoc)

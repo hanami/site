@@ -8,7 +8,7 @@ Requests and responses can be handled by the built-in handlers, or you can regis
 
 ## Installing
 
-*Depends on:* `ruby v2.4.0` or greater
+_Depends on:_ `ruby v2.4.0` or greater
 
 To install rom-http add the following to your `Gemfile`.
 
@@ -83,7 +83,7 @@ orgs.with(auto_struct: true).by_name('rom-rb').one
 
 Request and response handlers can be registered via `ROM::HTTP::Handlers` object:
 
-``` ruby
+```ruby
 ROM::HTTP::Handlers.register(:my_handlers,
   request: MyRequestHandler,
   response: MyResponseHandler

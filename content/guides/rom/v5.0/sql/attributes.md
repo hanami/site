@@ -10,7 +10,7 @@ Joining relations introduces a problem of having conflicting attribute names. To
 
 To qualify all attributes in a relation:
 
-``` ruby
+```ruby
 class Users < ROM::Relation[:sql]
   schema(infer: true) do
     associations do
@@ -31,7 +31,7 @@ end
 
 To rename all attributes in a relation:
 
-``` ruby
+```ruby
 class Users < ROM::Relation[:sql]
   schema(infer: true) do
     associations do
@@ -49,7 +49,7 @@ end
 
 To rename attributes in block-based DSLs you can use `as` method:
 
-``` ruby
+```ruby
 class Users < ROM::Relation[:sql]
   schema(infer: true)
 
@@ -58,13 +58,13 @@ class Users < ROM::Relation[:sql]
   end
   # produces "SELECT users.id AS user_id, users.name AS user_name ..."
 end
-````
+```
 
 ## Creating functions from attributes
 
 You can use an attribute to create a function. This is useful in cases where you would like to append a function that's created from an attribute coming from another relation. For example:
 
-``` ruby
+```ruby
 class Users < ROM::Relation[:sql]
   schema(infer: true)
 
@@ -81,7 +81,7 @@ end
 
 You can use Attribute API in restriction methods such as `#where`:
 
-``` ruby
+```ruby
 class Users < ROM::Relation[:sql]
   schema(infer: true)
 

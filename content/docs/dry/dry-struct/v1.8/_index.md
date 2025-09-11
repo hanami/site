@@ -1,8 +1,8 @@
 ---
 title: Introduction
 pages:
- - nested-structs
- - recipes
+  - nested-structs
+  - recipes
 ---
 
 `dry-struct` is a gem built on top of `dry-types` which provides virtus-like DSL for defining typed struct classes.
@@ -11,7 +11,7 @@ pages:
 
 You can define struct objects which will have readers for specified attributes using a simple dsl:
 
-``` ruby
+```ruby
 require 'dry-struct'
 
 module Types
@@ -40,9 +40,9 @@ user.age # => 21
 
 :warning: `Dry::Struct::Value` is deprecated in 1.2.0. Structs are already meant to be immutable, freezing them doesn't add any value (no pun intended) beyond a bad example of defensive programming.
 
-You can define value objects which will behave like structs but will be *deeply frozen*:
+You can define value objects which will behave like structs but will be _deeply frozen_:
 
-``` ruby
+```ruby
 class Location < Dry::Struct::Value
   attribute :lat, Types::Float
   attribute :lng, Types::Float
@@ -95,8 +95,8 @@ Please don't. Structs are meant to work with valid input, it cannot generate err
 
 `dry-struct` look somewhat similar to Virtus but there are few significant differences:
 
-* Structs don't provide attribute writers and are meant to be used as "data objects" exclusively
-* Handling of attribute values is provided by standalone type objects from `dry-types`, which gives you way more powerful features
-* Handling of attribute hashes is provided by standalone hash schemas from `dry-types`, which means there are different types of constructors in `dry-struct`
-* Structs are not designed as swiss-army knives, specific constructor types are used depending on the use case
-* Struct classes quack like `dry-types`, which means you can use them in hash schemas, as array members or sum them
+- Structs don't provide attribute writers and are meant to be used as "data objects" exclusively
+- Handling of attribute values is provided by standalone type objects from `dry-types`, which gives you way more powerful features
+- Handling of attribute hashes is provided by standalone hash schemas from `dry-types`, which means there are different types of constructors in `dry-struct`
+- Structs are not designed as swiss-army knives, specific constructor types are used depending on the use case
+- Struct classes quack like `dry-types`, which means you can use them in hash schemas, as array members or sum them

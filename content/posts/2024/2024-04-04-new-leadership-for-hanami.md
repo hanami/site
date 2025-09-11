@@ -5,7 +5,6 @@ tags: announcements
 author: Tim Riley
 image: true
 excerpt: >
-
 ---
 
 After 17 years dedicated to open source Ruby, Luca Guidi [has stepped down](https://discourse.hanamirb.org/t/stepping-down-from-hanami/933?u=jodosha) from the Hanami and [dry-rb](https://dry-rb.org) projects.

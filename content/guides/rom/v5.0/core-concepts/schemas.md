@@ -4,7 +4,7 @@ title: Schemas
 
 Schemas define explicit attribute names and types within a relation. All adapters support relation schemas, and adapter-specific extensions can be provided as well, for example `rom-sql` extends schema DSL with support for database-specific types.
 
-Apart from adapter-specific extensions, schemas can be *extended by you* since you can define your own *types* as well as your own custom methods available on attribute objects.
+Apart from adapter-specific extensions, schemas can be _extended by you_ since you can define your own _types_ as well as your own custom methods available on attribute objects.
 
 ## Why?
 
@@ -18,7 +18,7 @@ Furthermore, schemas can provide meta-data that can be used to automate many com
 
 The DSL is simple. Provide a symbol name with a type from the Types module:
 
-``` ruby
+```ruby
 class Users < ROM::Relation[:http]
   schema do
     attribute :id, Types::Int
@@ -32,7 +32,7 @@ end
 
 If the adapter that you use supports inferring schemas, your schemas can be defined as:
 
-``` ruby
+```ruby
 class Users < ROM::Relation[:sql]
   schema(infer: true)
 end
@@ -40,7 +40,7 @@ end
 
 You can also **override inferred attributes**:
 
-``` ruby
+```ruby
 class Users < ROM::Relation[:sql]
   schema(infer: true) do
     # this overrides inferred :meta attribute
@@ -57,7 +57,7 @@ All builtin types are defined in `ROM::Types` namespace, and individual adapters
 
 You can set up a primary key, either a single attribute or a composite:
 
-``` ruby
+```ruby
 class Users < ROM::Relation[:http]
   schema do
     attribute :id, Types::Int
@@ -71,7 +71,7 @@ end
 
 For a composite primary key, pass the relevant attribute names:
 
-``` ruby
+```ruby
 class UsersGroups < ROM::Relation[:http]
   schema do
     attribute :user_id, Types::Int
@@ -89,7 +89,7 @@ end
 
 You can set up foreign keys pointing to a specific relation:
 
-``` ruby
+```ruby
 class Posts < ROM::Relation[:http]
   schema do
     attribute :user_id, Types::ForeignKey(:users)
@@ -108,7 +108,7 @@ Schema types provide an API for adding arbitrary meta-information. This is mostl
 
 Here's an example:
 
-``` ruby
+```ruby
 class Users < ROM::Relation[:http]
   schema do
     attribute :name, Types::String.meta(namespace: 'details')
@@ -118,7 +118,7 @@ end
 
 Here we defined a `:namespace` meta-information, that can be used accessed via `:name` type:
 
-``` ruby
+```ruby
 Users.schema[:name].meta[:namespace] # 'details'
 ```
 
@@ -128,7 +128,7 @@ Relations commands will automatically use schema attributes when processing the 
 
 Let's say our setup requires generating a UUID prior executing a command:
 
-``` ruby
+```ruby
 class Users < ROM::Relation[:http]
   UUID = Types::String.default { SecureRandom.uuid }
 
@@ -146,7 +146,7 @@ Now when you persist data using [repositories](//guide/repositories) or [command
 
 Apart from `write` types, you can also specify `read` types, these are used by relations when they read data from a database. You can define them using `:read` option:
 
-``` ruby
+```ruby
 class Users < ROM::Relation[:http]
   schema do
     attribute :id, Types::Serial
@@ -164,13 +164,13 @@ Schemas use a type system from [dry-types](http://dry-rb.org/gems/dry-types) and
 
 Here are a couple of guidelines that should help you in making right decisions:
 
-* Don't treat relation schemas as a complex coercion system that is used against
+- Don't treat relation schemas as a complex coercion system that is used against
   data received at the HTTP boundary (ie rack request params)
-* Coercion logic for input should be low-level (eg. Hash => PGHash in rom-sql)
-* Default values should be used as a low-level guarantee that some value is
-  **always set** before making a change in your database. Generating a unique id   is a good example. For default values that are closer to your application domain   it's better to handle this outside of the persistence layer. For example, setting   `draft` as the default value for post's `:status` attribute is part of your domain   more than it is part of your persistence layer.
-* Strict types *can be used* and they will raise `TypeError` when invalid data
-  was accidentally passed to a command. Use this with caution, typically you want   to validate the data prior sending them to a command, but there might be use cases   where you expect data to be valid already, and any type error *is indeed an exception*   and you want your system to crash
+- Coercion logic for input should be low-level (eg. Hash => PGHash in rom-sql)
+- Default values should be used as a low-level guarantee that some value is
+  **always set** before making a change in your database. Generating a unique id is a good example. For default values that are closer to your application domain it's better to handle this outside of the persistence layer. For example, setting `draft` as the default value for post's `:status` attribute is part of your domain more than it is part of your persistence layer.
+- Strict types _can be used_ and they will raise `TypeError` when invalid data
+  was accidentally passed to a command. Use this with caution, typically you want to validate the data prior sending them to a command, but there might be use cases where you expect data to be valid already, and any type error _is indeed an exception_ and you want your system to crash
 
 ## Learn more
 

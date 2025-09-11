@@ -4,7 +4,7 @@ title: File System Utilities
 
 ### File System Utilities
 
-``` ruby
+```ruby
 # frozen_string_literal: true
 require "dry/files"
 

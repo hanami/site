@@ -28,7 +28,7 @@ From the root of your Hanami project: `bundle update hanami`.
 
 ## Released Gems
 
-  * `hanami-0.9.1`
-  * `hanami-utils-0.9.1`
-  * `hanami-router-0.8.1`
-  * `hanami-validations-0.7.1`
+- `hanami-0.9.1`
+- `hanami-utils-0.9.1`
+- `hanami-router-0.8.1`
+- `hanami-validations-0.7.1`

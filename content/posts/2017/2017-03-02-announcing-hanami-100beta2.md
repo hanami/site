@@ -27,26 +27,26 @@ excerpt: >
 
 ## Released Gems
 
-  * `hanami-1.0.0.beta2`
-  * `hanami-model-1.0.0.beta2`
-  * `hamami-controller-1.0.0.beta2`
-  * `hanami-router-1.0.0.beta2`
-  * `hanami-utils-1.0.0.beta2`
+- `hanami-1.0.0.beta2`
+- `hanami-model-1.0.0.beta2`
+- `hamami-controller-1.0.0.beta2`
+- `hanami-router-1.0.0.beta2`
+- `hanami-utils-1.0.0.beta2`
 
 ## Contributors
 
 We're grateful for each person who contributed to this release. These lovely people are:
 
-* [Alfonso Uceda](https://github.com/AlfonsoUceda)
-* [Anton Davydov](https://github.com/davydovanton)
-* [Craig M. Wellington](https://github.com/tercenya)
-* [Marcello Rocha](https://github.com/mereghost)
-* [Marion Duprey](https://github.com/TiteiKo)
-* [Marion Schleifer](https://github.com/marionschleifer)
-* [Oana Sipos](https://github.com/oana-sipos)
-* [Sean Collins](https://github.com/cllns)
-* [Semyon Pupkov](https://github.com/artofhuman)
-* [Valentyn Ostakh](https://github.com/valikos)
+- [Alfonso Uceda](https://github.com/AlfonsoUceda)
+- [Anton Davydov](https://github.com/davydovanton)
+- [Craig M. Wellington](https://github.com/tercenya)
+- [Marcello Rocha](https://github.com/mereghost)
+- [Marion Duprey](https://github.com/TiteiKo)
+- [Marion Schleifer](https://github.com/marionschleifer)
+- [Oana Sipos](https://github.com/oana-sipos)
+- [Sean Collins](https://github.com/cllns)
+- [Semyon Pupkov](https://github.com/artofhuman)
+- [Valentyn Ostakh](https://github.com/valikos)
 
 ## How To Update Your Project
 

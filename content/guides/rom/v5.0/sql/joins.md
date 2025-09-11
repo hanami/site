@@ -6,7 +6,7 @@ To load associated relations you can simply use `join`, `left_join`, or `right_j
 
 ## Using joins with relations
 
-``` ruby
+```ruby
 class Users < ROM::Relation[:sql]
   schema(infer: true) do
     associations do
@@ -29,7 +29,7 @@ end
 
 If you want to have more control, you can pass table name and additional options yourself:
 
-``` ruby
+```ruby
 class Users < ROM::Relation[:sql]
   schema(infer: true) do
     associations do
@@ -52,7 +52,7 @@ end
 
 The second option hash can be used too, if you want to provide more options:
 
-``` ruby
+```ruby
 class Users < ROM::Relation[:sql]
   schema(infer: true) do
     associations do

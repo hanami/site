@@ -4,7 +4,7 @@ title: Operations
 
 dry-logic uses operations to interact with the input passed to the different rules.
 
-``` ruby
+```ruby
 require 'dry/logic'
 require 'dry/logic/predicates'
 
@@ -25,7 +25,7 @@ user_rule.(user: { age: 19 }).success?
 # => true
 ```
 
-* Built-in:
+- Built-in:
   - `and`
   - `or`
   - `key`
@@ -40,7 +40,7 @@ user_rule.(user: { age: 19 }).success?
 
 Another example, lets create the `all?` method from the `Enumerable` module.
 
-``` ruby
+```ruby
 require 'dry/logic'
 require 'dry/logic/predicates'
 

@@ -42,7 +42,7 @@ end
 
 Repositories must be instantiated with a rom container passed to the constructor, this gives access to all components within the container:
 
-``` ruby
+```ruby
 user_repo = UserRepo.new(rom)
 ```
 
@@ -52,7 +52,7 @@ Let's see how Create, Update and Delete commands work with repositories.
 
 A repo can be configured to provide access to `Create` commands:
 
-``` ruby
+```ruby
 require 'rom-repository'
 
 class UserRepo < ROM::Repository[:users]
@@ -62,7 +62,7 @@ end
 
 The `commands` macro defines a `UserRepo#create` method for us:
 
-``` ruby
+```ruby
 user_repo.create(name: "Jane", email: "jane@doe.org")
 # => #<ROM::Struct[User] id=1 name="Jane" email="jane@doe.org">
 ```
@@ -75,7 +75,7 @@ Update and Delete commands require restricting relations so that ROM knows exact
 
 The most popular adapter, rom-sql, automatically defines a method, `by_pk`, that restricts by the primary key. In projects with rom-sql, we would use it to define update and delete commands in a repo:
 
-``` ruby
+```ruby
 require 'rom-repository'
 
 class UserRepo < ROM::Repository[:users]
@@ -85,7 +85,7 @@ end
 
 Now we have a full `CRUD` setup, we can create, update and delete user data:
 
-``` ruby
+```ruby
 user = user_repo.create(name: "Jane", email: "jane@doe.org")
 # => #<ROM::Struct[User] id=1 name="Jane" email="jane@doe.org">
 

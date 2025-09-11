@@ -11,7 +11,7 @@ dry-files is Ruby gem that provides a great abstraction for file manipulations.
 
 ### Basic usage
 
-``` ruby
+```ruby
 # frozen_string_literal: true
 require "dry/files"
 
@@ -21,7 +21,7 @@ files.write("path/to/file", "Hello, World!") # intermediate directories are crea
 
 ### Features
 
-``` ruby
+```ruby
 # frozen_string_literal: true
 require "dry/files"
 
@@ -100,10 +100,10 @@ file.executable?(path)
 
 dry-files ships with two adapters:
 
-  * File System adapter (default), for real file manipulation. It's meant to be used in production and integration tests.
-  * Memory adapter, for in-memory file manipulation. It's meant to be used for unit test.
+- File System adapter (default), for real file manipulation. It's meant to be used in production and integration tests.
+- Memory adapter, for in-memory file manipulation. It's meant to be used for unit test.
 
-``` ruby
+```ruby
 # frozen_string_literal: true
 require "dry/files"
 

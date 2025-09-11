@@ -6,14 +6,14 @@ ROM makes very little assumptions about its adapters that's why it is simple to 
 
 A ROM adapter must provide the following components:
 
-* `ROM::Gateway` subclass that implements required interface
-* `ROM::Relation` subclass that exposes adapter-specific interface for queries and writing
+- `ROM::Gateway` subclass that implements required interface
+- `ROM::Relation` subclass that exposes adapter-specific interface for queries and writing
 
-In addition to that the adapter *may* also provide:
+In addition to that the adapter _may_ also provide:
 
-* `ROM::Commands::Create` subclass for `create` operation
-* `ROM::Commands::Update` subclass for `update` operation
-* `ROM::Commands::Delete` subclass for `delete` operation
+- `ROM::Commands::Create` subclass for `create` operation
+- `ROM::Commands::Update` subclass for `update` operation
+- `ROM::Commands::Delete` subclass for `delete` operation
 
 Let's build an adapter for a plain Ruby array, because why not.
 
@@ -21,7 +21,7 @@ Let's build an adapter for a plain Ruby array, because why not.
 
 Adapter's gateway is used by ROM to retrieve datasets and inject them into adapter's relations as their data-access backends. Here's a simple implementation:
 
-``` ruby
+```ruby
 require 'rom'
 
 module ROM
@@ -61,7 +61,7 @@ Adapter-specific relation must exist because it can provide various features tha
 
 Since our datasets are just arrays, we can expose various array methods to the relation using `forward` macro:
 
-``` ruby
+```ruby
 module ROM
   module ArrayAdapter
     class Relation < ROM::Relation
@@ -93,13 +93,13 @@ The adapter must register itself under specific identifier which then can be use
 
 To register your adapter:
 
-``` ruby
+```ruby
 ROM.register_adapter(:array, ROM::ArrayAdapter)
 ```
 
 This is it! Now our array adapter can be setup using ROM:
 
-``` ruby
+```ruby
 configuration= ROM::Configuration.new(:array)
 
 class Users < ROM::Relation[:array]
@@ -133,13 +133,13 @@ By convention all command classes live under `ROM::YourAdapter::Commands` namesp
 
 Every ROM command has a couple of features available out-of-the-box:
 
-* `relation` - returns current relation for the current command
-* `source` - original relation that was injected to the current command initially
-* `>>(other)` - composes one command with another
-* `with(input)` - auto-curries a command with provided input
-* `combine(*others)` - builds a command graph with other commands as nodes
-* `one?` - returns true if a command returns a single tuple
-* `many?`- returns true if a command returns more than one tuple
+- `relation` - returns current relation for the current command
+- `source` - original relation that was injected to the current command initially
+- `>>(other)` - composes one command with another
+- `with(input)` - auto-curries a command with provided input
+- `combine(*others)` - builds a command graph with other commands as nodes
+- `one?` - returns true if a command returns a single tuple
+- `many?`- returns true if a command returns more than one tuple
 
 ### Extending Relation for Commands
 
@@ -147,7 +147,7 @@ Commands will require an interface to insert, delete and update data and also `c
 
 Let's provide that:
 
-``` ruby
+```ruby
 module ROM
   module ArrayAdapter
     class Relation < ROM::Relation
@@ -171,7 +171,7 @@ end
 
 To implement a create command:
 
-``` ruby
+```ruby
 require 'rom/commands/create' # require what you require!
 
 module ROM
@@ -202,7 +202,7 @@ puts users.to_a.inspect
 
 To implement a delete command:
 
-``` ruby
+```ruby
 require 'rom/commands/delete'
 
 module ROM
@@ -233,7 +233,7 @@ Notice that here delete command yields tuples from its current `relation` but de
 
 To implement an update command:
 
-``` ruby
+```ruby
 require 'rom/commands/update'
 
 module ROM
@@ -264,7 +264,7 @@ Here we simply rely on `Hash#update` which mutates tuples using the input attrib
 
 Once your command classes are defined ROM will pick them up from your namespace and they will be available during setup:
 
-``` ruby
+```ruby
 configuration = ROM::Configuration.new(:array)
 
 class Users < ROM::Relation[:array]

@@ -10,11 +10,7 @@ type Props = {
 
 export const tocScrollViewFn: ViewFn<Props> = (
   linkContainerNode: HTMLElement,
-  {
-    anchorContainerSelector,
-    indicatorSelector = ".toc-indicator",
-    linkSelector = "a[href^='#']",
-  }: Props,
+  { anchorContainerSelector, indicatorSelector = ".toc-indicator", linkSelector = "a[href^='#']" }: Props,
 ) => {
   const { anchors, anchorToLinkMap, indicator, links } = findElements({
     anchorContainerSelector,

@@ -10,7 +10,7 @@ The main API of dry-system is the abstract container that you inherit from. It a
 
 Let's say you want to define an application container that will provide a logger:
 
-``` ruby
+```ruby
 require 'dry/system'
 
 class Application < Dry::System::Container
@@ -33,7 +33,7 @@ By using simple naming conventions we can automatically register objects within 
 
 Let's provide a custom logger object and put it under a custom load-path that we will configure:
 
-``` ruby
+```ruby
 require "dry/system"
 
 class Application < Dry::System::Container

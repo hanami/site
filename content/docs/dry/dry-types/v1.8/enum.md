@@ -4,7 +4,7 @@ title: Enum
 
 In many cases you may want to define an enum. For example, in a blog application a post may have a finite list of statuses. Apart from accessing the current status value, it is useful to have all possible values accessible too. Furthermore, an enum can be a map from, e.g., strings to integers. This is useful for mapping externally-provided integer values to human-readable strings without explicit conversions, see examples.
 
-``` ruby
+```ruby
 require 'dry-types'
 require 'dry-struct'
 
@@ -36,7 +36,7 @@ Post::Statuses[nil]
 # => Dry::Types::ConstraintError: nil violates constraints
 ```
 
-Note that if you want to define an enum type with a default, you must call `.default` *before* calling `.enum`, not the other way around:
+Note that if you want to define an enum type with a default, you must call `.default` _before_ calling `.enum`, not the other way around:
 
 ```ruby
 # this is the correct usage:

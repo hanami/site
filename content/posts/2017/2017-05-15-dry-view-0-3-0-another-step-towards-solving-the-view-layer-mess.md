@@ -68,7 +68,7 @@ Then all you have left to do is add this one-liner to your template:
 <img src=<%= account.profile_image_url %>>
 ```
 
-The result? A cleaner template, and your view logic properly named and encapsulated in its own class, which you can also test  independently.
+The result? A cleaner template, and your view logic properly named and encapsulated in its own class, which you can also test independently.
 
 In this way, view parts provide a critical new layer for placing the majority of your complex view logic. They make your templates easier to understand and easier to work with, and they help ensure that your view layer isn’t where good code structure has to stop.
 

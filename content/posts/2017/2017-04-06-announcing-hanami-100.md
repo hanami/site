@@ -96,6 +96,7 @@ I'm excited to announce an expansion of the [core team](/team), by adding marvel
         </li>
       </ul>
     </div>
+
   </div>
 </div>
 <br>
@@ -103,16 +104,16 @@ Along with [Alfonso Uceda](https://twitter.com/joshka20) (already a member), we'
 
 ## Released Gems
 
-  * `hanami-1.0.0`
-  * `hanami-model-1.0.0`
-  * `hanami-utils-1.0.0`
-  * `hanami-validations-1.0.0`
-  * `hanami-router-1.0.0`
-  * `hanami-controller-1.0.0`
-  * `hanami-view-1.0.0`
-  * `hanami-helpers-1.0.0`
-  * `hanami-mailer-1.0.0`
-  * `hanami-assets-1.0.0`
+- `hanami-1.0.0`
+- `hanami-model-1.0.0`
+- `hanami-utils-1.0.0`
+- `hanami-validations-1.0.0`
+- `hanami-router-1.0.0`
+- `hanami-controller-1.0.0`
+- `hanami-view-1.0.0`
+- `hanami-helpers-1.0.0`
+- `hanami-mailer-1.0.0`
+- `hanami-assets-1.0.0`
 
 ## How To Get Started
 

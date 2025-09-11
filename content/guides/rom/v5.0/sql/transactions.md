@@ -4,7 +4,7 @@ title: Transactions
 
 To use a transaction simply wrap an operation via `Relation#transaction` method:
 
-``` ruby
+```ruby
 # rollback happens when any error is raised
 users.transaction do |t|
   users.command(:create).call(name: "jane")

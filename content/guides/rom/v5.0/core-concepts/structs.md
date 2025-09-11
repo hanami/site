@@ -19,7 +19,7 @@ Auto-struct is a relation feature which can automatically transform plain relati
 
 You can enable this feature via `auto_struct(true)` in a relation class:
 
-``` ruby
+```ruby
 class Users < ROM::Relation[:sql]
   schema(infer: true) do
     associations do
@@ -46,7 +46,7 @@ Relations support configuring `struct_namespace`, it is set to `ROM::Struct` by 
 
 Let's say you have `Entities` namespace and would like to provide a custom `Entities::User` class:
 
-``` ruby
+```ruby
 module Entities
   class User < ROM::Struct
     def full_name
@@ -71,7 +71,7 @@ user.full_name
 
 Mappers will look for struct classes based on `Relation#name`, but this is not restricted to canonical names of your relations, as they can be aliased too. For instance, you may define `:admins` relation, which is restricted to users with `type` set to `"Admin"`. Then if you have a `Entities::Admin` class, it will be used as the struct class for `:admins` relation.
 
-``` ruby
+```ruby
 module Entities
   class User < ROM::Struct
     def admin?

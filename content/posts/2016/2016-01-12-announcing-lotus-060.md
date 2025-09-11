@@ -19,15 +19,15 @@ It ships with the last important set of features that we planned: assets.
 
 As of Lotus v0.6.0, we now have a full set of features for assets management, such as:
 
-  * [Helpers](/guides/helpers/assets)
-  * [Preprocessors](/guides/assets/preprocessors) ([Sass](http://sass-lang.com), [Less](http://lesscss.org), [ES6](http://es6-features.org), [JSX](https://jsx.github.io), [CoffeeScript](http://coffeescript.org), [Opal](http://opalrb.org), etc..)
-  * [Compressors](/guides/assets/compressors) ([YUI](http://yui.github.io/yuicompressor), [UglifyJS2](http://lisperator.net/uglifyjs), [Google Closure Compiler](https://developers.google.com/closure/compiler), [Sass](http://sass-lang.com), etc..)
-  * [Deployment](/guides/command-line/assets) (precompile, compress, checksum)
-  * [Content Delivery Network](/guides/assets/content-delivery-network)
-  * [Heroku support](/blog/2015/12/29/introducing-assets)
-  * [Third Party Gems](/guides/assets/overview) (eg. `bootstrap` gem will support soon Lotus out of the box)
-  * A new [Rack middleware](/guides/assets/overview) to serve static assets
-  * Lazy precompilation + cache in development mode
+- [Helpers](/guides/helpers/assets)
+- [Preprocessors](/guides/assets/preprocessors) ([Sass](http://sass-lang.com), [Less](http://lesscss.org), [ES6](http://es6-features.org), [JSX](https://jsx.github.io), [CoffeeScript](http://coffeescript.org), [Opal](http://opalrb.org), etc..)
+- [Compressors](/guides/assets/compressors) ([YUI](http://yui.github.io/yuicompressor), [UglifyJS2](http://lisperator.net/uglifyjs), [Google Closure Compiler](https://developers.google.com/closure/compiler), [Sass](http://sass-lang.com), etc..)
+- [Deployment](/guides/command-line/assets) (precompile, compress, checksum)
+- [Content Delivery Network](/guides/assets/content-delivery-network)
+- [Heroku support](/blog/2015/12/29/introducing-assets)
+- [Third Party Gems](/guides/assets/overview) (eg. `bootstrap` gem will support soon Lotus out of the box)
+- A new [Rack middleware](/guides/assets/overview) to serve static assets
+- Lazy precompilation + cache in development mode
 
 Thanks to [Leigh Halliday](https://github.com/leighhalliday), [Gonzalo Rodríguez-Baltanás Díaz](https://github.com/Nerian), [deepj](https://github.com/deepj), [Michael Deol](https://github.com/michaeldeol), [Benjamin Klotz](https://github.com/tak1n), [Kleber Correia](https://github.com/klebervirgilio) for their contributions and help.
 

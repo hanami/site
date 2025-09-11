@@ -8,7 +8,7 @@ We’re happy to announce the release of `dry-system` 0.5.0 (previously known as
 
 ## Reasoning behind the project
 
-One of the reasons building and maintaining applications is difficult is their complex nature. Even a single-file Sinatra web application is complex, as it relies on multiple *components*. Even Sinatra itself is a 3rd-party component, giving you the beautiful routing DSL. Since it’s Sinatra, you also happen to be using Rack, which is another component of your application. If you’re using Rack, you’re also using rack middlewares, each being a component. When you look at it this way, it is easy to see that the nature of a “simple” sinatra application is complex by definition - it’s something composed of multiple, connected components. This is also just the very base of your application. Chances are, you’re going to use a database, which will be handled by another 3rd party library, maybe some JSON serializer, or a template renderer - all these things become part of your application, and at the same time they are standalone, reusable components. Then when you start writing the actual code of your application, even if you don’t think about your code providing additional components to your application, this *is exactly what’s going on*. When you don’t think about your own code as something that provides standalone, reusable components that are used across your application, it’s unfortunately easy to trap yourself into a corner called “too much coupling”.
+One of the reasons building and maintaining applications is difficult is their complex nature. Even a single-file Sinatra web application is complex, as it relies on multiple _components_. Even Sinatra itself is a 3rd-party component, giving you the beautiful routing DSL. Since it’s Sinatra, you also happen to be using Rack, which is another component of your application. If you’re using Rack, you’re also using rack middlewares, each being a component. When you look at it this way, it is easy to see that the nature of a “simple” sinatra application is complex by definition - it’s something composed of multiple, connected components. This is also just the very base of your application. Chances are, you’re going to use a database, which will be handled by another 3rd party library, maybe some JSON serializer, or a template renderer - all these things become part of your application, and at the same time they are standalone, reusable components. Then when you start writing the actual code of your application, even if you don’t think about your code providing additional components to your application, this _is exactly what’s going on_. When you don’t think about your own code as something that provides standalone, reusable components that are used across your application, it’s unfortunately easy to trap yourself into a corner called “too much coupling”.
 
 ## Object dependencies
 
@@ -16,12 +16,13 @@ Every application is a system that consists of multiple components. Typically, m
 
 If you’re used to how Rails works, this problem is seemingly nonexistent - Rails requires files automatically for you whenever you refer to a constant that is not yet defined. This is convenient, but it comes with a real danger - tight coupling. The result of this approach is that your application’s code crosses many boundaries (http layer, database, file system etc.) in an uncontrolled manner, and the moment when it becomes a visible problem is the moment when it’s often very difficult to refactor the code and reduce the coupling. This is **one of the main reasons** maintaining large Rails codebases is difficult.
 
-Ruby is an object-oriented language, and one of the most powerful OO techniques is **object composition**. In order to easily reduce an application’s complexity, you encapsulate individual concerns in separate objects, and compose them into a system. When your application is a mixture of classes, modules *and* objects, and when dependencies between individual objects are not handled explicitly, things don’t usually go very well. Let’s fix this.
+Ruby is an object-oriented language, and one of the most powerful OO techniques is **object composition**. In order to easily reduce an application’s complexity, you encapsulate individual concerns in separate objects, and compose them into a system. When your application is a mixture of classes, modules _and_ objects, and when dependencies between individual objects are not handled explicitly, things don’t usually go very well. Let’s fix this.
 
 ## Dependency Injection
+
 Yes, the almost forbidden word in the Ruby community. If you think we don’t need DI in Ruby because in tests we can monkey-patch - please reconsider, DI’s purpose is not to help you with testing (although it’s a bonus side-effect!), its purpose is to **reduce coupling**. Furthermore, DI in Ruby is very simple. Look:
 
-``` ruby
+```ruby
 class UserRepo
   attr_reader :db
 
@@ -35,14 +36,15 @@ UserRepo.new(Sequel.connect('sqlite::memory'))
 
 It would be great if nothing else was needed, but unfortunately there are a few things we still need to take care of:
 
-* Something needs to know there’s a `UserRepo` class and its constructor accepts a database connection
-* Something needs to know how and when `sequel` library needs to be required
-* Something needs to know how to initialize a sequel connection
-* Something needs to know how to *manage* a sequel connection
+- Something needs to know there’s a `UserRepo` class and its constructor accepts a database connection
+- Something needs to know how and when `sequel` library needs to be required
+- Something needs to know how to initialize a sequel connection
+- Something needs to know how to _manage_ a sequel connection
 
-What is that *something* we’re talking about here?
+What is that _something_ we’re talking about here?
 
 ## System with components
+
 Finally, we get to talk about `dry-system`! In applications based on `dry-system`, we organize our code into a system that consists of multiple components. This is really what every application is, except we choose to make it very explicit. Furthermore, we use Dependency Injection, and class interfaces are used purely as object constructors (typically via the `.new` method). This means our system uses **objects** exclusively, which gives as a great advantage - object composition, something you cannot do with classes.
 
 Such systems are loosely-coupled, they rely on abstractions, rather than concrete classes or modules, and 3rd party code is completely isolated from the application’s core logic. `dry-system` provides facilities to require files, set up `$LOAD_PATH` and **manage your application’s state**. This is done in a clear and explicit way, giving you complete control over your system. Big applications can be split into multiple sub-systems easily too.
@@ -51,7 +53,7 @@ Such systems are loosely-coupled, they rely on abstractions, rather than concret
 
 `dry-system` provides two main APIs - a container and a DI mixin. All you need to do is to define a system container:
 
-``` ruby
+```ruby
 # system/container.rb
 class MyApp < Dry::System::Container
   load_paths!('lib')
@@ -60,7 +62,7 @@ end
 
 Then, you can ask your system container to provide a DI mixin that you can use in your classes:
 
-``` ruby
+```ruby
 # system/import.rb
 require_relative 'container'
 Import = MyApp.injector
@@ -68,7 +70,7 @@ Import = MyApp.injector
 
 Then our previous example with `UserRepo` can become this:
 
-``` ruby
+```ruby
 require 'my_app/import'
 
 class UserRepo
@@ -88,7 +90,7 @@ In order to handle this type of component, `dry-system` provides a booting API. 
 
 Here’s how we could configure Sequel:
 
-``` ruby
+```ruby
 # system/boot/persistence.rb
 MyApp.finalize(:persistence) do |persistence|
   init do
@@ -109,7 +111,7 @@ This way we have a single place where our `persistence.db` component is being re
 
 Let’s say you have a rake task which needs the `persistence.db` component (effectively a sequel connection). This is all you need to do:
 
-``` ruby
+```ruby
 require_relative 'system/container'
 
 desc "do something with db"
@@ -132,7 +134,7 @@ This means we have **a sub-second boot time**, with no complex preloaders like S
 
 Convention-over-configuration is a great thing and we embrace it here too. Your application’s code can be automatically registered, and individual components are instantiated for you. The only thing you need to do is to configure an `auto_register` path:
 
-``` ruby
+```ruby
 # system/container.rb
 class MyApp < Dry::System::Container
   configure do |config|

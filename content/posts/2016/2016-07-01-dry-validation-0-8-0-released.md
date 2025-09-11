@@ -10,7 +10,7 @@ After 2 months of hard work we are happy to announce the release of dry-validati
 
 If you are upgrading from 0.7.x you should see plenty of deprecation warnings related to renamed macros and predicates. Updating it is pretty straightforward, but if you don’t feel like doing it now and warnings are annoying while you’re running your tests, just configure deprecation logger and revisit the output later:
 
-``` ruby
+```ruby
 Dry::Validation::Deprecations.configure do |config|
   config.logger = Logger.new(SPEC_ROOT.join('../log/deprecations.log'))
 end
@@ -20,7 +20,7 @@ If you use customized error messages, you may have to update some of them as a c
 
 If you use custom predicates modules, there’s a new interface for configuring it and **the old one no longer works**:
 
-``` ruby
+```ruby
 Dry::Validation.Schema do
   configure { predicates(MyCustomPredicates) }
 end
@@ -40,7 +40,7 @@ The `key` macro has been renamed to `required` which makes it easier to understa
 
 Here’s an example:
 
-``` ruby
+```ruby
 Dry::Validation.Schema do
   required(:name).filled(:str?, min_size?: 3)
   required(:age).filled(:int?, gt?: 18)
@@ -50,7 +50,7 @@ end
 
 Now you can also use blocks:
 
-``` ruby
+```ruby
 Dry::Validation.Schema do
   required(:data).maybe(type?: Array) { size?(2) | size?(4) }
   required(:logs).value { type?(Array) | type?(Hash) }
@@ -59,7 +59,7 @@ end
 
 This allows you to define each rules with additional rules for the value itself. For example let’s define a rule where the `:data` key is required and its value must be an array with 3 elements - where every element is an integer:
 
-``` ruby
+```ruby
 Dry::Validation.Schema do
   required(:data).value(type?: Array, min_size?: 3) { each(:int?) }
 end
@@ -76,7 +76,7 @@ A bunch of useful predicates have been added:
 
 Here are some examples:
 
-``` ruby
+```ruby
 Dry::Validation.Schema do
   required(:tags).filled(:str?, included_in?: %w(red green blue))
   required(:num).filled(:int?, not_eql?: 10)
@@ -89,7 +89,7 @@ In addition to a number of bug fixes, we've added support for defining a seperat
 
 To make use of this feature you need to tweak your `errors.yml` as follows:
 
-``` yaml
+```yaml
 en:
   errors:
     min_size?:
@@ -99,7 +99,7 @@ en:
 
 Now hints will be different than actual validation errors:
 
-``` ruby
+```ruby
 UserSchema = Dry::Validation.Schema do
   required(:login).filled(:str?, min_size?: 3)
 end
@@ -117,7 +117,7 @@ A root-level rule is applied to an input **before** any other rules in your sche
 
 Usage is very simple:
 
-``` ruby
+```ruby
 UserSchema = Dry::Validation.Schema do
   input :hash? # our root-level rule
 
@@ -135,7 +135,7 @@ For context-aware schemas you can now define rules with predicates that rely on 
 
 Let’s say we want to make sure that `:login_time` exists for users that are logged in. We can verify this by checking if `current_user[:id]` exists using the following custom predicate:
 
-``` ruby
+```ruby
 UserSchema = Dry::Validation.Schema do
   configure do
     option :current_user, {}
@@ -170,13 +170,13 @@ Messages now have access to **all** predicate arguments by default. If you add a
 
 For example:
 
-``` yaml
+```yaml
 en:
   errors:
     source_valid?: "my message has access to %{source} and %{target} :D"
 ```
 
-``` ruby
+```ruby
 UserSchema = Dry::Validation.Schema do
   configure do
     def source_valid?(source, target)
@@ -201,7 +201,7 @@ For more details on this feature [see our guide here](/gems/dry-validation/0.13/
 
 You can now provide your own methods to DRY up your schema definitions:
 
-``` ruby
+```ruby
 module MyMacros
   def maybe_int(name, *predicates, &block)
     required(name).maybe(:int?, *predicates, &block)

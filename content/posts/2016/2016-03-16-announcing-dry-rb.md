@@ -26,7 +26,7 @@ For a complete list of changes please refer to the [CHANGELOG](https://github.co
 
 Here's an example validation schema using new syntax:
 
-``` ruby
+```ruby
 require 'dry-validation'
 
 UserSchema = Dry::Validation.Schema do
@@ -66,7 +66,7 @@ For a complete list of changes please refer to the [CHANGELOG](https://github.co
 
 Here's an example Struct definition which uses these new features:
 
-``` ruby
+```ruby
 require 'dry-types'
 
 module Types
