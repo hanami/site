@@ -13,9 +13,9 @@ module Site
       end
 
       def render_with_slots(partial_name, &block)
-        # `#scope` inside templates does not do anything with its given block at the moment. For the
-        # purposes of this gemo, save the block into a special local name that we then call inside
-        # the custom scope class' `#initialize`.
+        # `#scope` inside templates does not do anything with its given block at the moment. Save
+        # the block into a special local name that we then call inside the custom scope class'
+        # `#initialize`.
         scope(render_scope_block: block).render(partial_name)
       end
 
